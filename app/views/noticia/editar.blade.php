@@ -11,7 +11,7 @@
         @endif
         {{ Form::open(array('url' => 'admin/noticia/editar', 'files' => true)) }}
             <h2 class="marginBottom2"><span>Carga y modificación de noticias</span></h2>
-
+{{--
         @if(Auth::user()->can('cambiar_seccion_item'))
             <select name="seccion_nueva_id">
                 <option value="">Seleccione Nueva Sección</option>
@@ -20,6 +20,7 @@
                 @endforeach
             </select>
         @endif
+--}}
             <!-- abre datos del Producto-->
             <div class="col70Admin datosProducto">
                 <h3>Título de la noticia</h3>
@@ -40,6 +41,20 @@
                 </div>
 
             </div>
+            
+            <h3>Secciones</h3>
+            @foreach($secciones as $s)
+                @if($s->menuSeccion()->modulo()->nombre == $item->seccionItem()->menuSeccion()->modulo()->nombre)
+                    @if(count($s->menuSeccion()->children) == 0)
+                        <h5>{{$s->menuSeccion()->nombre}}</h5>
+
+                        @foreach($s->menuSeccion()->secciones as $seccion)
+                            <input type="checkbox" name="secciones[]" value="{{$seccion->id}}" @if(in_array($seccion->id, $item->secciones->lists('id'))) checked="true" @endif>@if($seccion->titulo != ""){{$seccion->titulo}}@else Sección {{$seccion->id}} @endif
+                    @endforeach
+                @endif
+                @endif
+            @endforeach
+            
             <!-- Cierra columna ancha -->
 
 
