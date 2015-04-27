@@ -311,4 +311,33 @@ class Producto extends Item {
         return $this->belongsToMany('Carrito', 'carrito_producto', 'carrito_id', 'producto_id');
     }
 
+    public function nuevo() {
+        if (DB::table('item_seccion')
+                        ->join('seccion', 'item_seccion.seccion_id', '=', 'seccion.id')
+                        ->join('item', 'item_seccion.item_id', '=', 'item.id')
+                        ->where('item_seccion.estado', 'A')
+                        ->where('item_seccion.item_id', $this->id)
+                        ->where('item.estado', 'A')
+                        ->where('seccion.estado', 'A')
+                        ->where('item_seccion.destacado', 'N')
+                        ->get()) {
+            return true;
+        }
+        return false;
+    }
+    
+    public function oferta() {
+        if (DB::table('item_seccion')
+                        ->join('seccion', 'item_seccion.seccion_id', '=', 'seccion.id')
+                        ->join('item', 'item_seccion.item_id', '=', 'item.id')
+                        ->where('item_seccion.estado', 'A')
+                        ->where('item_seccion.item_id', $this->id)
+                        ->where('item.estado', 'A')
+                        ->where('seccion.estado', 'A')
+                        ->where('item_seccion.destacado', 'O')
+                        ->get()) {
+            return true;
+        }
+        return false;
+    }
 }

@@ -65,7 +65,7 @@
             <!-- H E A D E R -->
             <header class="container">
                 <a href="{{URL::to('')}}"><img style="height: 80px;width: 100px;" src="{{URL::to('images/tatu.jpg')}}" alt="Tatú Carreta"></a>
-                <h1 style="float: right;">Tatú Carreta</h1>
+                <h1 style="float: right;">Tatú Carreta Carrito: {{Cart::count()}}</h1>
                 <div class="clear"></div>
             </header>
 

@@ -33,10 +33,19 @@
             @endif
 
             <p class="tituloProducto"><span>{{ $i->titulo }}</span></p>
-            <p class="marca">Marca: @if(!is_null($i->producto()->marca_principal())){{$i->producto()->marca_principal()->nombre}}@endif</p>
-            <span class="precio">Precio: ${{$i->producto()->precio(2)}}</span>
-            <a class="carrito" href="{{URL::to('carrito/agregar/'.$i->producto()->id)}}">Agregar Carrito</a>	
-            <a class="detalle" href="{{URL::to('producto/'.$i->url)}}">Detalle</a>	
+            {{-- <p class="marca">Marca: @if(!is_null($i->producto()->marca_principal())){{$i->producto()->marca_principal()->nombre}}@endif</p> --}}
+            @if((!$i->destacado()) || ($i->producto()->nuevo()))
+                @if($c = Cart::search(array('id' => $i->producto()->id)))
+                    <a class="carrito" href="{{URL::to('carrito/borrar/'.$i->producto()->id.'/'.$c[0])}}">Quitar de Carrito</a>
+                @else
+                    <a class="carrito" href="{{URL::to('carrito/agregar/'.$i->producto()->id)}}">Agregar Carrito</a>
+                @endif
+                
+            @else
+                <span class="precio">Precio: ${{$i->producto()->precio(1)}} ${{$i->producto()->precio(2)}}</span>
+            @endif
+            
+            {{-- <a class="detalle" href="{{URL::to('producto/'.$i->url)}}">Detalle</a>	--}}
             @if(Auth::check())
                 <input type="hidden" name="orden[]" value="{{$i->id}}">
             @endif            		

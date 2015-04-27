@@ -4,24 +4,24 @@ class HomeController extends BaseController {
 
     public function inicio() {
 
-        $items_destacados = parent::itemsDestacados();
+        $items_nuevos = parent::itemsNuevos();
         $slideIndex = parent::slideIndex();
-        if (count($items_destacados) < 5) {
-            if (count($items_destacados) > 0) {
+        if (count($items_nuevos) < 4) {
+            if (count($items_nuevos) > 0) {
                 $destacados = array();
-                foreach ($items_destacados as $item) {
+                foreach ($items_nuevos as $item) {
                     array_push($destacados, $item->id);
                 }
 
-                $ultimos_productos = Item::where('estado', 'A')->whereNotIn('id', $destacados)->orderBy('fecha_modificacion', 'desc')->skip(0)->take(5 - count($items_destacados))->get();
+                $ultimos_productos = Item::where('estado', 'A')->whereNotIn('id', $destacados)->orderBy('fecha_modificacion', 'desc')->skip(0)->take(4 - count($items_nuevos))->get();
             } else {
-                $ultimos_productos = Item::where('estado', 'A')->orderBy('fecha_modificacion', 'desc')->skip(0)->take(5 - count($items_destacados))->get();
+                $ultimos_productos = Item::where('estado', 'A')->orderBy('fecha_modificacion', 'desc')->skip(0)->take(5 - count($items_nuevos))->get();
             }
         } else {
             $ultimos_productos = NULL;
         }
 
-        $this->array_view['items_destacados'] = $items_destacados;
+        $this->array_view['items_nuevos'] = $items_nuevos;
         $this->array_view['slide_index'] = $slideIndex;
         $this->array_view['ultimos_productos'] = $ultimos_productos;
 
