@@ -508,6 +508,58 @@ class Item extends Eloquent {
 
         return $respuesta;
     }
+    
+    public static function ponerNuevo($input) {
+        $respuesta = array();
+
+        $reglas = array(
+            'item_id' => array('integer'),
+            'seccion_id' => array('integer')
+        );
+
+        $validator = Validator::make($input, $reglas);
+
+        if ($validator->fails()) {
+            $respuesta['mensaje'] = $validator;
+            $respuesta['error'] = true;
+        } else {
+
+            $baja_item_seccion = DB::table('item_seccion')->where($input)->update(array(
+                'destacado' => 'N'));
+
+            $respuesta['mensaje'] = 'Producto nuevo.';
+            $respuesta['error'] = false;
+            $respuesta['data'] = $baja_item_seccion;
+        }
+
+        return $respuesta;
+    }
+    
+    public static function ponerOferta($input) {
+        $respuesta = array();
+
+        $reglas = array(
+            'item_id' => array('integer'),
+            'seccion_id' => array('integer')
+        );
+
+        $validator = Validator::make($input, $reglas);
+
+        if ($validator->fails()) {
+            $respuesta['mensaje'] = $validator;
+            $respuesta['error'] = true;
+        } else {
+
+            $baja_item_seccion = DB::table('item_seccion')->where($input)->update(array(
+                'destacado' => 'O'));
+
+            $respuesta['mensaje'] = 'Producto oferta.';
+            $respuesta['error'] = false;
+            $respuesta['data'] = $baja_item_seccion;
+        }
+
+        return $respuesta;
+    }
 
     public static function quitarDestacado($input) {
         $respuesta = array();

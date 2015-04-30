@@ -32,7 +32,8 @@ class CarritoController extends BaseController {
 
         $info = array(
             'producto_id' => $producto_id,
-            'rowId' => $rowId
+            'rowId' => $rowId,
+            'cantidad' => Input::get('cantidad')
         );
 
         //Aca se manda a la funcion borrarItem de la clase Item

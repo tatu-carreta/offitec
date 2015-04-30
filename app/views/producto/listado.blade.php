@@ -3,16 +3,24 @@
         <li>
             @if(Auth::check())
                 <div class="iconos">
-                    @if(!$i->destacado())
+                    @if(!$i->producto()->nuevo())
                         @if(Auth::user()->can("destacar_item"))
-                            <a href="{{URL::to('admin/producto/destacar/'.$i->producto()->id)}}" class="destacarProducto"><i  class="fa fa-thumb-tack fa-lg"></i></a><!-- onclick="destacarItemSeccion('../admin/item/destacar', '{{$seccion->id}}', '{{$i->id}}');" -->
+                            <i onclick="destacarItemSeccion('{{URL::to('admin/producto/nuevo')}}', '{{$seccion->id}}', '{{$i->id}}');" class="fa fa-thumb-tack fa-lg"></i>
                         @endif
                     @else
                         @if(Auth::user()->can("quitar_destacado_item"))
                             <i onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', '{{$seccion->id}}', '{{$i->id}}');" class="fa fa-thumb-tack prodDestacado fa-lg"></i>
                         @endif
                     @endif
-
+                    @if(!$i->producto()->oferta())
+                        @if(Auth::user()->can("destacar_item"))
+                            <a href="{{URL::to('admin/producto/oferta/'.$i->producto()->id.'/'.$seccion->id.'/seccion')}}" class="destacarProducto"><i  class="fa fa-thumb-tack fa-lg"></i></a>
+                        @endif
+                    @else
+                        @if(Auth::user()->can("quitar_destacado_item"))
+                            <i onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', '{{$seccion->id}}', '{{$i->id}}');" class="fa fa-thumb-tack prodDestacado fa-lg"></i>
+                        @endif
+                    @endif
                     <span class="floatRight">
                         @if(Auth::user()->can("editar_item"))
                             <a href="{{URL::to('admin/producto/editar/'.$i->producto()->id.'/seccion')}}" data='{{$seccion->id}}'><i class="fa fa-pencil fa-lg"></i></a>
@@ -24,6 +32,12 @@
                 </div>
             @endif
 
+            @if($i->producto()->nuevo())
+            <h2>NUEVO</h2>
+            @elseif($i->producto()->oferta())
+            <h2>OFERTA</h2>
+            @endif
+            
             @if(!Auth::check())
                 <a href="{{URL::to('producto/'.$i->url)}}">
             @endif
@@ -34,7 +48,7 @@
 
             <p class="tituloProducto"><span>{{ $i->titulo }}</span></p>
             {{-- <p class="marca">Marca: @if(!is_null($i->producto()->marca_principal())){{$i->producto()->marca_principal()->nombre}}@endif</p> --}}
-            @if((!$i->destacado()) || ($i->producto()->nuevo()))
+            @if((!$i->producto()->oferta()) || ($i->producto()->nuevo()))
                 @if($c = Cart::search(array('id' => $i->producto()->id)))
                     <a class="carrito" href="{{URL::to('carrito/borrar/'.$i->producto()->id.'/'.$c[0])}}">Quitar de Carrito</a>
                 @else

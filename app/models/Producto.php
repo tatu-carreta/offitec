@@ -255,6 +255,86 @@ class Producto extends Item {
 
         return $respuesta;
     }
+    
+    public static function ponerNuevo($input) {
+        $respuesta = array();
+
+        $reglas = array();
+
+        $validator = Validator::make($input, $reglas);
+
+        if ($validator->fails()) {
+            $respuesta['mensaje'] = $validator;
+            $respuesta['error'] = true;
+        } else {
+
+            $item = Item::ponerNuevo($input);
+
+            $respuesta['mensaje'] = 'Producto nuevo.';
+            $respuesta['error'] = false;
+            $respuesta['data'] = $item;
+        }
+
+        return $respuesta;
+    }
+    
+    public static function ponerOferta($input) {
+        $respuesta = array();
+
+        $reglas = array();
+
+        $validator = Validator::make($input, $reglas);
+
+        if ($validator->fails()) {
+            $respuesta['mensaje'] = $validator;
+            $respuesta['error'] = true;
+        } else {
+
+            $producto = Producto::find($input['producto_id']);
+
+            if (isset($input['precio_antes']) && ($input['precio_antes'] != "")) {
+
+                $datos = array(
+                    "producto_id" => $input['producto_id'],
+                    "tipo_precio_id" => 1,
+                );
+                $baja_producto_precio = DB::table('producto_precio')->where($datos)->update(array('estado' => 'B'));
+
+                $valores = array(
+                    "valor" => $input['precio_antes'],
+                    "estado" => "A"
+                );
+                $producto->precios()->attach(1, $valores);
+            }
+            if (isset($input['precio_actual']) && ($input['precio_actual'] != "")) {
+
+                $datos = array(
+                    "producto_id" => $input['producto_id'],
+                    "tipo_precio_id" => 2,
+                );
+                $baja_producto_precio = DB::table('producto_precio')->where($datos)->update(array('estado' => 'B'));
+
+                $valores = array(
+                    "valor" => $input['precio_actual'],
+                    "estado" => "A"
+                );
+                $producto->precios()->attach(2, $valores);
+            }
+
+            $data = array(
+                'item_id' => $producto->item()->id,
+                'seccion_id' => $input['seccion_id']
+            );
+
+            $item = Item::ponerOferta($data);
+
+            $respuesta['mensaje'] = 'Producto destacado.';
+            $respuesta['error'] = false;
+            $respuesta['data'] = $producto;
+        }
+
+        return $respuesta;
+    }
 
     //Me quedo con los precios del Producto
     public function precios() {

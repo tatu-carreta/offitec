@@ -5,6 +5,7 @@
         <h1>Inicio</h1>
         <div class="clear"></div>
         <ul>
+            <!-- PRODUCTOS DESTACADOS -->
             @foreach($items_nuevos as $item)
                 <li>
                     @if(!Auth::check())
@@ -18,6 +19,7 @@
                 </li>
             @endforeach
             @if(count($ultimos_productos) > 0)
+                <!-- ULTIMOS PRODUCTOS PARA COMPLETAR -->
                 @foreach($ultimos_productos as $item)
                     <li>
                         @if(!Auth::check())
@@ -32,5 +34,7 @@
                 @endforeach
             @endif
         </ul>
+        <!-- SLIDE HOME -->
+        @include($project_name.'-slide-home')
     </section>
 @stop

@@ -65,15 +65,10 @@
             <!-- H E A D E R -->
             <header class="container">
                 <a href="{{URL::to('')}}"><img style="height: 80px;width: 100px;" src="{{URL::to('images/tatu.jpg')}}" alt="Tatú Carreta"></a>
-                <h1 style="float: right;">Tatú Carreta Carrito: {{Cart::count()}}</h1>
+                <!-- CARRITO -->
+                <h1 style="float: right;">Tatú Carreta Carrito: {{Cart::count(false)}}</h1>
                 <div class="clear"></div>
             </header>
-
-            <!-- abre nuevo slide -->
-
-            <!-- S L I D E 
-            @include($project_name.'-slide-home')
--->
             <!-- N A V -->
             <nav>
                 <div class="menu">

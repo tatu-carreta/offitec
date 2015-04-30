@@ -196,6 +196,87 @@ class ProductoController extends BaseController {
         }
     }
 
+    public function nuevo() {
+
+        //Aca se manda a la funcion editarItem de la clase Item
+        //y se queda con la respuesta para redirigir cual sea el caso
+        $respuesta = Producto::ponerNuevo(Input::all());
+
+        /*
+          if ($respuesta['error'] == true) {
+          return Redirect::to('admin/producto')->withErrors($respuesta['mensaje'])->withInput();
+          } else {
+          return Redirect::to('admin/producto')->with('mensaje', $respuesta['mensaje']);
+          }
+         * 
+         */
+        /*
+          if ($respuesta['error'] == true) {
+          return Redirect::to('admin/producto')->withErrors($respuesta['mensaje'])->withInput();
+          } else {
+          if (Input::get('continue') == "home") {
+          return Redirect::to('/')->with('mensaje', $respuesta['mensaje']);
+          } else {
+          $seccion = Seccion::find(Input::get('seccion_id'));
+
+          $menu = $seccion->menuSeccion()->url;
+          $ancla = '#' . $seccion->estado . $seccion->id;
+
+          return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla);
+          }
+          }
+         * 
+         */
+        return $respuesta;
+    }
+
+    public function vistaOferta($id, $seccion_id, $next) {
+
+        //Me quedo con el item, buscando por id
+        $producto = Producto::find($id);
+
+        if ($producto) {
+            $this->array_view['seccion_id'] = $seccion_id;
+
+            $this->array_view['item'] = $producto->item();
+            $this->array_view['producto'] = $producto;
+            $this->array_view['continue'] = $next;
+            return View::make('producto.oferta', $this->array_view);
+        } else {
+            $this->array_view['texto'] = 'Página de Error!!';
+            return View::make($this->project_name . '-error', $this->array_view);
+        }
+    }
+
+    public function oferta() {
+
+        //Aca se manda a la funcion editarItem de la clase Item
+        //y se queda con la respuesta para redirigir cual sea el caso
+        $respuesta = Producto::ponerOferta(Input::all());
+
+        /*
+          if ($respuesta['error'] == true) {
+          return Redirect::to('admin/producto')->withErrors($respuesta['mensaje'])->withInput();
+          } else {
+          return Redirect::to('admin/producto')->with('mensaje', $respuesta['mensaje']);
+          }
+         * 
+         */
+        if ($respuesta['error'] == true) {
+            return Redirect::to('admin/producto')->withErrors($respuesta['mensaje'])->withInput();
+        } else {
+            if (Input::get('continue') == "home") {
+                return Redirect::to('/')->with('mensaje', $respuesta['mensaje']);
+            } else {
+                $seccion = Seccion::find(Input::get('seccion_id'));
+                $menu = $seccion->menuSeccion()->url;
+                $ancla = '#' . $seccion->estado . $seccion->id;
+
+                return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla);
+            }
+        }
+    }
+
     public function consultarProductoLista() {
 
         //Me quedo con el item, buscando por id
@@ -209,11 +290,11 @@ class ProductoController extends BaseController {
             $this->array_view['data'] = $data;
 
             Mail::send('emails.consulta-producto-listado', $this->array_view, function($message) use($data) {
-                        $message->from($data['email'], $data['nombre'])
-                                ->to('info@coarse.com.ar')
-                                ->subject('Consulta de producto')
-                        ;
-                    });
+                $message->from($data['email'], $data['nombre'])
+                        ->to('info@coarse.com.ar')
+                        ->subject('Consulta de producto')
+                ;
+            });
 
             if (count(Mail::failures()) > 0) {
                 $mensaje = 'El mail no pudo enviarse.';
@@ -249,11 +330,11 @@ class ProductoController extends BaseController {
         $this->array_view['data'] = $data;
 
         Mail::send('emails.consulta-general', $this->array_view, function($message) use($data) {
-                    $message->from($data['email'], $data['nombre'])
-                            ->to('info@coarse.com.ar')
-                            ->subject('Consulta')
-                    ;
-                });
+            $message->from($data['email'], $data['nombre'])
+                    ->to('info@coarse.com.ar')
+                    ->subject('Consulta')
+            ;
+        });
 
         if (count(Mail::failures()) > 0) {
             $mensaje = 'El mail no pudo enviarse.';

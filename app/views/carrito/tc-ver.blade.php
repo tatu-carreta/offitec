@@ -15,8 +15,6 @@
                 <th></th>
                 <th>Producto</th>
                 <th>Cantidad</th>
-                <th>Precio Unidad</th>
-                <th>Total</th>
                 <th>Borrar</th>
             </tr>
             @if(Cart::count()>0)
@@ -24,9 +22,7 @@
                 <tr>
                     <td><img class="lazy" data-original="@if(!is_null($producto->producto->item()->imagen_destacada())){{ URL::to($producto->producto->item()->imagen_destacada()->carpeta.$producto->producto->item()->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="{{$producto->producto->item()->titulo}}"></td>
                     <td>{{ $producto->producto->item()->titulo }}</td>
-                    <td>{{ $producto->qty }}</td>
-                    <td>${{ $producto->price }}</td>
-                    <td>${{ $producto->subtotal }}</td>
+                    <td><input class="cant_prod_carrito" type="text" name="cantidad" value="{{ $producto->qty }}" data='{{ $producto->rowid }}' id="{{ $producto->id }}"></td>
                     <td><a href="{{URL::to('carrito/borrar/'.$producto->id.'/'.$producto->rowid)}}">Borrar</a></td>
                 </tr>
                 @endforeach

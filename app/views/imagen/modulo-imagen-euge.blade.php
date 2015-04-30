@@ -16,7 +16,7 @@
 </div>
 
 <div class="divCargaImg">
-    <img id="cropbox" style="width: auto; max-height: 600px;">
+    <img id="cropbox" style="width: auto; max-height: 250px;">
 </div>
 <input class="block anchoTotal marginBottom" type="text" name="epigrafe_imagen_portada" placeholder="Ingrese una descripción de la foto">
 <input type="hidden" id="x" name="x">

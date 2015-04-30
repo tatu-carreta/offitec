@@ -205,7 +205,7 @@ class Seccion extends Eloquent {
     }
 
     public function items() {
-        return $this->belongsToMany('Item', 'item_seccion')->where('item_seccion.estado', 'A')->where('item.estado', 'A')->orderBy('item_seccion.destacado', 'DESC')->orderBy('item_seccion.orden')->orderBy('item.id', 'DESC');
+        return $this->belongsToMany('Item', 'item_seccion')->where('item_seccion.estado', 'A')->where('item.estado', 'A')->orderBy('item_seccion.orden')->orderBy('item.id', 'DESC');
     }
 
     public function destacados() {

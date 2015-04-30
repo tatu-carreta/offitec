@@ -67,7 +67,7 @@ Route::get('/carrito', 'CarritoController@vistaListado');
 
 Route::get('carrito/agregar/{producto_id}', 'CarritoController@agregarProducto');
 
-Route::get('carrito/editar/{producto_id}/{rowId}', 'CarritoController@editarProducto');
+Route::post('carrito/editar/{producto_id}/{rowId}', 'CarritoController@editarProducto');
 
 Route::get('carrito/borrar/{producto_id}/{rowId}', 'CarritoController@borrarProducto');
 
@@ -233,6 +233,11 @@ Route::group(array('before' => 'auth'), function() {
 
     Route::post('admin/producto/destacar', 'ProductoController@destacar');
 
+    Route::post('admin/producto/nuevo', 'ProductoController@nuevo');
+    
+    Route::get('admin/producto/oferta/{id}/{seccion_id}/{next}', 'ProductoController@vistaOferta');
+    
+    Route::post('admin/producto/oferta', 'ProductoController@oferta');
     /*
      * Ruteo de Noticia
      */

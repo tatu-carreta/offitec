@@ -100,6 +100,18 @@ function cancelarPopup(modal, seccion_id) {
 
 }
 
+$(function () {
+    $('.cant_prod_carrito').change(function () {
+        var cantidad = $(this).val();
+        var id = $(this).attr('data');
+        var producto_id = $(this).attr('id');
+
+        $.post('carrito/editar/' + producto_id + '/' + id, {cantidad: cantidad}, function (data) {
+            window.location.reload();
+        }, "json");
+    });
+});
+
 /*
  * VALIDAR CON JQUERY EL TAMAÑO DEL ARCHIVO
  */
