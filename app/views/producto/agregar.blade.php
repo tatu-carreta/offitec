@@ -52,6 +52,18 @@
                         <input type="text" name="precio" disabled="true" class="precioAble">
                     </div>
                 </div>
+                <h3>Secciones</h3>
+                @foreach($secciones as $s)
+                    @if($s->menuSeccion()->modulo()->nombre == $seccion->menuSeccion()->modulo()->nombre)
+                        @if(count($s->menuSeccion()->children) == 0)
+                            <h5>{{$s->menuSeccion()->nombre}}</h5>
+                        
+                            @foreach($s->menuSeccion()->secciones as $seccion)
+                                <input type="checkbox" name="secciones[]" value="{{$seccion->id}}" @if($seccion->id == $seccion_id) checked="true" disabled @endif>@if($seccion->titulo != ""){{$seccion->titulo}}@else Sección {{$seccion->id}} @endif
+                            @endforeach
+                        @endif
+                    @endif
+                @endforeach
             </div>
 
             <!-- Abre columna de imágenes -->
