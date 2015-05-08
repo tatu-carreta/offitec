@@ -1,0 +1,28 @@
+[2015-05-08 14:12:56] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'endfor' (T_ENDFOR)' in C:\xampp\htdocs\offitec\app\storage\views\f2ca99ef444906368fc16f54b63aaaab:33
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-05-08 14:12:59] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'endfor' (T_ENDFOR)' in C:\xampp\htdocs\offitec\app\storage\views\f2ca99ef444906368fc16f54b63aaaab:33
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-05-08 14:43:17] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\storage\views\9a29f5edfa6d973bd57a079446961be9:56
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-05-08 14:43:18] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\storage\views\9a29f5edfa6d973bd57a079446961be9:56
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-05-08 14:51:14] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function imagenes_producto() on a non-object' in C:\xampp\htdocs\offitec\app\storage\views\e573d1ba22a1510fd77530dd68d714cb:6
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-05-08 14:51:15] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function imagenes_producto() on a non-object' in C:\xampp\htdocs\offitec\app\storage\views\e573d1ba22a1510fd77530dd68d714cb:6
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-05-08 15:06:05] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<'' in C:\xampp\htdocs\offitec\app\storage\views\693da7c0a2896c8bf732a06b4d991e48:6
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []

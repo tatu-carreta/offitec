@@ -7,20 +7,27 @@
 
         <!-- abre LINK -->
         <link href="favicon.ico" rel="shortcut icon">
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
         <meta name="description" content="">
         <meta name="Keywords" content="">
         <meta property="og:image" content="" />
         <meta name="viewport" content="width = device-width, initial-scale=1, maximum-scale=1">
         
-        <link rel="stylesheet" type="text/css" href="{{URL::to('css/tatu-styles-admin.css')}}"> 
-        <link rel="stylesheet" type="text/css" href="{{URL::to('css/tatu-styles.css')}}"> 
+        <!-- B O O T S T R A P -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="{{URL::to('bootstrap-3.3.4-dist/css/bootstrap.css')}}">
+        
+        <link rel="stylesheet" type="text/css" href="{{URL::to('css/base.css')}}"> 
+        <link rel="stylesheet" type="text/css" href="{{URL::to('css/stylesOffitec.css')}}"> 
         <link rel="stylesheet" type="text/css" href="{{URL::to('css/jquery-ui.css')}}">
         <link rel="stylesheet" href="{{URL::to('font-awesome-4.2.0/css/font-awesome.css')}}">
         <link href="{{URL::to('css/jquery.Jcrop.css')}}" rel="stylesheet" />
         
+        <!-- M O D E R N I Z R -->
+        <script src="{{URL::to('js/modernizr.custom.05470.js')}}"></script>
+        
         <!-- abre SCRIPT -->
-        <script src="{{URL::to('js/jquery-1.11.0.min.js')}}"></script>
+        <script src="{{URL::to('js/jquery-1.11.2.min.js')}}"></script>
         <script src="{{URL::to('js/jquery-ui.min.js')}}"></script>
         <script src="{{URL::to('js/funcs.js')}}"></script>
         
@@ -63,20 +70,19 @@
             </div>
             @endif
             <!-- H E A D E R -->
-            <header class="container">
-                <a href="{{URL::to('')}}"><img style="height: 80px;width: 100px;" src="{{URL::to('images/tatu.jpg')}}" alt="Tatú Carreta"></a>
-                <!-- CARRITO -->
-                <h1 style="float: right;">Tatú Carreta Carrito: {{Cart::count(false)}}</h1>
-                <div class="clear"></div>
-            </header>
-            <!-- N A V -->
-            <nav>
-                <div class="menu">
-                    @include('menu.'.$project_name.'-desplegar-menu')
+            <header>
+                <div class="header">
+                    <div class="container">
+                        <a class="navbar-brand" href="#"><img alt="logo" src="{{URL::to('images/offitec.svg')}}"></a>
+                        <!-- CARRITO -->
+                        <h1 style="float: right;">Tatú Carreta Carrito: {{Cart::count(false)}}</h1>
+                    </div>
                 </div>
-                <div class="clear"></div>
-            </nav>
-            
+                
+                <!-- N A V -->
+                @include('menu.'.$project_name.'-desplegar-menu')
+
+            </header>            
         @show
         <!-- abre S E C T I O N -->
 
@@ -85,7 +91,8 @@
         @section('footer')
         <!-- abre F O O T E R -->
         <footer>
-        
+                <div class="col50 sucLP"></div>
+                <div class="col50 sucLZ"></div>
         </footer>
         
         <script src="{{URL::to('ckeditor/ckeditor.js')}}"></script>
@@ -108,6 +115,8 @@
         
         @show
         
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="{{URL::to('bootstrap-3.3.4-dist/js/bootstrap.min.js')}}"></script>
     
     </body>
 </html>
