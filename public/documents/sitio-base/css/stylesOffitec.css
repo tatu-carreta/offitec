@@ -2,11 +2,11 @@
 /*  M E N U  */
 #menuPrincipal {height: 90px; float: left; position: relative; left: 50%} 
 #menuPrincipal>li {float: left; position: relative; right: 50%}
-#menuPrincipal a {background: transparent; font-size: 24px; color:#1E120D; font-weight: 300;background: transparent; height: 90px; line-height: 90px; padding: 0 30px !important; box-sizing: border-box;}
+#menuPrincipal a {background: transparent; font-size: 1.5em; color:#1E120D; font-weight: 300;background: transparent; height: 5.625em; line-height: 5.625em; padding: 0 30px !important; box-sizing: border-box;}
 #menuPrincipal a:hover {background: #fff}
-#menuPrincipal .dropdown li a {height: 35px; line-height: 35px; font-size: 18px !important;}
+#menuPrincipal .dropdown li a {height: 2.188em; line-height: 2.188em; font-size: 1.125em !important;}
 
-.seguiFace {background: url(../images/facebook.png) no-repeat top right; display: inline-block; color: #1E120D; font-size: 26px; font-weight: 300; height: 36px; width: 100%; text-align: right; padding-right: 44px; margin-bottom: 2em;}
+.seguiFace {background: url(../images/facebook.png) no-repeat top right; display: inline-block; color: #1E120D; font-size: 1.625em; font-weight: 300; height: 36px; width: 100%; text-align: right; padding-right: 44px; margin-bottom: 2em;}
 
 .vidriera {height: 200px; background: red}
 .oferta {height: 200px; background: red}
@@ -15,14 +15,23 @@
 .sucLP {background: purple}
 .sucLZ {background: green}
 
+/* botones */
+.btn-offitec{color: #fff; font-size: 1.125em; width: 100%; text-transform: uppercase; line-height: 1.375em; letter-spacing: 0.05em}
+.btn-offitec:hover {color: #fff !important;}
+.btn-offitec span {font-size: 1.375em;}
+	.agregar {background: #8CDD2C; }
+	.quitar {background: #9EB779; }
+	.oferta {background: #FF7503}
+
 /* estilos de Bootstrap modificados */
-.navbar {margin:0 0 2em;}
+.navbar {margin:0;}
 .navbar-toggle {margin-top: 30px}
 .navbar-brand {padding: 2px 0}
 
 .open {background: #fff}
 
-.thumbnail {padding: 0; border: 0; min-height: 400px; text-align: center}
+.thumbnail {padding: 0; border: 0; min-height: 400px; text-align: center; margin-bottom: 5em !important }
+.thumbnail img {margin-bottom: 1em}
 
 
 

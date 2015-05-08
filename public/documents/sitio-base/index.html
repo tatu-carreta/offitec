@@ -17,7 +17,7 @@
 		<link href="css/base.css" rel="stylesheet">
 		<link href="css/stylesOffitec.css" rel="stylesheet">
 		<link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.css">
-		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
 
 		<!-- Optional theme 
 		<link rel="stylesheet" href="bootstrap-3.3.4-dist/css/bootstrap-theme.css">-->
@@ -50,12 +50,16 @@
 
         <!-- H E A D E R -->
 		<header>
-			<div class="container">
-				<nav class="navbar navbar-default" role="navigation">
+			<div class="header">
+				<div class="container">
+					<a class="navbar-brand" href="#"><img alt="logo" src="images/offitec.svg"></a>
+				</div>
+			</div>
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container">
 				<!-- El logotipo y el icono que despliega el menú se agrupan
        				para mostrarlos mejor en los dispositivos móviles -->
 						<div class="navbar-header">
-							<a class="navbar-brand" href="#"><img alt="logo" src="images/logo_offitec.png"></a>
 							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
 					        	data-target=".navbar-ex1-collapse">
 						      	<span class="sr-only">Desplegar navegación</span>
@@ -68,7 +72,7 @@
 				<!-- Agrupar los enlaces de navegación, los formularios y cualquier
        					otro elemento que se pueda ocultar al minimizar la barra -->
 					<div class="collapse navbar-collapse navbar-ex1-collapse">
-						<ul class="nav navbar-nav navbar-right" id="menuPrincipal">
+						<ul class="nav navbar-nav" id="menuPrincipal">
 							<li class="active"><a href="#">Inicio</a></li>
 							<li class="dropdown">
 						        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -94,8 +98,9 @@
 					      	<li><a href="#">Contacto</a></li>
 					    </ul>
 					</div>
-				</nav>
-			</div>
+				</div>
+			</nav>
+			
 		</header>
 
 		<!-- Abre slide -->
@@ -110,10 +115,10 @@
 				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
 					<div class="thumbnail">
 						<img src="images/foto1.jpg" alt="Muebles Offitec">
- 						<p>COD. 1020 MTD</p>
+ 						<p class="titProducto">COD. 1020 MTD</p>
 						<p>Precio anterior: $400</p>
 						<p>Precio: $700</p>
-						<a href="" class="btn btn-primary"><i class="fa fa-plus"></i>Agregar a presupuesto</a>
+						<a href="" class="btn btn-offitec btn-agregar">Agregar a <br><span>presupuesto</span></a>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
@@ -122,6 +127,7 @@
 						<p>COD. 1020 MTD</p>
 						<p>Precio anterior: $400</p>
 						<p>Precio: $700</p>
+						<a href="" class="btn btn-offitec btn-quitar">Quitar de <br><span>presupuesto</span></a>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
@@ -130,6 +136,7 @@
 						<p>COD. 1020 MTD</p>
 						<p>Precio anterior: $400</p>
 						<p>Precio: $700</p>
+						<a href="" class="btn btn-offitec btn-oferta">Precio <span>1500</span><span>1300</span></a>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
