@@ -15,7 +15,17 @@
                     @if(!Auth::check())
                         </a>
                     @endif
-                    <p class="tituloProducto"><span>{{ $item->titulo }}</span></p>
+                    <p>{{ $item->titulo }}</p>
+                    @if((!$item->producto()->oferta()) || ($item->producto()->nuevo()))
+                        @if($c = Cart::search(array('id' => $item->producto()->id)))
+                            <a class="carrito" href="{{URL::to('carrito/borrar/'.$item->producto()->id.'/'.$c[0].'/home')}}">Quitar de Carrito</a>
+                        @else
+                            <a href="{{URL::to('carrito/agregar/'.$item->producto()->id.'/home')}}" class="btn btn-primary"><i class="fa fa-plus"></i>Agregar a presupuesto</a>
+                        @endif
+
+                    @else
+                        <span class="precio">Precio: ${{$item->producto()->precio(1)}} ${{$item->producto()->precio(2)}}</span>
+                    @endif
                 </li>
             @endforeach
             @if(count($ultimos_productos) > 0)
@@ -29,7 +39,17 @@
                         @if(!Auth::check())
                             </a>
                         @endif
-                        <p class="tituloProducto"><span>{{ $item->titulo }}</span></p>
+                        <p>{{ $item->titulo }}</p>
+                        @if((!$item->producto()->oferta()) || ($item->producto()->nuevo()))
+                            @if($c = Cart::search(array('id' => $item->producto()->id)))
+                                <a class="carrito" href="{{URL::to('carrito/borrar/'.$item->producto()->id.'/'.$c[0].'/home')}}">Quitar de Carrito</a>
+                            @else
+                                <a href="{{URL::to('carrito/agregar/'.$item->producto()->id.'/home')}}" class="btn btn-primary"><i class="fa fa-plus"></i>Agregar a presupuesto</a>
+                            @endif
+
+                        @else
+                            <span class="precio">Precio: ${{$item->producto()->precio(1)}} ${{$item->producto()->precio(2)}}</span>
+                        @endif
                     </li>
                 @endforeach
             @endif

@@ -65,11 +65,11 @@ Route::post('registrar-newsletter', 'ClienteController@registrar');
 
 Route::get('/carrito', 'CarritoController@vistaListado');
 
-Route::get('carrito/agregar/{producto_id}', 'CarritoController@agregarProducto');
+Route::get('carrito/agregar/{producto_id}/{continue}', 'CarritoController@agregarProducto');
 
 Route::post('carrito/editar/{producto_id}/{rowId}', 'CarritoController@editarProducto');
 
-Route::get('carrito/borrar/{producto_id}/{rowId}', 'CarritoController@borrarProducto');
+Route::get('carrito/borrar/{producto_id}/{rowId}/{continue}', 'CarritoController@borrarProducto');
 
 Route::get('carrito/borrar', 'CarritoController@borrar');
 

@@ -50,9 +50,9 @@
         {{-- <p class="marca">Marca: @if(!is_null($i->producto()->marca_principal())){{$i->producto()->marca_principal()->nombre}}@endif</p> --}}
         @if((!$i->producto()->oferta()) || ($i->producto()->nuevo()))
             @if($c = Cart::search(array('id' => $i->producto()->id)))
-                <a class="carrito" href="{{URL::to('carrito/borrar/'.$i->producto()->id.'/'.$c[0])}}">Quitar de Carrito</a>
+                <a class="carrito" href="{{URL::to('carrito/borrar/'.$i->producto()->id.'/'.$c[0].'/seccion')}}">Quitar de Carrito</a>
             @else
-                <a href="{{URL::to('carrito/agregar/'.$i->producto()->id)}}" class="btn btn-primary"><i class="fa fa-plus"></i>Agregar a presupuesto</a>
+                <a href="{{URL::to('carrito/agregar/'.$i->producto()->id.'/seccion')}}" class="btn btn-primary"><i class="fa fa-plus"></i>Agregar a presupuesto</a>
                 {{-- <a class="carrito" href="{{URL::to('carrito/agregar/'.$i->producto()->id)}}">Agregar Carrito</a> --}}
             @endif
 

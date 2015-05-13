@@ -23,7 +23,7 @@
                     <td><img class="lazy" data-original="@if(!is_null($producto->producto->item()->imagen_destacada())){{ URL::to($producto->producto->item()->imagen_destacada()->carpeta.$producto->producto->item()->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="{{$producto->producto->item()->titulo}}"></td>
                     <td>{{ $producto->producto->item()->titulo }}</td>
                     <td><input class="cant_prod_carrito" type="text" name="cantidad" value="{{ $producto->qty }}" data='{{ $producto->rowid }}' id="{{ $producto->id }}"></td>
-                    <td><a href="{{URL::to('carrito/borrar/'.$producto->id.'/'.$producto->rowid)}}">Borrar</a></td>
+                    <td><a href="{{URL::to('carrito/borrar/'.$producto->id.'/'.$producto->rowid.'/carrito')}}">Borrar</a></td>
                 </tr>
                 @endforeach
                 <tr>

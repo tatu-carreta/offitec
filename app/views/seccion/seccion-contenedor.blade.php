@@ -48,7 +48,7 @@
 
         @else
             @if(!Auth::check())
-                No hay noticias cargadas aún.
+                No hay {{$texto_modulo}} aún.
             @endif
         @endif
     </div>
