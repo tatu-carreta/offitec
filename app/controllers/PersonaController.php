@@ -104,4 +104,28 @@ class PersonaController extends BaseController {
       }
      * 
      */
+    public function exportarEmail() {
+        Excel::create('Clientes' . date('Ymd'), function($excel) {
+            $excel->sheet('Clientes', function($sheet) {
+
+                $personas = Persona::select('apellido','nombre','email')->distinct()->get();
+
+                $datos = array(
+                    array('Apellido', 'Nombre','Email'),
+                );
+
+                foreach ($personas as $persona) {
+                    array_push($datos, array($persona->apellido, $persona->nombre,$persona->email));
+                }
+
+                $sheet->fromModel($datos, null, 'A1', false, false);
+
+                $sheet->row(1, function($row) {
+
+                    // call cell manipulation methods
+                    $row->setFontWeight('bold');
+                });
+            });
+        })->download('xls');
+    }
 }

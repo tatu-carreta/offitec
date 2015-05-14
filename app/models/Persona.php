@@ -28,7 +28,7 @@ class Persona extends Eloquent {
                 'email' => $input['email'],
                 'estado' => 'A',
                 'fecha_carga' => date("Y-m-d H:i:s"),
-                'usuario_id_carga' => Auth::user()->id
+                'usuario_id_carga' => '1'
             );
 
             if (isset($input['apellido']) && ($input['apellido'] != "")) {
@@ -41,15 +41,12 @@ class Persona extends Eloquent {
                 $datos['fecha_nacimiento'] = $input['fecha_nacimiento'];
             }
             if (isset($input['calle']) && ($input['calle'] != "")) {
-                
+
                 $direccion = Direccion::agregar($input);
-                
-                if(!$direccion['error'])
-                {
+
+                if (!$direccion['error']) {
                     $datos['direccion_id'] = $direccion['data']->id;
                 }
-                
-                
             }
 
             $direccion = static::create($datos);
@@ -61,69 +58,74 @@ class Persona extends Eloquent {
 
         return $respuesta;
     }
-/*
-    public static function editar($input) {
-        $respuesta = array();
 
-        $reglas = array(
-            'titulo' => array('max:50'),
-        );
+    /*
+      public static function editar($input) {
+      $respuesta = array();
 
-        $validator = Validator::make($input, $reglas);
+      $reglas = array(
+      'titulo' => array('max:50'),
+      );
 
-        if ($validator->fails()) {
-            $respuesta['mensaje'] = $validator;
-            $respuesta['error'] = true;
-        } else {
+      $validator = Validator::make($input, $reglas);
 
-            $seccion = Seccion::find($input['id']);
+      if ($validator->fails()) {
+      $respuesta['mensaje'] = $validator;
+      $respuesta['error'] = true;
+      } else {
 
-            $seccion->titulo = $input['titulo'];
-            $seccion->fecha_modificacion = date("Y-m-d H:i:s");
+      $seccion = Seccion::find($input['id']);
 
-            $seccion->save();
+      $seccion->titulo = $input['titulo'];
+      $seccion->fecha_modificacion = date("Y-m-d H:i:s");
 
-            $respuesta['mensaje'] = 'Sección modificada.';
-            $respuesta['error'] = false;
-            $respuesta['data'] = $seccion;
-        }
+      $seccion->save();
 
-        return $respuesta;
-    }
+      $respuesta['mensaje'] = 'Sección modificada.';
+      $respuesta['error'] = false;
+      $respuesta['data'] = $seccion;
+      }
 
-    public static function borrar($input) {
-        $respuesta = array();
+      return $respuesta;
+      }
 
-        $reglas = array(
-        );
+      public static function borrar($input) {
+      $respuesta = array();
 
-        $validator = Validator::make($input, $reglas);
+      $reglas = array(
+      );
 
-        if ($validator->fails()) {
-            $respuesta['mensaje'] = $validator;
-            $respuesta['error'] = true;
-        } else {
+      $validator = Validator::make($input, $reglas);
 
-            $seccion = Seccion::find($input['id']);
+      if ($validator->fails()) {
+      $respuesta['mensaje'] = $validator;
+      $respuesta['error'] = true;
+      } else {
 
-            $seccion->fecha_baja = date("Y-m-d H:i:s");
-            $seccion->estado = 'B';
-            $seccion->usuario_id_baja = Auth::user()->id;
+      $seccion = Seccion::find($input['id']);
 
-            $seccion->save();
+      $seccion->fecha_baja = date("Y-m-d H:i:s");
+      $seccion->estado = 'B';
+      $seccion->usuario_id_baja = Auth::user()->id;
 
-            $respuesta['mensaje'] = 'Sección eliminada.';
-            $respuesta['error'] = false;
-            $respuesta['data'] = $seccion;
-        }
+      $seccion->save();
 
-        return $respuesta;
-    }
- * 
- */
+      $respuesta['mensaje'] = 'Sección eliminada.';
+      $respuesta['error'] = false;
+      $respuesta['data'] = $seccion;
+      }
+
+      return $respuesta;
+      }
+     * 
+     */
 
     public function direccion() {
         return $this->hasOne('Direccion', 'id', 'direccion_id');
+    }
+
+    public function pedidos() {
+        return $this->hasMany('Pedido')->where('pedido.estado', 'A');
     }
 
 }

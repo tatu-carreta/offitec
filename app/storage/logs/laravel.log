@@ -34,3 +34,225 @@ Stack trace:
 Stack trace:
 #0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
 #1 {main} [] []
+[2015-05-14 10:21:47] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\storage\views\9a29f5edfa6d973bd57a079446961be9:56
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-05-14 11:04:33] production.ERROR: exception 'ErrorException' with message 'Undefined variable: _SESSION' in C:\xampp\htdocs\offitec\app\controllers\BaseController.php:14
+Stack trace:
+#0 C:\xampp\htdocs\offitec\app\controllers\BaseController.php(14): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 14, Array)
+#1 [internal function]: BaseController->__construct()
+#2 C:\xampp\htdocs\offitec\bootstrap\compiled.php(247): ReflectionClass->newInstanceArgs(Array)
+#3 C:\xampp\htdocs\offitec\bootstrap\compiled.php(205): Illuminate\Container\Container->build('HomeController', Array)
+#4 C:\xampp\htdocs\offitec\bootstrap\compiled.php(583): Illuminate\Container\Container->make('HomeController', Array)
+#5 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5830): Illuminate\Foundation\Application->make('HomeController')
+#6 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5819): Illuminate\Routing\ControllerDispatcher->makeController('HomeController')
+#7 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5028): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'HomeController', 'inicio')
+#8 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#9 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5386): call_user_func_array(Object(Closure), Array)
+#10 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5053): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5041): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\offitec\bootstrap\compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\offitec\bootstrap\compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7813): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8420): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8367): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\offitec\bootstrap\compiled.php(11030): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#18 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#19 C:\xampp\htdocs\offitec\public\index.php(49): Illuminate\Foundation\Application->run()
+#20 {main} [] []
+[2015-05-14 11:33:02] production.ERROR: exception 'ErrorException' with message 'Illegal string offset 'producto_id'' in C:\xampp\htdocs\offitec\app\controllers\PedidoController.php:26
+Stack trace:
+#0 C:\xampp\htdocs\offitec\app\controllers\PedidoController.php(26): Illuminate\Exception\Handler->handleError(2, 'Illegal string ...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 [internal function]: PedidoController->agregarPedido()
+#2 C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5835): Illuminate\Routing\Controller->callAction('agregarPedido', Array)
+#4 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5823): Illuminate\Routing\ControllerDispatcher->call(Object(PedidoController), Object(Illuminate\Routing\Route), 'agregarPedido')
+#5 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5028): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'PedidoControlle...', 'agregarPedido')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5386): call_user_func_array(Object(Closure), Array)
+#8 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5053): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5041): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\offitec\bootstrap\compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\offitec\bootstrap\compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7813): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8420): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8367): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\offitec\bootstrap\compiled.php(11030): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 C:\xampp\htdocs\offitec\public\index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-05-14 11:33:45] production.ERROR: exception 'ErrorException' with message 'Illegal string offset 'producto_id'' in C:\xampp\htdocs\offitec\app\controllers\PedidoController.php:26
+Stack trace:
+#0 C:\xampp\htdocs\offitec\app\controllers\PedidoController.php(26): Illuminate\Exception\Handler->handleError(2, 'Illegal string ...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 [internal function]: PedidoController->agregarPedido()
+#2 C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5835): Illuminate\Routing\Controller->callAction('agregarPedido', Array)
+#4 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5823): Illuminate\Routing\ControllerDispatcher->call(Object(PedidoController), Object(Illuminate\Routing\Route), 'agregarPedido')
+#5 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5028): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'PedidoControlle...', 'agregarPedido')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5386): call_user_func_array(Object(Closure), Array)
+#8 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5053): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5041): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\offitec\bootstrap\compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\offitec\bootstrap\compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7813): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8420): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8367): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\offitec\bootstrap\compiled.php(11030): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 C:\xampp\htdocs\offitec\public\index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-05-14 11:35:05] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use object of type stdClass as array' in C:\xampp\htdocs\offitec\app\controllers\PedidoController.php:26
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-05-14 11:35:33] production.ERROR: exception 'ErrorException' with message 'Undefined index: producto_id' in C:\xampp\htdocs\offitec\app\controllers\PedidoController.php:26
+Stack trace:
+#0 C:\xampp\htdocs\offitec\app\controllers\PedidoController.php(26): Illuminate\Exception\Handler->handleError(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 [internal function]: PedidoController->agregarPedido()
+#2 C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5835): Illuminate\Routing\Controller->callAction('agregarPedido', Array)
+#4 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5823): Illuminate\Routing\ControllerDispatcher->call(Object(PedidoController), Object(Illuminate\Routing\Route), 'agregarPedido')
+#5 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5028): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'PedidoControlle...', 'agregarPedido')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5386): call_user_func_array(Object(Closure), Array)
+#8 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5053): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5041): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\offitec\bootstrap\compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\offitec\bootstrap\compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7813): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8420): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8367): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\offitec\bootstrap\compiled.php(11030): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 C:\xampp\htdocs\offitec\public\index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-05-14 11:36:11] production.ERROR: exception 'ErrorException' with message 'Undefined index: producto_id' in C:\xampp\htdocs\offitec\app\controllers\PedidoController.php:26
+Stack trace:
+#0 C:\xampp\htdocs\offitec\app\controllers\PedidoController.php(26): Illuminate\Exception\Handler->handleError(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 [internal function]: PedidoController->agregarPedido()
+#2 C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5835): Illuminate\Routing\Controller->callAction('agregarPedido', Array)
+#4 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5823): Illuminate\Routing\ControllerDispatcher->call(Object(PedidoController), Object(Illuminate\Routing\Route), 'agregarPedido')
+#5 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5028): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'PedidoControlle...', 'agregarPedido')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5386): call_user_func_array(Object(Closure), Array)
+#8 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5053): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5041): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\offitec\bootstrap\compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\offitec\bootstrap\compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7813): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8420): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8367): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\offitec\bootstrap\compiled.php(11030): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 C:\xampp\htdocs\offitec\public\index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-05-14 11:36:39] production.ERROR: exception 'ErrorException' with message 'Undefined index: producto_id' in C:\xampp\htdocs\offitec\app\controllers\PedidoController.php:28
+Stack trace:
+#0 C:\xampp\htdocs\offitec\app\controllers\PedidoController.php(28): Illuminate\Exception\Handler->handleError(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 28, Array)
+#1 [internal function]: PedidoController->agregarPedido()
+#2 C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5835): Illuminate\Routing\Controller->callAction('agregarPedido', Array)
+#4 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5823): Illuminate\Routing\ControllerDispatcher->call(Object(PedidoController), Object(Illuminate\Routing\Route), 'agregarPedido')
+#5 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5028): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'PedidoControlle...', 'agregarPedido')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5386): call_user_func_array(Object(Closure), Array)
+#8 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5053): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5041): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\offitec\bootstrap\compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\offitec\bootstrap\compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7813): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8420): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8367): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\offitec\bootstrap\compiled.php(11030): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 C:\xampp\htdocs\offitec\public\index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-05-14 11:37:18] production.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in C:\xampp\htdocs\offitec\app\controllers\PedidoController.php:28
+Stack trace:
+#0 C:\xampp\htdocs\offitec\app\controllers\PedidoController.php(28): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 28, Array)
+#1 [internal function]: PedidoController->agregarPedido()
+#2 C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5835): Illuminate\Routing\Controller->callAction('agregarPedido', Array)
+#4 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5823): Illuminate\Routing\ControllerDispatcher->call(Object(PedidoController), Object(Illuminate\Routing\Route), 'agregarPedido')
+#5 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5028): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'PedidoControlle...', 'agregarPedido')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5386): call_user_func_array(Object(Closure), Array)
+#8 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5053): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5041): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\offitec\bootstrap\compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\offitec\bootstrap\compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7813): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8420): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8367): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\offitec\bootstrap\compiled.php(11030): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 C:\xampp\htdocs\offitec\public\index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-05-14 11:38:06] production.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in C:\xampp\htdocs\offitec\app\controllers\PedidoController.php:30
+Stack trace:
+#0 C:\xampp\htdocs\offitec\app\controllers\PedidoController.php(30): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 [internal function]: PedidoController->agregarPedido()
+#2 C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5835): Illuminate\Routing\Controller->callAction('agregarPedido', Array)
+#4 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5823): Illuminate\Routing\ControllerDispatcher->call(Object(PedidoController), Object(Illuminate\Routing\Route), 'agregarPedido')
+#5 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5028): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'PedidoControlle...', 'agregarPedido')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5386): call_user_func_array(Object(Closure), Array)
+#8 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5053): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5041): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\offitec\bootstrap\compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\offitec\bootstrap\compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7813): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8420): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8367): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\offitec\bootstrap\compiled.php(11030): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 C:\xampp\htdocs\offitec\public\index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-05-14 11:39:11] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use object of type stdClass as array' in C:\xampp\htdocs\offitec\app\controllers\PedidoController.php:31
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-05-14 11:39:30] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot use object of type stdClass as array' in C:\xampp\htdocs\offitec\app\controllers\PedidoController.php:29
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-05-14 11:42:55] production.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in C:\xampp\htdocs\offitec\app\models\Persona.php:31
+Stack trace:
+#0 C:\xampp\htdocs\offitec\app\models\Persona.php(31): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 31, Array)
+#1 C:\xampp\htdocs\offitec\app\controllers\PedidoController.php(43): Persona::agregar(Array)
+#2 [internal function]: PedidoController->agregarPedido()
+#3 C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5835): Illuminate\Routing\Controller->callAction('agregarPedido', Array)
+#5 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5823): Illuminate\Routing\ControllerDispatcher->call(Object(PedidoController), Object(Illuminate\Routing\Route), 'agregarPedido')
+#6 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5028): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'PedidoControlle...', 'agregarPedido')
+#7 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#8 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5386): call_user_func_array(Object(Closure), Array)
+#9 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5053): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5041): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\offitec\bootstrap\compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\offitec\bootstrap\compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7813): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8420): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8367): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\offitec\bootstrap\compiled.php(11030): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\offitec\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2015-05-14 11:45:10] production.ERROR: exception 'ErrorException' with message 'file_put_contents(C:\xampp\htdocs\offitec\app\storage/sessions/84a2f020c5fbe00600db01b3ef3009ee796c70ed): failed to open stream: Invalid argument' in C:\xampp\htdocs\offitec\bootstrap\compiled.php:4212
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'file_put_conten...', 'C:\\xampp\\htdocs...', 4212, Array)
+#1 C:\xampp\htdocs\offitec\bootstrap\compiled.php(4212): file_put_contents('C:\\xampp\\htdocs...', 'a:4:{s:6:"_toke...')
+#2 C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\Session\FileSessionHandler.php(69): Illuminate\Filesystem\Filesystem->put('C:\\xampp\\htdocs...', 'a:4:{s:6:"_toke...')
+#3 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7987): Illuminate\Session\FileSessionHandler->write('84a2f020c5fbe00...', 'a:4:{s:6:"_toke...')
+#4 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7837): Illuminate\Session\Store->save()
+#5 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7815): Illuminate\Session\Middleware->closeSession(Object(Illuminate\Session\Store))
+#6 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8420): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#7 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8367): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#8 C:\xampp\htdocs\offitec\bootstrap\compiled.php(11030): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\offitec\public\index.php(49): Illuminate\Foundation\Application->run()
+#11 {main} [] []

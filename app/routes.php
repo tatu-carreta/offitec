@@ -73,11 +73,15 @@ Route::get('carrito/borrar/{producto_id}/{rowId}/{continue}', 'CarritoController
 
 Route::get('carrito/borrar', 'CarritoController@borrar');
 
+Route::get('pedido/agregar', 'PedidoController@agregarPedido');
+
 // Para todas estas rutas el usuario debe haber iniciado sesión. 
 Route::group(array('before' => 'auth'), function() {
 
     Route::get('admin/exportar-clientes', 'ClienteController@exportarEmail');
 
+    Route::get('admin/exportar-personas', 'PersonaController@exportarEmail');
+    
     /*
      * Ruteo de Categoría
      */

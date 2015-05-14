@@ -75,7 +75,7 @@ class Producto extends Item {
         $respuesta = array();
 
         $reglas = array(
-            'titulo' => array('required', 'max:50', 'unique:item,titulo,'.$input['id']),
+            'titulo' => array('required', 'max:50', 'unique:item,titulo,' . $input['id']),
         );
 
         $validator = Validator::make($input, $reglas);
@@ -255,7 +255,7 @@ class Producto extends Item {
 
         return $respuesta;
     }
-    
+
     public static function ponerNuevo($input) {
         $respuesta = array();
 
@@ -277,7 +277,7 @@ class Producto extends Item {
 
         return $respuesta;
     }
-    
+
     public static function ponerOferta($input) {
         $respuesta = array();
 
@@ -386,9 +386,13 @@ class Producto extends Item {
     public function item() {
         return Item::find($this->item_id);
     }
-    
+
     public function carritos() {
         return $this->belongsToMany('Carrito', 'carrito_producto', 'carrito_id', 'producto_id');
+    }
+
+    public function pedidos() {
+        return $this->belongsToMany('Pedido', 'pedido_producto', 'pedido_id', 'producto_id');
     }
 
     public function nuevo() {
@@ -405,7 +409,7 @@ class Producto extends Item {
         }
         return false;
     }
-    
+
     public function oferta() {
         if (DB::table('item_seccion')
                         ->join('seccion', 'item_seccion.seccion_id', '=', 'seccion.id')
@@ -420,4 +424,5 @@ class Producto extends Item {
         }
         return false;
     }
+
 }
