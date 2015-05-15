@@ -19,9 +19,9 @@
 .btn-offitec{color: #fff; font-size: 1.125em; width: 100%; text-transform: uppercase; line-height: 1.375em; letter-spacing: 0.05em}
 .btn-offitec:hover {color: #fff !important;}
 .btn-offitec span {font-size: 1.375em;}
-	.agregar {background: #8CDD2C; }
-	.quitar {background: #9EB779; }
-	.oferta {background: #FF7503}
+	.btn-agregar {background: #8CDD2C; }
+	.btn-quitar {background: #9EB779; }
+	.btn-oferta {background: #FF7503}
 
 /* estilos de Bootstrap modificados */
 .navbar {margin:0;}
