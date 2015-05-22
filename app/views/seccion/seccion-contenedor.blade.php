@@ -16,20 +16,17 @@
 
                 @if(Auth::check())
                     @if(Auth::user()->can("editar_seccion"))
-                        <a href="{{URL::to('admin/seccion/editar/'.$seccion->id)}}" data='{{ $seccion->id }}' class="btnSec nuevaSeccion"><i class="fa fa-pencil fa-lg"></i>Cambiar nombre</a>
+                        <a href="{{URL::to('admin/seccion/editar/'.$seccion->id)}}" data='{{ $seccion->id }}' class="btn btn-primary"><i class="fa fa-pencil fa-lg"></i>Cambiar nombre</a>
                     @endif
                     @if(Auth::user()->can("borrar_seccion"))
-                        <a onclick="borrarData('../admin/seccion/borrar', '{{$seccion->id}}');" class="btnSec"><i class="fa fa-times fa-lg"></i>Eliminar sección</a>
+                        <a onclick="borrarData('../admin/seccion/borrar', '{{$seccion->id}}');" class="btn"><i class="fa fa-times fa-lg"></i>Eliminar sección</a>
                     @endif
                     @if(Auth::user()->can("agregar_item"))
-                        <a href="{{URL::to('admin/'.$menu->modulo()->nombre.'/agregar/'.$seccion->id)}}" data='{{ $seccion->id }}' class="btn floatRight"><i class="fa fa-plus fa-lg"></i>{{$texto_agregar}}</a>
+                        <a href="{{URL::to('admin/'.$menu->modulo()->nombre.'/agregar/'.$seccion->id)}}" data='{{ $seccion->id }}' class="btn btn-primary"><i class="fa fa-plus fa-lg"></i>{{$texto_agregar}}</a>
                     @endif
                 @endif
                 <div class="clear"></div>
 
-
-
-                
             </div>
         @endif
         @if(count($seccion->items) > 0)

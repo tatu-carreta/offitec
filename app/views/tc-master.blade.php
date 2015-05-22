@@ -74,9 +74,13 @@
             <header>
                 <div class="header">
                     <div class="container">
-                        <a class="navbar-brand" href="#"><img alt="logo" src="{{URL::to('images/offitec.svg')}}"></a>
-                        <!-- CARRITO -->
-                        <h1 style="float: right;">Tatú Carreta Carrito: {{Cart::count(false)}}</h1>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a class="navbar-brand" href="#"><img alt="logo" src="{{URL::to('images/offitec.svg')}}"></a>
+                                <!-- CARRITO -->
+                                <h1 style="float: right;">Tatú Carreta Carrito: {{Cart::count(false)}}</h1>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
