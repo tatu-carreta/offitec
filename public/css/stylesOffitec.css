@@ -1,4 +1,6 @@
 
+h1, h2, h3 {font-weight: 300 !important}
+
 /*  M E N U  */
 #menuPrincipal {height: 90px; float: left; position: relative; left: 50%} 
 #menuPrincipal>li {float: left; position: relative; right: 50%}

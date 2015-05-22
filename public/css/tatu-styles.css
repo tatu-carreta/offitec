@@ -1,7 +1,7 @@
 //PRODUCTOS
 
 .divProductos {vertical-align: top; border-top: 1px solid #C6C6C6; padding-top: 1em; min-height: 10em}
-.divProductos h3{margin-top: 0.3em}
+.divProductos h3{margin: 0 0.3em 0 0}
 
 .ulProductos{margin: 0 -0.625em}
 .ulProductos li{background:#fff; float:left; margin:2em 0.9%; width: 18.2%; box-sizing: content-box; position: relative; text-align: left}

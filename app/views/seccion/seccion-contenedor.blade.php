@@ -1,9 +1,9 @@
 @foreach($menu -> secciones as $seccion)
-    <div class="row ">
+    <div class="row divProductos">
         @if((count($seccion->items) > 0) || Auth::check())
-            <div class="row" id="{{$menu->estado.$menu->id}}">
+            <div  class="col-md-12" id="{{$menu->estado.$menu->id}}">
                 @if(($seccion->titulo != "") || (Auth::check()))
-                    <h3 class="floatLeft marginRight" id="{{$seccion->estado.$seccion->id}}">
+                    <h3 class="pull-left" id="{{$seccion->estado.$seccion->id}}">
                         @if($seccion->titulo != "")
                             {{ $seccion -> titulo }}
                         @else 
@@ -16,17 +16,18 @@
 
                 @if(Auth::check())
                     @if(Auth::user()->can("editar_seccion"))
-                        <a href="{{URL::to('admin/seccion/editar/'.$seccion->id)}}" data='{{ $seccion->id }}' class="btn btn-primary"><i class="fa fa-pencil fa-lg"></i>Cambiar nombre</a>
+                        <a href="{{URL::to('admin/seccion/editar/'.$seccion->id)}}" data='{{ $seccion->id }}' class="btn"><i class="fa fa-pencil fa-lg"></i>Cambiar nombre</a>
                     @endif
                     @if(Auth::user()->can("borrar_seccion"))
                         <a onclick="borrarData('../admin/seccion/borrar', '{{$seccion->id}}');" class="btn"><i class="fa fa-times fa-lg"></i>Eliminar sección</a>
                     @endif
                     @if(Auth::user()->can("agregar_item"))
-                        <a href="{{URL::to('admin/'.$menu->modulo()->nombre.'/agregar/'.$seccion->id)}}" data='{{ $seccion->id }}' class="btn btn-primary"><i class="fa fa-plus fa-lg"></i>{{$texto_agregar}}</a>
+                        <a href="{{URL::to('admin/'.$menu->modulo()->nombre.'/agregar/'.$seccion->id)}}" data='{{ $seccion->id }}' class="btn btn-primary pull-right"><i class="fa fa-plus fa-lg"></i>{{$texto_agregar}}</a>
                     @endif
                 @endif
-                <div class="clear"></div>
-
+                <div class="clearfix"></div>
+                <div class="sinProductos">Sin productos</div> <!-- Ver con MAXI -->
+                
             </div>
         @endif
         @if(count($seccion->items) > 0)

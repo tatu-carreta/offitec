@@ -25,19 +25,22 @@
 </style>
 <script src="{{URL::to('js/ckeditorLimitado.js')}}"></script>
 <script src="{{URL::to('js/producto-funcs.js')}}"></script>
-<section>
+<section class="container">
         {{ Form::open(array('url' => 'admin/producto/agregar', 'files' => true)) }}
             <h2 class="marginBottom2"><span>Carga y modificación de productos</span></h2>
             <div id="error" class="error" style="display:none"><span></span></div>
             <div id="correcto" class="correcto ok" style="display:none"><span></span></div>
 
+        <div class="row">
             <!-- Abre columna de descripción -->
-            <div class="col70Admin datosProducto">
+            <div class="col-md-8 datosProducto">
                 <h3>Nombre y modelo del producto</h3>
-                <input class="block anchoTotal marginBottom" type="text" name="titulo" placeholder="Código" required="true" maxlength="50">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="titulo" placeholder="Código" required="true" maxlength="50">
+                </div>
 
-                <div class="fondoDestacado padding1 marginBottom2">
-                    <div class="marginBottom1 class_checkbox">
+                <div class="fondoDestacado marginBottom2">
+                    <div class="checkbox">
                         <label for="destacarProducto" class="destacarProducto noTocado">
                             <input id="destacarProducto" class="precioDisabled check_box" type="checkbox" name="item_destacado" value="A">
                             <span class="spanDestacarProd">Destacar este producto</span>
@@ -49,9 +52,10 @@
 
                     <div class="form-group">
                         <label for="precio">Precio</label><span>$</span>
-                        <input type="text" name="precio" disabled="true" class="precioAble">
+                        <input type="text" name="precio" disabled="true" class="precioAble"> <!-- class="precioAble" Maxi ese class es tuyo? -->
                     </div>
                 </div>
+
                 <h3>Secciones</h3>
                 @foreach($secciones as $s)
                     @if($s->menuSeccion()->modulo()->nombre == $seccion->menuSeccion()->modulo()->nombre)
@@ -67,19 +71,21 @@
             </div>
 
             <!-- Abre columna de imágenes -->
-            <div class="col30Admin fondoDestacado padding1 cargaImg">
+            <div class="col-md-4 fondoDestacado padding1 cargaImg">
                 <h3>Imagen principal</h3>
                 @include('imagen.modulo-imagen-euge')
             </div>
 
             <div class="clear"></div>
             <!-- cierran columnas -->
-            
+
+
+        </div>  
             
 
             <div class="punteado">
-                <input type="submit" value="Publicar" class="btn marginRight5">
-                <a onclick="window.history.back();" class="btnGris">Cancelar</a>
+                <input type="submit" value="Publicar" class="btn btn-primary marginRight5">
+                <a onclick="window.history.back();" class="btn btn-default">Cancelar</a>
             </div>
 
 
