@@ -14,8 +14,6 @@ h1, h2, h3 {font-weight: 300 !important}
 .oferta {height: 200px; background: red}
 
 .col50 {min-height: 200px; width: 50%; float: left}
-.sucLP {background: purple}
-.sucLZ {background: green}
 
 /* estilos de Bootstrap modificados */
 .navbar {margin:0 0 2em;}

@@ -26,7 +26,7 @@
 <script src="{{URL::to('js/ckeditorLimitado.js')}}"></script>
 <script src="{{URL::to('js/producto-funcs.js')}}"></script>
 <section class="container">
-        {{ Form::open(array('url' => 'admin/producto/agregar', 'files' => true)) }}
+        {{ Form::open(array('url' => 'admin/producto/agregar', 'files' => true, 'role' => 'form')) }}
             <h2 class="marginBottom2"><span>Carga y modificación de productos</span></h2>
             <div id="error" class="error" style="display:none"><span></span></div>
             <div id="correcto" class="correcto ok" style="display:none"><span></span></div>
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="fondoDestacado marginBottom2">
-                    <div class="checkbox">
+                    <div class=" class_checkbox">
                         <label for="destacarProducto" class="destacarProducto noTocado">
                             <input id="destacarProducto" class="precioDisabled check_box" type="checkbox" name="item_destacado" value="A">
                             <span class="spanDestacarProd">Destacar este producto</span>
@@ -52,7 +52,7 @@
 
                     <div class="form-group">
                         <label for="precio">Precio</label><span>$</span>
-                        <input type="text" name="precio" disabled="true" class="precioAble"> <!-- class="precioAble" Maxi ese class es tuyo? -->
+                        <input type="text" name="precio" disabled="true" class="precioAble"> 
                     </div>
                 </div>
 

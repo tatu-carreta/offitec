@@ -96,8 +96,7 @@
         @section('footer')
         <!-- abre F O O T E R -->
         <footer>
-                <div class="col50 sucLP"></div>
-                <div class="col50 sucLZ"></div>
+
         </footer>
         
         <script src="{{URL::to('ckeditor/ckeditor.js')}}"></script>

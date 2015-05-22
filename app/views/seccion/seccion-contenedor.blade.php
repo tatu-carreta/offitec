@@ -26,7 +26,7 @@
                     @endif
                 @endif
                 <div class="clearfix"></div>
-                <div class="sinProductos">Sin productos</div> <!-- Ver con MAXI -->
+                 <!-- Ver con MAXI -->
                 
             </div>
         @endif
@@ -47,6 +47,8 @@
         @else
             @if(!Auth::check())
                 No hay {{$texto_modulo}} aún.
+            @else
+            <div class="sinProductos">Sin productos</div>
             @endif
         @endif
     </div>
