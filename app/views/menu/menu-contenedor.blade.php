@@ -43,7 +43,7 @@
                         @endif
                     @endif
                     @if(Auth::user()->can("agregar_seccion"))
-                        <a href="{{URL::to('admin/seccion/agregar/'.$menu->id)}}" class="btn btn-primary"><i class="fa fa-plus fa-lg"></i>Nueva sección</a>
+                        <a href="{{URL::to('admin/seccion/agregar/'.$menu->id)}}" class="btn btn-primary popup-nueva-seccion"><i class="fa fa-plus fa-lg"></i>Nueva sección</a>
                     @endif
                     </div>
                     <div class="clearfix"></div>
@@ -60,7 +60,11 @@
         </div>
 
         @if(Auth::check())
-            <div id="agregar-seccion"></div>
+            <div class="modal fade" id="nueva-seccion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content"></div>
+                </div>
+            </div>
         @endif
     </section>
 @stop

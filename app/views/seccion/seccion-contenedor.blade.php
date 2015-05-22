@@ -16,7 +16,7 @@
 
                 @if(Auth::check())
                     @if(Auth::user()->can("editar_seccion"))
-                        <a href="{{URL::to('admin/seccion/editar/'.$seccion->id)}}" data='{{ $seccion->id }}' class="btn"><i class="fa fa-pencil fa-lg"></i>Cambiar nombre</a>
+                        <a href="{{URL::to('admin/seccion/editar/'.$seccion->id)}}" data='{{ $seccion->id }}' class="btn popup-seccion"><i class="fa fa-pencil fa-lg"></i>Cambiar nombre</a>
                     @endif
                     @if(Auth::user()->can("borrar_seccion"))
                         <a onclick="borrarData('../admin/seccion/borrar', '{{$seccion->id}}');" class="btn"><i class="fa fa-times fa-lg"></i>Eliminar sección</a>
@@ -53,5 +53,10 @@
     @if(Auth::check())
         <div id="agregar-item{{ $seccion->id }}"></div>
         <div id="destacar-producto"></div>
+        <div class="modal fade" id="seccion{{$seccion->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content"></div>
+            </div>
+        </div>
     @endif
 @endforeach

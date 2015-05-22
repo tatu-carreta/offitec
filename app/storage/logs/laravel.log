@@ -348,3 +348,25 @@ Stack trace:
 Stack trace:
 #0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
 #1 {main} [] []
+[2015-05-22 16:16:53] production.ERROR: exception 'ErrorException' with message 'Undefined index: id' in C:\xampp\htdocs\offitec\app\models\Seccion.php:56
+Stack trace:
+#0 C:\xampp\htdocs\offitec\app\models\Seccion.php(56): Illuminate\Exception\Handler->handleError(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 56, Array)
+#1 C:\xampp\htdocs\offitec\app\controllers\SeccionController.php(56): Seccion::editarSeccion(Array)
+#2 [internal function]: SeccionController->editar()
+#3 C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5835): Illuminate\Routing\Controller->callAction('editar', Array)
+#5 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5823): Illuminate\Routing\ControllerDispatcher->call(Object(SeccionController), Object(Illuminate\Routing\Route), 'editar')
+#6 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5028): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'SeccionControll...', 'editar')
+#7 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#8 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5386): call_user_func_array(Object(Closure), Array)
+#9 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5053): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5041): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\offitec\bootstrap\compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\offitec\bootstrap\compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7813): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8420): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8367): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\offitec\bootstrap\compiled.php(11030): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\offitec\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []

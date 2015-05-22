@@ -132,6 +132,7 @@ function validar(elem) {
         //LimpiarInputFile(archivo.attr('id'));
     }
     else {
+        //Es mayor a 2MB
         if (archivo['0'].files['0'].size > (1024 * 1024) + (1024 * 1024))
         {
             alert("El archivo que intenta subir supera el tamaño indicado. Vuelva a intentar.");
