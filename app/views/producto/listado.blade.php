@@ -1,6 +1,7 @@
-@foreach($seccion -> items as $i)
 <div class="row">
-    <div class="col-md-12">
+@foreach($seccion -> items as $i)
+
+    <div class="col-md-3">
         <div class="thumbnail">
         @if(Auth::check())
             <div class="iconos">
@@ -67,5 +68,6 @@
         @endif            		
         </div>
     </div>
-</div>
+
 @endforeach
+</div>

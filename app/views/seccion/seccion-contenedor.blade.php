@@ -30,6 +30,8 @@
                 
             </div>
         @endif
+    </div>
+    
         @if(count($seccion->items) > 0)
             @if(Auth::check())
                 {{ Form::open(array('url' => 'admin/item/ordenar-por-seccion', 'class' => 'sortable')) }}
@@ -51,7 +53,7 @@
             <div class="sinProductos">Sin productos</div>
             @endif
         @endif
-    </div>
+
     @if(Auth::check())
         <div id="agregar-item{{ $seccion->id }}"></div>
         <div id="destacar-producto"></div>
