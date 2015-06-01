@@ -347,6 +347,56 @@ class Item extends Eloquent {
                 }
             }
 
+            if (isset($input['secciones']) && (count($input['secciones']) > 0)) {
+                foreach ($item->secciones as $seccion) {
+                    $data_borrar = array(
+                        'item_id' => $item->id,
+                        'seccion_id' => $seccion->id
+                    );
+
+                    $item->borrarItemSeccion($data_borrar);
+                }
+
+                foreach ($input['secciones'] as $secc) {
+                    $destacado = NULL;
+                    if (isset($input['item_destacado']) && ($input['item_destacado'] != "")) {
+                        if ($input['item_destacado'] == "A") {
+                            $destacado = 'A';
+                        }
+                    }
+
+                    $info = array(
+                        'estado' => 'A',
+                        'destacado' => $destacado
+                    );
+
+                    $item->secciones()->attach($secc, $info);
+
+                    //ME QUEDO CON LA SECCION CORRESPONDIENTE
+                    //$seccion = Seccion::find($input['seccion_id']);
+                    $seccion = Seccion::find($secc);
+
+                    //ME QUEDO CON EL MENU AL CUAL PERTENECE LA SECCION
+
+                    foreach ($seccion->menu as $menu) {
+                        $menu_id = $menu->id;
+                    }
+
+                    $menu = Menu::find($menu_id);
+
+                    //ME QUEDO CON LA CATEGORIA AL CUAL PERTENECE EL MENU
+                    foreach ($menu->categorias as $categoria) {
+                        $categoria_id = $categoria->id;
+                    }
+
+                    //IMPACTO AL ITEM CON LA CATEGORIA CORRESPONDIENTE
+
+                    if (isset($categoria_id)) {
+                        $item->categorias()->attach($categoria_id);
+                    }
+                }
+            }
+/*
             if (isset($input['seccion_nueva_id']) && ($input['seccion_nueva_id'] != "")) {
                 if ($item->seccionItem()->id != $input['seccion_nueva_id']) {
                     $data_borrar = array(
@@ -379,6 +429,8 @@ class Item extends Eloquent {
                 );
                 DB::table('item_seccion')->where($data_item)->update(['destacado' => NULL]);
             }
+ * 
+ */
 
             $respuesta['mensaje'] = 'Producto modificado.';
             $respuesta['error'] = false;
@@ -508,7 +560,7 @@ class Item extends Eloquent {
 
         return $respuesta;
     }
-    
+
     public static function ponerNuevo($input) {
         $respuesta = array();
 
@@ -534,7 +586,7 @@ class Item extends Eloquent {
 
         return $respuesta;
     }
-    
+
     public static function ponerOferta($input) {
         $respuesta = array();
 

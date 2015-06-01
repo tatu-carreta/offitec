@@ -36,25 +36,6 @@
             <div class="form-group marginBottom2">
                 <input class="form-control" type="text" name="titulo" placeholder="Título" required="true" value="{{ $item->titulo }}" maxlength="50">
             </div>
-            <div class="divVerMarcaPrincipal marginBottom2">
-                <h3>Marca del producto</h3>
-                <select class="form-control selectMarca" name="marca_principal">
-                    <option value="">Seleccione una Marca</option>
-                    @foreach($marcas_principales as $marca)
-                        <option value="{{$marca->id}}" @if(!is_null($producto->marca_principal())) @if($marca->id == $producto->marca_principal()->id) selected @endif @endif>{{$marca->nombre}}</option>
-                    @endforeach
-                </select>
-                <div class="marca_imagen_preview">
-                    @if(!is_null($producto->marca_principal()))
-                        @if(!is_null($producto->marca_principal()->imagen()))
-                            <img src="{{ URL::to($producto->marca_principal()->imagen()->carpeta.$producto->marca_principal()->imagen()->nombre) }}" alt="{{$producto->marca_principal()->nombre}}">
-                        @endif
-                    @endif
-                </div>
-                <div class="clear"></div>
-                <p>Si la marca que busca no está en el listado anterior, deberá agregarla desde el <a href="{{URL::to('admin/marca')}}">administrador de marcas</a></p>
-            </div>
-
             <div class="fondoDestacado marginBottom2">
                 <div class="marginBottom1 class_checkbox">
                     <label for="destacarProducto" class="destacarProducto @if($item->destacado()) tocado @else noTocado @endif">
@@ -69,38 +50,18 @@
                     <label for="precio">Precio</label><span>$</span>
                     <input type="text" name="precio" placeholder="Precio" disabled="true" class="precioAble" value="@if($item->destacado()){{ $producto->precio(2) }}@endif">
                 </div>
-
             </div>
+            
+            <h3>Secciones</h3>
+            @foreach($menues as $men)
+                @if(count($men->children) == 0)
+                    <h5>{{$men->nombre}}</h5>
 
-            <h3>Detalles técnicos</h3>
-            <div class="divEditorTxt marginBottom2">
-                <textarea id="texto" contenteditable="true" class="" name="cuerpo">{{ $producto->cuerpo }}</textarea>
-            </div>
-
-            <div class="marginBottom2">
-                <h3>Marcas Técnicas</h3>
-                    @foreach($marcas_secundarias as $marca)
-                    <div class="boxMarcaTecnica">
-                        <input type="checkbox" name="marcas_secundarias[]" value="{{$marca->id}}" id="{{$marca->nombre}}{{$marca->id}}" @if(in_array($marca->id, $producto->marcas_secundarias_editar()))checked="true"@endif><label for="{{$marca->nombre}}{{$marca->id}}"><span>{{$marca->nombre}}</span> <img style="width: 50px; height: 50px;" class="lazy" data-original="@if(!is_null($marca->imagen())){{ URL::to($marca->imagen()->carpeta.$marca->imagen()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="{{$marca->nombre}}"></label>
-                    </div>
-                @endforeach
-            </div>
-
-            <h3>Archivos PDF</h3>
-            <div  class="marginBottom2">
-                <div class="">
-                    @if(count($item->archivos) > 0)
-                        @foreach($item->archivos as $archivo)
-                        <div class="archivoCargado">
-                            <a class="descargarPDF">{{$archivo->titulo}}</a>
-                            <i onclick="borrarImagenReload('{{ URL::to('admin/archivo/borrar') }}', '{{$archivo->id}}');" class="fa fa-times fa-lg"></i>
-                        </div>
-                        @endforeach
-                    @endif
-                </div>
-                @include('archivo.modulo-archivo-maxi')
-            </div>
-
+                    @foreach($men->secciones as $seccion)
+                        <input type="checkbox" name="secciones[]" value="{{$seccion->id}}" @if(in_array($seccion->id, $item->secciones->lists('id'))) checked="true" @endif>@if($seccion->titulo != ""){{$seccion->titulo}}@else Sección {{$seccion->id}} @endif
+                    @endforeach
+                @endif
+            @endforeach
         </div>
         <!-- Cierra columna ancha -->
 
@@ -120,23 +81,6 @@
             @else
                 @include('imagen.modulo-imagen-euge')
             @endif
-
-            <h3>Imágenes secundarias</h3>
-            @if(count($item->imagenes_producto_editar()) > 0)
-                <div class="divCargaImgProducto">
-                    @foreach($item->imagenes_producto_editar() as $img)
-                    <div class="marginBottom1 divCargaImg">
-                        <img 
-                        src="{{ URL::to($img->carpeta.$img->nombre) }}" alt="{{$item->titulo}}">
-                        <i onclick="borrarImagenReload('{{URL::to('admin/imagen/borrar')}}', '{{$img->id}}');" class="fa fa-times fa-lg"></i>
-                    </div>
-                    <input type="hidden" name="imagenes_editar[]" value="{{$img->id}}">
-                    <input class="form-control" type="text" name="epigrafe_imagen_editar[]" placeholder="Ingrese una descripción de la foto" value="{{ $img->epigrafe }}">
-                    @endforeach
-                </div>
-            @endif
-            @include('imagen.modulo-galeria-producto-maxi')
-            <div class="clear"></div>
         </div>
         <!-- fin Columna imágenes-->
     </div>

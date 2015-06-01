@@ -36,10 +36,14 @@ class ProductoController extends BaseController {
 
     public function vistaAgregar($seccion_id) {
 
-        $this->array_view['secciones'] = parent::seccionesDinamicas();
+        
         $this->array_view['seccion_id'] = $seccion_id;
         
         $seccion = Seccion::find($seccion_id);
+        
+        $modulo = $seccion->menuSeccion()->modulo();    
+        
+        $this->array_view['menues'] = $modulo->menus;
         
         $this->array_view['seccion'] = $seccion;
 
@@ -93,6 +97,12 @@ class ProductoController extends BaseController {
 
             $this->array_view['marcas_principales'] = $marcas_principales;
             $this->array_view['marcas_secundarias'] = $marcas_secundarias;
+            
+            $seccion = $producto->item()->seccionItem();
+            
+            $modulo = $seccion->menuSeccion()->modulo();    
+        
+            $this->array_view['menues'] = $modulo->menus;
 
             $this->array_view['item'] = $producto->item();
             $this->array_view['producto'] = $producto;
