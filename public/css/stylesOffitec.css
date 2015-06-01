@@ -2,22 +2,15 @@
 h1, h2, h3 {font-weight: 300 !important}
 
 /*  M E N U  */
-/*#menuPrincipal {height: 90px; float: left; position: relative; left: 50%} 
-#menuPrincipal>li {float: left; position: relative; right: 50%}*/
-#menuPrincipal a {background: transparent; font-size: 15px; color:#fff; font-weight: 300;background: transparent; height: 88px; line-height: 88px; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box;}
-#menuPrincipal a:hover {background: #878979}
-#menuPrincipal .dropdown li a {height: 35px; line-height: 35px; font-size: 18px !important;}
 
 .seguiFace {background: url(../images/facebook.png) no-repeat top right; display: inline-block; color: #1E120D; font-size: 26px; font-weight: 300; height: 36px; width: 100%; text-align: right; padding-right: 44px; margin-bottom: 2em;}
 
 .vidriera {height: 200px; background: red}
 .oferta {height: 200px; background: red}
 
-.col50 {min-height: 200px; width: 50%; float: left}
-
 /* estilos de Bootstrap modificados */
 .navbar {margin:0;}
-.navbar-toggle {margin-top: 30px}
+.navbar-toggle {margin-top: 25px}
 .navbar-brand {padding: 2px 0; margin-top: 1em;}
 .dropdown-menu {background: #878979}
 
@@ -29,13 +22,14 @@ h1, h2, h3 {font-weight: 300 !important}
 
 /* -- M E D I A  Q U E R Y -- */
 @media screen and (max-width: 1000px) {
-	
+	#menuPrincipal a {padding: 0 20px !important }
 
 }
 
 
 @media screen and (max-width: 768px) {
 
+	.divMenu {float: left; width: 100%}
 	#menuPrincipal {height: auto !important;} 
 	#menuPrincipal a {height: 40px; line-height: 40px; font-size: 20px;}
 	.navbar-collapse {border: 0 !important;}

@@ -77,7 +77,7 @@
                         <div class="col-md-12">
                             <a class="navbar-brand" href="#"><img alt="logo" src="{{URL::to('images/offitec.svg')}}"></a>
                             <!-- CARRITO -->
-                            <p class="pull-right btnCarrito">Carrito: {{Cart::count(false)}}</p>
+                            <p class="pull-right btnCarrito">Presupuesto: {{Cart::count(false)}}</p>
 
                             <!-- N A V -->
                             @include('menu.'.$project_name.'-desplegar-menu')

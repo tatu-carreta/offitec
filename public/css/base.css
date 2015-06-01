@@ -14,7 +14,13 @@ a {text-decoration: none !important;}
 
 /* HEADER */
 header {background: #000;}
-.btnCarrito {font-weight: 300; font-size: 15px; height: 88px; line-height: 88px; margin: 0 !important; background: #302F2F; color:#fff; padding: 0 30px !important; box-sizing: border-box;}
+
+/* NAV */
+.divMenu {float: right;}
+#menuPrincipal a {background: transparent; font-size: 15px; color:#fff; font-weight: 300;background: transparent; height: 88px; line-height: 88px; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box;}
+#menuPrincipal a:hover {background: #878979}
+#menuPrincipal .dropdown li a {height: 35px; line-height: 35px; font-size: 15px !important;}
+.btnCarrito {font-weight: 300; font-size: 15px; height: 88px; line-height: 88px; margin: 0 !important; background: #302F2F; color:#fff; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box;}
 
 /* SLIDE */
 .slide {background: #777DA7; height: 600px; margin-bottom: 2em}

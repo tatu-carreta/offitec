@@ -13,7 +13,7 @@
 
         <!-- Agrupar los enlaces de navegación, los formularios y cualquier
                 otro elemento que se pueda ocultar al minimizar la barra -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse pull-right">
+        <div class="collapse navbar-collapse navbar-ex1-collapse divMenu">
             <ul class="nav navbar-nav" id="menuPrincipal">
                 @foreach($menus as $m)
                     @if(count($m->children) > 0)
