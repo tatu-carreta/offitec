@@ -62,7 +62,7 @@
                         <h5>{{$men->nombre}}</h5>
 
                         @foreach($men->secciones as $seccion)
-                            <input required="true" type="checkbox" name="secciones[]" value="{{$seccion->id}}" @if($seccion->id == $seccion_id) checked="true" disabled @endif>@if($seccion->titulo != ""){{$seccion->titulo}}@else Sección {{$seccion->id}} @endif
+                            <input type="checkbox" name="secciones[]" value="{{$seccion->id}}" @if($seccion->id == $seccion_id) checked="true" disabled @endif>@if($seccion->titulo != ""){{$seccion->titulo}}@else Sección {{$seccion->id}} @endif
                         @endforeach
                     @endif
                 @endforeach

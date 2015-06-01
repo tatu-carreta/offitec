@@ -2,7 +2,7 @@ jcrop_api = null;
 $(document).ready(function () {
 
     var imagen;
-    $("#imagen").on("change", function () {
+    $("#imagen1").on("change", function () {
         var fileReader = new FileReader();
         fileReader.readAsDataURL(this.files[0]);
         nombreImg = this.files[0].name;
@@ -14,8 +14,9 @@ $(document).ready(function () {
         fileReader.onloadend = function (event) {
             imagen = event.target.result;
             $("#cropbox").attr("src", event.target.result);
+            $("#cropbox").css({'height': "auto", 'width': '370px'});
             jcrop_api = $.Jcrop('#cropbox', {
-                setSelect: [ 0,0,250,250],
+                setSelect: [ 0,0,280,280],
                 aspectRatio: 1 / 1,
                 onSelect: updateCoords
             });

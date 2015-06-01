@@ -120,7 +120,7 @@ class Item extends Eloquent {
                     $epigrafe_imagen_portada = NULL;
                 }
 
-                if (isset($input['x']) && ($input['x'])) {
+                if (isset($input['x']) && ($input['x'] != "")) {
                     $coordenadas = array("x" => $input['x'], "y" => $input['y'], "w" => $input['w'], "h" => $input['h']);
                 } else {
                     $coordenadas = NULL;
