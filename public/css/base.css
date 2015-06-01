@@ -3,7 +3,7 @@
  * Copyright 2015
  */
 
-body {margin:0; font-family: 'Roboto', sans-serif !important;}
+body {margin:0; font-family: 'Source Sans Pro', sans-serif !important;}
 
 h1, h2, h3 {font-weight: normal}
 ul, li {margin:0; padding:0; list-style: none}
@@ -13,8 +13,8 @@ a {text-decoration: none !important;}
 .fondoDestacado > * { margin-top: 0;}
 
 /* HEADER */
-header {background: #bdbdbd;}
-.header {background: #5B5B54; border-bottom: 1px solid #fff}
+header {background: #000;}
+.btnCarrito {font-weight: 300; font-size: 15px; height: 88px; line-height: 88px; margin: 0 !important; background: #302F2F; color:#fff; padding: 0 30px !important; box-sizing: border-box;}
 
 /* SLIDE */
 .slide {background: #777DA7; height: 600px; margin-bottom: 2em}
@@ -40,14 +40,30 @@ footer {margin-top: 3em}
 /* Catálogo de Productos */
 .divProductos:nth-child(1) {border-top: 0 none;}
 .divProductos {border-top: 1px solid #c6c6c6; min-height: 10em; padding-top: 1em; vertical-align: top;}
-.divProductos h3 {margin: 0 1em 0 0}
+.divProductos h3 {margin: 0 1em 0 0 !important}
 .sinProductos {border: 1px dashed #C6C6C6; width: 218px; height: 218px; text-align: center; line-height: 200px; margin: 2em 0px 4em;}
+
+.iconos{padding: 0.5em 0.5em 0.563em; border-bottom: 1px dashed #C6C6C6; margin-bottom: 0.5em}
+.iconos i{cursor: pointer}
+.iconos .fa-pencil{margin-right: 0.5em}
+
+.lazy {margin-bottom: 0.5em;}
 
 /* Agregar Producto */
 .spanDestacarProd {display: inline-block; font-size: 1.5em; font-weight: 300;padding-top: 0.3em; width: 300px; margin-left: 1em;}
 .divCargaImgProducto {margin: 0px 0px 4em; position: relative;}
 .divCargaImg { height: 19.375em; width: 19.375em; border: 1px solid #CCC; position: relative; box-sizing: content-box;}
 
+.form-group span {display: inline-block; margin:0 0.3em; font-size: 2em;}
+.datosProductos h3 {margin-top: 0 !important}
+.punteado { padding-top: 1.5em; border-top: 1px dashed #C6C6C6;}
+
+/* Ocultamos el input file */
+.oculto {z-index: 999;line-height: 0;font-size: 30px; position: absolute;opacity: 0;filter: alpha(opacity = 0);-ms-filter: "alpha(opacity=0)";
+margin: 0;padding:0;left:0;top: 0;width: 130px;}
+
+/* Al label lo convertimos en "boton" (en apariencia) */
+.cargar {text-align: center;color: #fff;display: block;border-radius: 3px;font-size: 18px;float: left; position: relative;}
 
 
 /* Botones */
@@ -68,5 +84,4 @@ footer {margin-top: 3em}
 .marginBottom1 {margin-bottom: 1em !important}
 .marginBottom2 {margin-bottom: 2em !important;}
 
-.padding1 {padding: 1em; box-sizing:border-box !important;}
 .sinPadding {padding-right: 0 !important}

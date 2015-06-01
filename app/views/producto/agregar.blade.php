@@ -31,16 +31,16 @@
             <div id="error" class="error" style="display:none"><span></span></div>
             <div id="correcto" class="correcto ok" style="display:none"><span></span></div>
 
-        <div class="row">
+        <div class="row marginBottom2">
             <!-- Abre columna de descripción -->
-            <div class="col-md-8 datosProducto">
+            <div class="col-md-8 datosProductos">
                 <h3>Nombre y modelo del producto</h3>
-                <div class="form-group">
+                <div class="form-group marginBottom2">
                     <input class="form-control" type="text" name="titulo" placeholder="Código" required="true" maxlength="50">
                 </div>
 
                 <div class="fondoDestacado marginBottom2">
-                    <div class=" class_checkbox">
+                    <div class="class_checkbox marginBottom1">
                         <label for="destacarProducto" class="destacarProducto noTocado">
                             <input id="destacarProducto" class="precioDisabled check_box" type="checkbox" name="item_destacado" value="A">
                             <span class="spanDestacarProd">Destacar este producto</span>
@@ -71,7 +71,7 @@
             </div>
 
             <!-- Abre columna de imágenes -->
-            <div class="col-md-4 fondoDestacado padding1 cargaImg">
+            <div class="col-md-4 fondoDestacado cargaImg">
                 <h3>Imagen principal</h3>
                 @include('imagen.modulo-imagen-euge')
             </div>

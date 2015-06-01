@@ -11,11 +11,11 @@
 
 </style>
 
-<div class="marginBottom">
+<div class="marginBottom1">
     <input id="imagen" type="file" name="imagen_portada" onChange="validar(this);" required="true" >
 </div>
 
-<div class="divCargaImg">
+<div class="divCargaImg marginBottom1">
     <img id="cropbox" style="width: auto; max-height: 250px;">
 </div>
 <input class="form-control" type="text" name="epigrafe_imagen_portada" placeholder="Ingrese una descripción de la foto">

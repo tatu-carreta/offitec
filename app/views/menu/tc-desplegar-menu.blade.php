@@ -1,5 +1,4 @@
 <nav class="navbar navbar-default" role="navigation">
-    <div class="container">
         <!-- El logotipo y el icono que despliega el menú se agrupan
              para mostrarlos mejor en los dispositivos móviles -->
         <div class="navbar-header">
@@ -14,7 +13,7 @@
 
         <!-- Agrupar los enlaces de navegación, los formularios y cualquier
                 otro elemento que se pueda ocultar al minimizar la barra -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <div class="collapse navbar-collapse navbar-ex1-collapse pull-right">
             <ul class="nav navbar-nav" id="menuPrincipal">
                 @foreach($menus as $m)
                     @if(count($m->children) > 0)
@@ -40,5 +39,4 @@
                 @endforeach
             </ul>
         </div>
-    </div>
 </nav>

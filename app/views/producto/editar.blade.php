@@ -25,14 +25,17 @@
 </style>
 <script src="{{URL::to('js/ckeditorLimitado.js')}}"></script>
 <script src="{{URL::to('js/producto-funcs.js')}}"></script>
-<section>
+<section class="container">
     {{ Form::open(array('url' => 'admin/producto/editar', 'files' => true)) }}
         <h2 class="marginBottom2"><span>Carga y modificación de productos</span></h2>
 
+    <div class="row marginBottom2">    
         <!-- abre datos del Producto-->
-        <div class="col70Admin datosProducto">
+        <div class="col-md-8 datosProductos">
             <h3>Nombre y modelo del producto</h3>
-            <input class="block anchoTotal marginBottom" type="text" name="titulo" placeholder="Título" required="true" value="{{ $item->titulo }}" maxlength="50">
+            <div class="form-group marginBottom2">
+                <input class="form-control" type="text" name="titulo" placeholder="Título" required="true" value="{{ $item->titulo }}" maxlength="50">
+            </div>
             <div class="divVerMarcaPrincipal marginBottom2">
                 <h3>Marca del producto</h3>
                 <select class="form-control selectMarca" name="marca_principal">
@@ -52,7 +55,7 @@
                 <p>Si la marca que busca no está en el listado anterior, deberá agregarla desde el <a href="{{URL::to('admin/marca')}}">administrador de marcas</a></p>
             </div>
 
-            <div class="fondoDestacado padding1 marginBottom2">
+            <div class="fondoDestacado marginBottom2">
                 <div class="marginBottom1 class_checkbox">
                     <label for="destacarProducto" class="destacarProducto @if($item->destacado()) tocado @else noTocado @endif">
                         <input id="destacarProducto" class="precioDisabled check_box" type="checkbox" name="item_destacado" value="A" @if($item->destacado())checked="true"@endif>
@@ -103,7 +106,7 @@
 
 
         <!-- Columna 60% imágenes-->
-        <div class="col30Admin fondoDestacado padding1 cargaImg">
+        <div class="col-md-4 fondoDestacado cargaImg">
             <h3>Imagen principal</h3>
             @if(!is_null($item->imagen_destacada()))
                 <div class="divCargaImgProducto">
@@ -112,7 +115,7 @@
                         <i onclick="borrarImagenReload('{{ URL::to('admin/imagen/borrar') }}', '{{$item->imagen_destacada()->id}}');" class="fa fa-times fa-lg"></i>
                     </div>
                     <input type="hidden" name="imagen_producto_editar" value="{{$item->imagen_destacada()->id}}">
-                    <input class="block anchoTotal marginBottom" type="text" name="epigrafe_imagen_producto_editar" placeholder="Ingrese una descripción de la foto" value="{{ $item->imagen_destacada()->epigrafe }}">
+                    <input class="form-control" type="text" name="epigrafe_imagen_producto_editar" placeholder="Ingrese una descripción de la foto" value="{{ $item->imagen_destacada()->epigrafe }}">
                 </div>
             @else
                 @include('imagen.modulo-imagen-euge')
@@ -128,7 +131,7 @@
                         <i onclick="borrarImagenReload('{{URL::to('admin/imagen/borrar')}}', '{{$img->id}}');" class="fa fa-times fa-lg"></i>
                     </div>
                     <input type="hidden" name="imagenes_editar[]" value="{{$img->id}}">
-                    <input class="block anchoTotal marginBottom" type="text" name="epigrafe_imagen_editar[]" placeholder="Ingrese una descripción de la foto" value="{{ $img->epigrafe }}">
+                    <input class="form-control" type="text" name="epigrafe_imagen_editar[]" placeholder="Ingrese una descripción de la foto" value="{{ $img->epigrafe }}">
                     @endforeach
                 </div>
             @endif
@@ -136,12 +139,13 @@
             <div class="clear"></div>
         </div>
         <!-- fin Columna imágenes-->
+    </div>
 
         <div class="clear"></div>
 
         <div class="punteado">
-            <input type="submit" value="Guardar" class="btn marginRight5">
-            <a onclick="window.history.back();" class="btnGris">Cancelar</a>
+            <input type="submit" value="Guardar" class="btn btn-primary marginRight5">
+            <a onclick="window.history.back();" class="btn btn-default">Cancelar</a>
         </div>
 
         {{Form::hidden('continue', $continue)}}

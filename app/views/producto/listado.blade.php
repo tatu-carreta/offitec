@@ -5,6 +5,7 @@
         <div class="thumbnail">
         @if(Auth::check())
             <div class="iconos">
+            <span class="pull-left">
                 @if(!$i->producto()->nuevo())
                     @if(Auth::user()->can("destacar_item"))
                         <i onclick="destacarItemSeccion('{{URL::to('admin/producto/nuevo')}}', '{{$seccion->id}}', '{{$i->id}}');" class="fa fa-thumb-tack fa-lg"></i>
@@ -23,7 +24,8 @@
                         <i onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', '{{$seccion->id}}', '{{$i->id}}');" class="fa fa-thumb-tack prodDestacado fa-lg"></i>
                     @endif
                 @endif
-                <span class="floatRight">
+                </span>
+                <span class="pull-right">
                     @if(Auth::user()->can("editar_item"))
                         <a href="{{URL::to('admin/producto/editar/'.$i->producto()->id.'/seccion')}}" data='{{$seccion->id}}'><i class="fa fa-pencil fa-lg"></i></a>
                     @endif
@@ -31,6 +33,7 @@
                         <i onclick="borrarData('{{URL::to('admin/item/borrar')}}', '{{$i->id}}');" class="fa fa-times fa-lg"></i>
                     @endif
                 </span>
+                <div class="clearfix"></div>
             </div>
         @endif
 {{--
@@ -43,7 +46,7 @@
         @if(!Auth::check())
             <a href="{{URL::to('producto/'.$i->url)}}">
         @endif
-                <img class="lazy" data-original="@if(!is_null($i->imagen_destacada())){{ URL::to($i->imagen_destacada()->carpeta.$i->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="{{$i->titulo}}">
+               <img class="lazy" data-original="@if(!is_null($i->imagen_destacada())){{ URL::to($i->imagen_destacada()->carpeta.$i->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="{{$i->titulo}}">
         @if(!Auth::check())
             </a>
         @endif

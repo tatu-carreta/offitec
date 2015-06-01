@@ -7,7 +7,7 @@
 
         <!-- abre LINK -->
         <link href="favicon.ico" rel="shortcut icon">
-        <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>
         <meta name="description" content="">
         <meta name="Keywords" content="">
         <meta property="og:image" content="" />
@@ -72,21 +72,20 @@
             @endif
             <!-- H E A D E R -->
             <header>
-                <div class="header">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <a class="navbar-brand" href="#"><img alt="logo" src="{{URL::to('images/offitec.svg')}}"></a>
-                                <!-- CARRITO -->
-                                <h1 style="float: right;">Tatú Carreta Carrito: {{Cart::count(false)}}</h1>
-                            </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a class="navbar-brand" href="#"><img alt="logo" src="{{URL::to('images/offitec.svg')}}"></a>
+                            <!-- CARRITO -->
+                            <p class="pull-right btnCarrito">Carrito: {{Cart::count(false)}}</p>
+
+                            <!-- N A V -->
+                            @include('menu.'.$project_name.'-desplegar-menu')
+
+                            <div class="clearfix"></div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- N A V -->
-                @include('menu.'.$project_name.'-desplegar-menu')
-
             </header>            
         @show
         <!-- abre S E C T I O N -->
