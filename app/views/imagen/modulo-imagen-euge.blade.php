@@ -29,7 +29,7 @@
 </script>
 
 <div class="marginBottom1">
-	<label class="btn cargar marginRight5"> Buscar archivo
+	<label class="btn btn-primary cargar marginRight5"> Buscar archivo
             <span>
     			<input id="imagen" type="file" name="imagen_portada" class='oculto file imagen' onChange="validar(this);" required="true" >
     		</span>

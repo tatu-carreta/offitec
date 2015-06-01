@@ -35,7 +35,7 @@
         @show
     </head>
     <body>
-        @section('header')
+        @section('hexader')
             @include('analyticstracking')
             <!-- abre H E A D E R -->
             @if(Auth::check())
@@ -88,6 +88,9 @@
                 </div>
             </header>            
         @show
+        <!-- abre S L I D E estático -->
+        <div class="slideHome"></div>
+
         <!-- abre S E C T I O N -->
 
         @yield('contenido')
