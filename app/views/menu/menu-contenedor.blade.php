@@ -29,7 +29,7 @@
     <section class="container">
         
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 marginBottom2">
 	           <h2 class="pull-left">{{ $menu->nombre }}</h2>
          
                 @if(Auth::check())

@@ -10,10 +10,33 @@
 
 
 </style>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.file').previewInputFileImage();
+        
+        $(".imagen").change(function(){
+            var id = $(this).attr('data');
+            $(".url-archivo"+id).val($(this).val());
+        });
+        
+        $(".cancelarCargaImagen").click(function(){
+            var id = $(this).attr('data');
+            $("#imagen"+id).val("");
+            $(".url-archivo"+id).val("");
+            $("#im"+id).attr('src', "{{URL::to('images/sinImg.gif')}}");
+        });
+    });
+</script>
 
 <div class="marginBottom1">
-    <input id="imagen" type="file" name="imagen_portada" onChange="validar(this);" required="true" >
+	<label class="btn cargar marginRight5"> Buscar archivo
+            <span>
+    			<input id="imagen" type="file" name="imagen_portada" class='oculto file imagen' onChange="validar(this);" required="true" >
+    		</span>
+    </label>
+    <input type="text" class="url-archivo1 campoNomArchivo">
 </div>
+
 
 <div class="divCargaImg marginBottom1">
     <img id="cropbox" style="width: auto; max-height: 250px;">

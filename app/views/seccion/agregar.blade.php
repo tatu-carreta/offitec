@@ -6,11 +6,11 @@
 @section('contenido')
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">carga y modificación de secciones</h4>
+        <h4 class="modal-title" id="myModalLabel">Carga y modificación de secciones</h4>
     </div>
     {{ Form::open(array('url' => 'admin/seccion/agregar')) }}
         <div class="modal-body">
-            <input class="block anchoTotal marginBottom" type="text" name="titulo" placeholder="Nombre de la Sección">
+            <input class="form-control" type="text" name="titulo" placeholder="Nombre de la Sección">
             {{Form::hidden('menu_id', $menu_id)}}
         </div>
         <div class="modal-footer">
