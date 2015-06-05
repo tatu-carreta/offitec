@@ -34,7 +34,7 @@
     
         @if(count($seccion->items) > 0)
             @if(Auth::check())
-                {{ Form::open(array('url' => 'admin/item/ordenar-por-seccion', 'class' => 'sortable')) }}
+                {{ Form::open(array('url' => 'admin/item/ordenar-por-seccion', 'id' => 'formularioOrdenSeccion')) }}
             @endif
 
             <!-- LISTADO -->

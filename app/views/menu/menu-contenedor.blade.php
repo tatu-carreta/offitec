@@ -18,7 +18,7 @@
             $(function() {
                 $('.sortable').sortable({
                     update: function(event, ui) {
-                        $(this).submit();
+                        $("#formularioOrdenSeccion").submit();
                     }
                 });
             });

@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row sortable">
 @foreach($seccion -> items as $i)
 
     <div class="col-md-3">
