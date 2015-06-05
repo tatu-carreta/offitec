@@ -1,8 +1,16 @@
 
 h1, h2, h3 {font-weight: 300 !important}
 
+
+
 /* SLIDE */
 .slide {background: #878979; height: 340px; margin-bottom: 2em}
+
+/* Estilos Fichas de Productos*/
+
+.bandaProd {background: #878979; padding: 0.5em 1em; color: #fff; }
+.bandaProd span {margin-right: 1em}
+.lazy {margin: 0}
 
 /* Estilos de Bootstrap modificados */
 .navbar {margin:0;}
@@ -12,7 +20,7 @@ h1, h2, h3 {font-weight: 300 !important}
 
 .open {background: #878979}
 
-.thumbnail {padding: 0; border: 0; min-height: 400px; text-align: center}
+.thumbnail {padding: 0; border: 1px solid #ccc; border-radius: 0;}
 
 .modal-header, .modal-footer {border: 0}
 

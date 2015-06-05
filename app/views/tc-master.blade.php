@@ -17,11 +17,12 @@
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="{{URL::to('bootstrap-3.3.4-dist/css/bootstrap.css')}}">
         
-        <link rel="stylesheet" type="text/css" href="{{URL::to('css/base.css')}}"> 
-        <link rel="stylesheet" type="text/css" href="{{URL::to('css/stylesOffitec.css')}}"> 
         <link rel="stylesheet" type="text/css" href="{{URL::to('css/jquery-ui.css')}}">
         <link rel="stylesheet" href="{{URL::to('font-awesome-4.2.0/css/font-awesome.css')}}">
         <link href="{{URL::to('css/jquery.Jcrop.css')}}" rel="stylesheet" />
+        <link rel="stylesheet" href="{{URL::to('css/owl.carousel.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{URL::to('css/base.css')}}"> 
+        <link rel="stylesheet" type="text/css" href="{{URL::to('css/stylesOffitec.css')}}"> 
         
         <!-- M O D E R N I Z R -->
         <script src="{{URL::to('js/modernizr.custom.05470.js')}}"></script>
@@ -30,7 +31,6 @@
         <script src="{{URL::to('js/jquery-1.11.2.min.js')}}"></script>
         <script src="{{URL::to('js/jquery-ui.min.js')}}"></script>
         <script src="{{URL::to('js/funcs.js')}}"></script>
-        
         
         @show
     </head>
@@ -114,6 +114,20 @@
                 $("img.lazy").lazyload({
                     effect: "fadeIn"
                 });
+            });
+        </script>
+
+        <!-- Include OWL CARROUSEL -->
+        <script src="{{URL::to('js/owl.carousel.js')}}"></script>
+         <script>
+            $(document).ready(function() {
+              $("#owl-demo-prod").owlCarousel({
+             
+                  items : 4,
+                  itemsDesktop : [1199,3],
+                  itemsDesktopSmall : [979,3]
+             
+              });
             });
         </script>
 

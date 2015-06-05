@@ -458,3 +458,7 @@ Stack trace:
 Stack trace:
 #0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
 #1 {main} [] []
+[2015-06-05 15:39:43] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function imagenes_producto() on a non-object' in C:\xampp\htdocs\offitec\app\storage\views\e573d1ba22a1510fd77530dd68d714cb:6
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
