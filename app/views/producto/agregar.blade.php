@@ -62,7 +62,7 @@
                         <h5>{{$men->nombre}}</h5>
 
                         @foreach($men->secciones as $seccion)
-                            <input required="true" type="checkbox" name="secciones[]" value="{{$seccion->id}}" @if($seccion->id == $seccion_id) checked="true" disabled @endif>@if($seccion->titulo != ""){{$seccion->titulo}}@else Sección {{$seccion->id}} @endif
+                            <input type="checkbox" name="secciones[]" value="{{$seccion->id}}" @if($seccion->id == $seccion_id) checked="true" disabled @endif>@if($seccion->titulo != ""){{$seccion->titulo}}@else Sección {{$seccion->id}} @endif
                         @endforeach
                     @endif
                 @endforeach
@@ -71,7 +71,7 @@
             <!-- Abre columna de imágenes -->
             <div class="col-md-4 fondoDestacado cargaImg">
                 <h3>Imagen principal</h3>
-                @include('imagen.modulo-imagen-euge')
+                @include('imagen.modulo-imagen-producto-maxi')
             </div>
 
             <div class="clear"></div>

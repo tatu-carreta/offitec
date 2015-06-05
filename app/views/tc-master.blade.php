@@ -35,7 +35,7 @@
         @show
     </head>
     <body>
-        @section('hexader')
+        @section('header')
             @include('analyticstracking')
             <!-- abre H E A D E R -->
             @if(Auth::check())
@@ -76,7 +76,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <a class="navbar-brand" href="#"><img alt="logo" src="{{URL::to('images/offitec.svg')}}"></a>
-                            <!-- CARRITO -->
+                            <!-- B T N   C A R R I T O -->
                             <p class="pull-right btnCarrito">Presupuesto: {{Cart::count(false)}}</p>
 
                             <!-- N A V -->
@@ -86,10 +86,11 @@
                         </div>
                     </div>
                 </div>
-            </header>            
+            </header>  
+            <!-- abre S L I D E estático -->
+            <div class="slideHome"></div>          
         @show
-        <!-- abre S L I D E estático -->
-        <div class="slideHome"></div>
+        
 
         <!-- abre S E C T I O N -->
 

@@ -1,14 +1,10 @@
 
 h1, h2, h3 {font-weight: 300 !important}
 
-/*  M E N U  */
+/* SLIDE */
+.slide {background: #878979; height: 340px; margin-bottom: 2em}
 
-.seguiFace {background: url(../images/facebook.png) no-repeat top right; display: inline-block; color: #1E120D; font-size: 26px; font-weight: 300; height: 36px; width: 100%; text-align: right; padding-right: 44px; margin-bottom: 2em;}
-
-.vidriera {height: 200px; background: red}
-.oferta {height: 200px; background: red}
-
-/* estilos de Bootstrap modificados */
+/* Estilos de Bootstrap modificados */
 .navbar {margin:0;}
 .navbar-toggle {margin-top: 25px}
 .navbar-brand {padding: 2px 0; margin-top: 1em;}
