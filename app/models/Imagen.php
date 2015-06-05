@@ -181,6 +181,81 @@ class Imagen extends Eloquent {
         return $respuesta;
     }
 
+    public static function agregarImagenCropped($imagen_portada_crop, $ampliada, $epigrafe_imagen_portada) {
+
+        $respuesta = array();
+
+
+
+        $file = $ampliada;
+
+        $count = count($file->getClientOriginalName()) - 4;
+
+        $filename = Str::limit(Str::slug($file->getClientOriginalName()), $count, "");
+        $extension = $file->getClientOriginalExtension(); //if you need extension of the file
+        //$extension = File::extension($file['name']);
+
+        $carpeta = '/uploads/';
+        $directory = public_path() . $carpeta;
+        //$filename = sha1(time() . Hash::make($filename) . time()) . ".{$extension}";
+        //Pregunto para que no se repita el nombre de la imagen
+        if (!is_null(Imagen::imagenPorNombre($filename . ".{$extension}"))) {
+
+            $filename = $filename . "(" . Str::limit(sha1(time()), 3, "") . ")" . ".{$extension}";
+        } else {
+            $filename = $filename . ".{$extension}";
+        }
+
+        //$upload_success = $file->move($directory, $filename);
+        //resize(width, height)
+
+        if (Image::make($file)->resize(null, 800, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                })->save($directory . $filename)) {
+            $datos = array(
+                'nombre' => $filename,
+                'epigrafe' => $epigrafe_imagen_portada,
+                'carpeta' => $carpeta,
+                'tipo' => 'G',
+                'ampliada' => '',
+                'estado' => 'A',
+                'fecha_carga' => date("Y-m-d H:i:s"),
+                'usuario_id_carga' => Auth::user()->id
+            );
+
+            $imagen = static::create($datos);
+
+            $datos_chica = array(
+                'nombre' => $imagen_portada_crop,
+                'epigrafe' => $epigrafe_imagen_portada,
+                'carpeta' => $carpeta,
+                'tipo' => 'C',
+                'ampliada' => $imagen->id,
+                'estado' => 'A',
+                'fecha_carga' => date("Y-m-d H:i:s"),
+                'usuario_id_carga' => Auth::user()->id
+            );
+
+            $imagen_chica = static::create($datos_chica);
+
+            //Mensaje correspondiente a la agregacion exitosa
+            $respuesta['mensaje'] = 'Imagen creada.';
+            $respuesta['error'] = false;
+            $respuesta['data'] = $imagen_chica;
+            //return Response::json('success', 200);
+        } else {
+            //Mensaje correspondiente a la agregacion exitosa
+            $respuesta['mensaje'] = 'Imagen errónea.';
+            $respuesta['error'] = true;
+            $respuesta['data'] = null;
+            //return Response::json('error', 400);
+        }
+
+
+        return $respuesta;
+    }
+
     public static function agregarImagenSlideHome($imagen = null, $epigrafe = null, $coordenadas = null) {
 
         $respuesta = array();

@@ -128,6 +128,12 @@ Route::group(array('before' => 'auth'), function() {
     Route::post('admin/item/quitar-destacado', 'ItemController@quitarDestacadoItemSeccion');
 
     /*
+     * Ruteo Imagen 
+     */
+    
+    Route::post('admin/imagen/crop/upload', 'ImagenController@uploadImagenCrop');
+    
+    /*
      * Ruteo de Menu
      */
     Route::get('admin/menu', 'MenuController@vistaListado');

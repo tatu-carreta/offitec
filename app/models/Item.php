@@ -120,7 +120,7 @@ class Item extends Eloquent {
                     $epigrafe_imagen_portada = NULL;
                 }
 
-                if (isset($input['x']) && ($input['x'])) {
+                if (isset($input['x']) && ($input['x'] != "")) {
                     $coordenadas = array("x" => $input['x'], "y" => $input['y'], "w" => $input['w'], "h" => $input['h']);
                 } else {
                     $coordenadas = NULL;
@@ -130,6 +130,26 @@ class Item extends Eloquent {
 
                 $item->imagenes()->attach($imagen_creada['data']->miniatura()->id, array("destacado" => "A"));
             }
+
+            if (isset($input['imagen_portada_crop']) && ($input['imagen_portada_crop'] != "")) {
+                if (isset($input['imagen_portada_original']) && ($input['imagen_portada_original'] != "")) {
+                    $ampliada = $input['imagen_portada_original'];
+                } else {
+                    $ampliada = $input['imagen_portada_crop'];
+                }
+
+                if (isset($input['epigrafe_imagen_portada']) && ($input['epigrafe_imagen_portada'] != "")) {
+                    $epigrafe_imagen_portada = $input['epigrafe_imagen_portada'];
+                } else {
+                    $epigrafe_imagen_portada = NULL;
+                }
+
+                $imagen_crop = Imagen::agregarImagenCropped($input['imagen_portada_crop'], $ampliada, $epigrafe_imagen_portada);
+
+                $item->imagenes()->attach($imagen_crop['data']->id, array("destacado" => "A"));
+            }
+
+
             //Le asocia la categoria en caso que se haya elegido alguna
             if (isset($input['categoria_id']) && ($input['categoria_id'] != "")) {
                 $item->categorias()->attach($input['categoria_id']);
@@ -396,41 +416,41 @@ class Item extends Eloquent {
                     }
                 }
             }
-/*
-            if (isset($input['seccion_nueva_id']) && ($input['seccion_nueva_id'] != "")) {
-                if ($item->seccionItem()->id != $input['seccion_nueva_id']) {
-                    $data_borrar = array(
-                        'item_id' => $item->id,
-                        'seccion_id' => $item->seccionItem()->id
-                    );
-                    $item->borrarItemSeccion($data_borrar);
+            /*
+              if (isset($input['seccion_nueva_id']) && ($input['seccion_nueva_id'] != "")) {
+              if ($item->seccionItem()->id != $input['seccion_nueva_id']) {
+              $data_borrar = array(
+              'item_id' => $item->id,
+              'seccion_id' => $item->seccionItem()->id
+              );
+              $item->borrarItemSeccion($data_borrar);
 
-                    $item->secciones()->attach($input['seccion_nueva_id'], array('estado' => 'A'));
-                }
-            }
+              $item->secciones()->attach($input['seccion_nueva_id'], array('estado' => 'A'));
+              }
+              }
 
-            if (isset($input['item_destacado']) && ($input['item_destacado'] != "")) {
-                $data_item = array(
-                    'item_id' => $item->id,
-                    'seccion_id' => $item->seccionItem()->id
-                );
+              if (isset($input['item_destacado']) && ($input['item_destacado'] != "")) {
+              $data_item = array(
+              'item_id' => $item->id,
+              'seccion_id' => $item->seccionItem()->id
+              );
 
-                if ($input['item_destacado'] == "A") {
-                    $destacado = 'A';
-                } else {
-                    $destacado = NULL;
-                }
+              if ($input['item_destacado'] == "A") {
+              $destacado = 'A';
+              } else {
+              $destacado = NULL;
+              }
 
-                DB::table('item_seccion')->where($data_item)->update(['destacado' => $destacado]);
-            } else {
-                $data_item = array(
-                    'item_id' => $item->id,
-                    'seccion_id' => $item->seccionItem()->id
-                );
-                DB::table('item_seccion')->where($data_item)->update(['destacado' => NULL]);
-            }
- * 
- */
+              DB::table('item_seccion')->where($data_item)->update(['destacado' => $destacado]);
+              } else {
+              $data_item = array(
+              'item_id' => $item->id,
+              'seccion_id' => $item->seccionItem()->id
+              );
+              DB::table('item_seccion')->where($data_item)->update(['destacado' => NULL]);
+              }
+             * 
+             */
 
             $respuesta['mensaje'] = 'Producto modificado.';
             $respuesta['error'] = false;

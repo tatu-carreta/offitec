@@ -1,5 +1,12 @@
 @extends($project_name.'-master')
 
+@section('head')
+
+    @parent
+
+    <link rel="stylesheet" href="{{URL::to('css/ng-img-crop.css')}}" />
+@stop
+
 @section('contenido')
 <style>
     .check_box {
@@ -71,7 +78,7 @@
             <!-- Abre columna de imágenes -->
             <div class="col-md-4 fondoDestacado cargaImg">
                 <h3>Imagen principal</h3>
-                @include('imagen.modulo-imagen-producto-maxi')
+                @include('imagen.modulo-imagen-angular-crop')
             </div>
 
             <div class="clear"></div>
@@ -92,4 +99,15 @@
             {{Form::hidden('tipo_precio_id[]', '2')}}
         {{Form::close()}}
     </section>
+@stop
+
+@section('footer')
+
+    @parent
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+    <script src="{{URL::to('js/angular-file-upload.js')}}"></script>
+    <script src="{{URL::to('js/ng-img-crop.js')}}"></script>
+    <script src="{{URL::to('js/controllers.js')}}"></script>
+
 @stop
