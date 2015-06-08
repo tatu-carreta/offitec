@@ -3,27 +3,63 @@
 class HomeController extends BaseController {
 
     public function inicio() {
+        $items_home = array();
+        $destacados = array();
 
-        $items_nuevos = parent::itemsNuevos();
         $slideIndex = parent::slideIndex();
-        if (count($items_nuevos) < 4) {
-            if (count($items_nuevos) > 0) {
-                $destacados = array();
-                foreach ($items_nuevos as $item) {
-                    array_push($destacados, $item->id);
+        $items_oferta = parent::itemsOferta(8);
+
+        if (count($items_oferta) < 8) {
+            foreach ($items_oferta as $item_of) {
+                array_push($destacados, $item_of->id);
+                array_push($items_home, $item_of);
+            }
+
+            $items_nuevos = parent::itemsNuevos(8 - count($items_oferta));
+
+            if ((count($items_oferta) + count($items_nuevos)) < 8) {
+
+                if (count($items_nuevos) > 0) {
+
+                    foreach ($items_nuevos as $item) {
+                        array_push($destacados, $item->id);
+                        array_push($items_home, $item);
+                    }
+
+                    $ultimos_productos = Item::where('estado', 'A')->whereNotIn('id', $destacados)->orderBy('fecha_modificacion', 'desc')->skip(0)->take(8 - count($items_nuevos))->get();
+                } else {
+                    $ultimos_productos = Item::where('estado', 'A')->orderBy('fecha_modificacion', 'desc')->skip(0)->take(8 - count($items_nuevos))->get();
                 }
 
-                $ultimos_productos = Item::where('estado', 'A')->whereNotIn('id', $destacados)->orderBy('fecha_modificacion', 'desc')->skip(0)->take(4 - count($items_nuevos))->get();
-            } else {
-                $ultimos_productos = Item::where('estado', 'A')->orderBy('fecha_modificacion', 'desc')->skip(0)->take(5 - count($items_nuevos))->get();
+                foreach ($ultimos_productos as $item_ul) {
+                    array_push($items_home, $item_ul);
+                }
             }
-        } else {
-            $ultimos_productos = NULL;
         }
+        /*
+          $items_nuevos = parent::itemsNuevos();
 
-        $this->array_view['items_nuevos'] = $items_nuevos;
+          if (count($items_nuevos) < 8) {
+          if (count($items_nuevos) > 0) {
+          $destacados = array();
+          foreach ($items_nuevos as $item) {
+          array_push($destacados, $item->id);
+          }
+
+          $ultimos_productos = Item::where('estado', 'A')->whereNotIn('id', $destacados)->orderBy('fecha_modificacion', 'desc')->skip(0)->take(8 - count($items_nuevos))->get();
+          } else {
+          $ultimos_productos = Item::where('estado', 'A')->orderBy('fecha_modificacion', 'desc')->skip(0)->take(8 - count($items_nuevos))->get();
+          }
+          } else {
+          $ultimos_productos = NULL;
+          }
+         * 
+         */
+
+        //$this->array_view['items_nuevos'] = $items_nuevos;
         $this->array_view['slide_index'] = $slideIndex;
-        $this->array_view['ultimos_productos'] = $ultimos_productos;
+        //$this->array_view['ultimos_productos'] = $ultimos_productos;
+        $this->array_view['items_home'] = $items_home;
 
         return View::make($this->project_name . '-inicio', $this->array_view);
     }

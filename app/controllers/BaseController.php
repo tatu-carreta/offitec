@@ -111,7 +111,7 @@ class BaseController extends Controller {
         return $items;
     }
     
-    protected function itemsNuevos() {
+    protected function itemsNuevos($limit) {
         /*
          * FILTRO PARA MOSTRAR SOLAMENTE LOS MENU PADRE
          */
@@ -123,7 +123,37 @@ class BaseController extends Controller {
                 ->where('item_seccion.destacado', 'N')
                 ->where('seccion.estado', 'A')
                 ->orderBy('item.id', 'desc')
-                ->limit(4)
+                ->limit($limit)
+                ->select('item.id as item_id', 'item.titulo as item_titulo', 'item.descripcion as item_descripcion', 'item.url as item_url', 'seccion.id as seccion_id')
+                ->get();
+
+        $items = $items_destacados;
+
+        if ($items_destacados) {
+            $items = array();
+            foreach ($items_destacados as $item) {
+                $item_db = Item::find($item->item_id);
+
+                array_push($items, $item_db);
+            }
+        }
+
+        return $items;
+    }
+    
+    protected function itemsOferta($limit) {
+        /*
+         * FILTRO PARA MOSTRAR SOLAMENTE LOS MENU PADRE
+         */
+        $items_destacados = DB::table('item')
+                ->join('item_seccion', 'item.id', '=', 'item_seccion.item_id')
+                ->join('seccion', 'item_seccion.seccion_id', '=', 'seccion.id')
+                ->where('item.estado', 'A')
+                ->where('item_seccion.estado', 'A')
+                ->where('item_seccion.destacado', 'O')
+                ->where('seccion.estado', 'A')
+                ->orderBy('item.id', 'desc')
+                ->limit($limit)
                 ->select('item.id as item_id', 'item.titulo as item_titulo', 'item.descripcion as item_descripcion', 'item.url as item_url', 'seccion.id as seccion_id')
                 ->get();
 

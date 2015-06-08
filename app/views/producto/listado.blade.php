@@ -51,11 +51,9 @@
             </a>
         @endif
 
-        <div class="bandaProd">
+        <div class="bandaProd @if($i->producto()->nuevo()) nuevos @elseif($i->producto()->oferta()) ofertas @endif">
             <p class="pull-left">{{ $i->titulo }}</p>
             {{-- <p class="marca">Marca: @if(!is_null($i->producto()->marca_principal())){{$i->producto()->marca_principal()->nombre}}@endif</p> --}}
-            @if((!$i->producto()->oferta()) || ($i->producto()->nuevo()))
-            
             @if($c = Cart::search(array('id' => $i->producto()->id)))
                 <a class="carrito btn btn-default pull-right" href="{{URL::to('carrito/borrar/'.$i->producto()->id.'/'.$c[0].'/seccion')}}">Quitar de Carrito</a>
             @else
@@ -64,9 +62,10 @@
             @endif
             <div class="clearfix"></div>
         </div>
-
-        @else
-            <span class="precio">Precio: ${{$i->producto()->precio(1)}} ${{$i->producto()->precio(2)}}</span>
+        @if($i->producto()->oferta())
+            <span class="precio">Oferta: ${{$i->producto()->precio(1)}} ${{$i->producto()->precio(2)}}</span>
+        @elseif($i->producto()->nuevo())
+            <span>NUEVO</span>
         @endif
 
         {{-- <a class="detalle" href="{{URL::to('producto/'.$i->url)}}">Detalle</a>	--}}
