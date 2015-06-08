@@ -132,21 +132,55 @@ class Item extends Eloquent {
             }
 
             if (isset($input['imagen_portada_crop']) && ($input['imagen_portada_crop'] != "")) {
-                if (isset($input['imagen_portada_original']) && ($input['imagen_portada_original'] != "")) {
-                    $ampliada = $input['imagen_portada_original'];
+                if (is_array($input['imagen_portada_crop'])) {
+                    foreach ($input['imagen_portada_crop'] as $key => $imagen) {
+                        if ($imagen != "") {
+
+                            if (isset($input['imagen_portada_original']) && ($input['imagen_portada_original'] != "")) {
+                                $ampliada = $input['imagen_portada_original'][$key];
+                            } else {
+                                $ampliada = $imagen;
+                            }
+
+                            if (isset($input['epigrafe_imagen_portada']) && ($input['epigrafe_imagen_portada'] != "")) {
+                                $epigrafe_imagen_portada = $input['epigrafe_imagen_portada'][$key];
+                            } else {
+                                $epigrafe_imagen_portada = NULL;
+                            }
+
+                            $imagen_crop = Imagen::agregarImagenCropped($imagen, $ampliada, $epigrafe_imagen_portada);
+
+                            if (!$imagen_crop['error']) {
+                                if (isset($input['destacado']) && ($input['destacado'] == $key)) {
+                                    $destacado = array(
+                                        "destacado" => "A"
+                                    );
+                                } else {
+                                    $destacado = array(
+                                        "destacado" => NULL
+                                    );
+                                }
+                                $item->imagenes()->attach($imagen_crop['data']->id, $destacado);
+                            }
+                        }
+                    }
                 } else {
-                    $ampliada = $input['imagen_portada_crop'];
+                    if (isset($input['imagen_portada_original']) && ($input['imagen_portada_original'] != "")) {
+                        $ampliada = $input['imagen_portada_original'];
+                    } else {
+                        $ampliada = $input['imagen_portada_crop'];
+                    }
+
+                    if (isset($input['epigrafe_imagen_portada']) && ($input['epigrafe_imagen_portada'] != "")) {
+                        $epigrafe_imagen_portada = $input['epigrafe_imagen_portada'];
+                    } else {
+                        $epigrafe_imagen_portada = NULL;
+                    }
+
+                    $imagen_crop = Imagen::agregarImagenCropped($input['imagen_portada_crop'], $ampliada, $epigrafe_imagen_portada);
+
+                    $item->imagenes()->attach($imagen_crop['data']->id, array("destacado" => "A"));
                 }
-
-                if (isset($input['epigrafe_imagen_portada']) && ($input['epigrafe_imagen_portada'] != "")) {
-                    $epigrafe_imagen_portada = $input['epigrafe_imagen_portada'];
-                } else {
-                    $epigrafe_imagen_portada = NULL;
-                }
-
-                $imagen_crop = Imagen::agregarImagenCropped($input['imagen_portada_crop'], $ampliada, $epigrafe_imagen_portada);
-
-                $item->imagenes()->attach($imagen_crop['data']->id, array("destacado" => "A"));
             }
 
 
