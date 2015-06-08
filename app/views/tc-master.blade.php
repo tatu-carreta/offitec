@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="{{URL::to('font-awesome-4.2.0/css/font-awesome.css')}}">
         <link href="{{URL::to('css/jquery.Jcrop.css')}}" rel="stylesheet" />
         <link rel="stylesheet" href="{{URL::to('css/owl.carousel.css')}}">
+        <link rel="stylesheet" href="{{URL::to('css/owl.theme.css')}}">
         <link rel="stylesheet" type="text/css" href="{{URL::to('css/base.css')}}"> 
         <link rel="stylesheet" type="text/css" href="{{URL::to('css/stylesOffitec.css')}}"> 
         
