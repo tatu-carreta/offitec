@@ -1,50 +1,44 @@
 
-/*  M E N U  */
-#menuPrincipal {height: 90px; float: left; position: relative; left: 50%} 
-#menuPrincipal>li {float: left; position: relative; right: 50%}
-#menuPrincipal a {background: transparent; font-size: 1.5em; color:#1E120D; font-weight: 300;background: transparent; height: 5.625em; line-height: 5.625em; padding: 0 30px !important; box-sizing: border-box;}
-#menuPrincipal a:hover {background: #fff}
-#menuPrincipal .dropdown li a {height: 2.188em; line-height: 2.188em; font-size: 1.125em !important;}
+h1, h2, h3 {font-weight: 300 !important}
 
-.seguiFace {background: url(../images/facebook.png) no-repeat top right; display: inline-block; color: #1E120D; font-size: 1.625em; font-weight: 300; height: 36px; width: 100%; text-align: right; padding-right: 44px; margin-bottom: 2em;}
 
-.vidriera {height: 200px; background: red}
-.oferta {height: 200px; background: red}
 
-.col50 {min-height: 200px; width: 50%; float: left}
-.sucLP {background: purple}
-.sucLZ {background: green}
+/* SLIDE */
+.slide {background: #878979; height: 340px; margin-bottom: 2em}
 
-/* botones */
-.btn-offitec{color: #fff; font-size: 1.125em; width: 100%; text-transform: uppercase; line-height: 1.375em; letter-spacing: 0.05em}
-.btn-offitec:hover {color: #fff !important;}
-.btn-offitec span {font-size: 1.375em;}
-	.btn-agregar {background: #8CDD2C; }
-	.btn-quitar {background: #9EB779; }
-	.btn-oferta {background: #FF7503}
+.presentacion {text-align: center; color: #70162F; font-size: 1.250em; line-height: 1.5em; width: 60%; margin: 0 auto 2em}
 
-/* estilos de Bootstrap modificados */
+/* Estilos Fichas de Productos*/
+
+.bandaProd {background: #878979; padding: 0.5em 1em; color: #fff; }
+.bandaProd.ofertas {background: #70162F}
+.bandaProd.nuevos {background: #FF7503}
+.bandaProd span {margin-right: 1em; font-size: 0.938em; text-transform: uppercase; margin-top: 0.6em;}
+.lazy {margin: 0}
+
+/* Estilos de Bootstrap modificados */
 .navbar {margin:0;}
-.navbar-toggle {margin-top: 30px}
-.navbar-brand {padding: 2px 0}
+.navbar-toggle {margin-top: 1.560em}
+.navbar-brand {padding: 0.125em 0; margin-top: 1em;}
+.dropdown-menu {background: #878979}
 
-.open {background: #fff}
+.open {background: #878979}
 
-.thumbnail {padding: 0; border: 0; min-height: 400px; text-align: center; margin-bottom: 5em !important }
-.thumbnail img {margin-bottom: 1em}
+.thumbnail {padding: 0; border: 1px solid #ccc; border-radius: 0;}
 
-
+.modal-header, .modal-footer {border: 0}
 
 /* -- M E D I A  Q U E R Y -- */
 @media screen and (max-width: 1000px) {
-	
+	#menuPrincipal a {padding: 0 1.250em !important }
 
 }
 
 
 @media screen and (max-width: 768px) {
 
+	.divMenu {float: left; width: 100%}
 	#menuPrincipal {height: auto !important;} 
-	#menuPrincipal a {height: 40px; line-height: 40px; font-size: 20px;}
+	#menuPrincipal a {height: 40px; line-height: 40px; font-size: 1.250em;}
 	.navbar-collapse {border: 0 !important;}
 }
