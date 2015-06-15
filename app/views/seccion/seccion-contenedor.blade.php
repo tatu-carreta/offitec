@@ -47,10 +47,8 @@
             {{-- {{$seccion->items_noticias()['paginador']->links()}} --}}
 
         @else
-            @if(!Auth::check())
-                No hay {{$texto_modulo}} aún.
-            @else
-            <div class="sinProductos">Sin productos</div>
+            @if(Auth::check())
+                <div class="sinProductos">Sin productos</div>
             @endif
         @endif
 

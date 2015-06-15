@@ -30,7 +30,7 @@
         
         <div class="row">
             <div class="col-md-12 marginBottom2">
-	           <h2 class="pull-left">{{ $menu->nombre }}</h2>
+                <h2 class="pull-left">{{ $menu->nombre }}</h2>
          
                 @if(Auth::check())
                     <div class="pull-right">
@@ -47,16 +47,19 @@
                     @endif
                     </div>
                     <div class="clearfix"></div>
-                </div>
-                        
+                @endif
             </div>
-
-            @else
-            </div>
-
-            @endif
+        </div>
         <div class="contenedorSecciones">
-            @include('seccion.seccion-contenedor')
+            @if((!$hay_datos) && (!Auth::check()))
+                <div class="row">
+                    <div class="col-md-12">
+                        No hay {{$texto_modulo}} aún.
+                    </div>
+                </div>
+            @else
+                @include('seccion.seccion-contenedor')
+            @endif
         </div>
 
         @if(Auth::check())
