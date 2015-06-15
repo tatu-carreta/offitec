@@ -1,12 +1,15 @@
 
-h1, h2, h3 {font-weight: 300 !important}
+h1, h2, h3 {font-weight: 300}
 
 
 
-/* SLIDE */
-.slide {background: #878979; height: 340px; margin-bottom: 2em}
+/* SLIDE HOME */
+
 
 .presentacion {text-align: center; color: #70162F; font-size: 1.250em; line-height: 1.5em; width: 60%; margin: 0 auto 2em}
+
+
+
 
 /* Estilos Fichas de Productos*/
 
@@ -27,6 +30,8 @@ h1, h2, h3 {font-weight: 300 !important}
 .thumbnail {padding: 0; border: 1px solid #ccc; border-radius: 0;}
 
 .modal-header, .modal-footer {border: 0}
+
+.progress {height: 12px;}
 
 /* -- M E D I A  Q U E R Y -- */
 @media screen and (max-width: 1000px) {

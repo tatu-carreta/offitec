@@ -1,5 +1,5 @@
 @foreach($menu -> secciones as $seccion)
-    <div class="row divProductos">
+    <div class="row divListadoItems">
         @if((count($seccion->items) > 0) || Auth::check())
             <div  class="col-md-12" id="{{$menu->estado.$menu->id}}">
                 @if(($seccion->titulo != "") || (Auth::check()))

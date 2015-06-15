@@ -19,7 +19,7 @@ header {background: #000;}
 .divMenu {float: right;}
 #menuPrincipal a {background: transparent; font-size: 1.250em; color:#fff; font-weight: 300;background: transparent; height: 88px; line-height: 88px; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box;}
 #menuPrincipal a:hover {background: #878979}
-#menuPrincipal .dropdown li a {height: 35px; line-height: 35px; font-size: 1.250em !important;}
+#menuPrincipal .dropdown li a {height: 35px; line-height: 35px; font-size: 1em;}
 .btnCarrito {font-weight: 300; font-size: 15px; height: 88px; line-height: 88px; margin: 0 !important; background: #302F2F; color:#fff; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box;}
 
 /* Módulo lista y ficha de productos */
@@ -47,9 +47,9 @@ footer {margin-top: 3em}
 .headerAdmin .salir{color:#fff; padding: 0 1em; margin-left: 1em}
 
 /* Catálogo de Productos */
-.divProductos:nth-child(1) {border-top: 0 none;}
-.divProductos {border-top: 1px solid #c6c6c6; min-height: 10em; padding-top: 1em; vertical-align: top;}
-.divProductos h3 {margin: 0 1em 0 0 !important}
+.divListadoItems:nth-child(1) {border-top: 0 none;}
+.divListadoItems {border-top: 1px solid #c6c6c6; min-height: 10em; padding-top: 1em; vertical-align: top;}
+.divListadoItems h3 {margin: 0 1em 0 0 !important}
 .sinProductos {border: 1px dashed #C6C6C6; width: 218px; height: 218px; text-align: center; line-height: 200px; margin: 2em 0px 4em;}
 
 .iconos{padding: 0.5em 0.5em 0.563em; border-bottom: 1px dashed #C6C6C6; margin-bottom: 0.5em}
@@ -58,21 +58,36 @@ footer {margin-top: 3em}
 
 .lazy {margin-bottom: 0.5em;}
 
+
 /* Agregar Producto */
+.datosProducto {}
+.datosProducto h3 {margin-top: 0 !important; font-size: 1.250em; font-weight: 400 !important; }
+.datosProducto label {font-weight: normal}
+
 .spanDestacarProd {display: inline-block; font-size: 1.5em; font-weight: 300;padding-top: 0.3em; width: 300px; margin-left: 1em;}
 .divCargaImgProducto {margin: 0px 0px 4em; position: relative;}
 .divCargaImg { height: 19.375em; width: 19.375em; border: 1px solid #CCC; position: relative; box-sizing: content-box;}
 
 .form-group span {display: inline-block; margin:0 0.3em; font-size: 2em;}
-.datosProductos h3 {margin-top: 0 !important}
-.punteado { padding-top: 1.5em; border-top: 1px dashed #C6C6C6;}
+
+.estado input[type=text]{width: 80px}
+.modIndicarSeccion {display: table; width: 100%; }
+.modIndicarSeccion .cadaSeccion {font-size: 12px; border-bottom: 1px solid #C6C6C6; padding: 0.6em 0; display: table-row;}
+	.cadaSeccion div {display: table-cell; padding: 0.5em 1em 0.5em 0; border-bottom: 1px solid #C6C6C6;}
+	.cadaSeccion div:first-child {font-size: 16px; width: 40%;}
+	.cadaSeccion span {display: inline-block;}
+	.cadaSeccion input[type=checkbox] {margin-right: 0.3em}
+	.cadaSeccion label {margin-right: 1.2em; vertical-align: 2px}
+
+.punteado {padding-top: 1.5em; border-top: 1px dashed #C6C6C6;}
+.border-top {padding-top: 1.5em; border-top: 1px solid #C6C6C6;}
 
 /* Ocultamos el input file */
 .oculto {z-index: 999;line-height: 0;font-size: 30px; position: absolute;opacity: 0;filter: alpha(opacity = 0);-ms-filter: "alpha(opacity=0)";
 margin: 0;padding:0;left:0;top: 0;width: 130px;}
 
-/* Al label lo convertimos en "boton" (en apariencia) */
-.cargar {text-align: center;color: #fff;display: block;border-radius: 3px;font-size: 18px;float: left; position: relative;}
+/* Al label lo convertimos en "boton" (en apariencia) 
+.cargar {text-align: center;color: #fff;display: block;border-radius: 3px;font-size: 18px;float: left; position: relative;}*/
 
 
 /* Botones */
@@ -85,6 +100,8 @@ margin: 0;padding:0;left:0;top: 0;width: 130px;}
 .btnCalado {display:inline-block; color:#fff !important; padding: 0.625em 0.938em;}
 .btnCalado i:before {color:#FF8D13;}
 .btnCalado:hover i:before {color: #FF8D13;}
+
+.inputWidth80 {width: 80px}
 
 .marginTop1 {margin-top: 1em !important}
 .marginRight5 {margin-right: 0.5em;}

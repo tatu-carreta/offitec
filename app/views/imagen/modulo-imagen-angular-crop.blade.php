@@ -20,15 +20,38 @@
         height:350px;
     }
     .cropArea.small {
-        width:300px;
-        height:200px;
+        width:100%;
+        height:250px;
     }
 </style>
+
+<script>
+    $(document).ready(function () {
+        
+        $(".imagen").change(function(){
+            var id = $(this).attr('data');
+            $(".url-archivo"+id).val($(this).val());
+        });
+        
+    });
+
+</script>
 <div id="ng-app" ng-app="app">
     <div ng-controller="AppController" nv-file-drop="" uploader="uploader" filters="queueLimit, customFilter, sizeLimit">
 
-        <input id="fileInput" type="file" nv-file-select="" uploader="uploader" name="imagen_portada_original"/>
-        <input type="hidden" name="imagen_portada_crop" value="<% imagen_portada %>">
+        <div class="row marginBottom1">
+            <div class="col-xs-4">
+                <label class="btn btn-primary"> Seleccionar archivo
+                <span>
+                    <input data='1' id="fileInput" type="file" nv-file-select="" uploader="uploader" name="imagen_portada_original" class='oculto file imagen'/>
+                </span>
+                </label>
+            </div>
+            <div class="col-xs-8">
+                <input type="text" class="url-archivo1 form-control">
+                <input type="hidden" name="imagen_portada_crop" value="<% imagen_portada %>">
+            </div>
+        </div>
 
         <div class="cropArea" ng-class="{'big':size == 'big', 'medium':size == 'medium', 'small':size == 'small'}">
             <img-crop image="image"
@@ -49,19 +72,20 @@
             <input type="hidden" ng-model="foto">
             <!--aspect-ratio="aspectRatio"-->
         </div>
-        <div style="text-align:center">
-            <h3>Result</h3>
-            <div>
+
+        <h3>Resultado</h3>
+        <div class="marginBottom1">
                 <img ng-src="<% croppedImage %>" />
-            </div>
         </div>
-        <input class="form-control" type="text" name="epigrafe_imagen_portada" placeholder="Ingrese una descripción de la foto">
+
+        <input class="form-control" type="text" name="epigrafe_imagen_portada" placeholder="Ingrese una descripción de la foto (opcional)">
+
         <div style="margin-bottom: 40px;margin-top: 20px;">
             <table class="table">
                 <thead>
                     <tr>
-                        <th width="50%">Name</th>
-                        <th ng-show="uploader.isHTML5">Size</th>
+                        <th width="50%">Nombre</th>
+                        <th ng-show="uploader.isHTML5">Peso</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -74,16 +98,15 @@
 
             <div>
                 <div>
-                    Queue progress:
+                    Progreso de carga
                     <div class="progress" style="">
                         <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-success btn-s" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">
-                    <span class="glyphicon glyphicon-upload"></span> Upload all
+
+                <button type="button" class="btn btn-primary marginRight5" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">Cargar imagen
                 </button>
-                <button type="button" class="btn btn-danger btn-s" ng-click="removerImagen()" ng-disabled="!uploader.queue.length">
-                    <span class="glyphicon glyphicon-trash"></span> Remove all
+                <button type="button" class="btn btn-default" ng-click="removerImagen()" ng-disabled="!uploader.queue.length">Eliminar imagen
                 </button>
             </div>
 

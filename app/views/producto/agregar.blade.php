@@ -38,14 +38,53 @@
             <div id="error" class="error" style="display:none"><span></span></div>
             <div id="correcto" class="correcto ok" style="display:none"><span></span></div>
 
-        <div class="row marginBottom2">
-            <!-- Abre columna de descripción -->
-            <div class="col-md-8 datosProductos">
-                <h3>Nombre y modelo del producto</h3>
-                <div class="form-group marginBottom2">
-                    <input class="form-control" type="text" name="titulo" placeholder="Código" required="true" maxlength="50">
+        <div class="row datosProducto marginBottom2">
+            <!-- Abre columna de descripción de Producto -->
+            <div class="col-md-6">
+
+                <!-- Nombre del producto -->
+                <div>
+                    <h3>Nombre y modelo del producto</h3>
+                    <div class="form-group marginBottom2">
+                        <input class="form-control" type="text" name="titulo" placeholder="Código" required="true" maxlength="50">
+                    </div>
                 </div>
 
+                <!-- Estado  -->
+                <h3>Estado</h3>
+                <div class="marginBottom2">
+                    <div class="fondoDestacado marginBottom05">
+                        <div class="">
+                            <label>
+                                <input id="" class="" type="checkbox" name="" value="">
+                                Nuevo
+                            </label>
+                        </div>
+                    </div>
+                    <div class="fondoDestacado marginBottom05">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="">
+                                    <input id="" class="" type="checkbox" name="" value="">
+                                    Oferta
+                                </label>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="" >
+                                    Precio Antes $ <input id="" class="form-control inputWidth80" type="text" name="" value="">
+                                </label>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="" >
+                                    Precio Después $ <input id="" class="form-control inputWidth80" type="text" name="" value="">
+                                </label>
+                            </div>    
+                        </div>
+                    </div>
+                    <p>Los productos nuevos y las ofertas se muestran en la home</p>
+                </div>
+
+                <!-- Destacar producto  -->
                 <div class="fondoDestacado marginBottom2">
                     <div class="class_checkbox marginBottom1">
                         <label for="destacarProducto" class="destacarProducto noTocado">
@@ -62,21 +101,26 @@
                         <input type="text" name="precio" disabled="true" class="precioAble"> 
                     </div>
                 </div>
-
-                <h3>Secciones</h3>
-                @foreach($menues as $men)
-                    @if(count($men->children) == 0)
-                        <h5>{{$men->nombre}}</h5>
-
-                        @foreach($men->secciones as $seccion)
-                            <input type="checkbox" name="secciones[]" value="{{$seccion->id}}" @if($seccion->id == $seccion_id) checked="true" disabled @endif>@if($seccion->titulo != ""){{$seccion->titulo}}@else Sección {{$seccion->id}} @endif
+                
+                <div class="fondoDestacado modIndicarSeccion">
+                    <h3>Ubicación</h3>
+                        @foreach($menues as $men)
+                        <div class="cadaSeccion">
+                            @if(count($men->children) == 0)
+                                <div>{{$men->nombre}}</div>
+                                <div>
+                                @foreach($men->secciones as $seccion)
+                                    <span><input id="seccion{{$seccion->id}}" type="checkbox" name="secciones[]" value="{{$seccion->id}}" @if($seccion->id == $seccion_id) checked="true" disabled @endif><label for="seccion{{$seccion->id}}">@if($seccion->titulo != ""){{$seccion->titulo}}@else Sección {{$seccion->id}} @endif</label></span>
+                                @endforeach
+                                </div>
+                            @endif
+                        </div>
                         @endforeach
-                    @endif
-                @endforeach
-            </div>
+                </div>
+            </div><!--cierra columna datos de producto-->
 
             <!-- Abre columna de imágenes -->
-            <div class="col-md-4 fondoDestacado cargaImg">
+            <div class="col-md-6 fondoDestacado cargaImg">
                 <h3>Imagen principal</h3>
                 @include('imagen.modulo-imagen-angular-crop')
             </div>
@@ -88,7 +132,7 @@
         </div>  
             
 
-            <div class="punteado">
+            <div class="border-top">
                 <input type="submit" value="Publicar" class="btn btn-primary marginRight5">
                 <a onclick="window.history.back();" class="btn btn-default">Cancelar</a>
             </div>
