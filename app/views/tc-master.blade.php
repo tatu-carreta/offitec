@@ -20,6 +20,7 @@
         <link rel="stylesheet" type="text/css" href="{{URL::to('css/jquery-ui.css')}}">
         <link rel="stylesheet" href="{{URL::to('font-awesome-4.2.0/css/font-awesome.css')}}">
         <link href="{{URL::to('css/jquery.Jcrop.css')}}" rel="stylesheet" />
+        <!-- <link rel="stylesheet" href="{{URL::to('css/flexslider.css')}}">-->
         <link rel="stylesheet" href="{{URL::to('css/owl.carousel.css')}}">
         <link rel="stylesheet" href="{{URL::to('css/owl.theme.css')}}">
         <link rel="stylesheet" type="text/css" href="{{URL::to('css/base.css')}}"> 
@@ -32,7 +33,7 @@
         <script src="{{URL::to('js/jquery-1.11.2.min.js')}}"></script>
         <script src="{{URL::to('js/jquery-ui.min.js')}}"></script>
         <script src="{{URL::to('js/funcs.js')}}"></script>
-        
+
         @show
     </head>
     <body>
@@ -88,19 +89,37 @@
                     </div>
                 </div>
             </header>  
-            <!-- abre S L I D E estático -->
-            <div class="slideHome"></div>          
+
+            @yield('slide-estatico') 
+
         @show
         
-
         <!-- abre S E C T I O N -->
-
         @yield('contenido')
 
         @section('footer')
         <!-- abre F O O T E R -->
         <footer>
-
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 tarjetas">
+                        <img src="{{URL::to('images/tarjetas/visa.jpg')}}" alt="Tarjeta Visa">
+                        <img src="{{URL::to('images/tarjetas/mastercard.jpg')}}" alt="Tarjeta Mastercard">
+                        <img src="{{URL::to('images/tarjetas/american.jpg')}}" alt="Tarjeta American Sxpress">
+                        <img src="{{URL::to('images/tarjetas/naranja.jpg')}}" alt="Tarjeta Naranja">
+                        <img src="{{URL::to('images/tarjetas/nativa.jpg')}}" alt="Tarjeta Nativa">
+                        <img src="{{URL::to('images/tarjetas/shopping.jpg')}}" alt="Tarjeta Shopping">
+                        <img src="{{URL::to('images/tarjetas/cencosud.jpg')}}" alt="Tarjeta Cencosud">
+                        <img src="{{URL::to('images/tarjetas/argencard.jpg')}}" alt="Tarjeta Argencard">
+                        <img src="{{URL::to('images/tarjetas/cabal.jpg')}}" alt="Tarjeta Cabal">
+                        <img src="{{URL::to('images/tarjetas/mercado_pago.jpg')}}" alt="Mercado Pago">
+                        <!--data fiscal -->
+                        <a  class="data-fiscal" href="http://qr.afip.gob.ar" target=""><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0"></a>
+                        <!--/data fiscal -->
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
         </footer>
         
         <script src="{{URL::to('ckeditor/ckeditor.js')}}"></script>
@@ -118,27 +137,10 @@
             });
         </script>
 
-        <!-- Include OWL CARROUSEL -->
-        <script src="{{URL::to('js/owl.carousel.js')}}"></script>
-         <script>
-            $(document).ready(function() {
-              $("#owl-demo-prod").owlCarousel({
-             
-                  items : 4,
-                  itemsDesktop : [1199,3],
-                  itemsDesktopSmall : [979,3]
-             
-              });
-            });
-        </script>
-
         <!-- Div alerta  -->
         @include($project_name.'-div-alerta')
         
         @show
         
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="{{URL::to('bootstrap-3.3.4-dist/js/bootstrap.min.js')}}"></script>
-    
     </body>
 </html>

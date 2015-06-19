@@ -942,3 +942,99 @@ Stack trace:
 Stack trace:
 #0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
 #1 {main} [] []
+[2015-06-19 16:56:28] production.ERROR: exception 'InvalidArgumentException' with message 'View [slide.slide-estatico-offitec] not found.' in C:\xampp\htdocs\offitec\bootstrap\compiled.php:9499
+Stack trace:
+#0 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9472): Illuminate\View\FileViewFinder->findInPaths('slide.slide-est...', Array)
+#1 C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\View\Factory.php(124): Illuminate\View\FileViewFinder->find('slide.slide-est...')
+#2 C:\xampp\htdocs\offitec\app\storage\views\45f11c4ef781293dea0f905c0f353826(23): Illuminate\View\Factory->make('slide.slide-est...', Array)
+#3 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9868): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9746): Illuminate\View\Engines\CompilerEngine->get('C:\\xampp\\htdocs...', Array)
+#6 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9733): Illuminate\View\View->getContents()
+#7 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9724): Illuminate\View\View->renderContents()
+#8 C:\xampp\htdocs\offitec\bootstrap\compiled.php(10426): Illuminate\View\View->render()
+#9 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9956): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#10 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5246): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#11 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5055): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#12 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5041): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\offitec\bootstrap\compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\offitec\bootstrap\compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7813): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8420): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8367): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#18 C:\xampp\htdocs\offitec\bootstrap\compiled.php(11030): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#19 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#20 C:\xampp\htdocs\offitec\public\index.php(49): Illuminate\Foundation\Application->run()
+#21 {main}
+
+Next exception 'ErrorException' with message 'View [slide.slide-estatico-offitec] not found. (View: C:\xampp\htdocs\offitec\app\views\tc-inicio.blade.php)' in C:\xampp\htdocs\offitec\bootstrap\compiled.php:9499
+Stack trace:
+#0 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9870): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(InvalidArgumentException), 1)
+#1 C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\\xampp\\htdocs...', Array)
+#2 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9746): Illuminate\View\Engines\CompilerEngine->get('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9733): Illuminate\View\View->getContents()
+#4 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9724): Illuminate\View\View->renderContents()
+#5 C:\xampp\htdocs\offitec\bootstrap\compiled.php(10426): Illuminate\View\View->render()
+#6 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9956): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5246): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5055): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5041): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\offitec\bootstrap\compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\offitec\bootstrap\compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7813): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8420): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8367): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\offitec\bootstrap\compiled.php(11030): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 C:\xampp\htdocs\offitec\public\index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-06-19 16:57:30] production.ERROR: exception 'InvalidArgumentException' with message 'View [slide.slide-estatico-offitec] not found.' in C:\xampp\htdocs\offitec\bootstrap\compiled.php:9499
+Stack trace:
+#0 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9472): Illuminate\View\FileViewFinder->findInPaths('slide.slide-est...', Array)
+#1 C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\View\Factory.php(124): Illuminate\View\FileViewFinder->find('slide.slide-est...')
+#2 C:\xampp\htdocs\offitec\app\storage\views\45f11c4ef781293dea0f905c0f353826(23): Illuminate\View\Factory->make('slide.slide-est...', Array)
+#3 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9868): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9746): Illuminate\View\Engines\CompilerEngine->get('C:\\xampp\\htdocs...', Array)
+#6 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9733): Illuminate\View\View->getContents()
+#7 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9724): Illuminate\View\View->renderContents()
+#8 C:\xampp\htdocs\offitec\bootstrap\compiled.php(10426): Illuminate\View\View->render()
+#9 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9956): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#10 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5246): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#11 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5055): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#12 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5041): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#13 C:\xampp\htdocs\offitec\bootstrap\compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#14 C:\xampp\htdocs\offitec\bootstrap\compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#15 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7813): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8420): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8367): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#18 C:\xampp\htdocs\offitec\bootstrap\compiled.php(11030): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#19 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#20 C:\xampp\htdocs\offitec\public\index.php(49): Illuminate\Foundation\Application->run()
+#21 {main}
+
+Next exception 'ErrorException' with message 'View [slide.slide-estatico-offitec] not found. (View: C:\xampp\htdocs\offitec\app\views\tc-inicio.blade.php)' in C:\xampp\htdocs\offitec\bootstrap\compiled.php:9499
+Stack trace:
+#0 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9870): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(InvalidArgumentException), 1)
+#1 C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\\xampp\\htdocs...', Array)
+#2 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9746): Illuminate\View\Engines\CompilerEngine->get('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9733): Illuminate\View\View->getContents()
+#4 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9724): Illuminate\View\View->renderContents()
+#5 C:\xampp\htdocs\offitec\bootstrap\compiled.php(10426): Illuminate\View\View->render()
+#6 C:\xampp\htdocs\offitec\bootstrap\compiled.php(9956): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5246): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5055): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5041): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\offitec\bootstrap\compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\offitec\bootstrap\compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7813): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8420): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8367): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\offitec\bootstrap\compiled.php(11030): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 C:\xampp\htdocs\offitec\public\index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-06-19 17:16:58] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:44
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []

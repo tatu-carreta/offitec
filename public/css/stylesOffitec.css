@@ -1,13 +1,30 @@
 
 h1, h2, h3 {font-weight: 300}
 
+/* -------------------------- H O M E ---------------------------------------------- */
+/*carousel colores*/
+#owl-demo2 .item {margin: 0px;}
+#owl-demo2 .item img {display: block; width: 100%; height: auto;}
 
-
-/* SLIDE HOME */
-
+.carousel-home .owl-pagination {margin-top: 10px; text-align: center;display: none;}
+.carousel-home {width: 90%; margin:0 auto;}
+.contenedor-carousel {width: 100%; background:#000;}
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {position: absolute;top: 50%;z-index: 5; display: inline-block;height: auto;}
+.carousel-indicators {display: none}
+.carousel-control.left {background: none;}
+.carousel-control.right {background: none}
+/*.olw-item {width: 142px !important;}*/
+.contenedor-carousel a{display: block;height: 172px;color:#000;text-align: center;padding-top: 60px; text-decoration: none;color:#fff; font-family: helvetica;text-transform: uppercase;}
+.boton-naranja {background: #FF7503;}
+.boton-rojo {background: #D52318;}
+.boton-violeta {background: #70162F;}
+.boton-azul {background: #142B3A;}
+.boton-verde {background: #1D6A0E;}
 
 .presentacion {text-align: center; color: #70162F; font-size: 1.250em; line-height: 1.5em; width: 60%; margin: 0 auto 2em}
 
+.info{background-color: #F4F4EF; height: 139px; text-align: center; padding-top: 5px; border-bottom: 5px solid #fff; }
+.mapa{width: 100%; height: 224px; border: 0;}
 
 
 
@@ -27,21 +44,18 @@ h1, h2, h3 {font-weight: 300}
 
 .open {background: #878979}
 
-.thumbnail {padding: 0; border: 1px solid #ccc; border-radius: 0;}
+.thumbnail {padding: 0; border: none; border-radius: 0;}
 
 .modal-header, .modal-footer {border: 0}
 
 .progress {height: 12px;}
 
-/* -- M E D I A  Q U E R Y -- */
+/* ----------------------------- M E D I A  Q U E R Y ------------------------------------- */
 @media screen and (max-width: 1000px) {
 	#menuPrincipal a {padding: 0 1.250em !important }
-
 }
 
-
 @media screen and (max-width: 768px) {
-
 	.divMenu {float: left; width: 100%}
 	#menuPrincipal {height: auto !important;} 
 	#menuPrincipal a {height: 40px; line-height: 40px; font-size: 1.250em;}

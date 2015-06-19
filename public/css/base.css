@@ -22,18 +22,39 @@ header {background: #000;}
 #menuPrincipal .dropdown li a {height: 35px; line-height: 35px; font-size: 1em;}
 .btnCarrito {font-weight: 300; font-size: 15px; height: 88px; line-height: 88px; margin: 0 !important; background: #302F2F; color:#fff; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box;}
 
+.carrouselProdHome {margin-bottom: 6em}
+
+/* SLIDE HOME */
+.slideHome{min-height: auto; overflow: hidden; }
+.carousel-inner {position: relative; width: 100%; overflow: hidden; height:400px;}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {width: 100%; margin: auto;}
+
+/* SLIDE HOME */
+.slideDinamicoHome {height: 340px; background: #777774; margin-bottom: 6em; overflow: hidden}
+.flex-caption {width: 46%; padding: 2%; float:left ; color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 14px; line-height: 18px;}
+.imgSlideFlex {width: 50%; float: left;}
+.imgSlideFlex img {width: 100%; height: auto;}
+
+
+
+
+.tarjetas img {margin-right: 2em; vertical-align: middle;x}
+.data-fiscal {float: right; position: relative; top: -10px;}
+.data-fiscal img {width: 40px; border: 0;margin-right: 0!important;}
+
+
 /* Módulo lista y ficha de productos */
 
-
-
+.moduloItem {min-height: 370px}
 .producto {background: #666; width: 100%; height: 250px;}
+
 
 /* SECTION */
 section {padding-top: 4em}
-section  * > * > *>{margin-top: 0 !important}
+	{margin-top: 0 !important}
 
 /* FOOTER */
-footer {margin-top: 3em}
+footer {margin-top: 1em; padding: 4em}
 
 /* ----------------------------- A D M I N ------------------------------------ */
 
@@ -48,7 +69,7 @@ footer {margin-top: 3em}
 
 /* Catálogo de Productos */
 .divListadoItems:nth-child(1) {border-top: 0 none;}
-.divListadoItems {border-top: 1px solid #c6c6c6; min-height: 10em; padding-top: 1em; vertical-align: top;}
+.divListadoItems {border-top: 1px solid #c6c6c6; min-height: 5em; padding-top: 1em; vertical-align: top;}
 .divListadoItems h3 {margin: 0 1em 0 0 !important}
 .sinProductos {border: 1px dashed #C6C6C6; width: 218px; height: 218px; text-align: center; line-height: 200px; margin: 2em 0px 4em;}
 

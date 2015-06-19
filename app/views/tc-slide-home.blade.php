@@ -1,23 +1,33 @@
 
-<script src="{{URL::to('js/jquery.cross-slide.min.js')}}"></script>
+<script src="{{URL::to('js/jquery.flexslider.js')}}"></script>
 <script>
-    $(function() {
-        $('.slide').crossSlide({
-        speed: 60,
-                fade: 1
-        }, [
-            @if (!is_null($slide_index) && !is_null($slide_index -> imagenes))
-                @foreach($slide_index -> imagenes as $img)
-                    { src: "{{ URL::to($img->carpeta.$img->nombre) }}", dir: 'up'},
-                @endforeach
-            @else
-                { src: "{{URL::to('images/slide-1.jpg')}}", dir: 'up'   },
-                { src: "{{URL::to('images/slide-2.jpg')}}", dir: 'down' },
-                { src: "{{URL::to('images/slide-1.jpg')}}", dir: 'up'   },
-                { src: "{{URL::to('images/slide-2.jpg')}}", dir: 'down' }
-            @endif
-        ]);
+    // Can also be used with $(document).ready()
+    $(window).load(function() {
+      $('.flexslider').flexslider({
+        animation: "slide"
+      });
     });
 </script>
 
-<div class="slide"></div>
+<div class="slideDinamicoHome">
+    <!-- Place somewhere in the <body> of your page -->
+    <div class="flexslider">
+        <ul class="slides">
+            <li>
+                <div class="imgSlideFlex"><img src="{{URL::to('images/foto1.jpg')}}" /></div>
+                <div class="flex-caption">
+                    <p>Descripción de la Imagen</p>
+                </div>
+                <div class="clearfix"></div>
+            </li>
+            <li>
+                <div class="imgSlideFlex"><img src="{{URL::to('images/foto1.jpg')}}" /></div>
+                <div class="flex-caption">
+                    <p>Descripción de la Imagen</p>
+                </div>
+                <div class="clearfix"></div>
+            </li>
+        </ul>
+    </div>
+
+</div>
