@@ -12,3 +12,5 @@
         {{Form::close()}}
     </section>
 @stop
+
+@section('tarjetas')@stop
