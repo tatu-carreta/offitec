@@ -24,7 +24,10 @@
             </div>
 
             <div class="item">
-                <img src="images/slide1.jpg" alt="slider1">
+                <img src="images/slide4.jpg" alt="slider1">
+            </div>
+             <div class="item">
+                <img src="images/slide5.jpg" alt="slider1">
             </div>
         </div>
 
