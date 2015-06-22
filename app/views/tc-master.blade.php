@@ -37,6 +37,14 @@
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="{{URL::to('bootstrap-3.3.4-dist/js/bootstrap.min.js')}}"></script>
+        
+        <!-- Include Fancybox -->
+        <script src="{{URL::to('source/jquery.fancybox.js')}}"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".fancybox").fancybox();
+            });
+        </script>
         @show
     </head>
     <body>

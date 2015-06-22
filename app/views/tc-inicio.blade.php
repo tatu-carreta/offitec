@@ -16,14 +16,7 @@
         });
     });
     </script>
-
-    <!-- Include Fancybox -->
-    <script src="{{URL::to('source/jquery.fancybox.js')}}"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(".fancybox").fancybox();
-        });
-    </script>
+    
 @stop
 
 @section('slide-estatico')
@@ -47,7 +40,7 @@
                             <div class="col-md-12">
                                 <div class="thumbnail">
                                     @if(!Auth::check())
-                                        <a class="fancybox" href="{{URL::to('producto/'.$item->url)}}">
+                                    <a class="fancybox" href="{{URL::to($item->imagen_destacada()->ampliada()->carpeta.$item->imagen_destacada()->ampliada()->nombre)}}" title="{{ $item->imagen_destacada()->ampliada()->epigrafe }}">
                                     @endif
                                     <img class="lazy" src="@if(!is_null($item->imagen_destacada())){{ URL::to($item->imagen_destacada()->carpeta.$item->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="{{$item->titulo}}">
                                     @if(!Auth::check())

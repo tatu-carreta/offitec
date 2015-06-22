@@ -36,15 +36,9 @@
                 <div class="clearfix"></div>
             </div>
         @endif
-{{--
-        @if($i->producto()->nuevo())
-        <h2>NUEVO</h2>
-        @elseif($i->producto()->oferta())
-        <h2>OFERTA</h2>
-        @endif
---}}
+
         @if(!Auth::check())
-            <a href="{{URL::to('producto/'.$i->url)}}">
+            <a class="fancybox" href="{{URL::to($i->imagen_destacada()->ampliada()->carpeta.$i->imagen_destacada()->ampliada()->nombre)}}" title="{{ $i->imagen_destacada()->ampliada()->epigrafe }}" rel='group'>
         @endif
                <img class="lazy" data-original="@if(!is_null($i->imagen_destacada())){{ URL::to($i->imagen_destacada()->carpeta.$i->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="{{$i->titulo}}">
         @if(!Auth::check())
