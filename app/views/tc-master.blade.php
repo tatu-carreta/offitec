@@ -100,26 +100,30 @@
         @section('footer')
         <!-- abre F O O T E R -->
         <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 tarjetas">
-                        <img src="{{URL::to('images/tarjetas/visa.jpg')}}" alt="Tarjeta Visa">
-                        <img src="{{URL::to('images/tarjetas/mastercard.jpg')}}" alt="Tarjeta Mastercard">
-                        <img src="{{URL::to('images/tarjetas/american.jpg')}}" alt="Tarjeta American Sxpress">
-                        <img src="{{URL::to('images/tarjetas/naranja.jpg')}}" alt="Tarjeta Naranja">
-                        <img src="{{URL::to('images/tarjetas/nativa.jpg')}}" alt="Tarjeta Nativa">
-                        <img src="{{URL::to('images/tarjetas/shopping.jpg')}}" alt="Tarjeta Shopping">
-                        <img src="{{URL::to('images/tarjetas/cencosud.jpg')}}" alt="Tarjeta Cencosud">
-                        <img src="{{URL::to('images/tarjetas/argencard.jpg')}}" alt="Tarjeta Argencard">
-                        <img src="{{URL::to('images/tarjetas/cabal.jpg')}}" alt="Tarjeta Cabal">
-                        <img src="{{URL::to('images/tarjetas/mercado_pago.jpg')}}" alt="Mercado Pago">
-                        <!--data fiscal -->
-                        <a  class="data-fiscal" href="http://qr.afip.gob.ar" target=""><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0"></a>
-                        <!--/data fiscal -->
-                        <div class="clearfix"></div>
+            @section('tarjetas')
+                @if(!Auth::check())
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 tarjetas">
+                                <img src="{{URL::to('images/tarjetas/visa.jpg')}}" alt="Tarjeta Visa">
+                                <img src="{{URL::to('images/tarjetas/mastercard.jpg')}}" alt="Tarjeta Mastercard">
+                                <img src="{{URL::to('images/tarjetas/american.jpg')}}" alt="Tarjeta American Sxpress">
+                                <img src="{{URL::to('images/tarjetas/naranja.jpg')}}" alt="Tarjeta Naranja">
+                                <img src="{{URL::to('images/tarjetas/nativa.jpg')}}" alt="Tarjeta Nativa">
+                                <img src="{{URL::to('images/tarjetas/shopping.jpg')}}" alt="Tarjeta Shopping">
+                                <img src="{{URL::to('images/tarjetas/cencosud.jpg')}}" alt="Tarjeta Cencosud">
+                                <img src="{{URL::to('images/tarjetas/argencard.jpg')}}" alt="Tarjeta Argencard">
+                                <img src="{{URL::to('images/tarjetas/cabal.jpg')}}" alt="Tarjeta Cabal">
+                                <img src="{{URL::to('images/tarjetas/mercado_pago.jpg')}}" alt="Mercado Pago">
+                                <!--data fiscal -->
+                                <a  class="data-fiscal" href="http://qr.afip.gob.ar" target=""><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0"></a>
+                                <!--/data fiscal -->
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                @endif
+            @show
         </footer>
         
         <script src="{{URL::to('ckeditor/ckeditor.js')}}"></script>
