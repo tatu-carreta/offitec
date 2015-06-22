@@ -34,6 +34,8 @@
         <script src="{{URL::to('js/jquery-ui.min.js')}}"></script>
         <script src="{{URL::to('js/funcs.js')}}"></script>
 
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="{{URL::to('bootstrap-3.3.4-dist/js/bootstrap.min.js')}}"></script>
         @show
     </head>
     <body>

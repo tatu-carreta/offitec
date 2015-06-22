@@ -2,9 +2,6 @@
 
 @section('head')
     @parent
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="{{URL::to('bootstrap-3.3.4-dist/js/bootstrap.min.js')}}"></script>
-
     <!-- Include OWL CARROUSEL -->
     <script src="{{URL::to('js/owl.carousel.js')}}"></script>
 
