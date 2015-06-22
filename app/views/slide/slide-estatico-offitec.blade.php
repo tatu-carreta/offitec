@@ -12,19 +12,19 @@
 
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="images/slider1.jpg" alt="slider1">
+                <img src="images/slide1.jpg" alt="slider1">
             </div>
 
             <div class="item">
-                <img src="images/slider2.jpg" alt="slider2">
+                <img src="images/slide2.jpg" alt="slider2">
             </div>
         
             <div class="item">
-                <img src="images/slider3.jpg" alt="slider3">
+                <img src="images/slide3.jpg" alt="slider3">
             </div>
 
             <div class="item">
-                <img src="images/slider1.jpg" alt="slider1">
+                <img src="images/slide1.jpg" alt="slider1">
             </div>
         </div>
 
