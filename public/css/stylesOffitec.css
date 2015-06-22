@@ -32,7 +32,9 @@ h1, h2, h3 {font-weight: 300}
 
 .bandaProd {background: #878979; padding: 0.5em 1em; color: #fff; }
 .bandaProd.ofertas {background: #70162F}
+	.precioOferta {color: #70162F; font-size: 1.2em}
 .bandaProd.nuevos {background: #FF7503}
+	.precioNuevo {color: #FF7503; font-size: 1.2em}
 .bandaProd span {margin-right: 1em; font-size: 0.938em; text-transform: uppercase; margin-top: 0.6em;}
 .lazy {margin: 0}
 

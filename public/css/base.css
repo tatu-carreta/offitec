@@ -31,10 +31,14 @@ header {background: #000;}
 
 /* SLIDE HOME */
 .slideDinamicoHome {height: 340px; background: #777774; margin-bottom: 6em; overflow: hidden}
-.flex-caption {width: 46%; padding: 2%; float:left ; color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 14px; line-height: 18px;}
+.flex-caption {width: 50%; padding: 10%; float:left ; color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 14px; line-height: 1em;}
+.flex-caption p {font-size: 1.5em; font-weight: 300}
+
 .imgSlideFlex {width: 50%; float: left;}
 .imgSlideFlex img {width: 100%; height: auto;}
-
+/*.flex-direction-nav {position: absolute; top:30%; left: 50%}
+.flex-prev {display: none}
+.flex-next {background: url(../images/flecha-02.svg); width: 22px; height: 72px;display: block; text-indent: -9999px; }*/
 
 
 

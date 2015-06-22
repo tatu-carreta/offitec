@@ -23,6 +23,7 @@
         <!-- <link rel="stylesheet" href="{{URL::to('css/flexslider.css')}}">-->
         <link rel="stylesheet" href="{{URL::to('css/owl.carousel.css')}}">
         <link rel="stylesheet" href="{{URL::to('css/owl.theme.css')}}">
+        <link rel="stylesheet" href="{{URL::to('source/jquery.fancybox.css')}}">
         <link rel="stylesheet" type="text/css" href="{{URL::to('css/base.css')}}"> 
         <link rel="stylesheet" type="text/css" href="{{URL::to('css/stylesOffitec.css')}}"> 
         

@@ -16,6 +16,14 @@
         });
     });
     </script>
+
+    <!-- Include Fancybox -->
+    <script src="{{URL::to('source/jquery.fancybox.js')}}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".fancybox").fancybox();
+        });
+    </script>
 @stop
 
 @section('slide-estatico')
@@ -39,7 +47,7 @@
                             <div class="col-md-12">
                                 <div class="thumbnail">
                                     @if(!Auth::check())
-                                        <a href="{{URL::to('producto/'.$item->url)}}">
+                                        <a class="fancybox" href="{{URL::to('producto/'.$item->url)}}">
                                     @endif
                                     <img class="lazy" src="@if(!is_null($item->imagen_destacada())){{ URL::to($item->imagen_destacada()->carpeta.$item->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="{{$item->titulo}}">
                                     @if(!Auth::check())
@@ -55,9 +63,9 @@
                                         <div class="clearfix"></div>
                                     </div>
                                     @if($item->producto()->oferta())
-                                        <span class="precio">Oferta: ${{$item->producto()->precio(1)}} ${{$item->producto()->precio(2)}}</span>
+                                        <span class="precioOferta">OFERTA: Nuevo: ${{$item->producto()->precio(1)}}, Oferta: ${{$item->producto()->precio(2)}}</span>
                                     @elseif($item->producto()->nuevo())
-                                        <span>NUEVO</span>
+                                        <span class="precioNuevo">NUEVO</span>
                                     @endif
                                 </div>
                             </div>
