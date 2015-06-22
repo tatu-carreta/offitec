@@ -15,7 +15,7 @@
                             <li><a href="{{URL::to('admin/slide/agregar/'.$menu->id.'/E')}}" class="btn nuevaSeccion"><i class="fa fa-plus fa-lg"></i>Agregar slide</a></li>
                         @endif
                         @if(Auth::user()->can("agregar_slide"))
-                            <li><a href="{{URL::to('admin/slide/agregar/'.$menu->id.'/I')}}" class="btn popup-nueva-seccion"><i class="fa fa-plus fa-lg"></i>Agregar slide en Index</a></li>
+                            <li><a href="{{URL::to('admin/slide/agregar/'.$menu->id.'/I')}}" class="btn"><i class="fa fa-plus fa-lg"></i>Agregar slide en Index</a></li>
                         @endif
                         @if(Auth::user()->can("agregar_galeria"))
                             <li><a href="{{URL::to('admin/galeria/agregar/'.$menu->id)}}" class="btn nuevaSeccion"><i class="fa fa-plus fa-lg"></i>Agregar galería</a></li>
@@ -54,4 +54,13 @@
             </div>
         @endif
     </section>
+@stop
+
+@section('footer')
+
+    @parent
+    
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+
+    
 @stop

@@ -10,7 +10,7 @@
     </div>
     {{ Form::open(array('url' => 'admin/slide/agregar')) }}
         <div class="modal-body">
-            
+            @include('imagen.modulo-galeria-angular')
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>

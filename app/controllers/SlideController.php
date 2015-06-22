@@ -13,14 +13,14 @@ class SlideController extends BaseController {
         $this->array_view['seccion_id'] = $seccion['data']->id;
         $this->array_view['tipo'] = $tipo;
 
-        return View::make('slide.agregar', $this->array_view);
+        return View::make('slide.agregar-sin-popup', $this->array_view);
     }
 
     public function agregar() {
 
         //Aca se manda a la funcion agregarItem de la clase Item
         //y se queda con la respuesta para redirigir cual sea el caso
-        $respuesta = Slide::agregarSlide(Input::all());
+        $respuesta = Slide::agregarSlideHome(Input::all());
 
         if ($respuesta['error'] == true) {
             return Redirect::to('admin/item')->withErrors($respuesta['mensaje'])->withInput();

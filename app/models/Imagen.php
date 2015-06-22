@@ -256,6 +256,95 @@ class Imagen extends Eloquent {
         return $respuesta;
     }
 
+    public static function uploadImageAngular($imagen_crop, $imagen_ampliada) {
+
+        $count = count($imagen_ampliada->getClientOriginalName()) - 4;
+
+        $filename = Str::limit(Str::slug($imagen_ampliada->getClientOriginalName()), $count, "");
+        $extension = $imagen_ampliada->getClientOriginalExtension(); //if you need extension of the file
+        //$extension = File::extension($file['name']);
+
+        $carpeta = '/uploads/';
+        $directory = public_path() . $carpeta;
+        //$filename = sha1(time() . Hash::make($filename) . time()) . ".{$extension}";
+        //Pregunto para que no se repita el nombre de la imagen
+        if (!is_null(Imagen::imagenPorNombre($filename . ".{$extension}"))) {
+
+            $filename = $filename . "(" . Str::limit(sha1(time()), 3, "") . ")" . ".{$extension}";
+        } else {
+            $filename = $filename . ".{$extension}";
+        }
+
+        Image::make($imagen_ampliada)->resize(null, 800, function ($constraint) {
+            $constraint->aspectRatio();
+            $constraint->upsize();
+        })->save($directory . $filename);
+
+        $imagen_crop_name = "small_" . $filename;
+
+        $imagen_crop->move($directory, $imagen_crop_name);
+        $answer = array('answer' => 'File transfer completed', 'imagen_path' => $imagen_crop_name, 'imagen_ampliada' => $filename);
+
+        return $answer;
+    }
+
+    public static function uploadImageAngularSlide($imagen_slide) {
+
+        $count = count($imagen_slide->getClientOriginalName()) - 4;
+
+        $filename = Str::limit(Str::slug($imagen_slide->getClientOriginalName()), $count, "");
+        $extension = $imagen_slide->getClientOriginalExtension(); //if you need extension of the file
+        //$extension = File::extension($file['name']);
+
+        $carpeta = '/uploads/';
+        $directory = public_path() . $carpeta;
+        //$filename = sha1(time() . Hash::make($filename) . time()) . ".{$extension}";
+        //Pregunto para que no se repita el nombre de la imagen
+        if (!is_null(Imagen::imagenPorNombre($filename . ".{$extension}"))) {
+
+            $filename = $filename . "(" . Str::limit(sha1(time()), 3, "") . ")" . ".{$extension}";
+        } else {
+            $filename = $filename . ".{$extension}";
+        }
+
+        Image::make($imagen_slide)->resize(570, null, function ($constraint) {
+            $constraint->aspectRatio();
+            $constraint->upsize();
+        })->save($directory . $filename);
+
+
+        $answer = array('answer' => 'File transfer completed', 'imagen_path' => $filename);
+
+        return $answer;
+    }
+
+    public static function agregarImagenAngularSlideHome($imagen, $epigrafe) {
+        $respuesta = array();
+
+        $carpeta = "/uploads/";
+
+        $datos = array(
+            'nombre' => $imagen,
+            'epigrafe' => $epigrafe,
+            'carpeta' => $carpeta,
+            'tipo' => 'G',
+            'ampliada' => '',
+            'estado' => 'A',
+            'fecha_carga' => date("Y-m-d H:i:s"),
+            'usuario_id_carga' => Auth::user()->id
+        );
+
+        $imagen = static::create($datos);
+
+        //Mensaje correspondiente a la agregacion exitosa
+        $respuesta['mensaje'] = 'Imagen creada.';
+        $respuesta['error'] = false;
+        $respuesta['data'] = $imagen;
+        //return Response::json('success', 200);
+
+        return $respuesta;
+    }
+
     public static function agregarImagenSlideHome($imagen = null, $epigrafe = null, $coordenadas = null) {
 
         $respuesta = array();
