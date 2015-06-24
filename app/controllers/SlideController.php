@@ -2,6 +2,8 @@
 
 class SlideController extends BaseController {
 
+    protected $folder_name = 'slide';
+
     public function vistaAgregar($menu_id, $tipo) {
         $datos = array(
             'titulo' => '',
@@ -13,7 +15,7 @@ class SlideController extends BaseController {
         $this->array_view['seccion_id'] = $seccion['data']->id;
         $this->array_view['tipo'] = $tipo;
 
-        return View::make('slide.agregar-sin-popup', $this->array_view);
+        return View::make($this->folder_name . '.agregar', $this->array_view);
     }
 
     public function agregar() {
