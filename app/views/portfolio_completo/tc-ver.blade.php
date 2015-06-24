@@ -4,44 +4,44 @@
 @if(Session::has('mensaje'))
 <script src="{{URL::to('js/divAlertaFuncs.js')}}"></script>
 @endif
-<section>
+<section class="container">
     @if (Session::has('mensaje'))
         <div class="divAlerta ok alert-success">{{ Session::get('mensaje') }}<i onclick="" class="cerrarDivAlerta fa fa-times fa-lg"></i></div>
     @endif
-    <div class="container">
-        <h2><span class=""><a class="volveraSeccion" href="{{URL::to('/'.$item -> seccionItem() -> menuSeccion() -> url)}}">{{ $item -> seccionItem() -> menuSeccion() -> nombre }}</a></span></h2>
-       
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{{ $item -> titulo }}</h2>
+            <a class="volveraSeccion" href="{{URL::to('/'.$item -> seccionItem() -> menuSeccion() -> url)}}">Volver a {{ $item -> seccionItem() -> menuSeccion() -> nombre }}</a>
         @if(Auth::check())
             @if(Auth::user()->can("editar_item"))
             <a href="{{URL::to('admin/portfolio_completo/editar/'.$item->portfolio()->portfolio_completo()->id)}}" data='{{$item -> seccionItem() -> id}}' style="display:none">Editar<i class="fa fa-pencil fa-lg"></i></a>
             @endif
         @endif
-        
-        <!--columna producto y descripcion -->
-        <div class="col70">
-            <div class="imgProd">
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="row">
+        <div class="col-md-3">
                         @if(count($item->imagen_destacada()) > 0)
-                                <img src="{{ URL::to($item->imagen_destacada()->carpeta.$item->imagen_destacada()->nombre) }}" alt="{{$item->titulo}}">
-                                <p>{{$item->imagen_destacada()->epigrafe}}</p>
+                <a href="#"><img src="{{ URL::to($item->imagen_destacada()->carpeta.$item->imagen_destacada()->nombre) }}" alt="{{$item->titulo}}"></a>
+                {{-- <p>{{$item->imagen_destacada()->epigrafe}}</p> --}}
                         @else
-                            <li><img src="{{ URL::to('images/sinImg.gif') }}" alt="{{$item->titulo}}"></li>
+                <img src="{{ URL::to('images/sinImg.gif') }}" alt="{{$item->titulo}}">
                         @endif
             </div>
-            
-            <div class="detalleProd">
-                <h2>{{ $item -> titulo }}</h2> 
-                <div class="editor">
-                    <h4>Descripcion</h4>
-                    {{ $item->descripcion }}
+        @foreach($item->imagenes as $img)
+            <div class="col-md-3">
+                <a href="#"><img src="{{ URL::to($img->carpeta.$img->nombre) }}" alt="{{$item->titulo}}"></a>
+                {{-- <p>{{$img->epigrafe}}</p> --}}
                 </div>
-                <div class="editor">
-                    <h4>Cuerpo</h4>
-                    {{ $item->portfolio()->portfolio_completo()->cuerpo }}
+        @endforeach
                 </div>
-            </div>
             <div class="clear"></div>
+    <div class="row">
+        <div class="col-md-12">
+            {{ $item->portfolio()->portfolio_completo()->cuerpo }}
         </div>
-        <div class="clear"></div>
     </div>
+        
 </section>
 @stop
