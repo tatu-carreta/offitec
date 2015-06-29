@@ -63,3 +63,7 @@ h1, h2, h3 {font-weight: 300}
 	#menuPrincipal a {height: 40px; line-height: 40px; font-size: 1.250em;}
 	.navbar-collapse {border: 0 !important;}
 }
+
+@media screen and (max-width: 600px){
+	.contenedor-carousel a{height: 120px; padding-top: 40px }
+}

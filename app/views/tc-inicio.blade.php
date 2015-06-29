@@ -9,10 +9,13 @@
     $(document).ready(function(){
         $("#owl-demo2").owlCarousel({
          
-            autoPlay: 2000, //Set AutoPlay to 3 seconds 
+            autoPlay: 2000, //Set AutoPlay to 3 seconds //itemsDesktop : [1199,3]
             items : 8,
-            itemsDesktop : [1199,3],
-            itemsDesktopSmall : [979,3]
+            itemsDesktop : [600,3],
+            itemsDesktopSmall : [1000,4],
+            itemsTablet: [768,3],
+            itemsMobile : [479,3]
+
         });
     });
     </script>
