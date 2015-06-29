@@ -11,9 +11,10 @@
          
             autoPlay: 2000, //Set AutoPlay to 3 seconds //itemsDesktop : [1199,3]
             items : 8,
-            itemsDesktop : [600,3],
-            itemsDesktopSmall : [1000,4],
-            itemsTablet: [768,3],
+            itemsDesktop : [1000,6],
+            itemsDesktopSmall : [900,5],
+            itemsDesktopSmall : [800,4],
+            itemsTablet: [768,4],
             itemsMobile : [479,3]
 
         });

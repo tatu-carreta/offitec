@@ -65,5 +65,5 @@ h1, h2, h3 {font-weight: 300}
 }
 
 @media screen and (max-width: 600px){
-	.contenedor-carousel a{height: 120px; padding-top: 40px }
+	.contenedor-carousel a{height: 120px; padding-top: 40px; font-size:0.9em }
 }
