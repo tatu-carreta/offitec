@@ -26,7 +26,7 @@ header {background: #000;}
 
 /* SLIDE HOME */
 .slideHome{min-height: auto; overflow: hidden; }
-.carousel-inner {position: relative; width: 100%; overflow: hidden; height:400px;}
+.carousel-inner {position: relative; width: 100%; overflow: hidden; }
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {width: 100%; margin: auto;}
 
 /* SLIDE HOME */
