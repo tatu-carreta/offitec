@@ -67,3 +67,24 @@ h1, h2, h3 {font-weight: 300}
 @media screen and (max-width: 600px){
 	.contenedor-carousel a{height: 120px; padding-top: 40px; font-size:0.9em }
 }
+
+@media screen and (max-width: 1200px){
+	#menuPrincipal a{padding: 0 20px !important;}
+}
+
+@media screen and (max-width: 950px){
+	#menuPrincipal a{padding: 0 15px !important;}
+}
+
+@media screen and (max-width: 900px){
+	#menuPrincipal {display: none;}
+}
+
+@media screen and (max-width: 900px){
+	.navbar-toggle {display: block; }
+}
+
+
+@media (min-width: 768px){
+.navbar-header {float: right !important;}
+}
