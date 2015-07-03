@@ -14,7 +14,7 @@ h1, h2, h3 {font-weight: 300}
 .carousel-control.left {background: none;}
 .carousel-control.right {background: none}
 /*.olw-item {width: 142px !important;}*/
-.contenedor-carousel a{display: block;height: 172px;color:#000;text-align: center;padding-top: 60px; text-decoration: none;color:#fff; font-family: helvetica;text-transform: uppercase;}
+.contenedor-carousel a{display: block;height: 172px;color:#000;text-align: center;padding-top: 60px; text-decoration: none;color:#fff; text-transform: uppercase;}
 .boton-naranja {background: rgba(255,117,3,0.8);}
 .boton-rojo {background: #D52318;}
 .boton-violeta {background: #70162F;}
