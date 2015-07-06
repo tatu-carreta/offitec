@@ -52,6 +52,28 @@ h1, h2, h3 {font-weight: 300}
 
 .progress {height: 12px;}
 
+/* SERVICIOS */
+.redes{width: 144px; height: 24px; float: right;}
+.redes a{background-image: url(../images/sprites-redes.png); width: 24px; height: 24px; display: inline-block;}
+.facebook{background-position: 0 -24px; }
+.google{background-position: 48px -24px;}
+.facebook:hover{background-position: 0 0px; }
+.google:hover{background-position: 48px 0px;}
+.col-md-6{margin-bottom: 40px;}
+h4{margin-bottom: 20px;font-size: 20px;}
+
+.info p{font-size: 16px;}
+
+/* CARRITO */
+.col-carrito {background-color: #F4F4EF; height: 790px; padding: 36px 46px; margin-bottom: 146px;}
+.col-carrito textarea.form-control {height: 185px;}
+.col-carrito .form-control{height: 50px;}
+.col-carrito label{font-size: 20px; font-weight: normal;}
+table .form-control {width: 68px; height: 43px;}
+.borde{border-bottom: 1px #DEDAD7 solid; margin-bottom: 30px;}
+
+
+
 /* ----------------------------- M E D I A  Q U E R Y ------------------------------------- */
 @media screen and (max-width: 1000px) {
 	#menuPrincipal a {padding: 0 1.250em !important }
