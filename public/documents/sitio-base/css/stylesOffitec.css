@@ -28,6 +28,23 @@ h1, h2, h3 {font-weight: 300 !important}
 
 .modal-header, .modal-footer {border: 0}
 
+/* SERVICIOS */
+.redes{width: 144px; height: 24px; float: right;}
+.redes a{background-image: url(../images/sprites-redes.png); width: 24px; height: 24px; display: inline-block;}
+.facebook{background-position: 0 -24px; }
+.google{background-position: 48px -24px;}
+.facebook:hover{background-position: 0 0px; }
+.google:hover{background-position: 48px 0px;}
+.col-md-6{margin-bottom: 40px;}
+h4{margin-bottom: 20px;font-size: 20px;}
+.info{margin-top: 167px;width: 567px;height: 139px; padding-top: 5px;background-color: #F4F4EF; text-align: center; font-size: 16px;}
+.info p{font-size: 16px;}
+
+
+
+
+
+
 /* -- M E D I A  Q U E R Y -- */
 @media screen and (max-width: 1000px) {
 	#menuPrincipal a {padding: 0 1.250em !important }

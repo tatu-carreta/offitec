@@ -1,8 +1,11 @@
-<ul class="listaNoticias @if(Auth::check()) sortable @endif">
+<div class="row sortable">
     @foreach($seccion -> items as $i)
-        <li>
+
+        <div class="col-md-3">
+            <div class="thumbnail">
             @if(Auth::check())
             <div class="iconos">
+                    <span class="pull-left">
                 @if(!$i->destacado())
                     @if(Auth::user()->can("destacar_item"))
                         <i onclick="destacarItemSeccion('{{URL::to('admin/item/destacar')}}', '{{$seccion->id}}', '{{$i->id}}');" class="fa fa-thumb-tack fa-lg"></i>
@@ -12,29 +15,23 @@
                         <i onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', '{{$seccion->id}}', '{{$i->id}}');" class="fa fa-thumb-tack prodDestacado fa-lg"></i>
                     @endif
                 @endif
-                <span class="floatRight">
+                    </span>
+                    <span class="pull-right">
                     @if(Auth::user()->can("editar_item"))
-                        <a href="{{URL::to('admin/portfolio/editar/'.$i->portfolio()->id.'/seccion')}}" data='{{$seccion->id}}'><i class="fa fa-pencil fa-lg"></i></a>
+                            <a href="{{URL::to('admin/'.$seccion->menuSeccion()->modulo()->nombre.'/editar/'.$i->id.'/seccion')}}" data='{{$seccion->id}}'><i class="fa fa-pencil fa-lg"></i></a>
                     @endif
                     @if(Auth::user()->can("borrar_item"))
                         <i onclick="borrarData('{{URL::to('admin/item/borrar')}}', '{{$i->id}}');" class="fa fa-times fa-lg"></i>
                     @endif
                 </span>
+                    <div class="clearfix"></div>
             </div>
             @endif
 
             @if(!Auth::check())
-                <a href="{{URL::to('portfolio/'.$i->url)}}">
+                <a href="#">
             @endif
-
-                    <div class="divImgNoticia">
                         <img class="lazy" data-original="@if(!is_null($i->imagen_destacada())){{ URL::to($i->imagen_destacada()->carpeta.$i->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="{{$i->titulo}}">
-                        @if(!is_null($i->imagen_destacada()))
-                        <p>{{$i->imagen_destacada()->epigrafe}}</p>
-                        @endif
-                    </div>
-
-                    <div class="clear"></div>
             @if(!Auth::check())
                 </a>
             @endif
@@ -42,6 +39,8 @@
             @if(Auth::check())
             <input type="hidden" name="orden[]" value="{{$i->id}}">
             @endif            		
-        </li>
+            </div>
+        </div>
+
     @endforeach
-</ul>
+</div>

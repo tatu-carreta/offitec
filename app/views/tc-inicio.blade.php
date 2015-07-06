@@ -9,10 +9,13 @@
     $(document).ready(function(){
         $("#owl-demo2").owlCarousel({
          
-            autoPlay: 2000, //Set AutoPlay to 3 seconds 
+            autoPlay: 2000, //Set AutoPlay to 3 seconds //itemsDesktop : [1199,3]
             items : 8,
-            itemsDesktop : [1199,8],
-            itemsDesktopSmall : [979,6]
+            itemsDesktop : [1000,6],
+            itemsDesktopSmall : [900,5],
+            itemsDesktopSmall : [800,4],
+            itemsTablet: [768,4],
+            itemsMobile : [479,3]
         });
     });
     </script>
@@ -40,7 +43,7 @@
                             <div class="col-md-12">
                                 <div class="thumbnail">
                                     @if(!Auth::check())
-                                    <a class="fancybox" href="{{URL::to($item->imagen_destacada()->ampliada()->carpeta.$item->imagen_destacada()->ampliada()->nombre)}}" title="{{ $item->imagen_destacada()->ampliada()->epigrafe }}">
+                                    <a class="fancybox" href="{{URL::to($item->imagen_destacada()->ampliada()->carpeta.$item->imagen_destacada()->ampliada()->nombre)}}" title="{{ $item->imagen_destacada()->ampliada()->epigrafe }}" rel='group'> 
                                     @endif
                                     <img class="lazy" src="@if(!is_null($item->imagen_destacada())){{ URL::to($item->imagen_destacada()->carpeta.$item->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="{{$item->titulo}}">
                                     @if(!Auth::check())
@@ -48,10 +51,12 @@
                                     @endif
                                     <div class="bandaProd @if($item->producto()->nuevo()) nuevos @elseif($item->producto()->oferta()) ofertas @endif">
                                         <span class="pull-left">{{ $item->titulo }}</span>
-                                        @if($c = Cart::search(array('id' => $item->producto()->id)))
-                                            <a href="{{URL::to('carrito/borrar/'.$item->producto()->id.'/'.$c[0].'/home')}}" class="carrito btn btn-default pull-right">Quitar de Carrito</a>
-                                        @else
-                                            <a href="{{URL::to('carrito/agregar/'.$item->producto()->id.'/home')}}" class="btn btn-default pull-right"><i class="fa fa-plus"></i>Presupuestar</a>
+                                        @if(!Auth::check())
+                                            @if($c = Cart::search(array('id' => $item->producto()->id)))
+                                                <a href="{{URL::to('carrito/borrar/'.$item->producto()->id.'/'.$c[0].'/home')}}" class="carrito btn btn-default pull-right">Quitar de Carrito</a>
+                                            @else
+                                                <a href="{{URL::to('carrito/agregar/'.$item->producto()->id.'/home')}}" class="btn btn-default pull-right"><i class="fa fa-plus"></i>Presupuestar</a>
+                                            @endif
                                         @endif
                                         <div class="clearfix"></div>
                                     </div>

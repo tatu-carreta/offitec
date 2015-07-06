@@ -51,15 +51,15 @@
             <div class="item"><a class="boton-naranja" href="#">muebles<br>gerenciales</a></div>
             <div class="item"><a class="boton-rojo" href="#">muebles<br>operativos</a></div>
             <div class="item"><a class="boton-violeta" href="#">mesas <br> de reunión</a></div>
-            <div class="item"><a class="boton-azul" href="#">mesas bajas</a></div>
+            <div class="item"><a class="boton-azul" href="#">mesas <br>bajas</a></div>
             <div class="item"><a class="boton-verde" href="#">muebles <br> de guardado</a></div>
             <div class="item"><a class="boton-naranja" href="#">asientos<br>gerenciales</a></div>
             <div class="item"><a class="boton-rojo" href="#">asientos<br>operativos</a></div>
-            <div class="item"><a class="boton-violeta" href="#">sillas de visita <br> y recepción</a></div>
-            <div class="item"><a class="boton-azul" href="#">sillones de visita <br> y recepción</a></div>
-            <div class="item"><a class="boton-verde" href="#">cortinas</a></div>
-            <div class="item"><a class="boton-naranja" href="#">accesorios</a></div>
-            <div class="item"><a class="boton-rojo" href="#">deco casa</a></div>
+            <div class="item"><a class="boton-violeta" href="#">sillas <br>de visita</a></div>
+            <div class="item"><a class="boton-azul" href="#">sillones <br>de visita</a></div>
+            <div class="item"><a class="boton-verde" href="#">cortinas<br> a medida</a></div>
+            <div class="item"><a class="boton-naranja" href="#">accesorios <br>y complementos</a></div>
+            <div class="item"><a class="boton-rojo" href="#">deco <br>casa</a></div>
         </div>
     </div>
 </div>    

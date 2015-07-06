@@ -1,4 +1,4 @@
-<div class="row sortable">
+<div class="row @if(Auth::check()) sortable @endif">
 @foreach($seccion -> items as $i)
 
     <div class="col-md-3 moduloItem">
@@ -48,20 +48,28 @@
         <div class="bandaProd @if($i->producto()->nuevo()) nuevos @elseif($i->producto()->oferta()) ofertas @endif">
             <p class="pull-left">{{ $i->titulo }}</p>
             {{-- <p class="marca">Marca: @if(!is_null($i->producto()->marca_principal())){{$i->producto()->marca_principal()->nombre}}@endif</p> --}}
-            @if($c = Cart::search(array('id' => $i->producto()->id)))
-                <a class="carrito btn btn-default pull-right" href="{{URL::to('carrito/borrar/'.$i->producto()->id.'/'.$c[0].'/seccion')}}">Quitar de Carrito</a>
-            @else
-                <a href="{{URL::to('carrito/agregar/'.$i->producto()->id.'/seccion')}}" class="btn btn-default pull-right"><i class="fa fa-plus"></i>Presupuestar</a>
-                {{-- <a class="carrito btn btn-default pull-right" href="{{URL::to('carrito/agregar/'.$i->producto()->id)}}">Agregar Carrito</a> --}}
+            @if(!Auth::check())
+                @if($c = Cart::search(array('id' => $i->producto()->id)))
+                    <a class="carrito btn btn-default pull-right" href="{{URL::to('carrito/borrar/'.$i->producto()->id.'/'.$c[0].'/seccion')}}">Quitar de Carrito</a>
+                @else
+                    <a href="{{URL::to('carrito/agregar/'.$i->producto()->id.'/seccion')}}" class="btn btn-default pull-right"><i class="fa fa-plus"></i>Presupuestar</a>
+                    {{-- <a class="carrito btn btn-default pull-right" href="{{URL::to('carrito/agregar/'.$i->producto()->id)}}">Agregar Carrito</a> --}}
+                @endif
             @endif
             <div class="clearfix"></div>
         </div>
+        @if($i->producto()->oferta())
+            <span class="precioOferta">OFERTA: Nuevo: ${{$i->producto()->precio(1)}}, Oferta: ${{$i->producto()->precio(2)}}</span>
+        @elseif($i->producto()->nuevo())
+            <span class="precioNuevo">NUEVO</span>
+        @endif
+        {{--
         @if($i->producto()->oferta())
             <span class="precio">Oferta: ${{$i->producto()->precio(1)}} ${{$i->producto()->precio(2)}}</span>
         @elseif($i->producto()->nuevo())
             <span>NUEVO</span>
         @endif
-
+        --}}
         {{-- <a class="detalle" href="{{URL::to('producto/'.$i->url)}}">Detalle</a>	--}}
         @if(Auth::check())
             <input type="hidden" name="orden[]" value="{{$i->id}}">

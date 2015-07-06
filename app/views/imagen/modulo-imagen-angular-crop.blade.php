@@ -43,7 +43,7 @@
             <div class="col-xs-4">
                 <label class="btn btn-primary"> Seleccionar archivo
                 <span>
-                    <input data='1' id="fileInput" type="file" nv-file-select="" uploader="uploader" name="imagen_portada_original" class='oculto file imagen'/>
+                    <input data='1' id="fileInput" type="file" nv-file-select="" uploader="uploader" name="imagen_portada_ampliada" class='oculto file imagen'/>
                 </span>
                 </label>
             </div>

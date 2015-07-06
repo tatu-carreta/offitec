@@ -13,7 +13,7 @@ class ImagenController extends BaseController {
 
     public function uploadImagenCrop() {
 
-        if (!empty(Input::hasFile('file'))) {
+        //if (!empty(Input::hasFile('file'))) {
             $img = Input::file('file');
 
             $path = public_path() . '/uploads/';
@@ -33,23 +33,23 @@ class ImagenController extends BaseController {
             $img->move($path, "small_" . $filename);
             $answer = array('answer' => 'File transfer completed', 'imagen_path' => "small_" . $filename);
             echo json_encode($answer);
-        } else {
-            echo 'No image';
-        }
+        //} else {
+        //    echo 'No image';
+        //}
     }
     
     public function uploadGaleriaSlideHome() {
 
-        if (!empty(Input::hasFile('file'))) {
+        //if (!empty(Input::hasFile('file'))) {
 
             $img_slide = Input::file('file');
 
             $respuesta = Imagen::uploadImageAngularSlide($img_slide);
 
             echo json_encode($respuesta);
-        } else {
-            echo 'No image';
-        }
+        //} else {
+        //    echo 'No image';
+        //}
         die();
     }
 

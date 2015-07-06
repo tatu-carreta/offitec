@@ -59,6 +59,7 @@ angular
 
                 var uploader = $scope.uploader = new FileUploader({
                     url: 'http://localhost/offitec/public/admin/imagen/crop/upload'
+                    //url: 'http://offitec.com/nuevo/public/admin/imagen/crop/upload'
                 });
 
                 // FILTERS
@@ -168,6 +169,7 @@ angular
 
                 var uploader = $scope.uploader = new FileUploader({
                     url: 'http://localhost/offitec/public/admin/imagen/slide/upload'
+                    // url: 'http://offitec.com/nuevo/public/admin/imagen/crop/upload'
                 });
 
                 // FILTERS
