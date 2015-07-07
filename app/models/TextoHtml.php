@@ -15,6 +15,8 @@ class TextoHtml extends Item {
 
         $input['descripcion'] = NULL;
         
+        $input['es_texto'] = true;
+        
         $item = Item::agregarItem($input);
 
         if (isset($input['cuerpo'])) {
