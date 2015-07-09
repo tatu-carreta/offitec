@@ -62,7 +62,11 @@ footer {margin-top: 1em; padding: 4em}
 
 /* ----------------------------- A D M I N ------------------------------------ */
 
-.sortable{cursor:move;}
+.divAlerta{position: fixed; bottom: 0; right: 1em; width: 300px; padding: 1em; z-index: 1000; font-size: 1.1em; }
+.ok{background: #599F00; color: white; }
+.error{background: #E5352D; color: white;}
+.sortable div{cursor:move;}
+.cursor-move{cursor: move !important;}
 
 .divLogin{margin: 100px auto 250px auto; width: 300px;  }
 /*.divLogin input[type="text"], .divLogin input[type="password"] {width: 100%; margin-bottom: 20px}

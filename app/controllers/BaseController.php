@@ -110,7 +110,7 @@ class BaseController extends Controller {
 
         return $items;
     }
-    
+
     protected function itemsNuevos($limit) {
         /*
          * FILTRO PARA MOSTRAR SOLAMENTE LOS MENU PADRE
@@ -118,6 +118,7 @@ class BaseController extends Controller {
         $items_destacados = DB::table('item')
                 ->join('item_seccion', 'item.id', '=', 'item_seccion.item_id')
                 ->join('seccion', 'item_seccion.seccion_id', '=', 'seccion.id')
+                ->join('producto', 'item.id', '=', 'producto.item_id')
                 ->where('item.estado', 'A')
                 ->where('item_seccion.estado', 'A')
                 ->where('item_seccion.destacado', 'N')
@@ -140,7 +141,7 @@ class BaseController extends Controller {
 
         return $items;
     }
-    
+
     protected function itemsOferta($limit) {
         /*
          * FILTRO PARA MOSTRAR SOLAMENTE LOS MENU PADRE
@@ -148,6 +149,7 @@ class BaseController extends Controller {
         $items_destacados = DB::table('item')
                 ->join('item_seccion', 'item.id', '=', 'item_seccion.item_id')
                 ->join('seccion', 'item_seccion.seccion_id', '=', 'seccion.id')
+                ->join('producto', 'item.id', '=', 'producto.item_id')
                 ->where('item.estado', 'A')
                 ->where('item_seccion.estado', 'A')
                 ->where('item_seccion.destacado', 'O')
@@ -202,4 +204,5 @@ class BaseController extends Controller {
 
         return $secciones_estaticas;
     }
+
 }

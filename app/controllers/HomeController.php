@@ -26,9 +26,9 @@ class HomeController extends BaseController {
                         array_push($items_home, $item);
                     }
 
-                    $ultimos_productos = Item::where('estado', 'A')->whereNotIn('id', $destacados)->orderBy('fecha_modificacion', 'desc')->skip(0)->take(8 - count($items_home))->get();
+                    $ultimos_productos = Item::where('estado', 'A')->join('producto', 'item.id', '=', 'producto.item_id')->whereNotIn('item.id', $destacados)->orderBy('item.fecha_modificacion', 'desc')->skip(0)->take(8 - count($items_home))->get();
                 } else {
-                    $ultimos_productos = Item::where('estado', 'A')->orderBy('fecha_modificacion', 'desc')->skip(0)->take(8 - count($items_home))->get();
+                    $ultimos_productos = Item::where('estado', 'A')->join('producto', 'item.id', '=', 'producto.item_id')->orderBy('item.fecha_modificacion', 'desc')->skip(0)->take(8 - count($items_home))->get();
                 }
 
                 foreach ($ultimos_productos as $item_ul) {

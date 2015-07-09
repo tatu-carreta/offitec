@@ -34,9 +34,7 @@
 <script src="{{URL::to('js/producto-funcs.js')}}"></script>
 <section class="container">
         {{ Form::open(array('url' => 'admin/producto/agregar', 'files' => true, 'role' => 'form')) }}
-            <h2 class="marginBottom2"><span>Carga y modificación de productos</span></h2>
-            <div id="error" class="error" style="display:none"><span></span></div>
-            <div id="correcto" class="correcto ok" style="display:none"><span></span></div>
+            <h2 class="marginBottom2"><span>Nuevo producto</span></h2>
 
         <div class="row datosProducto marginBottom2">
             <!-- Abre columna de descripción de Producto -->
@@ -54,9 +52,17 @@
                 <h3>Estado</h3>
                 <div class="marginBottom2">
                     <div class="fondoDestacado marginBottom05">
-                        <div class="">
+                        <div class="radio">
                             <label>
-                                <input id="" class="" type="checkbox" name="" value="">
+                                <input id="" class="" type="radio" name="item_destacado" value="B" checked="true">
+                                Normal
+                            </label>
+                        </div>
+                    </div>
+                    <div class="fondoDestacado marginBottom05">
+                        <div class="radio">
+                            <label>
+                                <input id="" class="" type="radio" name="item_destacado" value="N">
                                 Nuevo
                             </label>
                         </div>
@@ -64,19 +70,21 @@
                     <div class="fondoDestacado marginBottom05">
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="">
-                                    <input id="" class="" type="checkbox" name="" value="">
-                                    Oferta
+                                <div class="radio">
+                                    <label>
+                                        <input id="" class="class_checkbox precioDisabled" type="radio" name="item_destacado" value="O">
+                                        Oferta
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="" >
+                                    Precio Antes $ <input id="" class="form-control inputWidth80 precioAble" type="text" name="" value="" disabled="true">
                                 </label>
                             </div>
                             <div class="col-md-4">
                                 <label for="" >
-                                    Precio Antes $ <input id="" class="form-control inputWidth80" type="text" name="" value="">
-                                </label>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="" >
-                                    Precio Después $ <input id="" class="form-control inputWidth80" type="text" name="" value="">
+                                    Precio Después $ <input id="" class="form-control inputWidth80 precioAble" type="text" name="" value="" disabled="true">
                                 </label>
                             </div>    
                         </div>
@@ -84,24 +92,6 @@
                     <p>Los productos nuevos y las ofertas se muestran en la home</p>
                 </div>
 
-                <!-- Destacar producto  -->
-                <div class="fondoDestacado marginBottom2">
-                    <div class="class_checkbox marginBottom1">
-                        <label for="destacarProducto" class="destacarProducto noTocado">
-                            <input id="destacarProducto" class="precioDisabled check_box" type="checkbox" name="item_destacado" value="A">
-                            <span class="spanDestacarProd">Destacar este producto</span>
-                        </label>
-                    </div>
-
-                    <p>Los últimos 5 productos destacados se muestran en la home.<br>
-                        Los productos destacados deben tener precio</p>
-
-                    <div class="form-group">
-                        <label for="precio">Precio</label><span>$</span>
-                        <input type="text" name="precio" disabled="true" class="precioAble"> 
-                    </div>
-                </div>
-                
                 <div class="fondoDestacado modIndicarSeccion">
                     <h3>Ubicación</h3>
                         @foreach($menues as $men)

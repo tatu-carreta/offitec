@@ -16,9 +16,18 @@ class Item extends Eloquent {
 
         //Se definen las reglas con las que se van a validar los datos..
         $reglas = array(
-            'titulo' => array('max:50', 'unique:item'),
+//'titulo' => array('max:50', 'unique:item'),
             'seccion_id' => array('integer'),
+            'imagen_portada_crop' => array('required'),
         );
+
+        if (isset($input['titulo']) && ($input['titulo'] != "")) {
+            $reglas['titulo'] = array('max:50', 'unique:item');
+        }
+
+        if (isset($input['es_texto']) && ($input['es_texto'])) {
+            unset($reglas['imagen_portada_crop']);
+        }
 
         if (isset($input['file']) && ($input['file'] != "") && (!is_array($input['file']))) {
             $reglas['x'] = array('required');
@@ -32,7 +41,10 @@ class Item extends Eloquent {
 
         if ($validator->fails()) {
             // $respuesta['mensaje'] = "No se pudo realizar la carga del producto. Compruebe los campos.";
-            $respuesta['mensaje'] = $validator->messages()->first('titulo');
+            $respuesta['mensaje'] = $validator->messages()->first('imagen_portada_crop');
+            if (isset($input['titulo']) && ($input['titulo'] != "")) {
+                $respuesta['mensaje'] = $validator->messages()->first('titulo');
+            }
             //Si está todo mal, carga lo que corresponde en el mensaje.
 
             $respuesta['error'] = true;
@@ -205,8 +217,21 @@ class Item extends Eloquent {
             //if ($input['seccion_id'] != "") {
             if (count($secciones) > 0) {
 
-                if (isset($input['item_destacado']) && ($input['item_destacado'] == 'A')) {
-                    $destacado = 'A';
+                if (isset($input['item_destacado'])) {
+                    switch ($input['item_destacado']) {
+                        case 'A':
+                            $destacado = 'A';
+                            break;
+                        case 'N':
+                            $destacado = 'N';
+                            break;
+                        case 'O':
+                            $destacado = 'O';
+                            break;
+                        default :
+                            $destacado = NULL;
+                            break;
+                    }
                 } else {
                     $destacado = NULL;
                 }
@@ -257,7 +282,7 @@ class Item extends Eloquent {
         $respuesta = array();
 
         $reglas = array(
-            'titulo' => array('max:50', 'unique:item,titulo,' . $input['id']),
+                //'titulo' => array('max:50', 'unique:item,titulo,' . $input['id']),
         );
 
         if (isset($input['file']) && ($input['file'] != "") && (!is_array($input['file']))) {
@@ -267,10 +292,14 @@ class Item extends Eloquent {
             $reglas['w'] = array('required');
         }
 
+        if (isset($input['imagen_portada_crop']) && ($input['imagen_portada_crop'] != "")) {
+            $reglas['imagen_portada_crop'] = array('required');
+        }
+
         $validator = Validator::make($input, $reglas);
 
         if ($validator->fails()) {
-            $respuesta['mensaje'] = $validator->messages()->first('titulo');
+            $respuesta['mensaje'] = '';
             $respuesta['error'] = true;
         } else {
 
@@ -403,9 +432,24 @@ class Item extends Eloquent {
                 }
             }
 
+            if (isset($input['imagen_crop_editar']) && ($input['imagen_crop_editar'] != "")) {
+                if (is_array($input['imagen_crop_editar'])) {
+                    foreach ($input['imagen_crop_editar'] as $key => $imagen) {
+                        if ($imagen != "") {
+
+                            $datos = array(
+                                'id' => $imagen,
+                                'epigrafe' => $input['epigrafe_imagen_crop_editar'][$key]
+                            );
+
+                            $imagen_crop = Imagen::editar($datos);
+                        }
+                    }
+                }
+            }
+
             if (isset($input['imagen_portada_crop']) && ($input['imagen_portada_crop'] != "")) {
                 if (is_array($input['imagen_portada_crop'])) {
-                    $i = 0;
                     foreach ($input['imagen_portada_crop'] as $key => $imagen) {
                         if ($imagen != "") {
 
@@ -424,18 +468,13 @@ class Item extends Eloquent {
                             $imagen_crop = Imagen::agregarImagenCropped($imagen, $ampliada, $epigrafe_imagen_portada);
 
                             if (!$imagen_crop['error']) {
-                                if ($i == 0) {
-                                    $destacado = array(
-                                        "destacado" => "A"
-                                    );
-                                } else {
-                                    $destacado = array(
-                                        "destacado" => NULL
-                                    );
-                                }
+
+                                $destacado = array(
+                                    "destacado" => NULL
+                                );
+
                                 $item->imagenes()->attach($imagen_crop['data']->id, $destacado);
                             }
-                            $i++;
                         }
                     }
                 } else {
@@ -840,6 +879,6 @@ class Item extends Eloquent {
 
     public function muestra() {
         return Muestra::where('item_id', $this->id)->first();
-}
+    }
 
 }

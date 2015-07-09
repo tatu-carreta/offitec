@@ -7,8 +7,10 @@
             <div class="iconos">
             <span class="pull-left">
                 @if(!$i->producto()->nuevo())
-                    @if(Auth::user()->can("destacar_item"))
-                        <i onclick="destacarItemSeccion('{{URL::to('admin/producto/nuevo')}}', '{{$seccion->id}}', '{{$i->id}}');" class="fa fa-thumb-tack fa-lg"></i>
+                    @if(!$i->producto()->oferta())
+                        @if(Auth::user()->can("destacar_item"))
+                            <i onclick="destacarItemSeccion('{{URL::to('admin/producto/nuevo')}}', '{{$seccion->id}}', '{{$i->id}}');" class="fa fa-thumb-tack fa-lg"></i>
+                        @endif
                     @endif
                 @else
                     @if(Auth::user()->can("quitar_destacado_item"))
@@ -17,7 +19,7 @@
                 @endif
                 @if(!$i->producto()->oferta())
                     @if(Auth::user()->can("destacar_item"))
-                        <a href="{{URL::to('admin/producto/oferta/'.$i->producto()->id.'/'.$seccion->id.'/seccion')}}" class="destacarProducto"><i  class="fa fa-thumb-tack fa-lg"></i></a>
+                        <a href="{{URL::to('admin/producto/oferta/'.$i->producto()->id.'/'.$seccion->id.'/seccion')}}" class="popup-nueva-seccion"><i  class="fa fa-thumb-tack fa-lg"></i></a>
                     @endif
                 @else
                     @if(Auth::user()->can("quitar_destacado_item"))

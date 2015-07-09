@@ -81,21 +81,6 @@
         <input class="form-control" type="text" name="epigrafe_imagen_portada" placeholder="Ingrese una descripción de la foto (opcional)">
 
         <div style="margin-bottom: 40px;margin-top: 20px;">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th width="50%">Nombre</th>
-                        <th ng-show="uploader.isHTML5">Peso</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="item in uploader.queue">
-                        <td><strong><% item.file.name %></strong></td>
-                        <td ng-show="uploader.isHTML5" nowrap><% item.file.size / 1024 / 1024|number:2 %> MB</td>
-                    </tr>
-                </tbody>
-            </table>
-
             <div>
                 <div>
                     Progreso de carga
