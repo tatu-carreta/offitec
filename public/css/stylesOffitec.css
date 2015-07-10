@@ -6,26 +6,26 @@ h1, h2, h3 {font-weight: 300}
 #owl-demo2 .item {margin: 0px;}
 #owl-demo2 .item img {display: block; width: 100%; height: auto;}
 
+
 .carousel-home .owl-pagination {margin-top: 10px; text-align: center;display: none;}
-.carousel-home {width: 90%; margin:0 auto;}
-.contenedor-carousel {width: 100%; background:#000;}
+.carousel-home {width: 100%; margin:0 auto;}
 .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {position: absolute;top: 50%;z-index: 5; display: inline-block;height: auto;}
 .carousel-indicators {display: none}
 .carousel-control.left {background: none;}
 .carousel-control.right {background: none}
 /*.olw-item {width: 142px !important;}*/
-.contenedor-carousel a{display: block;height: 150px;color:#000;text-align: center;padding-top: 60px; text-decoration: none;color:#fff; text-transform: uppercase;}
+.contenedor-carousel a{display: block;height: 130px;text-align: center;padding-top: 40px;color:#fff; text-transform: uppercase;}
 .boton-naranja {background: rgba(255,117,3,0.8);}
 .boton-rojo {background: #D52318;}
 .boton-violeta {background: #70162F;}
 .boton-azul {background: #142B3A;}
 .boton-verde {background: #1D6A0E;}
 
-.presentacion {text-align: center; color: #70162F; font-size: 1.250em; line-height: 1.5em; width: 60%; margin: 0 auto 2em}
+.presentacion {text-align: center; color: #70162F; font-size: 1.250em; line-height: 1.5em; width: 70%; margin: 0 auto 2em;letter-spacing: 0.2px;}
 
 .info{background-color: #F4F4EF; width: 49.8%;height: 100%; text-align: center; padding-top: 5px; border-bottom: 5px solid #fff; display: inline-block; }
 .mapa{width: 100%; height: 224px; border: 0;}
-
+.fondo-negro{width: 100%;height: 130px;background-color: #000;}
 
 
 /* Estilos Fichas de Productos*/
