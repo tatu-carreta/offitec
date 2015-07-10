@@ -35,7 +35,7 @@ class Producto extends Item {
                     );
                     $producto->precios()->attach(2, $valores);
                 }
-                
+
                 if (isset($input['item_destacado']) && ($input['item_destacado'] == 'O')) {
                     if (isset($input['precio_antes']) && ($input['precio_antes'] != "")) {
 
@@ -109,6 +109,10 @@ class Producto extends Item {
             'titulo' => array('required', 'max:50', 'unique:item,titulo,' . $input['id']),
         );
 
+        if (isset($input['imagen_portada_crop'])) {
+            $reglas['imagen_portada_crop'] = array('required');
+        }
+        
         $validator = Validator::make($input, $reglas);
 
         if ($validator->fails()) {
@@ -143,6 +147,39 @@ class Producto extends Item {
                 );
                 $producto->precios()->attach(2, $valores);
             }
+
+
+            if (isset($input['item_destacado']) && ($input['item_destacado'] == 'O')) {
+                if (isset($input['precio_antes']) && ($input['precio_antes'] != "")) {
+
+                    $datos = array(
+                        "producto_id" => $producto->id,
+                        "tipo_precio_id" => 1,
+                    );
+                    $baja_producto_precio = DB::table('producto_precio')->where($datos)->update(array('estado' => 'B'));
+
+                    $valores = array(
+                        "valor" => $input['precio_antes'],
+                        "estado" => "A"
+                    );
+                    $producto->precios()->attach(1, $valores);
+                }
+                if (isset($input['precio_actual']) && ($input['precio_actual'] != "")) {
+
+                    $datos = array(
+                        "producto_id" => $producto->id,
+                        "tipo_precio_id" => 2,
+                    );
+                    $baja_producto_precio = DB::table('producto_precio')->where($datos)->update(array('estado' => 'B'));
+
+                    $valores = array(
+                        "valor" => $input['precio_actual'],
+                        "estado" => "A"
+                    );
+                    $producto->precios()->attach(2, $valores);
+                }
+            }
+
 
             if (isset($input['marca_principal']) && ($input['marca_principal'] != "")) {
                 $datos = array(

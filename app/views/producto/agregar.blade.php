@@ -42,7 +42,7 @@
 
                 <!-- Nombre del producto -->
                 <div>
-                    <h3>Nombre y modelo del producto</h3>
+                    <h3>Código del producto</h3>
                     <div class="form-group marginBottom2">
                         <input class="form-control" type="text" name="titulo" placeholder="Código" required="true" maxlength="50">
                     </div>
