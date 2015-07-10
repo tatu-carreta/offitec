@@ -46,3 +46,16 @@ $(function () {
         }
     });
 });
+
+$(document).ready(function () {
+    var oferta = $(".precioDisabled");
+
+    $(".precioAble1").keyup(function () {
+        if ($(this).val() != "") {
+            oferta.prop("checked", true);
+        } else {
+
+            oferta.removeProp('checked');
+        }
+    });
+});

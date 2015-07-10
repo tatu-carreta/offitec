@@ -32,7 +32,7 @@
 </style>
 <script src="{{URL::to('js/ckeditorLimitado.js')}}"></script>
 <script src="{{URL::to('js/producto-funcs.js')}}"></script>
-<section class="container">
+<section class="container">    
         {{ Form::open(array('url' => 'admin/producto/agregar', 'files' => true, 'role' => 'form')) }}
             <h2 class="marginBottom2"><span>Nuevo producto</span></h2>
 
@@ -51,18 +51,20 @@
                 <!-- Estado  -->
                 <h3>Estado</h3>
                 <div class="marginBottom2">
+                    <!--
                     <div class="fondoDestacado marginBottom05">
                         <div class="radio">
                             <label>
-                                <input id="" class="" type="radio" name="item_destacado" value="B" checked="true">
+                                <input id="" class="" type="checkbox" name="item_destacado" value="B" checked="true">
                                 Normal
                             </label>
                         </div>
                     </div>
+                    -->
                     <div class="fondoDestacado marginBottom05">
                         <div class="radio">
                             <label>
-                                <input id="" class="" type="radio" name="item_destacado" value="N">
+                                <input id="" class="" type="checkbox" name="item_destacado" value="N">
                                 Nuevo
                             </label>
                         </div>
@@ -72,19 +74,19 @@
                             <div class="col-md-4">
                                 <div class="radio">
                                     <label>
-                                        <input id="" class="class_checkbox precioDisabled" type="radio" name="item_destacado" value="O">
+                                        <input id="" class=" precioDisabled" type="checkbox" name="item_destacado" value="O">
                                         Oferta
                                     </label>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <label for="" >
-                                    Precio Antes $ <input id="" class="form-control inputWidth80 precioAble" type="text" name="" value="" disabled="true">
+                                    Precio Antes $ <input id="" class="form-control inputWidth80 precioAble1" type="text" name="precio_antes" value="">
                                 </label>
                             </div>
                             <div class="col-md-4">
                                 <label for="" >
-                                    Precio Después $ <input id="" class="form-control inputWidth80 precioAble" type="text" name="" value="" disabled="true">
+                                    Precio Después $ <input id="" class="form-control inputWidth80 precioAble" type="text" name="precio_actual" value="">
                                 </label>
                             </div>    
                         </div>

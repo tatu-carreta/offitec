@@ -34,7 +34,13 @@ class HomeController extends BaseController {
                 foreach ($ultimos_productos as $item_ul) {
                     array_push($items_home, $item_ul);
                 }
+            } else {
+                foreach ($items_nuevos as $item) {
+                    array_push($items_home, $item);
+                }
             }
+        } else {
+            $items_home = $items_oferta;
         }
         /*
           $items_nuevos = parent::itemsNuevos();
