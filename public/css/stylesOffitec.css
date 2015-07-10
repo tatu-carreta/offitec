@@ -71,6 +71,8 @@ h4{margin-bottom: 20px;font-size: 20px;}
 td{vertical-align: middle !important;}
 .fa-remove:before, .fa-close:before, .fa-times:before {color: #000;}
 
+.mapa{border-top: 3px solid #fff;}
+
 /* ----------------------------- M E D I A  Q U E R Y ------------------------------------- */
 @media screen and (max-width: 1000px) {
 	#menuPrincipal a {padding: 0 1.250em !important }
