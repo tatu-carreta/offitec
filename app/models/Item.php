@@ -16,7 +16,7 @@ class Item extends Eloquent {
 
         //Se definen las reglas con las que se van a validar los datos..
         $reglas = array(
-//'titulo' => array('max:50', 'unique:item'),
+            'titulo' => array('max:50', 'unique:item'),
             'seccion_id' => array('integer'),
             'imagen_portada_crop' => array('required'),
         );
@@ -283,6 +283,7 @@ class Item extends Eloquent {
 
         $reglas = array(
                 //'titulo' => array('max:50', 'unique:item,titulo,' . $input['id']),
+            //'imagen_portada_crop' => array('required')
         );
 
         if (isset($input['file']) && ($input['file'] != "") && (!is_array($input['file']))) {
@@ -290,10 +291,6 @@ class Item extends Eloquent {
             $reglas['y'] = array('required');
             $reglas['h'] = array('required');
             $reglas['w'] = array('required');
-        }
-
-        if (isset($input['imagen_portada_crop']) && ($input['imagen_portada_crop'] != "")) {
-            $reglas['imagen_portada_crop'] = array('required');
         }
 
         $validator = Validator::make($input, $reglas);
@@ -495,7 +492,82 @@ class Item extends Eloquent {
                     $item->imagenes()->attach($imagen_crop['data']->id, array("destacado" => "A"));
                 }
             }
+            
+            $secciones = array();
 
+            if (isset($input['secciones']) && (is_array($input['secciones'])) && (count($input['secciones']) > 0)) {
+                $secciones = $input['secciones'];
+            }
+
+            if (isset($input['seccion_id']) && ($input['seccion_id'] != "")) {
+                array_push($secciones, $input['seccion_id']);
+            }
+
+            //Le asocia la seccion y por lo tanto la categoria correspondiente
+            //if ($input['seccion_id'] != "") {
+            if (count($secciones) > 0) {
+
+                foreach ($item->secciones as $seccion) {
+                    $data_borrar = array(
+                        'item_id' => $item->id,
+                        'seccion_id' => $seccion->id
+                    );
+
+                    $item->borrarItemSeccion($data_borrar);
+                }
+                
+                if (isset($input['item_destacado'])) {
+                    switch ($input['item_destacado']) {
+                        case 'A':
+                            $destacado = 'A';
+                            break;
+                        case 'N':
+                            $destacado = 'N';
+                            break;
+                        case 'O':
+                            $destacado = 'O';
+                            break;
+                        default :
+                            $destacado = NULL;
+                            break;
+                    }
+                } else {
+                    $destacado = NULL;
+                }
+
+                $info = array(
+                    'estado' => 'A',
+                    'destacado' => $destacado
+                );
+
+                $item->secciones()->attach($secciones, $info);
+
+                foreach ($secciones as $seccion_id) {
+                    //ME QUEDO CON LA SECCION CORRESPONDIENTE
+                    //$seccion = Seccion::find($input['seccion_id']);
+                    $seccion = Seccion::find($seccion_id);
+
+                    //ME QUEDO CON EL MENU AL CUAL PERTENECE LA SECCION
+
+                    foreach ($seccion->menu as $menu) {
+                        $menu_id = $menu->id;
+                    }
+
+                    $menu = Menu::find($menu_id);
+
+                    //ME QUEDO CON LA CATEGORIA AL CUAL PERTENECE EL MENU
+                    foreach ($menu->categorias as $categoria) {
+                        $categoria_id = $categoria->id;
+                    }
+
+                    //IMPACTO AL ITEM CON LA CATEGORIA CORRESPONDIENTE
+
+                    if (isset($categoria_id)) {
+                        $item->categorias()->attach($categoria_id);
+                    }
+                }
+            }
+/*
             if (isset($input['secciones']) && (count($input['secciones']) > 0)) {
                 foreach ($item->secciones as $seccion) {
                     $data_borrar = array(
@@ -545,6 +617,8 @@ class Item extends Eloquent {
                     }
                 }
             }
+ * 
+ */
             /*
               if (isset($input['seccion_nueva_id']) && ($input['seccion_nueva_id'] != "")) {
               if ($item->seccionItem()->id != $input['seccion_nueva_id']) {
