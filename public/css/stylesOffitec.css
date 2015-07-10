@@ -14,7 +14,7 @@ h1, h2, h3 {font-weight: 300}
 .carousel-control.left {background: none;}
 .carousel-control.right {background: none}
 /*.olw-item {width: 142px !important;}*/
-.contenedor-carousel a{display: block;height: 172px;color:#000;text-align: center;padding-top: 60px; text-decoration: none;color:#fff; text-transform: uppercase;}
+.contenedor-carousel a{display: block;height: 150px;color:#000;text-align: center;padding-top: 60px; text-decoration: none;color:#fff; text-transform: uppercase;}
 .boton-naranja {background: rgba(255,117,3,0.8);}
 .boton-rojo {background: #D52318;}
 .boton-violeta {background: #70162F;}
@@ -23,7 +23,7 @@ h1, h2, h3 {font-weight: 300}
 
 .presentacion {text-align: center; color: #70162F; font-size: 1.250em; line-height: 1.5em; width: 60%; margin: 0 auto 2em}
 
-.info{background-color: #F4F4EF; height: 139px; text-align: center; padding-top: 5px; border-bottom: 5px solid #fff; }
+.info{background-color: #F4F4EF; width: 48%;height: 100%; text-align: center; padding-top: 5px; border-bottom: 5px solid #fff; display: inline-block; }
 .mapa{width: 100%; height: 224px; border: 0;}
 
 
@@ -65,14 +65,11 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .info p{font-size: 16px;}
 
 /* CARRITO */
-.col-carrito {background-color: #F4F4EF; height: 790px; padding: 36px 46px; margin-bottom: 146px;}
-.col-carrito textarea.form-control {height: 185px;}
-.col-carrito .form-control{height: 50px;}
+.col-carrito {vertical-align: top;background-color: #F4F4EF; width: 48%; height: 100%;padding: 2% 3%; margin-bottom:146px;display: inline-block;}
 .col-carrito label{font-size: 20px; font-weight: normal;}
-table .form-control {width: 68px; height: 43px;}
-.borde{border-bottom: 1px #DEDAD7 solid; margin-bottom: 30px;}
-
-
+.borde{border-top: 1px #DEDAD7 solid; padding-top: 30px;}
+td{vertical-align: middle !important;}
+.fa-remove:before, .fa-close:before, .fa-times:before {color: #000;}
 
 /* ----------------------------- M E D I A  Q U E R Y ------------------------------------- */
 @media screen and (max-width: 1000px) {
