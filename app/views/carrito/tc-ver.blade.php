@@ -35,33 +35,33 @@
                     </div>
                     <div class="col-carrito">
                         <h3>Complete sus datos</h3>
-                        <form  class="borde" role="form">
+                        {{ Form::open(array('url' => 'pedido/agregar', 'class' => 'borde', 'role' => 'form')) }}
                             <div class="form-group">
                                 <label for="ejemplo_email_1">Nombre y apellido</label>
-                                <input type="email" class="form-control" id="ejemplo_email_1"
-                                       placeholder="">
+                                <input type="type" class="form-control" id="ejemplo_email_1"
+                                       placeholder="" name="nombre">
                             </div>
                             <div class="form-group">
                                 <label for="ejemplo_password_1">Empresa</label>
-                                <input type="password" class="form-control" id="ejemplo_password_1" 
-                                       placeholder="">
+                                <input type="type" class="form-control" id="ejemplo_password_1" 
+                                       placeholder="" name="empresa">
                             </div>
                             <div class="form-group">
-                                <label for="ejemplo_password_1">email</label>
-                                <input type="password" class="form-control" id="ejemplo_password_1" 
-                                       placeholder="">
+                                <label for="ejemplo_password_1">Email</label>
+                                <input type="email" class="form-control" id="ejemplo_password_1" 
+                                       placeholder="" name="email">
                             </div>
                             <div class="form-group">
                                 <label for="ejemplo_password_1">Teléfono</label>
-                                <input type="password" class="form-control" id="ejemplo_password_1" 
-                                       placeholder="">
+                                <input type="type" class="form-control" id="ejemplo_password_1" 
+                                       placeholder="" name="telefono">
                             </div>
                             <div class="form-group">
                                 <label for="ejemplo_password_1">Comentarios</label>
-                                <textarea class="form-control" rows="3"></textarea>
+                                <textarea class="form-control" rows="3" name="consulta"></textarea>
                             </div>
                             <button type="submit" class="btn btn-default">Enviar</button>
-                        </form>
+                        {{ Form::close() }}
                     </div>
                 </div>
             </div>

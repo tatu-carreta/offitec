@@ -66,7 +66,7 @@ Route::post('consulta', 'ClienteController@consultaContacto');
 
 Route::post('registrar-newsletter', 'ClienteController@registrar');
 
-Route::get('/carrito', 'CarritoController@vistaListado');
+Route::get('carrito', 'CarritoController@vistaListado');
 
 Route::get('carrito/agregar/{producto_id}/{continue}', 'CarritoController@agregarProducto');
 
@@ -76,7 +76,7 @@ Route::get('carrito/borrar/{producto_id}/{rowId}/{continue}', 'CarritoController
 
 Route::get('carrito/borrar', 'CarritoController@borrar');
 
-Route::get('pedido/agregar', 'PedidoController@agregarPedido');
+Route::post('pedido/agregar', 'PedidoController@agregarPedido');
 
 // Para todas estas rutas el usuario debe haber iniciado sesión. 
 Route::group(array('before' => 'auth'), function() {
@@ -348,6 +348,12 @@ Route::group(array('before' => 'auth'), function() {
     Route::get('admin/direccion/alta', 'DireccionController@vistaAgregar');
 
     Route::post('admin/direccion/agregar', 'DireccionController@agregar');
+    
+    //TELEFONO
+    
+    Route::get('admin/telefono/alta', 'TelefonoController@vistaAgregar');
+
+    Route::post('admin/telefono/agregar', 'TelefonoController@agregar');
     
     //PERSONA
     

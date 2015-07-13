@@ -35,9 +35,10 @@ class PedidoController extends BaseController {
         //Levanto los datos del formulario del presupuesto para
         //generar la persona correspondiente al pedido
         $datos_persona = array(
-            'email' => 'prueba@prueba.com',
-            'apellido' => 'Apellido',
-            'nombre' => 'Nombre'
+            'email' => Input::get('email'),
+            'apellido' => Input::get('nombre'),
+            'tipo_telefono_id' => 2,
+            'telefono' => Input::get('telefono')
         );
 
         $persona = Persona::agregar($datos_persona);
@@ -49,6 +50,19 @@ class PedidoController extends BaseController {
 
         $respuesta = Pedido::agregar($datos_pedido);
 
+        if ($respuesta['error']) {
+
+            return Redirect::to('/carrito')->with('mensaje', $respuesta['mensaje'])->with('error', true);
+        } else {
+
+            $this->resumenPedido($datos_persona);
+
+            Cart::destroy();
+
+            Session::forget('carrito');
+
+            return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
+        }
 
         /*
           switch ($continue) {
@@ -71,11 +85,6 @@ class PedidoController extends BaseController {
          * 
          */
         //CIERRO EL CARRITO
-        Cart::destroy();
-
-        Session::forget('carrito');
-
-        return Redirect::to('/')->with('mensaje', $respuesta['mensaje']);
     }
 
     public function editarProducto($producto_id, $rowId) {
@@ -132,6 +141,29 @@ class PedidoController extends BaseController {
         $respuesta = Carrito::borrar();
 
         return Redirect::to('/carrito')->with('mensaje', $respuesta['mensaje']);
+    }
+
+    public function resumenPedido($info) {
+
+        $data = $info;
+        $this->array_view['data'] = $info;
+
+        Mail::send('emails.consulta-pedido', $this->array_view, function($message) use($data) {
+            $message->from($data['email'], $data['nombre'])
+                    ->to('max.-ang@hotmail.com.ar')
+                    ->subject('Pedido de presupuesto')
+            ;
+        });
+
+        if (count(Mail::failures()) > 0) {
+            $mensaje = 'El mail no pudo enviarse.';
+        } else {
+
+            //$data['nombre_apellido'] = $data['nombre'];
+            //Cliente::agregar($data);
+
+            $mensaje = 'El mail se envió correctamente';
+        }
     }
 
 }

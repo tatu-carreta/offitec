@@ -1,11 +1,11 @@
 <?php
 
-class Persona extends Eloquent {
+class Telefono extends Eloquent {
 
     //Tabla de la BD
-    protected $table = 'persona';
+    protected $table = 'telefono';
     //Atributos que van a ser modificables
-    protected $fillable = array('apellido', 'nombre', 'email', 'fecha_nacimiento', 'direccion_id', 'fecha_carga', 'fecha_baja', 'usuario_id_carga', 'usuario_id_baja', 'estado');
+    protected $fillable = array('tipo_telefono_id', 'caracteristica', 'numero', 'fecha_carga', 'fecha_baja', 'usuario_id_carga', 'usuario_id_baja', 'estado');
     //Hace que no se utilicen los default: create_at y update_at
     public $timestamps = false;
 
@@ -14,60 +14,31 @@ class Persona extends Eloquent {
         $respuesta = array();
 
         $reglas = array(
-            'email' => array('required'),
+            'tipo_telefono_id' => array('required'),
+            'telefono' => array('required'),
         );
-
+        
         $validator = Validator::make($input, $reglas);
 
         if ($validator->fails()) {
             $respuesta['mensaje'] = $validator;
             $respuesta['error'] = true;
         } else {
-
+            
             $datos = array(
-                'email' => $input['email'],
+                'tipo_telefono_id' => $input['tipo_telefono_id'],
+                //'caracteristica' => $input['caracteristica'],
+                'numero' => $input['telefono'],
                 'estado' => 'A',
                 'fecha_carga' => date("Y-m-d H:i:s"),
-                'usuario_id_carga' => '1'
+                'usuario_id_carga' => 1//Auth::user()->id
             );
+            
+            $telefono = static::create($datos);
 
-            if (isset($input['apellido']) && ($input['apellido'] != "")) {
-                $datos['apellido'] = $input['apellido'];
-            }
-            if (isset($input['nombre']) && ($input['nombre'] != "")) {
-                $datos['nombre'] = $input['nombre'];
-            }
-            if (isset($input['fecha_nacimiento']) && ($input['fecha_nacimiento'] != "")) {
-                $datos['fecha_nacimiento'] = $input['fecha_nacimiento'];
-            }
-            if (isset($input['calle']) && ($input['calle'] != "")) {
-
-                $direccion = Direccion::agregar($input);
-
-                if (!$direccion['error']) {
-                    $datos['direccion_id'] = $direccion['data']->id;
-                }
-            }
-
-
-            $persona = static::create($datos);
-
-            if (isset($input['telefono']) && ($input['telefono'] != "")) {
-
-                $telefono = Telefono::agregar($input);
-
-                if (!$telefono['error']) {
-                    $info = array(
-                        'estado' => 'A',
-                    );
-
-                    $persona->telefonos()->attach($telefono['data'], $info);
-                }
-            }
-
-            $respuesta['mensaje'] = 'Persona creada.';
+            $respuesta['mensaje'] = 'Teléfono creado.';
             $respuesta['error'] = false;
-            $respuesta['data'] = $persona;
+            $respuesta['data'] = $telefono;
         }
 
         return $respuesta;
@@ -134,16 +105,12 @@ class Persona extends Eloquent {
      * 
      */
 
-    public function direccion() {
-        return $this->hasOne('Direccion', 'id', 'direccion_id');
+    public function tipo_telefono() {
+        return $this->belongsTo('Telefono');
     }
 
-    public function telefonos() {
-        return $this->belongsToMany('Telefono', 'persona_telefono')->where('persona_telefono.estado', 'A')->where('telefono.estado', 'A');
-    }
-
-    public function pedidos() {
-        return $this->hasMany('Pedido')->where('pedido.estado', 'A');
+    public function persona() {
+        return $this->belongsToMany('Persona', 'persona_telefono', 'persona_id', 'telefono_id');
     }
 
 }
