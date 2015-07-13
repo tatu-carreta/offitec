@@ -62,7 +62,7 @@ class Carrito extends Eloquent {
             //return Response::make($validator->errors->first(), 400);
             //Si está todo mal, carga lo que corresponde en el mensaje.
             $respuesta['mensaje'] = $validator;
-            $respuesta['error'] = 'no pasa';
+            $respuesta['error'] = true;
         } else {
 
             if (is_null(Session::get('carrito'))) {

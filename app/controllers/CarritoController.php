@@ -13,38 +13,48 @@ class CarritoController extends BaseController {
 
     public function agregarProducto($producto_id, $continue) {
 
-        $info = array(
-            'producto_id' => $producto_id
-        );
+        if (Cart::count(false) < 6) {
 
-        //Aca se manda a la funcion borrarItem de la clase Item
-        //y se queda con la respuesta para redirigir cual sea el caso
-        $respuesta = Carrito::agregarProducto($info);
+            $info = array(
+                'producto_id' => $producto_id
+            );
 
-        $producto = Producto::find($producto_id);
+            //Aca se manda a la funcion borrarItem de la clase Item
+            //y se queda con la respuesta para redirigir cual sea el caso
+            $respuesta = Carrito::agregarProducto($info);
 
-
+            if ($respuesta['error']) {
+                $estado = 'error';
+                $error = true;
+            } else {
+                $estado = 'ok';
+                $error = false;
+            }
+        } else {
+            $respuesta['mensaje'] = "El máximo permitido para el presupuesto es de 6 productos.";
+            $estado = 'error';
+            $error = true;
+        }
 
         switch ($continue) {
             case 'home':
-                return Redirect::to('/')->with('mensaje', $respuesta['mensaje']);
+                return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with($estado, $error);
                 break;
             case 'seccion':
+                $producto = Producto::find($producto_id);
+
                 $menu = $producto->item()->seccionItem()->menuSeccion()->url;
                 $ancla = '#' . $producto->item()->seccionItem()->estado . $producto->item()->seccionItem()->id;
 
-                return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla);
+                return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla)->with($estado, $error);
                 break;
             case 'carrito':
-                return Redirect::to('/carrito')->with('mensaje', $respuesta['mensaje']);
+                return Redirect::to('/carrito')->with('mensaje', $respuesta['mensaje'])->with($estado, $error);
                 break;
             default :
-                return Redirect::to('/')->with('mensaje', $respuesta['mensaje']);
+                return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with($estado, $error);
                 break;
         }
-
-        //return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla);
-        //return $respuesta;
     }
 
     public function editarProducto($producto_id, $rowId) {

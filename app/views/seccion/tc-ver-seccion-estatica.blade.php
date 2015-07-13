@@ -10,21 +10,21 @@
                         <a href="{{URL::to('admin/texto/editar/'.$i->id)}}" class="btn popup-nueva-seccion"><i class="fa fa-pencil fa-lg"></i>editar</a>
                 @endif
                 @if(Auth::user()->can("borrar_texto"))
-                        <a onclick="borrarData('../admin/seccion/borrar', '{{$seccion->id}}');" class="btn sinPadding"><i class="fa fa-times fa-lg"></i>eliminar</a>
+                        <a onclick="borrarData('{{URL::to('admin/seccion/borrar')}}', '{{$seccion->id}}');" class="btn sinPadding"><i class="fa fa-times fa-lg"></i>eliminar</a>
                 @endif
             @elseif(!is_null($i->html()))
                 @if(Auth::user()->can("editar_html"))
                         <a href="{{URL::to('admin/html/editar/'.$i->id)}}" class="btn popup-nueva-seccion"><i class="fa fa-pencil fa-lg"></i>editar</a>
                 @endif
                 @if(Auth::user()->can("borrar_html"))
-                        <a onclick="borrarData('../admin/seccion/borrar', '{{$seccion->id}}');" class="btn sinPadding"><i class="fa fa-times fa-lg"></i>eliminar</a>
+                        <a onclick="borrarData('{{URL::to('admin/seccion/borrar')}}', '{{$seccion->id}}');" class="btn sinPadding"><i class="fa fa-times fa-lg"></i>eliminar</a>
                 @endif
             @elseif(!is_null($i->galeria()))
                 @if(Auth::user()->can("editar_galeria"))
                         <a href="{{URL::to('admin/galeria/editar/'.$i->id)}}" class="btn popup-nueva-seccion"><i class="fa fa-pencil fa-lg"></i>editar</a>
                 @endif
                 @if(Auth::user()->can("borrar_galeria"))
-                        <a onclick="borrarData('../admin/seccion/borrar', '{{$seccion->id}}');" class="btn sinPadding"><i class="fa fa-times fa-lg"></i>eliminar</a>
+                        <a onclick="borrarData('{{URL::to('admin/seccion/borrar')}}', '{{$seccion->id}}');" class="btn sinPadding"><i class="fa fa-times fa-lg"></i>eliminar</a>
                 @endif
             @endif
         </div>
