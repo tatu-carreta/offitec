@@ -21,6 +21,7 @@ header {background: #000;}
 #menuPrincipal a:hover {background: #878979}
 #menuPrincipal .dropdown li a {height: 35px; line-height: 35px; font-size: 15px;}
 .btnCarrito {font-weight: 300; font-size: 15px; height: 88px; line-height: 88px; margin: 0 !important; background: #302F2F; color:#fff; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box;}
+.btnCarrito.active {color:#80DFFF}
 
 .carrouselProdHome {margin-bottom: 6em}
 
@@ -40,7 +41,14 @@ header {background: #000;}
 .flex-prev {display: none}
 .flex-next {background: url(../images/flecha-02.svg); width: 22px; height: 72px;display: block; text-indent: -9999px; }*/
 
-
+/* Ventanas emergentes */
+.divEmergente{background:#00A9E0; width:170px; padding: 20px; position: absolute; top:88px; right: 15px; z-index: 999; font-size: 1em; line-height: 1.4em; text-align: center; -webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.4);
+-moz-box-shadow:1px 1px 5px 0px rgba(50, 50, 50, 0.4); box-shadow:1px 1px 5px 0px rgba(50, 50, 50, 0.4);  }
+.cerrarEmergente{position: absolute; top:10px; right:10px;}
+.cerrarEmergente i {color:#fff; font-size: 1.3em;}
+.cerrarEmergente span {display: none}
+.triang{background: url(../images/triang.png); width:20px; height: 9px; position: absolute; top:-9px; z-index:999;}
+#ventanaCarrito .triang{left:95px;}
 
 .tarjetas img {margin-right: 2em; vertical-align: middle;x}
 .data-fiscal {float: right; position: relative; top: -10px;}
