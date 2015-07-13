@@ -58,6 +58,7 @@
                             <tr ng-repeat="item in uploader.queue">
                                 <td>
                                     <strong><% item.file.name %></strong>
+                                    <input class="form-control marginBottom1" id="epigrafe" type="text" name="epigrafe_slide[]" placeholder="Ingrese una descripción de la foto (opcional)">
                                     <!-- Image preview -->
                                     <!--auto height-->
                                     <!--<div ng-thumb="{ file: item.file, width: 100 }"></div>-->

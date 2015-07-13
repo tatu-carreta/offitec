@@ -15,7 +15,7 @@ class SlideController extends BaseController {
         $this->array_view['seccion_id'] = $seccion['data']->id;
         $this->array_view['tipo'] = $tipo;
 
-        return View::make($this->folder_name . '.agregar', $this->array_view);
+        return View::make($this->folder_name . '.agregar-sin-popup', $this->array_view);
     }
 
     public function agregar() {
@@ -25,12 +25,12 @@ class SlideController extends BaseController {
         $respuesta = Slide::agregarSlideHome(Input::all());
 
         if ($respuesta['error'] == true) {
-            return Redirect::to('admin/item')->withErrors($respuesta['mensaje'])->withInput();
+            return Redirect::to('admin/item')->with('mensaje', $respuesta['mensaje'])->with('error', true);
         } else {
             $menu = $respuesta['data']->seccion->menuSeccion()->url;
             $ancla = '#' . $respuesta['data']->seccion->estado . $respuesta['data']->seccion->id;
 
-            return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla);
+            return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla)->with('ok', true);
         }
     }
 

@@ -32,7 +32,7 @@
                        <a href="{{URL::to('admin/slide/agregar/'.$menu->id.'/E')}}" class="btn btn-primary popup-nueva-seccion">Agregar slide</a>
                     @endif
                     @if(Auth::user()->can("agregar_slide"))
-                        <a href="{{URL::to('admin/slide/agregar/'.$menu->id.'/I')}}" class="btn btn-primary popup-nueva-seccion">Agregar slide en Index</a>
+                        <a href="{{URL::to('admin/slide/agregar/'.$menu->id.'/I')}}" class="btn btn-primary">Agregar slide en Index</a>
                     @endif
                     @if(Auth::user()->can("agregar_galeria"))
                         <a href="{{URL::to('admin/galeria/agregar/'.$menu->id)}}" class="btn btn-primary popup-nueva-seccion">Agregar galería</a>

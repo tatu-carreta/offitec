@@ -13,20 +13,32 @@
     <!-- Place somewhere in the <body> of your page -->
     <div class="flexslider">
         <ul class="slides">
-            <li>
-                <div class="imgSlideFlex"><img src="{{URL::to('images/foto1.jpg')}}" /></div>
-                <div class="flex-caption">
-                    <p>Descripción de la Imagen</p>
-                </div>
-                <div class="clearfix"></div>
-            </li>
-            <li>
-                <div class="imgSlideFlex"><img src="{{URL::to('images/foto1.jpg')}}" /></div>
-                <div class="flex-caption">
-                    <p>Descripción de la Imagen</p>
-                </div>
-                <div class="clearfix"></div>
-            </li>
+            @if (!is_null($slide_index) && !is_null($slide_index -> imagenes))
+                @foreach($slide_index -> imagenes as $img)
+                    <li>
+                        <div class="imgSlideFlex"><img src="{{ URL::to($img->carpeta.$img->nombre) }}" /></div>
+                        <div class="flex-caption">
+                            <p>{{ $img->epigrafe }}</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                @endforeach
+            @else
+                <li>
+                    <div class="imgSlideFlex"><img src="{{URL::to('images/foto1.jpg')}}" /></div>
+                    <div class="flex-caption">
+                        <p>Descripción de la Imagen</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+                <li>
+                    <div class="imgSlideFlex"><img src="{{URL::to('images/foto1.jpg')}}" /></div>
+                    <div class="flex-caption">
+                        <p>Descripción de la Imagen</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+            @endif
         </ul>
     </div>
 

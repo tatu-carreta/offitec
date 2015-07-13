@@ -111,7 +111,7 @@ class Slide extends Eloquent {
                     foreach ($input['imagenes_slide'] as $key => $imagen) {
                         if ($imagen != "") {
                             if ($input['tipo'] == "I") {
-                                $imagen_creada = Imagen::agregarImagenAngularSlideHome($imagen, null);
+                                $imagen_creada = Imagen::agregarImagenAngularSlideHome($imagen, $input['epigrafe_slide'][$key]);
                             } else {
                                 $imagen_creada = Imagen::agregarImagen($imagen, $input['epigrafe_slide'][$key]);
                             }
