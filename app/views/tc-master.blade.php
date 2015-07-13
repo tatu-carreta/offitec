@@ -95,15 +95,22 @@
                             @include('menu.'.$project_name.'-desplegar-menu')
 
                             <div class="clearfix"></div>
-                            <!-- ventana Carrito -->
-                            <div id="ventanaCarrito" class="divEmergente">
-                                <div class="triang"></div>
-                                <a class="cerrarEmergente"><i class="fa fa-times-circle-o fa-lg"></i><span>Cerrar</span></a>
-                                    <img class="imgArtPedido" src="" alt="">
-                                    <p>Agregaste a carrito<br>
-                                    <span>Nombre del producto</span></p>
-                                    <input type="submit" class="btn btn-default" value="Ver Presupuesto">
-                            </div>
+                            @if(Session::has('producto_carrito_subido'))
+                                @if(Session::get('producto_carrito_subido'))
+                                holiiiiii
+                                    <!-- ventana Carrito -->
+                                    <div id="ventanaCarrito" class="divEmergente">
+                                        <div class="triang"></div>
+                                        <a class="cerrarEmergente cerrarVentanaCarrito"><i class="fa fa-times-circle-o fa-lg"></i><span>Cerrar</span></a>
+                                            <img class="imgArtPedido" src="" alt="">
+                                            <p>Agregaste a carrito<br>
+                                            <span>Cod: {{ Session::get('producto_carrito')->item()->titulo }}</span></p>
+                                            <a href="{{URL::to('carrito')}}" class="btn btn-default">Ver Presupuesto</a>
+                                    </div>
+                                @else
+                                noo
+                                @endif
+                            @endif
                         </div>
                     </div>
                 </div>

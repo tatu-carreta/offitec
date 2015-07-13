@@ -26,33 +26,37 @@ class CarritoController extends BaseController {
             if ($respuesta['error']) {
                 $estado = 'error';
                 $error = true;
+                $producto_carrito_subido = false;
             } else {
                 $estado = 'ok';
                 $error = false;
+                $producto_carrito_subido = true;
             }
         } else {
             $respuesta['mensaje'] = "El máximo permitido para el presupuesto es de 6 productos.";
             $estado = 'error';
             $error = true;
+            $producto_carrito_subido = false;
         }
+        
+        $producto = Producto::find($producto_id);
 
         switch ($continue) {
             case 'home':
-                return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with($estado, $error);
+                return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with($estado, $error)->with('producto_carrito', $producto)->with('producto_carrito_subido', $producto_carrito_subido);
                 break;
             case 'seccion':
-                $producto = Producto::find($producto_id);
-
+                
                 $menu = $producto->item()->seccionItem()->menuSeccion()->url;
                 $ancla = '#' . $producto->item()->seccionItem()->estado . $producto->item()->seccionItem()->id;
 
-                return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla)->with($estado, $error);
+                return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla)->with($estado, $error)->with('producto_carrito', $producto)->with('producto_carrito_subido', $producto_carrito_subido);
                 break;
             case 'carrito':
-                return Redirect::to('/carrito')->with('mensaje', $respuesta['mensaje'])->with($estado, $error);
+                return Redirect::to('/carrito')->with('mensaje', $respuesta['mensaje'])->with($estado, $error)->with('producto_carrito', $producto)->with('producto_carrito_subido', $producto_carrito_subido);
                 break;
             default :
-                return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with($estado, $error);
+                return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with($estado, $error)->with('producto_carrito', $producto)->with('producto_carrito_subido', $producto_carrito_subido);
                 break;
         }
     }
