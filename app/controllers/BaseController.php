@@ -132,10 +132,13 @@ class BaseController extends Controller {
 
         if ($items_destacados) {
             $items = array();
+            $items_id = array();
             foreach ($items_destacados as $item) {
-                $item_db = Item::find($item->item_id);
-
-                array_push($items, $item_db);
+                if (!in_array($item->item_id, $items_id)) {
+                    $item_db = Item::find($item->item_id);
+                    array_push($items, $item_db);
+                    array_push($items_id, $item->item_id);
+                }
             }
         }
 
@@ -157,16 +160,21 @@ class BaseController extends Controller {
                 ->orderBy('item.id', 'desc')
                 ->limit($limit)
                 ->select('item.id as item_id', 'item.titulo as item_titulo', 'item.descripcion as item_descripcion', 'item.url as item_url', 'seccion.id as seccion_id')
+                ->distinct()
                 ->get();
 
         $items = $items_destacados;
 
         if ($items_destacados) {
             $items = array();
+            $items_id = array();
             foreach ($items_destacados as $item) {
-                $item_db = Item::find($item->item_id);
 
-                array_push($items, $item_db);
+                if (!in_array($item->item_id, $items_id)) {
+                    $item_db = Item::find($item->item_id);
+                    array_push($items, $item_db);
+                    array_push($items_id, $item->item_id);
+                }
             }
         }
 
