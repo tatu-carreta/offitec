@@ -45,6 +45,11 @@
                 $(".fancybox").fancybox();
             });
         </script>
+        <script>
+            $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip(); 
+            });
+        </script>
         @show
     </head>
     <body>

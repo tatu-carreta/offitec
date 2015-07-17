@@ -54,6 +54,7 @@ header {background: #000;}
 .data-fiscal {float: right; position: relative; top: -10px;}
 .data-fiscal img {width: 40px; border: 0;margin-right: 0!important;}
 
+.tooltip {background: black; color:#fff;}
 
 /* Módulo lista y ficha de productos */
 
