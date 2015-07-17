@@ -120,7 +120,7 @@ class Carrito extends Eloquent {
             Cart::associate('Producto')->add($producto->id, $producto->item()->titulo, $cantidad, $producto->precio(2));
 
             //Mensaje correspondiente a la agregacion exitosa
-            $respuesta['mensaje'] = 'Producto agregado.';
+            $respuesta['mensaje'] = 'El producto fue agregado al presupuesto.';
             $respuesta['error'] = false;
             $respuesta['data'] = $carrito;
         }

@@ -100,7 +100,7 @@
                                     <!-- ventana Carrito -->
                                     <div id="ventanaCarrito" class="divEmergente">
                                         <div class="triang"></div>
-                                        <a class="cerrarEmergente cerrarVentanaCarrito"><i class="fa fa-times-circle-o fa-lg"></i><span>Cerrar</span></a>
+                                        <div class="cerrarEmergente cerrarVentanaCarrito"><i class="fa fa-times-circle-o fa-lg"></i></div>
                                             <img class="imgArtPedido" src="@if(!is_null(Session::get('producto_carrito')->item()->imagen_destacada())){{ URL::to(Session::get('producto_carrito')->item()->imagen_destacada()->carpeta.Session::get('producto_carrito')->item()->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="">
                                             <p>Agregaste a carrito<br>
                                             <span>Cod: {{ Session::get('producto_carrito')->item()->titulo }}</span></p>
@@ -155,6 +155,7 @@
         <script src="{{URL::to('js/jquery.lazyload.js')}}"></script>
         <script src="{{URL::to('js/jquery-ui.min.js')}}"></script>
         <script src="{{URL::to('js/jquery.Jcrop.min.js')}}"></script>
+        <script src="{{URL::to('js/div-ventana-carrito.js')}}"></script>
         
         <script>
             $(function () {
