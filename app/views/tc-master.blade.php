@@ -102,19 +102,8 @@
                             @include('menu.'.$project_name.'-desplegar-menu')
 
                             <div class="clearfix"></div>
-                            @if(Session::has('producto_carrito_subido'))
-                                @if(Session::get('producto_carrito_subido'))
-                                    <!-- ventana Carrito -->
-                                    <div id="ventanaCarrito" class="divEmergente">
-                                        <div class="triang"></div>
-                                        <div class="cerrarEmergente cerrarVentanaCarrito"><i class="fa fa-times-circle-o fa-lg"></i></div>
-                                            <img class="imgArtPedido" src="@if(!is_null(Session::get('producto_carrito')->item()->imagen_destacada())){{ URL::to(Session::get('producto_carrito')->item()->imagen_destacada()->carpeta.Session::get('producto_carrito')->item()->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="">
-                                            <p>Agregaste a carrito<br>
-                                            <span>Cod: {{ Session::get('producto_carrito')->item()->titulo }}</span></p>
-                                            <a href="{{URL::to('carrito')}}" class="btn btn-default">Ver Presupuesto</a>
-                                    </div>
-                                @endif
-                            @endif
+                            
+                            
                         </div>
                     </div>
                 </div>

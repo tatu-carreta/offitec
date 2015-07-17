@@ -1390,3 +1390,23 @@ Stack trace:
 Stack trace:
 #0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
 #1 {main} [] []
+[2015-07-10 16:03:43] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on null' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-10 16:04:11] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on null' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-10 16:06:39] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on null' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-10 16:08:13] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on null' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-10 16:24:59] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on null' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
