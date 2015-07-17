@@ -27,6 +27,7 @@
             @if(count($data['productos']) > 0)
                 @foreach($data['productos'] as $producto)
                     <strong>COD:</strong>{{ Producto::find($producto['id'])->item()->titulo }}<br>
+                    @if(!is_null(Producto::find($producto['id'])->item()->imagen_destacada()))<strong>IMG:</strong>{{ Producto::find($producto['id'])->item()->imagen_destacada()->carpeta.Producto::find($producto['id'])->item()->imagen_destacada()->nombre }}<br>@endif
                     <strong>CNT:</strong>{{ $producto['cantidad'] }}<br>
                 @endforeach
             @endif

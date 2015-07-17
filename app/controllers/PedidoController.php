@@ -61,7 +61,8 @@ class PedidoController extends BaseController {
                 'email' => Input::get('email'),
                 'nombre' => Input::get('nombre'),
                 'telefono' => Input::get('telefono'),
-                'empresa' => Input::get('empresa')
+                'empresa' => Input::get('empresa'),
+                'consulta' => Input::get('consulta')
             );
 
             $this->resumenPedido($datos_resumen_pedido);
@@ -159,7 +160,7 @@ class PedidoController extends BaseController {
 
         Mail::send('emails.consulta-pedido', $this->array_view, function($message) use($data) {
             $message->from($data['email'], $data['nombre'])
-                    ->to('max.-ang@hotmail.com.ar')
+                    ->to('max.angletti@gmail.com')
                     ->subject('Pedido de presupuesto')
             ;
         });
