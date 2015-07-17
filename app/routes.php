@@ -240,7 +240,7 @@ Route::group(array('before' => 'auth'), function() {
 
     Route::post('admin/producto/agregar', 'ProductoController@agregar');
 
-    Route::get('admin/producto/editar/{id}/{next}', 'ProductoController@vistaEditar');
+    Route::get('admin/producto/editar/{id}/{next}/{seccion_next}', 'ProductoController@vistaEditar');
 
     Route::post('admin/producto/editar', 'ProductoController@editar');
 
