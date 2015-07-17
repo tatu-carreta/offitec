@@ -206,7 +206,7 @@ class Carrito extends Eloquent {
 
             Cart::remove($input['rowId']);
 
-            $respuesta['mensaje'] = 'Producto carrito borrado.';
+            $respuesta['mensaje'] = 'El producto fue quitado al presupuesto.';
             $respuesta['error'] = false;
             $respuesta['data'] = $carrito;
         }

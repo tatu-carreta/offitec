@@ -54,18 +54,32 @@
                 <div class="contenedor-carousel">
                     <div class="carousel-home">
                         <div id="owl-demo2">
-                            <div class="item"><a class="boton-naranja" href="#">muebles<br>gerenciales</a></div>
-                            <div class="item"><a class="boton-rojo" href="#">muebles<br>operativos</a></div>
-                            <div class="item"><a class="boton-violeta" href="#">mesas <br> de reunión</a></div>
-                            <div class="item"><a class="boton-azul" href="#">mesas <br>bajas</a></div>
-                            <div class="item"><a class="boton-verde" href="#">muebles <br> de guardado</a></div>
-                            <div class="item"><a class="boton-naranja" href="#">asientos<br>gerenciales</a></div>
-                            <div class="item"><a class="boton-rojo" href="#">asientos<br>operativos</a></div>
-                            <div class="item"><a class="boton-violeta" href="#">sillas <br>de visita</a></div>
-                            <div class="item"><a class="boton-azul" href="#">sillones <br>de visita</a></div>
-                            <div class="item"><a class="boton-verde" href="#">cortinas<br> a medida</a></div>
-                            <div class="item"><a class="boton-naranja" href="#">accesorios <br>y complementos</a></div>
-                            <div class="item"><a class="boton-rojo" href="#">deco <br>casa</a></div>
+                            <?php $i = 0; ?>
+                            @foreach($menu_dinamico as $menu)
+                                @if(count($menu->children) > 0)
+                                    @foreach($menu->children as $ch)
+                                        <div class="item">
+                                            <a class="@if(in_array($i, [0, 5, 10, 15])) boton-naranja @elseif(in_array($i, [1, 6, 11, 16])) boton-rojo @elseif(in_array($i, [2, 7, 12, 17])) boton-violeta @elseif(in_array($i, [3, 8, 13, 18])) boton-azul @elseif(in_array($i, [4, 9, 14, 19])) boton-verde @endif" href="{{URL::to($ch->url)}}">
+                                                {{ $ch->nombre }}
+                                            </a>
+                                        </div>
+                                        <?php $i++; ?>
+                                    @endforeach
+                                @endif
+                            @endforeach
+                            <!--
+                                <div class="item"><a class="" href="#">muebles<br>operativos</a></div>
+                                <div class="item"><a class="" href="#">mesas <br> de reunión</a></div>
+                                <div class="item"><a class="" href="#">mesas <br>bajas</a></div>
+                                <div class="item"><a class="" href="#">muebles <br> de guardado</a></div>
+                                <div class="item"><a class="boton-naranja" href="#">asientos<br>gerenciales</a></div>
+                                <div class="item"><a class="boton-rojo" href="#">asientos<br>operativos</a></div>
+                                <div class="item"><a class="boton-violeta" href="#">sillas <br>de visita</a></div>
+                                <div class="item"><a class="boton-azul" href="#">sillones <br>de visita</a></div>
+                                <div class="item"><a class="boton-verde" href="#">cortinas<br> a medida</a></div>
+                                <div class="item"><a class="boton-naranja" href="#">accesorios <br>y complementos</a></div>
+                                <div class="item"><a class="boton-rojo" href="#">deco <br>casa</a></div>
+                            -->
                         </div>
                     </div>
                 </div>
