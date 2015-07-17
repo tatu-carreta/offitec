@@ -46,7 +46,7 @@ class Pedido extends Eloquent {
             }
 
             //Mensaje correspondiente a la agregacion exitosa
-            $respuesta['mensaje'] = 'Pedido realizado.';
+            $respuesta['mensaje'] = 'El presupuesto fue enviado.';
             $respuesta['error'] = false;
             $respuesta['data'] = $pedido;
         }
