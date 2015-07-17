@@ -210,6 +210,8 @@ class Carrito extends Eloquent {
             $respuesta['error'] = false;
             $respuesta['data'] = $carrito;
         }
+        
+        return $respuesta;
     }
 
     public static function borrar() {

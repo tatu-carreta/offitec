@@ -99,12 +99,14 @@
                         @foreach($menues as $men)
                         <div class="cadaSeccion">
                             @if(count($men->children) == 0)
-                                <div>{{$men->nombre}}</div>
+                            
+                                <div><label for="menu{{$men->id}}">{{$men->nombre}}</label></div>
                                 <div>
                                 @foreach($men->secciones as $seccion)
-                                    <span><input id="seccion{{$seccion->id}}" type="checkbox" name="secciones[]" value="{{$seccion->id}}" @if($seccion->id == $seccion_id) checked="true" disabled @endif><label for="seccion{{$seccion->id}}">@if($seccion->titulo != ""){{$seccion->titulo}}@else Sección {{$seccion->id}} @endif</label></span>
+                                    <span><input id="menu{{$men->id}}" type="checkbox" name="secciones[]" value="{{$seccion->id}}" @if($seccion->id == $seccion_id) checked="true" disabled @endif>{{-- @if($seccion->titulo != ""){{$seccion->titulo}}@else Sección {{$seccion->id}} @endif --}}</span>
                                 @endforeach
                                 </div>
+                            
                             @endif
                         </div>
                         @endforeach

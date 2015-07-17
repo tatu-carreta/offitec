@@ -90,19 +90,19 @@ class CarritoController extends BaseController {
         $producto = Producto::find($producto_id);
         switch ($continue) {
             case 'home':
-                return Redirect::to('/')->with('mensaje', $respuesta['mensaje']);
+                return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
                 break;
             case 'seccion':
                 $menu = $producto->item()->seccionItem()->menuSeccion()->url;
                 $ancla = '#' . $producto->item()->seccionItem()->estado . $producto->item()->seccionItem()->id;
 
-                return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla);
+                return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla)->with('ok', true);
                 break;
             case 'carrito':
-                return Redirect::to('/carrito')->with('mensaje', $respuesta['mensaje']);
+                return Redirect::to('/carrito')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
                 break;
             default :
-                return Redirect::to('/')->with('mensaje', $respuesta['mensaje']);
+                return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
                 break;
         }
         //return Redirect::to('/carrito')->with('mensaje', $respuesta['mensaje']);
