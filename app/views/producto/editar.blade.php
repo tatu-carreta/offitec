@@ -102,7 +102,7 @@
                                 <div><label for="menu{{$men->id}}">{{$men->nombre}}</label></div>
                                 <div>
                                 @foreach($men->secciones as $seccion)
-                                    <span><input id="menu{{$men->id}}" type="checkbox" name="secciones[]" value="{{$seccion->id}}" @if(in_array($seccion->id, $item->secciones->lists('id'))) checked="true" @endif >{{-- @if($seccion->titulo != ""){{$seccion->titulo}}@else Sección {{$seccion->id}} @endif --}}</span>
+                                    <span><input id="menu{{$men->id}}" type="checkbox" name="secciones[]" value="{{$seccion->id}}" @if(in_array($seccion->id, $item->secciones->lists('id'))) checked="true" @endif @if($seccion->id == $seccion_next) disabled @endif>{{-- @if($seccion->titulo != ""){{$seccion->titulo}}@else Sección {{$seccion->id}} @endif --}}</span>
                                 @endforeach
                                 </div>
                             @endif
@@ -147,7 +147,7 @@
             {{Form::hidden('producto_id', $producto->id)}}
             {{Form::hidden('descripcion', '')}}
             {{Form::hidden('tipo_precio_id[]', '2')}}
-            {{Form::hidden('seccion', $seccion_next)}}
+            {{Form::hidden('seccion_id', $seccion_next)}}
         {{Form::close()}}
     </section>
 @stop

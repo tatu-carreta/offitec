@@ -140,7 +140,7 @@ class ProductoController extends BaseController {
             if (Input::get('continue') == "home") {
                 return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
             } else {
-                $seccion = Seccion::find(Input::get('seccion'));
+                $seccion = Seccion::find(Input::get('seccion_id'));
                 
                 $menu = $seccion->menuSeccion()->url;
                 $ancla = '#' . $respuesta['data']->item()->seccionItem()->estado . $respuesta['data']->item()->seccionItem()->id;

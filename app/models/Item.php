@@ -877,7 +877,7 @@ class Item extends Eloquent {
 
     //Me quedo con las secciones a las que pertenece el Item
     public function secciones() {
-        return $this->belongsToMany('Seccion', 'item_seccion', 'item_id', 'seccion_id');
+        return $this->belongsToMany('Seccion', 'item_seccion', 'item_id', 'seccion_id')->where('item_seccion.estado', 'A');
     }
 
     public function imagenes() {
