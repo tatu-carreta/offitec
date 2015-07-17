@@ -46,6 +46,7 @@ header {background: #000;}
 /* Ventanas emergentes */
 .divEmergente{background:#00A9E0; width:170px; padding: 20px; position: absolute; top:88px; right: 15px; z-index: 999; font-size: 1em; line-height: 1.4em; text-align: center; -webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.4);
 -moz-box-shadow:1px 1px 5px 0px rgba(50, 50, 50, 0.4); box-shadow:1px 1px 5px 0px rgba(50, 50, 50, 0.4);  }
+.divEmergente .imgArtPedido {width: 150px; height: auto}
 .cerrarEmergente{position: absolute; top:10px; right:10px;}
 .cerrarEmergente i {color:#fff; font-size: 1.3em;}
 .cerrarEmergente span {display: none}
