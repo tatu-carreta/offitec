@@ -9,6 +9,12 @@
     });
 </script>
 
+@if(Auth::check())
+    @if (!is_null($slide_index) && !is_null($slide_index -> imagenes))
+        <a href="{{URL::to('admin/slide/editar/'.$slide_index->id.'/home')}}">Editar Slide Home</a>
+    @endif
+@endif
+
 <div class="slideDinamicoHome">
     <!-- Place somewhere in the <body> of your page -->
     <div class="flexslider">

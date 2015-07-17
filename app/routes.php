@@ -194,6 +194,10 @@ Route::group(array('before' => 'auth'), function() {
     Route::get('admin/slide/agregar/{menu_id}/{tipo}', 'SlideController@vistaAgregar');
 
     Route::post('admin/slide/agregar', 'SlideController@agregar');
+    
+    Route::get('admin/slide/editar/{id}/{next}', 'SlideController@vistaEditar');
+
+    Route::post('admin/slide/editar', 'SlideController@editar');
 
     /*
      * Ruteo de Galeria
