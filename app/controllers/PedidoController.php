@@ -45,7 +45,7 @@ class PedidoController extends BaseController {
 
         $datos_pedido = array(
             'persona_id' => $persona['data']->id,
-            'productos' => $productos
+            'productos' => $productos,
         );
 
         $respuesta = Pedido::agregar($datos_pedido);
@@ -55,7 +55,16 @@ class PedidoController extends BaseController {
             return Redirect::to('/carrito')->with('mensaje', $respuesta['mensaje'])->with('error', true);
         } else {
 
-            $this->resumenPedido($datos_persona);
+            $datos_resumen_pedido = array(
+                'persona_id' => $persona['data']->id,
+                'productos' => $productos,
+                'email' => Input::get('email'),
+                'nombre' => Input::get('nombre'),
+                'telefono' => Input::get('telefono'),
+                'empresa' => Input::get('empresa')
+            );
+
+            $this->resumenPedido($datos_resumen_pedido);
 
             Cart::destroy();
 
@@ -146,7 +155,7 @@ class PedidoController extends BaseController {
     public function resumenPedido($info) {
 
         $data = $info;
-        $this->array_view['data'] = $info;
+        $this->array_view['data'] = $data;
 
         Mail::send('emails.consulta-pedido', $this->array_view, function($message) use($data) {
             $message->from($data['email'], $data['nombre'])
