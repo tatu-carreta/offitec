@@ -28,7 +28,7 @@ header {background: #000;}
 .carrouselProdHome {margin-bottom: 6em}
 
 /* SLIDE HOME */
-.slideHome{min-height: auto; overflow: hidden; }
+.slideHome{overflow: hidden; }
 .carousel-inner {position: relative; width: 100%; overflow: hidden;}
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {width: 100%; margin: auto;}
 

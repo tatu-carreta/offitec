@@ -1,0 +1,85 @@
+.wrapper{
+	position: relative;
+	width: 100%;
+}
+.wrapper p{
+	clear: both;
+	font-size: 24px;
+	line-height: 40px;
+	text-align: center;
+}
+
+.ei-slider{
+	position: relative;
+	width: 100%;
+	max-height: 360px;
+	height: 360px;
+	margin: 0 auto;
+
+}
+.ei-slider-loading{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index:999;
+	background: rgba(0,0,0,0.9);
+	color: #fff;
+	text-align: center;
+	line-height: 360px;
+}
+.ei-slider-large{
+	height: 100%;
+	width: 100%;
+	position:relative;
+	overflow: hidden;
+}
+.ei-slider-large li{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	overflow: hidden;
+	
+	width: 100%;
+}
+.ei-slider-large img {
+	margin: 0 !important;
+	min-width: 100%; min-height: 100%; width: auto; height: auto; overflow: hidden;
+}
+
+
+.ei-title{
+	position: absolute;
+	right: 32%;
+	margin-right: 0%;
+	top: 35%;
+	width: 600px;
+	height: auto;
+	text-align: center;
+}
+
+.ei-title h3{
+	
+	font-size: 70px;
+	color:#fff;
+  	font-family:'Poiret One', cursive;
+  
+}
+.ei-slider-thumbs{
+	display: none !important;
+}
+
+
+
+@media screen and (max-width: 950px) {
+.ei-title h3{font-size: 60px;}
+}
+
+@media screen and (max-width: 850px) {
+.ei-title h3{font-size: 50px;}
+}
+
+@media screen and (max-width: 750px) {
+.ei-title h3{font-size: 40px;}
+}
