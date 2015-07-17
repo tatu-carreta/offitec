@@ -25,7 +25,7 @@ angular
                     $scope.image = '';
                     $scope.croppedImage = '';
                     angular.element(document.querySelector('#fileInput')).val('');
-                    angular.element(document.querySelector('#url-archivo1')).val('');
+                    angular.element(document.querySelector('.url-archivo1')).val('');
                 };
 
                 $scope.onChange = function ($dataURI) {
