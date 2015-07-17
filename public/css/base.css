@@ -12,6 +12,8 @@ a {text-decoration: none !important;}
 .fondoDestacado {background: #EFEFEF; padding: 1em; margin-bottom: 2em; box-sizing: border-box !important;}
 .fondoDestacado > * { margin-top: 0;}
 
+.ajustaImg {width: 100%; height: auto}
+
 /* HEADER */
 header {background: #000;}
 
@@ -50,10 +52,6 @@ header {background: #000;}
 .triang{background: url(../images/triang.png); width:20px; height: 9px; position: absolute; top:-9px; z-index:999;}
 #ventanaCarrito .triang{left:95px;}
 
-.tarjetas img {margin-right: 2em; vertical-align: middle;x}
-.data-fiscal {float: right; position: relative; top: -10px;}
-.data-fiscal img {width: 40px; border: 0;margin-right: 0!important;}
-
 .tooltip {background: black; color:#fff;}
 
 /* Módulo lista y ficha de productos */
@@ -67,7 +65,11 @@ section {padding-top: 4em}
 	{margin-top: 0 !important}
 
 /* FOOTER */
-footer {margin-top: 1em; padding: 4em}
+footer {margin-top: 1em; padding: 4em 0}
+
+.tarjetas img {margin: 0 2em 2em 0; vertical-align: middle;}
+.data-fiscal {float: right !important; position: relative; top: -10px;}
+.data-fiscal img {width: 40px; border: 0;margin-right: 0!important;}
 
 /* ----------------------------- A D M I N ------------------------------------ */
 

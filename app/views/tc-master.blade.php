@@ -132,7 +132,7 @@
                 @if(!Auth::check())
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-12 tarjetas">
+                            <div class="col-md-11 col-sm-10 col-xs-12 tarjetas">
                                 <img src="{{URL::to('images/tarjetas/visa.jpg')}}" alt="Tarjeta Visa">
                                 <img src="{{URL::to('images/tarjetas/mastercard.jpg')}}" alt="Tarjeta Mastercard">
                                 <img src="{{URL::to('images/tarjetas/american.jpg')}}" alt="Tarjeta American Sxpress">
@@ -143,6 +143,8 @@
                                 <img src="{{URL::to('images/tarjetas/argencard.jpg')}}" alt="Tarjeta Argencard">
                                 <img src="{{URL::to('images/tarjetas/cabal.jpg')}}" alt="Tarjeta Cabal">
                                 <img src="{{URL::to('images/tarjetas/mercado_pago.jpg')}}" alt="Mercado Pago">
+                            </div>
+                            <div class="col-md-1 col-sm-2 col-xs-12 tarjetas">
                                 <!--data fiscal -->
                                 <a  class="data-fiscal" href="http://qr.afip.gob.ar" target=""><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0"></a>
                                 <!--/data fiscal -->

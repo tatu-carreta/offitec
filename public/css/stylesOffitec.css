@@ -15,6 +15,7 @@ h1, h2, h3 {font-weight: 300}
 .carousel-control.right {background: none}
 /*.olw-item {width: 142px !important;}*/
 .contenedor-carousel a{display: block;height: 130px;text-align: center;padding-top: 40px;color:#fff; text-transform: uppercase;}
+.contenedor-carousel a span {width: 80%; display: inline-block;}
 .boton-naranja {background: rgba(255,117,3,0.8);}
 .boton-rojo {background: #D52318;}
 .boton-violeta {background: #70162F;}
@@ -81,6 +82,7 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .table img{width: 60px !important; height: 60px !important;}
 .table input{width: 68px; height: 43px;}
 
+
 /* ----------------------------- M E D I A  Q U E R Y ------------------------------------- */
 @media screen and (max-width: 1000px) {
 	#menuPrincipal a {padding: 0 1.250em !important }
@@ -113,7 +115,12 @@ h4{margin-bottom: 20px;font-size: 20px;}
 	.navbar-toggle {display: block; }
 }
 
-
 @media (min-width: 768px){
 .navbar-header {float: right !important;}
+.info {width: 100%; border-bottom: 0; margin-bottom: 1em}
+}
+
+@media (min-width: 600px){
+.tarjetas {text-align: center}
+.data-fiscal {float:none;}
 }
