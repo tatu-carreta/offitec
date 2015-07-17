@@ -1374,3 +1374,7 @@ Stack trace:
 #16 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
 #17 C:\xampp\htdocs\offitec\public\index.php(49): Illuminate\Foundation\Application->run()
 #18 {main} [] []
+[2015-07-17 11:45:09] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []

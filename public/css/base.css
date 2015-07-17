@@ -107,7 +107,7 @@ footer {margin-top: 1em; padding: 4em}
 
 .spanDestacarProd {display: inline-block; font-size: 1.5em; font-weight: 300;padding-top: 0.3em; width: 300px; margin-left: 1em;}
 .divCargaImgProducto {margin: 0px 0px 4em; position: relative;}
-.divCargaImg { height: 19.375em; width: 19.375em; border: 1px solid #CCC; position: relative; box-sizing: content-box;}
+.divCargaImg { height: 20em; width: 20em; position: relative; box-sizing: border-box;}
 
 .form-group span {display: inline-block; margin:0 0.3em; font-size: 2em;}
 
