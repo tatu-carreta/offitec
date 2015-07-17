@@ -16,7 +16,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="col-carrito">
+                    <div class="col-tabla">
                         <h3>Productos seleccionados</h3>
                         <table class="table">
                             <tbody>
@@ -35,6 +35,7 @@
                     </div>
                     <div class="col-carrito">
                         <h3>Complete sus datos</h3>
+                        <div class="formulario">
                         {{ Form::open(array('url' => 'pedido/agregar', 'class' => 'borde', 'role' => 'form')) }}
                             <div class="form-group">
                                 <label for="ejemplo_email_1">Nombre y apellido</label>
@@ -60,8 +61,9 @@
                                 <label for="ejemplo_password_1">Comentarios</label>
                                 <textarea class="form-control" rows="3" name="consulta"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-default">Enviar</button>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
                         {{ Form::close() }}
+                    </div>
                     </div>
                 </div>
             </div>
