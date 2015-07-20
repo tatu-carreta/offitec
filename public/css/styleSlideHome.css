@@ -51,9 +51,9 @@
 
 .ei-title{
 	position: absolute;
-	right: 32%;
-	margin-right: 0%;
-	top: 35%;
+	left: 50%;
+	margin-left: -300px;
+	top: 30%;
 	width: 600px;
 	height: auto;
 	text-align: center;
