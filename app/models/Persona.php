@@ -14,13 +14,13 @@ class Persona extends Eloquent {
         $respuesta = array();
 
         $reglas = array(
-            'email' => array('required'),
+            'email' => array('required', 'email'),
         );
 
         $validator = Validator::make($input, $reglas);
 
         if ($validator->fails()) {
-            $respuesta['mensaje'] = $validator;
+            $respuesta['mensaje'] = $validator->messages()->first('email');
             $respuesta['error'] = true;
         } else {
 
