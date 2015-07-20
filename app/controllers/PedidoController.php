@@ -15,6 +15,8 @@ class PedidoController extends BaseController {
 
         $input = Input::all();
 
+        Input::flashOnly('nombre', 'email', 'empresa', 'telefono', 'consulta');
+        
         $reglas = array(
             'email' => array('required', 'email'),
             'nombre' => array('required'),
@@ -35,31 +37,36 @@ class PedidoController extends BaseController {
                 $mensaje = 'Los datos de contacto para el envio del presupuesto son erróneos.';
             }
 
-            return Redirect::to('/carrito')->with('mensaje', $mensaje)->with('error', true);
+            return Redirect::to('/carrito')->with('mensaje', $mensaje)->with('error', true)->withInput();
         } else {
-
-            $carrito_id = Session::get('carrito');
-
-            $carrito = Carrito::find($carrito_id);
-
-            $datos = DB::table('carrito_producto')->where('carrito_id', $carrito->id)->where('estado', 'A')->get();
-
             $productos = array();
+            if (Session::has('carrito')) {
 
-            foreach ($datos as $prod) {
+                $carrito_id = Session::get('carrito');
 
-                $data = array(
-                    'id' => $prod->producto_id,
-                    'cantidad' => $prod->cantidad,
-                    'precio' => $prod->precio
-                );
+                $carrito = Carrito::find($carrito_id);
 
-                array_push($productos, $data);
+                $datos = DB::table('carrito_producto')->where('carrito_id', $carrito->id)->where('estado', 'A')->get();
+
+
+
+                foreach ($datos as $prod) {
+
+                    $data = array(
+                        'id' => $prod->producto_id,
+                        'cantidad' => $prod->cantidad,
+                        'precio' => $prod->precio
+                    );
+
+                    array_push($productos, $data);
+                }
             }
+
+
 
             if (count($productos) == 0) {
                 $mensaje = 'Para realizar el presupuesto debe seleccionar al menos un producto.';
-                return Redirect::to('/carrito')->with('mensaje', $mensaje)->with('error', true);
+                return Redirect::to('/carrito')->with('mensaje', $mensaje)->with('error', true)->withInput();
             } else {
 
                 //Levanto los datos del formulario del presupuesto para
