@@ -26,11 +26,11 @@
     @include('slide.slide-estatico-offitec')
 @stop
 
+@section('class-redes-sociales')
+    redesHome
+@stop
+
 @section('contenido')
-        <div class="redesHome pull-right">
-            <a class="facebook" href="#"></a>
-            <a class="google" href="#"></a>
-        </div>
     <section class="container">
         
         <div class="row">

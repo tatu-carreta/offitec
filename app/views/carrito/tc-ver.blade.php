@@ -7,11 +7,6 @@
                 <div class="col-md-12 marginBottom2">
                     <h2 class="pull-left">Presupuesto</h2>
                     <div class="clearfix"></div>
-                    <div class="redes pull-right">
-                        <a class="facebook" href="#"></a>
-                        <a class="google" href="#"></a>
-                    </div>
-                    <div class="clearfix"></div>
                 </div>
             </div>
             <div class="row">
@@ -35,37 +30,6 @@
                     </div>
                     <div class="col-carrito">
                         <h3>Complete sus datos</h3>
-<<<<<<< HEAD
-                        
-                        {{ Form::open(array('url' => 'pedido/agregar', 'class' => 'borde', 'role' => 'form')) }}
-                            <div class="form-group">
-                                <label for="ejemplo_email_1">Nombre y apellido</label>
-                                <input type="type" class="form-control" id="ejemplo_email_1"
-                                       placeholder="" name="nombre">
-                            </div>
-                            <div class="form-group">
-                                <label for="ejemplo_password_1">Empresa</label>
-                                <input type="type" class="form-control" id="ejemplo_password_1" 
-                                       placeholder="" name="empresa">
-                            </div>
-                            <div class="form-group">
-                                <label for="ejemplo_password_1">Email</label>
-                                <input type="email" class="form-control" id="ejemplo_password_1" 
-                                       placeholder="" name="email">
-                            </div>
-                            <div class="form-group">
-                                <label for="ejemplo_password_1">Teléfono</label>
-                                <input type="type" class="form-control" id="ejemplo_password_1" 
-                                       placeholder="" name="telefono">
-                            </div>
-                            <div class="form-group">
-                                <label for="ejemplo_password_1">Comentarios</label>
-                                <textarea class="form-control" rows="3" name="consulta"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Enviar</button>
-                        {{ Form::close() }}
-                    
-=======
                         <div class="formulario">
                             {{ Form::open(array('url' => 'pedido/agregar', 'class' => 'borde', 'role' => 'form')) }}
                                 <div class="form-group">
@@ -100,7 +64,6 @@
                                 <button type="submit" class="btn btn-primary">Enviar</button>
                             {{ Form::close() }}
                         </div>
->>>>>>> origin/master
                     </div>
                 </div>
             </div>
