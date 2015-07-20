@@ -9,7 +9,7 @@
                 @if(!$i->producto()->nuevo())
                     @if(!$i->producto()->oferta())
                         @if(Auth::user()->can("destacar_item"))
-                            <i onclick="destacarItemSeccion('{{URL::to('admin/producto/nuevo')}}', '{{$seccion->id}}', '{{$i->id}}');" class="fa fa-tag fa-lg" data-toggle="tooltip" data-placement="top" title="nuevo"></i>
+                            <i onclick="destacarItemSeccion('{{URL::to('admin/producto/nuevo')}}', '{{$seccion->id}}', '{{$i->id}}');" class="fa fa-tag fa-lg"></i>
                         @endif
                     @endif
                 @else
@@ -19,7 +19,7 @@
                 @endif
                 @if(!$i->producto()->oferta())
                     @if(Auth::user()->can("destacar_item"))
-                        <a href="{{URL::to('admin/producto/oferta/'.$i->producto()->id.'/'.$seccion->id.'/seccion')}}" class="popup-nueva-seccion"><i  class="fa fa-shopping-cart fa-lg" data-toggle="tooltip" data-placement="top" title="oferta"></i></a>
+                        <a href="{{URL::to('admin/producto/oferta/'.$i->producto()->id.'/'.$seccion->id.'/seccion')}}" class="popup-nueva-seccion"><i  class="fa fa-shopping-cart fa-lg"></i></a>
                     @endif
                 @else
                     @if(Auth::user()->can("quitar_destacado_item"))

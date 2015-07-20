@@ -33,9 +33,9 @@ header {background: #000;}
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {width: 100%; margin: auto;}
 
 /* SLIDE HOME */
-.slideDinamicoHome {height: 340px; background: #777774; margin-bottom: 6em; overflow: hidden}
-.flex-caption {width: 50%; padding: 10%; float:left ; color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 14px; line-height: 1em;}
-.flex-caption p {font-size: 1.5em; font-weight: 300}
+.slideDinamicoHome {height: 340px; background: #70162F; margin-bottom: 6em; overflow: hidden}
+.flex-caption {width: 50%; padding: 10%; float:left ; color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 14px; line-height: 2em;}
+.flex-caption p {font-size: 1.6em; font-weight: 300;}
 
 .imgSlideFlex {width: 50%; float: left;}
 .imgSlideFlex img {width: 100%; height: auto;}
@@ -96,7 +96,7 @@ footer {margin-top: 1em; padding: 4em 0}
 .sinProductos {border: 1px dashed #C6C6C6; width: 250px; height: 250px; text-align: center; line-height: 200px; margin: 2em 0px 4em;}
 
 .iconos{padding: 0.5em 0.5em 0.563em; border-bottom: 1px dashed #C6C6C6; margin-bottom: 0.5em}
-.iconos i{cursor: pointer}
+.iconos i{cursor: pointer; color: #337ab7}
 .iconos .fa-pencil{margin-right: 0.5em}
 
 .lazy {margin-bottom: 0.5em;}
@@ -112,6 +112,7 @@ footer {margin-top: 1em; padding: 4em 0}
 .spanDestacarProd {display: inline-block; font-size: 1.5em; font-weight: 300;padding-top: 0.3em; width: 300px; margin-left: 1em;}
 .divCargaImgProducto {margin: 0px 0px 4em; position: relative;}
 .divCargaImg { height: 20em; width: 20em; position: relative; box-sizing: border-box;}
+.divCargaImg i {position: absolute; top: 0.6em; right: 0.6em; font-size: 1.4em; color: #337ab7;}
 
 .form-group span {display: inline-block; margin:0 0.3em; font-size: 2em;}
 
