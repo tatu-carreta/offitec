@@ -115,11 +115,11 @@ class PersonaController extends BaseController {
                 $personas = Persona::select('apellido', 'nombre', 'email')->distinct()->get();
 
                 $datos = array(
-                    array('Apellido', 'Nombre', 'Email'),
+                    array('Apellido y nombre', 'Email'),
                 );
 
                 foreach ($personas as $persona) {
-                    array_push($datos, array($persona->apellido, $persona->nombre, $persona->email));
+                    array_push($datos, array($persona->apellido, $persona->email));
                 }
 
                 $sheet->fromModel($datos, null, 'A1', false, false);

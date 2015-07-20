@@ -18,6 +18,7 @@
 
 <div id="ng-app" ng-app="app">
     <div ng-controller="GaleriaUpload" nv-file-drop="" uploader="uploader" filters="queueLimit, customFilter, sizeLimit">
+        <input type="hidden" ng-model="url_public" ng-init="url_public = '{{URL::to('/')}}'">
 
         <div class="container">
             <div class="row">

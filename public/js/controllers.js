@@ -19,6 +19,13 @@ angular
                 $scope.resImgQuality = 1;
                 $scope.selMinSize = 100;
                 $scope.resImgSize = 280;
+                $scope.url = '';
+
+                $scope.$watch('url_public', cambiaUrlUploader, true);
+                function cambiaUrlUploader() {
+                  $scope.uploader.url = $scope.url_public + '/admin/imagen/crop/upload';
+                  //console.log($scope.uploader.url);
+                }
 
                 $scope.removerImagen = function () {
                     uploader.clearQueue();
@@ -59,8 +66,8 @@ angular
                 });
 
                 var uploader = $scope.uploader = new FileUploader({
-                    url: 'http://localhost/offitec/public/admin/imagen/crop/upload'
-                    //url: 'http://offitec.com/nuevo/admin/imagen/crop/upload'
+                    url: 'admin/imagen/crop/upload'
+                            //url: 'http://offitec.com/nuevo/admin/imagen/crop/upload'
                 });
 
                 // FILTERS
@@ -112,7 +119,6 @@ angular
                 uploader.onBeforeUploadItem = function (item) {
                     var blob = dataURItoBlob($scope.croppedImage);
                     item._file = blob;
-
                 };
 
                 /**
@@ -167,10 +173,16 @@ angular
         .controller('GaleriaUpload', ['$scope', 'FileUploader', function ($scope, FileUploader) {
 
                 $scope.imagenes_seleccionadas = [];
+        
+                $scope.$watch('url_public', cambiaUrlUploader, true);
+                function cambiaUrlUploader() {
+                    $scope.uploader.url = $scope.url_public + '/admin/imagen/slide/upload';
+                    //console.log($scope.uploader.url);
+                }
 
                 var uploader = $scope.uploader = new FileUploader({
-                    url: 'http://localhost/offitec/public/admin/imagen/slide/upload'
-                     //url: 'http://offitec.com/nuevo/admin/imagen/crop/upload'
+                    url: 'admin/imagen/slide/upload'
+                            //url: 'http://offitec.com/nuevo/admin/imagen/crop/upload'
                 });
 
                 // FILTERS
@@ -229,7 +241,7 @@ angular
                 };
                 uploader.onCompleteItem = function (fileItem, response, status, headers) {
                     console.info('onCompleteItem', fileItem, response, status, headers);
-                    
+
                     var imagen = {
                         'imagen_slide': response.imagen_path,
                     };

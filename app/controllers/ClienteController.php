@@ -24,41 +24,73 @@ class ClienteController extends BaseController {
     public function consultaContacto() {
 
         $data = Input::all();
-        $this->array_view['data'] = $data;
 
-        Mail::send('emails.consulta-contacto', $this->array_view, function($message) use($data) {
-            $message->from($data['email'], $data['nombre'])
-                    ->to('max.-ang@hotmail.com.ar')
-                    ->subject('Consulta')
-            ;
-        });
+        Input::flashOnly('nombre', 'email', 'telefono', 'consulta');
 
-        if (count(Mail::failures()) > 0) {
-            $mensaje = 'El mail no pudo enviarse.';
+        $reglas = array(
+            'email' => array('required', 'email'),
+            'nombre' => array('required'),
+            'telefono' => array('required'),
+        );
+
+        $validator = Validator::make($data, $reglas);
+
+        if ($validator->fails()) {
+            $messages = $validator->messages();
+            if ($messages->has('nombre')) {
+                $mensaje = $messages->first('nombre');
+            } elseif ($messages->has('email')) {
+                $mensaje = $messages->first('email');
+            } elseif ($messages->has('telefono')) {
+                $mensaje = $messages->first('telefono');
+            } else {
+                $mensaje = 'Los datos de contacto para el envio del presupuesto son erróneos.';
+            }
+
+            return Redirect::to('/contacto')->with('mensaje', $mensaje)->with('error', true)->withInput();
         } else {
 
-            $data['nombre_apellido'] = $data['nombre'];
+            $this->array_view['data'] = $data;
 
-            Cliente::agregar($data);
+            Mail::send('emails.consulta-contacto', $this->array_view, function($message) use($data) {
+                $message->from($data['email'], $data['nombre'])
+                        ->to('max.-ang@hotmail.com.ar')
+                        ->subject('Consulta')
+                ;
+            });
 
-            $mensaje = 'El mail se envió correctamente';
-        }
+            if (count(Mail::failures()) > 0) {
+                $mensaje = 'El mail no pudo enviarse.';
+            } else {
 
-        if (isset($data['continue']) && ($data['continue'] != "")) {
-            switch ($data['continue']) {
-                case "contacto":
-                    return Redirect::to('contacto')->with('mensaje', $mensaje);
-                    break;
-                case "menu":
-                    $menu = Menu::find($data['menu_id']);
+                $datos_persona = array(
+                    'email' => $data['email'],
+                    'apellido' => $data['nombre'],
+                    'tipo_telefono_id' => 2,
+                    'telefono' => $data['telefono']
+                );
 
-                    return Redirect::to('/' . $menu->url)->with('mensaje', $mensaje);
-                    break;
+                Persona::agregar($datos_persona);
+
+                $mensaje = 'El mail se envió correctamente';
             }
-        }
 
-        return Redirect::to("/")->with('mensaje', $mensaje);
-        //return View::make('producto.editar', $this->array_view);
+            if (isset($data['continue']) && ($data['continue'] != "")) {
+                switch ($data['continue']) {
+                    case "contacto":
+                        return Redirect::to('contacto')->with('mensaje', $mensaje);
+                        break;
+                    case "menu":
+                        $menu = Menu::find($data['menu_id']);
+
+                        return Redirect::to('/' . $menu->url)->with('mensaje', $mensaje);
+                        break;
+                }
+            }
+
+            return Redirect::to("/")->with('mensaje', $mensaje);
+            //return View::make('producto.editar', $this->array_view);
+        }
     }
 
     public function exportarEmail() {

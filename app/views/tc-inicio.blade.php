@@ -47,9 +47,7 @@
                         <div class="item">
                             <div class="col-md-12">
                                 <div class="thumbnail">
-                                    @if(!Auth::check())
                                     <a class="fancybox" href="@if(!is_null($item->imagen_destacada())){{URL::to($item->imagen_destacada()->ampliada()->carpeta.$item->imagen_destacada()->ampliada()->nombre)}}@else{{URL::to('images/sinImg.gif')}}@endif" title="@if(!is_null($item->imagen_destacada())){{ $item->imagen_destacada()->ampliada()->epigrafe }}@endif" rel='group'> 
-                                    @endif
                                         <div class="divImgProd">
                                             <img class="lazy" src="@if(!is_null($item->imagen_destacada())){{ URL::to($item->imagen_destacada()->carpeta.$item->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="{{$item->titulo}}">
                                             @if($item->producto()->oferta())
@@ -58,9 +56,7 @@
                                                 <span class="bandaNuevos">NUEVO</span>
                                             @endif
                                         </div>
-                                    @if(!Auth::check())
-                                        </a>
-                                    @endif
+                                    </a>
                                     <div class="bandaInfoProd @if($item->producto()->nuevo()) nuevos @elseif($item->producto()->oferta()) ofertas @endif">
                                         <span class="pull-left">{{ $item->titulo }}</span>
                                         @if(!Auth::check())

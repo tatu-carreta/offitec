@@ -39,9 +39,7 @@
             </div>
         @endif
 
-        @if(!Auth::check())
-            <a class="fancybox" href="{{URL::to($i->imagen_destacada()->ampliada()->carpeta.$i->imagen_destacada()->ampliada()->nombre)}}" title="{{ $i->imagen_destacada()->ampliada()->epigrafe }}" rel='group'>
-        @endif
+        <a class="fancybox" href="{{URL::to($i->imagen_destacada()->ampliada()->carpeta.$i->imagen_destacada()->ampliada()->nombre)}}" title="{{ $i->imagen_destacada()->ampliada()->epigrafe }}" rel='group'>
             <div class="divImgProd">
                <img class="lazy" data-original="@if(!is_null($i->imagen_destacada())){{ URL::to($i->imagen_destacada()->carpeta.$i->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="{{$i->titulo}}">
                @if($i->producto()->oferta())
@@ -50,10 +48,8 @@
                     <span class="bandaNuevos">NUEVO</span>
                 @endif
             </div>
-        @if(!Auth::check())
-            </a>
-        @endif
-
+        </a>
+        
         <div class="bandaInfoProd @if($i->producto()->nuevo()) nuevos @elseif($i->producto()->oferta()) ofertas @endif">
             <p class="pull-left">{{ $i->titulo }}</p>
             {{-- <p class="marca">Marca: @if(!is_null($i->producto()->marca_principal())){{$i->producto()->marca_principal()->nombre}}@endif</p> --}}

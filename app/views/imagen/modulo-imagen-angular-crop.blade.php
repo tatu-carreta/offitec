@@ -50,6 +50,7 @@
             <div class="col-xs-8">
                 <input type="text" class="url-archivo1 form-control">
                 <input type="hidden" name="imagen_portada_crop" value="<% imagen_portada %>">
+                <input type="hidden" ng-model="url_public" ng-init="url_public = '{{URL::to('/')}}'">
             </div>
         </div>
 

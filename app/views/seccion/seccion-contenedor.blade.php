@@ -1,17 +1,16 @@
 @foreach($menu -> secciones as $seccion)
-    @if((count($seccion->items) > 0) || Auth::check())
-        <div class="row divListadoItems">
-            
+    @if((count($seccion->items) > 0) || (Auth::check()))
+        <div class="row @if(Auth::check()) divListadoItems @endif">
                 <div  class="col-md-12" id="{{$menu->estado.$menu->id}}">
                     @if(($seccion->titulo != "") || (Auth::check()))
                         <h3 class="pull-left" id="{{$seccion->estado.$seccion->id}}">
                             @if($seccion->titulo != "")
                                 {{ $seccion -> titulo }}
-                            @else 
+                            {{-- @else 
                                 @if(Auth::check()) 
                                     Sección sin título {{ $seccion->id }}
-                                @endif 
-                            @endif
+                                @endif  --}}
+                            @endif 
                         </h3>
                     @endif
 
