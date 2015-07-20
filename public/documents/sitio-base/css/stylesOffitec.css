@@ -29,8 +29,9 @@ h1, h2, h3 {font-weight: 300 !important}
 .modal-header, .modal-footer {border: 0}
 
 /* SERVICIOS */
-.redeshome{width:24px; }
-.redes{width: 51px;}
+.redesHome{width: 26px; height: 51px;   position: relative; top: 270px;}
+.redesHome a{background-image: url(../images/sprites-redes.png); width: 24px; height: 24px; display: inline-block;}
+.redes{  width: 51px; position: relative; z-index: 99; top: 60px; right: 105px;}
 .redes a{background-image: url(../images/sprites-redes.png); width: 24px; height: 24px; display: inline-block;}
 .facebook{background-position: 0 -24px; }
 .google{background-position: 48px -24px;}
