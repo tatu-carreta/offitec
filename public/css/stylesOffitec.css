@@ -17,7 +17,7 @@ h1, h2, h3 {font-weight: 300}
 
 .contenedor-carousel a{display: block;height: 130px;text-align: center;padding-top: 40px;color:#fff; }
 .contenedor-carousel a span {width: 80%; display: inline-block;}
-.boton-naranja {background: #f19300;}
+.boton-naranja {background: #ff7503;}
 .boton-rojo {background: #D52318;}
 .boton-violeta {background: #70162F;}
 .boton-azul {background: #142B3A;}
@@ -41,7 +41,7 @@ h1, h2, h3 {font-weight: 300}
 .bandaInfoProd p {margin:7px 0 5px;}
 .bandaOfertas, .bandaNuevos {color: #fff; font-size: 1.2em; position: absolute; bottom: 0; left: 0; padding: 0.1em 0.5em;}
 .bandaOfertas {background: #D52318;}
-.bandaNuevos {background: #f19300}
+.bandaNuevos {background: #ff7503}
 .bandaProd span {margin-right: 1em; font-size: 0.938em; text-transform: uppercase; margin-top: 0.6em;}
 .lazy {margin: 0}
 
@@ -49,6 +49,7 @@ h1, h2, h3 {font-weight: 300}
 .navbar {margin:0;}
 .navbar-toggle {margin-top: 1.560em}
 .navbar-brand {padding: 0.125em 0; margin-top: 1em;}
+.navbar-collapse {padding-right: 0}
 .dropdown-menu {background: #878979}
 
 .open {background: #878979}
