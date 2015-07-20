@@ -67,7 +67,8 @@
                                     @foreach($menu->children as $ch)
                                         <div class="item">
                                             <a class="@if(in_array($i, [0, 5, 10, 15])) boton-naranja @elseif(in_array($i, [1, 6, 11, 16])) boton-rojo @elseif(in_array($i, [2, 7, 12, 17])) boton-violeta @elseif(in_array($i, [3, 8, 13, 18])) boton-azul @elseif(in_array($i, [4, 9, 14, 19])) boton-verde @endif" href="{{URL::to($ch->url)}}">
-                                                <span>{{ $ch->nombre }}</span>
+                                                <?php //$nombre = explode(' ', $ch->nombre); ?>
+                                                <span>{{$ch->nombre}}<?php //echo $nombre[0]; ?><br><?php //$j=0; foreach($nombre as $n){if($j != 0){echo $n." ";} $j++;} ?></span>
                                             </a>
                                         </div>
                                         <?php $i++; ?>
