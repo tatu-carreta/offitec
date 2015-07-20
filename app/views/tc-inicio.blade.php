@@ -27,10 +27,15 @@
 @stop
 
 @section('contenido')
+        <div class="redesHome pull-right">
+            <a class="facebook" href="#"></a>
+            <a class="google" href="#"></a>
+        </div>
     <section class="container">
+        
         <div class="row">
             <div class="col-md-12">
-                <h2 class="presentacion">Equipamiento integral de oficinas. Muebles, sillas, sillones, tabiques, cortinas y complementos. Asesoramiento profesional. Muebles a medida. Envíos a todo el país.</h2>
+                <h2 class="presentacion">Equipamiento integral de oficinas. Muebles, sillas, sillones, cortinas y complementos. Asesoramiento profesional. Muebles a medida. Envíos a todo el país.</h2>
             </div>
         </div>
         <div class="row carrouselProdHome">

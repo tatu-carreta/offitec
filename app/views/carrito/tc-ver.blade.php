@@ -35,7 +35,7 @@
                     </div>
                     <div class="col-carrito">
                         <h3>Complete sus datos</h3>
-                        <div class="formulario">
+                        
                         {{ Form::open(array('url' => 'pedido/agregar', 'class' => 'borde', 'role' => 'form')) }}
                             <div class="form-group">
                                 <label for="ejemplo_email_1">Nombre y apellido</label>
@@ -63,7 +63,7 @@
                             </div>
                             <button type="submit" class="btn btn-primary">Enviar</button>
                         {{ Form::close() }}
-                    </div>
+                    
                     </div>
                 </div>
             </div>
