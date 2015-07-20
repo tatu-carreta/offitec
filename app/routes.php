@@ -194,6 +194,10 @@ Route::group(array('before' => 'auth'), function() {
     Route::get('admin/slide/agregar/{menu_id}/{tipo}', 'SlideController@vistaAgregar');
 
     Route::post('admin/slide/agregar', 'SlideController@agregar');
+    
+    Route::get('admin/slide/editar/{id}/{next}', 'SlideController@vistaEditar');
+
+    Route::post('admin/slide/editar', 'SlideController@editar');
 
     /*
      * Ruteo de Galeria
@@ -240,7 +244,7 @@ Route::group(array('before' => 'auth'), function() {
 
     Route::post('admin/producto/agregar', 'ProductoController@agregar');
 
-    Route::get('admin/producto/editar/{id}/{next}', 'ProductoController@vistaEditar');
+    Route::get('admin/producto/editar/{id}/{next}/{seccion_next}', 'ProductoController@vistaEditar');
 
     Route::post('admin/producto/editar', 'ProductoController@editar');
 

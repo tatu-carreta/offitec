@@ -25,6 +25,7 @@ angular
                     $scope.image = '';
                     $scope.croppedImage = '';
                     angular.element(document.querySelector('#fileInput')).val('');
+                    angular.element(document.querySelector('.url-archivo1')).val('');
                 };
 
                 $scope.onChange = function ($dataURI) {
@@ -59,7 +60,7 @@ angular
 
                 var uploader = $scope.uploader = new FileUploader({
                     url: 'http://localhost/offitec/public/admin/imagen/crop/upload'
-                    //url: 'http://offitec.com/nuevo/public/admin/imagen/crop/upload'
+                    //url: 'http://offitec.com/nuevo/admin/imagen/crop/upload'
                 });
 
                 // FILTERS
@@ -169,7 +170,7 @@ angular
 
                 var uploader = $scope.uploader = new FileUploader({
                     url: 'http://localhost/offitec/public/admin/imagen/slide/upload'
-                    // url: 'http://offitec.com/nuevo/public/admin/imagen/crop/upload'
+                     //url: 'http://offitec.com/nuevo/admin/imagen/crop/upload'
                 });
 
                 // FILTERS

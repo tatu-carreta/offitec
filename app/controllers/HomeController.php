@@ -6,18 +6,20 @@ class HomeController extends BaseController {
         $items_home = array();
         $destacados = array();
 
+        $total_home = 12;
+        
         $slideIndex = parent::slideIndex();
-        $items_oferta = parent::itemsOferta(8);
+        $items_oferta = parent::itemsOferta($total_home);
 
-        if (count($items_oferta) < 8) {
+        if (count($items_oferta) < $total_home) {
             foreach ($items_oferta as $item_of) {
                 array_push($destacados, $item_of->id);
                 array_push($items_home, $item_of);
             }
 
-            $items_nuevos = parent::itemsNuevos(8 - count($items_home));
+            $items_nuevos = parent::itemsNuevos($total_home - count($items_home));
 
-            if ((count($items_home) + count($items_nuevos)) < 8) {
+            if ((count($items_home) + count($items_nuevos)) < $total_home) {
 
                 if (count($items_nuevos) > 0) {
 
@@ -26,9 +28,9 @@ class HomeController extends BaseController {
                         array_push($items_home, $item);
                     }
 
-                    $ultimos_productos = Item::where('estado', 'A')->join('producto', 'item.id', '=', 'producto.item_id')->whereNotIn('item.id', $destacados)->orderBy('item.fecha_modificacion', 'desc')->skip(0)->take(8 - count($items_home))->get();
+                    $ultimos_productos = Item::where('estado', 'A')->join('producto', 'item.id', '=', 'producto.item_id')->whereNotIn('item.id', $destacados)->orderBy('item.fecha_modificacion', 'desc')->skip(0)->take($total_home - count($items_home))->get();
                 } else {
-                    $ultimos_productos = Item::where('estado', 'A')->join('producto', 'item.id', '=', 'producto.item_id')->orderBy('item.fecha_modificacion', 'desc')->skip(0)->take(8 - count($items_home))->get();
+                    $ultimos_productos = Item::where('estado', 'A')->join('producto', 'item.id', '=', 'producto.item_id')->orderBy('item.fecha_modificacion', 'desc')->skip(0)->take($total_home - count($items_home))->get();
                 }
 
                 foreach ($ultimos_productos as $item_ul) {

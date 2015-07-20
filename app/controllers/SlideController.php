@@ -33,5 +33,28 @@ class SlideController extends BaseController {
             return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla)->with('ok', true);
         }
     }
+    
+    public function vistaEditar($id, $next) {
+        $slide = Slide::find($id);
+        
+        $this->array_view['slide'] = $slide;
+        $this->array_view['continue'] = $next;
+
+        return View::make($this->folder_name . '.editar-sin-popup', $this->array_view);
+    }
+
+    public function editar() {
+
+        //Aca se manda a la funcion agregarItem de la clase Item
+        //y se queda con la respuesta para redirigir cual sea el caso
+        $respuesta = Slide::editarSlideHome(Input::all());
+
+        if ($respuesta['error'] == true) {
+            return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('error', true);
+        } else {
+            
+            return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
+        }
+    }
 
 }

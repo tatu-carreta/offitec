@@ -13,87 +13,118 @@ class PedidoController extends BaseController {
 
     public function agregarPedido() {
 
-        $carrito_id = Session::get('carrito');
+        $input = Input::all();
 
-        $carrito = Carrito::find($carrito_id);
-
-        $datos = DB::table('carrito_producto')->where('carrito_id', $carrito->id)->where('estado', 'A')->get();
-
-        $productos = array();
-
-        foreach ($datos as $prod) {
-
-            $data = array(
-                'id' => $prod->producto_id,
-                'cantidad' => $prod->cantidad,
-                'precio' => $prod->precio
-            );
-
-            array_push($productos, $data);
-        }
-
-        //Levanto los datos del formulario del presupuesto para
-        //generar la persona correspondiente al pedido
-        $datos_persona = array(
-            'email' => Input::get('email'),
-            'apellido' => Input::get('nombre'),
-            'tipo_telefono_id' => 2,
-            'telefono' => Input::get('telefono')
+        Input::flashOnly('nombre', 'email', 'empresa', 'telefono', 'consulta');
+        
+        $reglas = array(
+            'email' => array('required', 'email'),
+            'nombre' => array('required'),
+            'telefono' => array('required'),
         );
 
-        $persona = Persona::agregar($datos_persona);
+        $validator = Validator::make($input, $reglas);
 
-        $datos_pedido = array(
-            'persona_id' => $persona['data']->id,
-            'productos' => $productos,
-        );
+        if ($validator->fails()) {
+            $messages = $validator->messages();
+            if ($messages->has('nombre')) {
+                $mensaje = $messages->first('nombre');
+            } elseif ($messages->has('email')) {
+                $mensaje = $messages->first('email');
+            } elseif ($messages->has('telefono')) {
+                $mensaje = $messages->first('telefono');
+            } else {
+                $mensaje = 'Los datos de contacto para el envio del presupuesto son erróneos.';
+            }
 
-        $respuesta = Pedido::agregar($datos_pedido);
-
-        if ($respuesta['error']) {
-
-            return Redirect::to('/carrito')->with('mensaje', $respuesta['mensaje'])->with('error', true);
+            return Redirect::to('/carrito')->with('mensaje', $mensaje)->with('error', true)->withInput();
         } else {
+            $productos = array();
+            if (Session::has('carrito')) {
 
-            $datos_resumen_pedido = array(
-                'persona_id' => $persona['data']->id,
-                'productos' => $productos,
-                'email' => Input::get('email'),
-                'nombre' => Input::get('nombre'),
-                'telefono' => Input::get('telefono'),
-                'empresa' => Input::get('empresa')
-            );
+                $carrito_id = Session::get('carrito');
 
-            $this->resumenPedido($datos_resumen_pedido);
+                $carrito = Carrito::find($carrito_id);
 
-            Cart::destroy();
+                $datos = DB::table('carrito_producto')->where('carrito_id', $carrito->id)->where('estado', 'A')->get();
 
-            Session::forget('carrito');
 
-            return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
+
+                foreach ($datos as $prod) {
+
+                    $data = array(
+                        'id' => $prod->producto_id,
+                        'cantidad' => $prod->cantidad,
+                        'precio' => $prod->precio
+                    );
+
+                    array_push($productos, $data);
+                }
+            }
+
+
+
+            if (count($productos) == 0) {
+                $mensaje = 'Para realizar el presupuesto debe seleccionar al menos un producto.';
+                return Redirect::to('/carrito')->with('mensaje', $mensaje)->with('error', true)->withInput();
+            } else {
+
+                //Levanto los datos del formulario del presupuesto para
+                //generar la persona correspondiente al pedido
+                $datos_persona = array(
+                    'email' => Input::get('email'),
+                    'apellido' => Input::get('nombre'),
+                    'tipo_telefono_id' => 2,
+                    'telefono' => Input::get('telefono')
+                );
+
+                $persona = Persona::agregar($datos_persona);
+
+                if ($persona['error']) {
+                    $mensaje = 'Hubo un error al realizar el pedido. Vuelva a intentarlo en unos minutos.';
+                    return Redirect::to('/carrito')->with('mensaje', $mensaje)->with('error', true);
+                } else {
+
+                    $datos_pedido = array(
+                        'persona_id' => $persona['data']->id,
+                        'productos' => $productos,
+                    );
+
+                    $respuesta = Pedido::agregar($datos_pedido);
+
+                    if ($respuesta['error']) {
+
+                        return Redirect::to('/carrito')->with('mensaje', $respuesta['mensaje'])->with('error', true);
+                    } else {
+
+                        $datos_resumen_pedido = array(
+                            'persona_id' => $persona['data']->id,
+                            'productos' => $productos,
+                            'email' => Input::get('email'),
+                            'nombre' => Input::get('nombre'),
+                            'telefono' => Input::get('telefono'),
+                            'empresa' => Input::get('empresa'),
+                            'consulta' => Input::get('consulta')
+                        );
+
+                        $envio_mail = $this->resumenPedido($datos_resumen_pedido);
+
+                        if ($envio_mail) {
+                            Cart::destroy();
+
+                            Session::forget('carrito');
+
+                            $mensaje = 'El presupuesto fue enviado.';
+
+                            return Redirect::to('/')->with('mensaje', $mensaje)->with('ok', true);
+                        } else {
+                            $mensaje = 'El mail con el resumen de su presupuesto no pudo enviarse correctamente. Vuelva a intentarlo en unos minutos.';
+                            return Redirect::to('/carrito')->with('mensaje', $mensaje)->with('error', true);
+                        }
+                    }
+                }
+            }
         }
-
-        /*
-          switch ($continue) {
-          case 'home':
-          return Redirect::to('/')->with('mensaje', $respuesta['mensaje']);
-          break;
-          case 'seccion':
-          $menu = $producto->item()->seccionItem()->menuSeccion()->url;
-          $ancla = '#' . $producto->item()->seccionItem()->estado . $producto->item()->seccionItem()->id;
-
-          return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla);
-          break;
-          case 'carrito':
-          return Redirect::to('/carrito')->with('mensaje', $respuesta['mensaje']);
-          break;
-          default :
-          return Redirect::to('/')->with('mensaje', $respuesta['mensaje']);
-          break;
-          }
-         * 
-         */
-        //CIERRO EL CARRITO
     }
 
     public function editarProducto($producto_id, $rowId) {
@@ -159,20 +190,24 @@ class PedidoController extends BaseController {
 
         Mail::send('emails.consulta-pedido', $this->array_view, function($message) use($data) {
             $message->from($data['email'], $data['nombre'])
-                    ->to('max.-ang@hotmail.com.ar')
+                    ->to('max.angletti@gmail.com')
                     ->subject('Pedido de presupuesto')
             ;
         });
 
         if (count(Mail::failures()) > 0) {
             $mensaje = 'El mail no pudo enviarse.';
+            $ok = FALSE;
         } else {
 
             //$data['nombre_apellido'] = $data['nombre'];
             //Cliente::agregar($data);
 
             $mensaje = 'El mail se envió correctamente';
+            $ok = TRUE;
         }
+
+        return $ok;
     }
 
 }

@@ -12,6 +12,8 @@ a {text-decoration: none !important;}
 .fondoDestacado {background: #EFEFEF; padding: 1em; margin-bottom: 2em; box-sizing: border-box !important;}
 .fondoDestacado > * { margin-top: 0;}
 
+.ajustaImg {width: 100%; height: auto}
+
 /* HEADER */
 header {background: #000;}
 
@@ -20,20 +22,20 @@ header {background: #000;}
 #menuPrincipal a {background: transparent; font-size: 15px; color:#fff; font-weight: 300;background: transparent; height: 88px; line-height: 88px; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box;}
 #menuPrincipal a:hover {background: #878979}
 #menuPrincipal .dropdown li a {height: 35px; line-height: 35px; font-size: 15px;}
-.btnCarrito {font-weight: 300; font-size: 15px; height: 88px; line-height: 88px; margin: 0 !important; background: #302F2F; color:#fff; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box;}
+.btnCarrito {font-weight: 300; font-size: 15px; height: 88px; line-height: 88px; margin: 0 !important; background: #302F2F; color:#fff; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box; position: relative; z-index: 1000;}
 .btnCarrito.active {color:#80DFFF}
 
 .carrouselProdHome {margin-bottom: 6em}
 
 /* SLIDE HOME */
-.slideHome{min-height: auto; overflow: hidden; }
+.slideHome{overflow: hidden; }
 .carousel-inner {position: relative; width: 100%; overflow: hidden;}
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {width: 100%; margin: auto;}
 
 /* SLIDE HOME */
-.slideDinamicoHome {height: 340px; background: #777774; margin-bottom: 6em; overflow: hidden}
-.flex-caption {width: 50%; padding: 10%; float:left ; color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 14px; line-height: 1em;}
-.flex-caption p {font-size: 1.5em; font-weight: 300}
+.slideDinamicoHome {height: 340px; background: #70162F; margin-bottom: 6em; overflow: hidden}
+.flex-caption {width: 50%; padding: 10%; float:left ; color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 14px; line-height: 2em;}
+.flex-caption p {font-size: 1.6em; font-weight: 300;}
 
 .imgSlideFlex {width: 50%; float: left;}
 .imgSlideFlex img {width: 100%; height: auto;}
@@ -44,16 +46,14 @@ header {background: #000;}
 /* Ventanas emergentes */
 .divEmergente{background:#00A9E0; width:170px; padding: 20px; position: absolute; top:88px; right: 15px; z-index: 999; font-size: 1em; line-height: 1.4em; text-align: center; -webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.4);
 -moz-box-shadow:1px 1px 5px 0px rgba(50, 50, 50, 0.4); box-shadow:1px 1px 5px 0px rgba(50, 50, 50, 0.4);  }
+.divEmergente .imgArtPedido {width: 150px; height: auto}
 .cerrarEmergente{position: absolute; top:10px; right:10px;}
 .cerrarEmergente i {color:#fff; font-size: 1.3em;}
 .cerrarEmergente span {display: none}
 .triang{background: url(../images/triang.png); width:20px; height: 9px; position: absolute; top:-9px; z-index:999;}
 #ventanaCarrito .triang{left:95px;}
 
-.tarjetas img {margin-right: 2em; vertical-align: middle;x}
-.data-fiscal {float: right; position: relative; top: -10px;}
-.data-fiscal img {width: 40px; border: 0;margin-right: 0!important;}
-
+.tooltip {background: black; color:#fff;}
 
 /* Módulo lista y ficha de productos */
 
@@ -66,7 +66,11 @@ section {padding-top: 4em}
 	{margin-top: 0 !important}
 
 /* FOOTER */
-footer {margin-top: 1em; padding: 4em}
+footer {margin-top: 1em; padding: 4em 0}
+
+.tarjetas img {margin: 0 2em 2em 0; vertical-align: middle;}
+.data-fiscal {float: right !important; position: relative; top: -10px;}
+.data-fiscal img {width: 40px; border: 0;margin-right: 0!important;}
 
 /* ----------------------------- A D M I N ------------------------------------ */
 
@@ -92,7 +96,7 @@ footer {margin-top: 1em; padding: 4em}
 .sinProductos {border: 1px dashed #C6C6C6; width: 250px; height: 250px; text-align: center; line-height: 200px; margin: 2em 0px 4em;}
 
 .iconos{padding: 0.5em 0.5em 0.563em; border-bottom: 1px dashed #C6C6C6; margin-bottom: 0.5em}
-.iconos i{cursor: pointer}
+.iconos i{cursor: pointer; color: #337ab7}
 .iconos .fa-pencil{margin-right: 0.5em}
 
 .lazy {margin-bottom: 0.5em;}
@@ -108,6 +112,7 @@ footer {margin-top: 1em; padding: 4em}
 .spanDestacarProd {display: inline-block; font-size: 1.5em; font-weight: 300;padding-top: 0.3em; width: 300px; margin-left: 1em;}
 .divCargaImgProducto {margin: 0px 0px 4em; position: relative;}
 .divCargaImg { height: 20em; width: 20em; position: relative; box-sizing: border-box;}
+.divCargaImg i {position: absolute; top: 0.6em; right: 0.6em; font-size: 1.4em; color: #337ab7;}
 
 .form-group span {display: inline-block; margin:0 0.3em; font-size: 2em;}
 

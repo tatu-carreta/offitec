@@ -8,6 +8,7 @@
         <!-- abre LINK -->
         <link href="favicon.ico" rel="shortcut icon">
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
         <meta name="description" content="">
         <meta name="Keywords" content="">
         <meta property="og:image" content="" />
@@ -24,6 +25,7 @@
         <link rel="stylesheet" href="{{URL::to('css/owl.carousel.css')}}">
         <link rel="stylesheet" href="{{URL::to('css/owl.theme.css')}}">
         <link rel="stylesheet" href="{{URL::to('source/jquery.fancybox.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{URL::to('css/styleSlideHome.css')}}" />
         <link rel="stylesheet" type="text/css" href="{{URL::to('css/base.css')}}"> 
         <link rel="stylesheet" type="text/css" href="{{URL::to('css/stylesOffitec.css')}}"> 
         
@@ -43,6 +45,11 @@
         <script type="text/javascript">
             $(document).ready(function() {
                 $(".fancybox").fancybox();
+            });
+        </script>
+        <script>
+            $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip(); 
             });
         </script>
         @show
@@ -95,19 +102,8 @@
                             @include('menu.'.$project_name.'-desplegar-menu')
 
                             <div class="clearfix"></div>
-                            @if(Session::has('producto_carrito_subido'))
-                                @if(Session::get('producto_carrito_subido'))
-                                    <!-- ventana Carrito -->
-                                    <div id="ventanaCarrito" class="divEmergente">
-                                        <div class="triang"></div>
-                                        <a class="cerrarEmergente cerrarVentanaCarrito"><i class="fa fa-times-circle-o fa-lg"></i><span>Cerrar</span></a>
-                                            <img class="imgArtPedido" src="@if(!is_null(Session::get('producto_carrito')->item()->imagen_destacada())){{ URL::to(Session::get('producto_carrito')->item()->imagen_destacada()->carpeta.Session::get('producto_carrito')->item()->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="">
-                                            <p>Agregaste a carrito<br>
-                                            <span>Cod: {{ Session::get('producto_carrito')->item()->titulo }}</span></p>
-                                            <a href="{{URL::to('carrito')}}" class="btn btn-default">Ver Presupuesto</a>
-                                    </div>
-                                @endif
-                            @endif
+                            
+                            
                         </div>
                     </div>
                 </div>
@@ -127,7 +123,7 @@
                 @if(!Auth::check())
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-12 tarjetas">
+                            <div class="col-md-11 col-sm-10 col-xs-12 tarjetas">
                                 <img src="{{URL::to('images/tarjetas/visa.jpg')}}" alt="Tarjeta Visa">
                                 <img src="{{URL::to('images/tarjetas/mastercard.jpg')}}" alt="Tarjeta Mastercard">
                                 <img src="{{URL::to('images/tarjetas/american.jpg')}}" alt="Tarjeta American Sxpress">
@@ -138,6 +134,8 @@
                                 <img src="{{URL::to('images/tarjetas/argencard.jpg')}}" alt="Tarjeta Argencard">
                                 <img src="{{URL::to('images/tarjetas/cabal.jpg')}}" alt="Tarjeta Cabal">
                                 <img src="{{URL::to('images/tarjetas/mercado_pago.jpg')}}" alt="Mercado Pago">
+                            </div>
+                            <div class="col-md-1 col-sm-2 col-xs-12 tarjetas">
                                 <!--data fiscal -->
                                 <a  class="data-fiscal" href="http://qr.afip.gob.ar" target=""><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0"></a>
                                 <!--/data fiscal -->
@@ -155,11 +153,25 @@
         <script src="{{URL::to('js/jquery.lazyload.js')}}"></script>
         <script src="{{URL::to('js/jquery-ui.min.js')}}"></script>
         <script src="{{URL::to('js/jquery.Jcrop.min.js')}}"></script>
+        <script src="{{URL::to('js/div-ventana-carrito.js')}}"></script>
         
         <script>
             $(function () {
                 $("img.lazy").lazyload({
                     effect: "fadeIn"
+                });
+            });
+        </script>
+
+        <script type="text/javascript" src="{{URL::to('js/jquery.eislideshow.js')}}"></script>
+        <script type="text/javascript" src="{{URL::to('js/jquery.easing.1.3.js')}}"></script>
+        <script type="text/javascript">
+            $(function() {
+                $('#ei-slider').eislideshow({
+                    animation           : 'center',
+                    autoplay            : true,
+                    slideshow_interval  : 3000,
+                    titlesFactor        : 0
                 });
             });
         </script>

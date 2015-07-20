@@ -90,7 +90,7 @@ class Producto extends Item {
 
                 $respuesta['data'] = $producto;
                 $respuesta['error'] = false;
-                $respuesta['mensaje'] = "Producto creado.";
+                $respuesta['mensaje'] = "Producto publicado.";
             } else {
                 $respuesta['error'] = true;
                 $respuesta['mensaje'] = "El producto no pudo ser creado. Compruebe los campos.";

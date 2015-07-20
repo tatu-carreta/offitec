@@ -1,9 +1,9 @@
 @extends($project_name.'-master')
 
 @section('contenido')
-<section>
+<section class="container">
     <div>
-        <h1>{{ $texto }}</h1>
+        <h2>{{ $texto }}</h2>
     </div>
 </section>
 @stop

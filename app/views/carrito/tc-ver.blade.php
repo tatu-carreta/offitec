@@ -35,6 +35,7 @@
                     </div>
                     <div class="col-carrito">
                         <h3>Complete sus datos</h3>
+<<<<<<< HEAD
                         
                         {{ Form::open(array('url' => 'pedido/agregar', 'class' => 'borde', 'role' => 'form')) }}
                             <div class="form-group">
@@ -64,6 +65,42 @@
                             <button type="submit" class="btn btn-primary">Enviar</button>
                         {{ Form::close() }}
                     
+=======
+                        <div class="formulario">
+                            {{ Form::open(array('url' => 'pedido/agregar', 'class' => 'borde', 'role' => 'form')) }}
+                                <div class="form-group">
+                                    <label for="nombre">Nombre y apellido</label>
+                                    {{Form::text('nombre', Input::old('nombre'),  array('id' => 'nombre','class' => 'form-control', 'required' => true))}}    
+                                    <!--<input type="type" class="form-control" id="ejemplo_email_1"
+                                           placeholder="" name="nombre">-->
+                                </div>
+                                <div class="form-group">
+                                    <label for="empresa">Empresa</label>
+                                    {{Form::text('empresa', Input::old('empresa'),  array('id' => 'empresa','class' => 'form-control'))}} 
+                                    <!--<input type="type" class="form-control" id="ejemplo_password_1" 
+                                           placeholder="" name="empresa">-->
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    {{Form::email('email', Input::old('email'),  array('id' => 'email','class' => 'form-control', 'required' => true))}} 
+                                    <!--<input type="email" class="form-control" id="ejemplo_password_1" 
+                                           placeholder="" name="email">-->
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefono">Teléfono</label>
+                                    {{Form::text('telefono', Input::old('telefono'),  array('id' => 'telefono','class' => 'form-control', 'required' => true))}} 
+                                    <!--<input type="type" class="form-control" id="ejemplo_password_1" 
+                                           placeholder="" name="telefono">-->
+                                </div>
+                                <div class="form-group">
+                                    <label for="consulta">Comentarios</label>
+                                    {{Form::textarea('consulta', Input::old('consulta'),  array('id' => 'consulta','class' => 'form-control', 'rows' => 3))}} 
+                                    <!--<textarea class="form-control" rows="3" name="consulta"></textarea>-->
+                                </div>
+                                <button type="submit" class="btn btn-primary">Enviar</button>
+                            {{ Form::close() }}
+                        </div>
+>>>>>>> origin/master
                     </div>
                 </div>
             </div>

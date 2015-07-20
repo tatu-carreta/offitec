@@ -90,7 +90,7 @@ class ProductoController extends BaseController {
         }
     }
 
-    public function vistaEditar($id, $next) {
+    public function vistaEditar($id, $next, $seccion_next) {
 
         //Me quedo con el item, buscando por id
         $producto = Producto::find($id);
@@ -111,6 +111,7 @@ class ProductoController extends BaseController {
             $this->array_view['item'] = $producto->item();
             $this->array_view['producto'] = $producto;
             $this->array_view['continue'] = $next;
+            $this->array_view['seccion_next'] = $seccion_next;
             return View::make($this->folder_name . '.editar', $this->array_view);
         } else {
             $this->array_view['texto'] = 'Página de Error!!';
@@ -137,9 +138,11 @@ class ProductoController extends BaseController {
             //return Redirect::to('admin/producto')->withErrors($respuesta['mensaje'])->withInput();
         } else {
             if (Input::get('continue') == "home") {
-                return Redirect::to('/')->with('mensaje', $respuesta['mensaje']);
+                return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
             } else {
-                $menu = $respuesta['data']->item()->seccionItem()->menuSeccion()->url;
+                $seccion = Seccion::find(Input::get('seccion_id'));
+                
+                $menu = $seccion->menuSeccion()->url;
                 $ancla = '#' . $respuesta['data']->item()->seccionItem()->estado . $respuesta['data']->item()->seccionItem()->id;
 
                 return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla)->with('ok', true);
