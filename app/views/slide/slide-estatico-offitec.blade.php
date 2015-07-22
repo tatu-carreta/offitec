@@ -61,33 +61,20 @@
                 <div class="contenedor-carousel">
                     <div class="carousel-home">
                         <div id="owl-demo2">
-                            <?php $i = 0; ?>
-                            @foreach($menu_dinamico as $menu)
-                                @if(count($menu->children) > 0)
-                                    @foreach($menu->children as $ch)
-                                        <div class="item">
-                                            <a class="@if(in_array($i, [0, 5, 10, 15])) boton-naranja @elseif(in_array($i, [1, 6, 11, 16])) boton-rojo @elseif(in_array($i, [2, 7, 12, 17])) boton-violeta @elseif(in_array($i, [3, 8, 13, 18])) boton-azul @elseif(in_array($i, [4, 9, 14, 19])) boton-verde @endif" href="{{URL::to($ch->url)}}">
-                                                <?php //$nombre = explode(' ', $ch->nombre); ?>
-                                                <span>{{$ch->nombre}}<?php //echo $nombre[0]; ?><br><?php //$j=0; foreach($nombre as $n){if($j != 0){echo $n." ";} $j++;} ?></span>
-                                            </a>
-                                        </div>
-                                        <?php $i++; ?>
-                                    @endforeach
-                                @endif
-                            @endforeach
-                            <!--
-                                <div class="item"><a class="" href="#">muebles<br>operativos</a></div>
-                                <div class="item"><a class="" href="#">mesas <br> de reunión</a></div>
-                                <div class="item"><a class="" href="#">mesas <br>bajas</a></div>
-                                <div class="item"><a class="" href="#">muebles <br> de guardado</a></div>
-                                <div class="item"><a class="boton-naranja" href="#">asientos<br>gerenciales</a></div>
-                                <div class="item"><a class="boton-rojo" href="#">asientos<br>operativos</a></div>
-                                <div class="item"><a class="boton-violeta" href="#">sillas <br>de visita</a></div>
-                                <div class="item"><a class="boton-azul" href="#">sillones <br>de visita</a></div>
-                                <div class="item"><a class="boton-verde" href="#">cortinas<br> a medida</a></div>
-                                <div class="item"><a class="boton-naranja" href="#">accesorios <br>y complementos</a></div>
-                                <div class="item"><a class="boton-rojo" href="#">deco <br>casa</a></div>
-                            -->
+                            
+                                <div class="item"><a class="boton-naranja" href="{{URL::to('muebles-operativos')}}">Muebles<br>gerenciales</a></div>
+                                <div class="item"><a class="boton-rojo" href="{{URL::to('muebles-operativos')}}">Muebles<br>operativos</a></div>
+                                <div class="item"><a class="boton-violeta" href="{{URL::to('mesas-de-reunion')}}">Mesas <br> de reunión</a></div>
+                                <div class="item"><a class="boton-azul" href="{{URL::to('mesas-bajas')}}">Mesas <br>bajas</a></div>
+                                <div class="item"><a class="boton-verde" href="{{URL::to('muebles-de-guardado')}}">Muebles <br> de guardado</a></div>
+                                <div class="item"><a class="boton-naranja" href="{{URL::to('asientos-gerenciales')}}">Asientos<br>gerenciales</a></div>
+                                <div class="item"><a class="boton-rojo" href="{{URL::to('asientos-operativos')}}">Asientos<br>operativos</a></div>
+                                <div class="item"><a class="boton-violeta" href="{{URL::to('sillas-de-visita')}}">Sillas <br>de visita</a></div>
+                                <div class="item"><a class="boton-azul" href="{{URL::to('sillones-de-visita')}}">Sillones <br>de visita</a></div>
+                                <div class="item"><a class="boton-verde" href="{{URL::to('cortinas-a-medida')}}">Cortinas<br> a medida</a></div>
+                                <div class="item"><a class="boton-naranja" href="{{URL::to('accesorios-y-complementos')}}">Accesorios <br>y complementos</a></div>
+                                <div class="item"><a class="boton-rojo" href="{{URL::to('deco-casa')}}">Deco <br>casa</a></div>
+                            
                         </div>
                     </div>
                 </div>
