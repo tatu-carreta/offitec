@@ -3,9 +3,17 @@
 @section('contenido')
 <section class="container">
     {{ Form::open(array('url' => 'admin/slide/agregar')) }}
-          @include('imagen.modulo-galeria-angular')
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-          <button type="submit" class="btn btn-primary">Guardar</button>
+        <div class="row marginBottom2">
+            <!-- Abre columna de imágenes -->
+            <div class="col-md-12 cargaImg">
+                <div class="fondoDestacado">
+                    <h3>Selección de imágenes</h3>
+                    @include('imagen.modulo-galeria-angular')
+                </div>
+            </div>
+        </div>  
+        <button type="button" class="btn btn-default" onclick="window.history.back();">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
         {{Form::hidden('seccion_id', $seccion_id)}}
         {{Form::hidden('tipo', $tipo)}}
     {{Form::close()}}

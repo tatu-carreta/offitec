@@ -23,8 +23,8 @@ angular
 
                 $scope.$watch('url_public', cambiaUrlUploader, true);
                 function cambiaUrlUploader() {
-                  $scope.uploader.url = $scope.url_public + '/admin/imagen/crop/upload';
-                  //console.log($scope.uploader.url);
+                    $scope.uploader.url = $scope.url_public + '/admin/imagen/crop/upload';
+                    //console.log($scope.uploader.url);
                 }
 
                 $scope.removerImagen = function () {
@@ -173,7 +173,8 @@ angular
         .controller('GaleriaUpload', ['$scope', 'FileUploader', function ($scope, FileUploader) {
 
                 $scope.imagenes_seleccionadas = [];
-        
+                $scope.nombres_archivos = '';
+
                 $scope.$watch('url_public', cambiaUrlUploader, true);
                 function cambiaUrlUploader() {
                     $scope.uploader.url = $scope.url_public + '/admin/imagen/slide/upload';
@@ -216,6 +217,8 @@ angular
                     console.info('onWhenAddingFileFailed', item, filter, options);
                 };
                 uploader.onAfterAddingFile = function (fileItem) {
+                    cargarNombresArchivos();
+
                     console.info('onAfterAddingFile', fileItem);
                 };
                 uploader.onAfterAddingAll = function (addedFileItems) {
@@ -251,6 +254,26 @@ angular
                 uploader.onCompleteAll = function () {
                     console.info('onCompleteAll');
                 };
+
+                function cargarNombresArchivos() {
+                    $scope.nombres_archivos = '';
+                    angular.forEach(uploader.queue, function (item) {
+                        $scope.nombres_archivos += item.file.name + ";   ";
+                    });
+                }
+                
+
+                $scope.removeItem = function (item) {
+                    item.remove();
+                    cargarNombresArchivos();
+                };
+                
+                $scope.removeTodos = function (item) {
+                    uploader.clearQueue();
+                    cargarNombresArchivos();
+                };
+                
+                
 
                 console.info('uploader', uploader);
             }]);
