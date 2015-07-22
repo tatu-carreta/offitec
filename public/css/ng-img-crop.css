@@ -5,6 +5,7 @@ img-crop {
   display: block;
   position: relative;
   overflow: hidden;
+
 }
 /* line 7, ../../source/scss/ng-img-crop.scss */
 img-crop canvas {

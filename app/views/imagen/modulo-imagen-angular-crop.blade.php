@@ -54,7 +54,7 @@
             </div>
         </div>
 
-        <div class="cropArea" ng-class="{'big':size == 'big', 'medium':size == 'medium', 'small':size == 'small'}">
+        <div class="cropArea marginBottom1" ng-class="{'big':size == 'big', 'medium':size == 'medium', 'small':size == 'small'}">
             <img-crop image="image"
                       result-image="croppedImage"
                       change-on-fly="changeOnFly"
@@ -79,7 +79,7 @@
                 <img ng-src="<% croppedImage %>" />
         </div>
 
-        <input class="form-control" type="text" name="epigrafe_imagen_portada" placeholder="Ingrese una descripción de la foto (opcional)">
+        <input class="marginBottom1 form-control" type="text" name="epigrafe_imagen_portada" placeholder="Ingrese una descripción de la foto (opcional)">
 
         <div style="margin-bottom: 40px;margin-top: 20px;">
             <div>
