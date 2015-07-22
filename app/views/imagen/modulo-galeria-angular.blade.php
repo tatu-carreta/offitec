@@ -46,7 +46,7 @@
                             <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
                             <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
                             <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
-                            <input class="form-control" id="epigrafe" type="text" name="epigrafe_slide[]" placeholder="Ingrese una descripción de la foto (opcional)">
+                            <textarea class="form-control" id="epigrafe" name="epigrafe_slide[]"></textarea>
                             <i ng-click="removeItem(item)" class="fa fa-times-circle fa-lg"></i>
                         </div>
                     </div>

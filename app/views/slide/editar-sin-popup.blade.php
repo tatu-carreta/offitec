@@ -13,7 +13,7 @@
                        <div class="thumbnail">
                            <input type="hidden" name="imagen_slide_editar[]" value="{{$img->id}}">
                            <img class="marginBottom1" src="{{ URL::to($img->carpeta.$img->nombre) }}" alt="{{$slide->titulo}}">
-                           <input class="form-control" type="text" name="epigrafe_imagen_slide_editar[]" value="{{$img->epigrafe}}">
+                           <textarea class="form-control" name="epigrafe_imagen_slide_editar[]" >{{$img->epigrafe}}</textarea>
                            <i onclick="borrarImagenReload('{{ URL::to('admin/imagen/borrar') }}', '{{$img->id}}');" class="fa fa-times-circle fa-lg"></i>
                        </div>
                    </div>
