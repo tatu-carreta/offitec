@@ -11,7 +11,11 @@
 
 @if(Auth::check())
     @if (!is_null($slide_index) && !is_null($slide_index -> imagenes))
-        <a href="{{URL::to('admin/slide/editar/'.$slide_index->id.'/home')}}">Editar Slide Home</a>
+        <div class="row">
+            <div class="col-md-12">
+                <a class="btn pull-right" href="{{URL::to('admin/slide/editar/'.$slide_index->id.'/home')}}"> <i class="fa fa-pencil fa-lg"></i>Editar Slide Home</a>
+            </div>
+        </div>
     @endif
 @endif
 
