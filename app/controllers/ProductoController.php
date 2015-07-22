@@ -208,7 +208,7 @@ class ProductoController extends BaseController {
             return Redirect::to('admin/' . $this->folder_name)->with('mensaje', $respuesta['mensaje'])->with('error', true);
         } else {
             if (Input::get('continue') == "home") {
-                return Redirect::to('/')->with('mensaje', $respuesta['mensaje']);
+                return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
             } else {
                 $menu = $respuesta['data']->item()->seccionItem()->menuSeccion()->url;
                 $ancla = '#' . $respuesta['data']->item()->seccionItem()->estado . $respuesta['data']->item()->seccionItem()->id;
@@ -288,7 +288,7 @@ class ProductoController extends BaseController {
             return Redirect::to('admin/' . $this->folder_name)->with('mensaje', $respuesta['mensaje'])->with('error', true);
         } else {
             if (Input::get('continue') == "home") {
-                return Redirect::to('/')->with('mensaje', $respuesta['mensaje']);
+                return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
             } else {
                 $seccion = Seccion::find(Input::get('seccion_id'));
                 $menu = $seccion->menuSeccion()->url;

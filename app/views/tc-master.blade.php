@@ -111,12 +111,13 @@
 
             @yield('slide-estatico') 
 
+            <!-- REDES SOCIALES -->
+            <div class="@section('class-redes-sociales') redes @show pull-right">
+                <a class="facebook" href="#"></a>
+                <a class="google" href="#"></a>
+            </div>
         @show
-        <!-- REDES SOCIALES -->
-        <div class="@section('class-redes-sociales') redes @show pull-right">
-            <a class="facebook" href="#"></a>
-            <a class="google" href="#"></a>
-        </div>
+        
         <!-- abre S E C T I O N -->
         @yield('contenido')
 

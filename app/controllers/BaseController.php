@@ -181,6 +181,65 @@ class BaseController extends Controller {
         return $items;
     }
 
+    protected function ultimosProductos($destacados, $limit) {
+        /*
+         * FILTRO PARA MOSTRAR SOLAMENTE LOS MENU PADRE
+         */
+        if (count($destacados) > 0) {
+
+            $items_destacados = DB::table('item')
+                    ->join('item_seccion', 'item.id', '=', 'item_seccion.item_id')
+                    ->join('seccion', 'item_seccion.seccion_id', '=', 'seccion.id')
+                    ->join('producto', 'item.id', '=', 'producto.item_id')
+                    ->where('item.estado', 'A')
+                    ->where('item_seccion.estado', 'A')
+                    ->whereNull('item_seccion.destacado')
+                    ->where('seccion.estado', 'A')
+                    ->whereNotIn('item.id', $destacados)
+                    ->orderBy('item.fecha_modificacion', 'desc')
+                    //->limit($limit)
+                    ->select('item.id as item_id', 'item.titulo as item_titulo', 'item.descripcion as item_descripcion', 'item.url as item_url', 'seccion.id as seccion_id')
+                    ->distinct()
+                    ->get();
+        } else {
+            $items_destacados = DB::table('item')
+                    ->join('item_seccion', 'item.id', '=', 'item_seccion.item_id')
+                    ->join('seccion', 'item_seccion.seccion_id', '=', 'seccion.id')
+                    ->join('producto', 'item.id', '=', 'producto.item_id')
+                    ->where('item.estado', 'A')
+                    ->where('item_seccion.estado', 'A')
+                    ->whereNull('item_seccion.destacado')
+                    ->where('seccion.estado', 'A')
+                    ->orderBy('item.fecha_modificacion', 'desc')
+                    //->limit($limit)
+                    ->select('item.id as item_id', 'item.titulo as item_titulo', 'item.descripcion as item_descripcion', 'item.url as item_url', 'seccion.id as seccion_id')
+                    ->distinct()
+                    ->get();
+        }
+
+        $items = $items_destacados;
+
+        if ($items_destacados) {
+            $items = array();
+            $items_id = array();
+            $i = 0;
+            foreach ($items_destacados as $item) {
+
+                if (!in_array($item->item_id, $items_id) && ($i != $limit)) {
+                    $item_db = Item::find($item->item_id);
+                    array_push($items, $item_db);
+                    array_push($items_id, $item->item_id);
+                    
+                    $i++;
+                }
+                
+                
+            }
+        }
+
+        return $items;
+    }
+
     protected function slideIndex() {
         return Slide::where('estado', 'A')->where('tipo', 'I')->orderBy('id', 'desc')->first();
     }

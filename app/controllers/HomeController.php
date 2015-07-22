@@ -7,7 +7,7 @@ class HomeController extends BaseController {
         $destacados = array();
 
         $total_home = 12;
-        
+
         $slideIndex = parent::slideIndex();
         $items_oferta = parent::itemsOferta($total_home);
 
@@ -28,10 +28,10 @@ class HomeController extends BaseController {
                         array_push($items_home, $item);
                     }
 
-                    $ultimos_productos = Item::where('estado', 'A')->join('producto', 'item.id', '=', 'producto.item_id')->whereNotIn('item.id', $destacados)->orderBy('item.fecha_modificacion', 'desc')->skip(0)->take($total_home - count($items_home))->get();
-                } else {
-                    $ultimos_productos = Item::where('estado', 'A')->join('producto', 'item.id', '=', 'producto.item_id')->orderBy('item.fecha_modificacion', 'desc')->skip(0)->take($total_home - count($items_home))->get();
                 }
+                $limit = $total_home - count($items_home);
+                //echo $limit;
+                $ultimos_productos = parent::ultimosProductos($destacados, $limit);
 
                 foreach ($ultimos_productos as $item_ul) {
                     array_push($items_home, $item_ul);
@@ -44,6 +44,7 @@ class HomeController extends BaseController {
         } else {
             $items_home = $items_oferta;
         }
+        
         /*
           $items_nuevos = parent::itemsNuevos();
 

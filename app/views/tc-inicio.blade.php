@@ -47,6 +47,42 @@
                         <div class="item">
                             <div class="col-md-12">
                                 <div class="thumbnail">
+                                    @if(Auth::check())
+                                        <div class="iconos">
+                                            <span class="pull-left">
+                                                @if(!$item->producto()->nuevo())
+                                                    @if(!$item->producto()->oferta())
+                                                        @if(Auth::user()->can("destacar_item"))
+                                                            <i onclick="destacarItemSeccion('{{URL::to('admin/producto/nuevo')}}', 'null', '{{$item->id}}');" class="fa fa-tag fa-lg"></i>
+                                                        @endif
+                                                    @endif
+                                                @else
+                                                    @if(Auth::user()->can("quitar_destacado_item"))
+                                                        <i onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', 'null', '{{$item->id}}');" class="fa fa-tag prodDestacado fa-lg"></i>
+                                                    @endif
+                                                @endif
+                                                @if(!$item->producto()->oferta())
+                                                    @if(Auth::user()->can("destacar_item"))
+                                                        <a href="{{URL::to('admin/producto/oferta/'.$item->producto()->id.'/null/home')}}" class="popup-nueva-seccion"><i  class="fa fa-shopping-cart fa-lg"></i></a>
+                                                    @endif
+                                                @else
+                                                    @if(Auth::user()->can("quitar_destacado_item"))
+                                                        <i onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', 'null', '{{$item->id}}');" class="fa fa-shopping-cart prodDestacado fa-lg"></i>
+                                                    @endif
+                                                @endif
+                                            </span>
+                                            <span class="pull-right">
+                                                @if(Auth::user()->can("editar_item"))
+                                                    <a href="{{URL::to('admin/producto/editar/'.$item->producto()->id.'/home/null')}}" data='null'><i class="fa fa-pencil fa-lg"></i></a>
+                                                @endif
+                                                @if(Auth::user()->can("borrar_item"))
+                                                    <i onclick="borrarData('{{URL::to('admin/item/borrar')}}', '{{$item->id}}');" class="fa fa-times fa-lg"></i>
+                                                @endif
+                                            </span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    @endif
+                                    
                                     <a class="fancybox" href="@if(!is_null($item->imagen_destacada())){{URL::to($item->imagen_destacada()->ampliada()->carpeta.$item->imagen_destacada()->ampliada()->nombre)}}@else{{URL::to('images/sinImg.gif')}}@endif" title="@if(!is_null($item->imagen_destacada())){{ $item->imagen_destacada()->ampliada()->epigrafe }}@endif" rel='group'> 
                                         <div class="divImgProd">
                                             <img class="lazy" src="@if(!is_null($item->imagen_destacada())){{ URL::to($item->imagen_destacada()->carpeta.$item->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="{{$item->titulo}}">
@@ -72,11 +108,24 @@
                             </div>
                         </div>
                     @endforeach
-                @endif
+                    
+                    
                 
             </div>
         </div>
 
+        @if(Auth::check())
+            <script src="{{URL::to('js/popupFuncs.js')}}"></script>
+        
+                <div class="modal fade" id="nueva-seccion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                        </div>
+                    </div>
+                </div>
+            @endif
+        @endif
         <div class="row">
             <div class="col-md-12 moduloItem">
             <!-- SLIDE HOME -->

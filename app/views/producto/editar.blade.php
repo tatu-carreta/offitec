@@ -94,21 +94,23 @@
                     <p>Los productos nuevos y las ofertas se muestran en la home</p>
                 </div>
 
-                <div class="fondoDestacado modIndicarSeccion">
-                    <h3>Ubicación</h3>
-                        @foreach($menues as $men)
-                        <div class="cadaSeccion">
-                            @if(count($men->children) == 0)
-                                <div>
-                                    @foreach($men->secciones as $seccion)
-                                        <span><input id="menu{{$men->id}}" type="checkbox" name="secciones[]" value="{{$seccion->id}}" @if(in_array($seccion->id, $item->secciones->lists('id'))) checked="true" @endif @if($seccion->id == $seccion_next) disabled @endif>{{-- @if($seccion->titulo != ""){{$seccion->titulo}}@else Sección {{$seccion->id}} @endif --}}</span>
-                                    @endforeach
-                                </div>
-                                <div><label for="menu{{$men->id}}">{{$men->nombre}}</label></div>
-                            @endif
-                        </div>
-                        @endforeach
-                </div>
+                @if($seccion_next != 'null')
+                    <div class="fondoDestacado modIndicarSeccion">
+                        <h3>Ubicación</h3>
+                            @foreach($menues as $men)
+                            <div class="cadaSeccion">
+                                @if(count($men->children) == 0)
+                                    <div>
+                                        @foreach($men->secciones as $seccion)
+                                            <span><input id="menu{{$men->id}}" type="checkbox" name="secciones[]" value="{{$seccion->id}}" @if(in_array($seccion->id, $item->secciones->lists('id'))) checked="true" @endif @if($seccion->id == $seccion_next) disabled @endif>{{-- @if($seccion->titulo != ""){{$seccion->titulo}}@else Sección {{$seccion->id}} @endif --}}</span>
+                                        @endforeach
+                                    </div>
+                                    <div><label for="menu{{$men->id}}">{{$men->nombre}}</label></div>
+                                @endif
+                            </div>
+                            @endforeach
+                    </div>
+                @endif
             </div><!--cierra columna datos de producto-->
 
             <!-- Abre columna de imágenes -->
@@ -147,7 +149,9 @@
             {{Form::hidden('producto_id', $producto->id)}}
             {{Form::hidden('descripcion', '')}}
             {{Form::hidden('tipo_precio_id[]', '2')}}
-            {{Form::hidden('seccion_id', $seccion_next)}}
+            @if($seccion_next != 'null')
+                {{Form::hidden('seccion_id', $seccion_next)}}
+            @endif
         {{Form::close()}}
     </section>
 @stop
