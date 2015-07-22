@@ -1,0 +1,215 @@
+<!Doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Offitec</title>
+
+        <!-- abre LINK -->
+        <link href="favicon.ico" rel="shortcut icon">
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>
+        <meta name="description" content="">
+        <meta name="Keywords" content="">
+        <meta property="og:image" content="" />
+        <meta name="viewport" content="width = device-width, initial-scale=1, maximum-scale=1">
+
+        <!-- B O O T S T R A P -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="bootstrap-3.3.4-dist/css/bootstrap.css">
+
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+        <link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="css/base.css"> 
+        <link rel="stylesheet" type="text/css" href="css/stylesOffitec.css"> 
+
+        <!-- M O D E R N I Z R -->
+        <script src="js/modernizr.custom.05470.js"></script>
+
+        <!-- abre SCRIPT -->
+        <script src="js/jquery-1.11.2.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/funcs.js"></script>
+    </head>
+    <body>
+        <div class="headerAdmin">
+            <div class="divAdministrar">
+                <a href="{{URL::to('admin/exportar-clientes')}}" class="btnCalado"><i class="fa fa-pencil fa-lg"></i>Exportar Clientes</a>
+                <a href="{{URL::to('admin/exportar-personas')}}" class="btnCalado"><i class="fa fa-pencil fa-lg"></i>Exportar Personas</a>
+                <a href="{{URL::to('admin/menu')}}" class="btnCalado"><i class="fa fa-pencil fa-lg"></i>Menú</a>
+                <a href="{{URL::to('admin/item')}}" class="btnCalado"><i class="fa fa-pencil fa-lg"></i>Items</a>
+                <a href="{{URL::to('admin/seccion')}}" class="btnCalado"><i class="fa fa-pencil fa-lg"></i>Secciones</a>
+            </div>
+            <div class="divSalir">
+                <span class="nameAdmin"><i class="fa fa-user fa-lg marginRight5"></i>{{Auth::user()->perfil()->name}}</span>
+                <a href="{{URL::to('logout')}}" class="btnCalado"><i class="fa fa-share  fa-lg"></i>Salir</a>
+            </div>
+            <div class="divSalir">
+                <a href="{{URL::to('login')}}" class="btnCalado"><i class="fa fa-share  fa-lg"></i>Ingresar</a>
+            </div>
+        </div>
+        <!-- H E A D E R -->
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a class="navbar-brand" href="#"><img alt="logo" src="{{URL::to('images/offitec.svg')}}"></a>
+                        <!-- B T N   C A R R I T O -->
+                        <p class="pull-right btnCarrito">Presupuesto: {{Cart::count(false)}}</p>
+
+                        <nav class="navbar navbar-default" role="navigation">
+                            <div class="container">
+                                <!-- El logotipo y el icono que despliega el menú se agrupan
+                                para mostrarlos mejor en los dispositivos móviles -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                            data-target=".navbar-ex1-collapse">
+                                        <span class="sr-only">Desplegar navegación</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+
+                                <!-- Agrupar los enlaces de navegación, los formularios y cualquier
+                                        otro elemento que se pueda ocultar al minimizar la barra -->
+                                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                                    <ul class="nav navbar-nav" id="menuPrincipal">
+                                        <li class="active"><a href="#">Inicio</a></li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                Catálogo <b class="caret"></b>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Muebles Gerenciales</a></li>
+                                                <li><a href="#">Muebles Operativos</a></li>
+                                                <li><a href="#">Mesas de reunión</a></li>
+                                                <li><a href="#">Mesas bajas</a></li>
+                                                <li><a href="#">Muebles de guardado</a></li>	
+                                                <li><a href="#">Asientos gerenciales</a></li>
+                                                <li><a href="#">Asientos operativos</a></li>
+                                                <li><a href="#">Sillas de visita y recepción</a></li>
+                                                <li><a href="#">Sillones de visita y recepción</a></li>
+                                                <li><a href="#">Tabiques</a></li>
+                                                <li><a href="#">Cortinas</a></li>
+                                                <li><a href="#">Complementos</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Servicios</a></li>
+                                        <li><a href="#">Clientes</a></li>
+                                        <li><a href="#">Contacto</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </header>  
+        <!-- abre S L I D E estático -->
+        <div class="slideHome"></div>          
+        <!-- abre S E C T I O N -->
+            <div class="redes pull-right">
+                <a class="facebook" href="#"></a>
+                <a class="google" href="#"></a>
+            </div>
+        <section class="container">
+          
+
+            <div class="row">
+                <div class="col-md-12 marginBottom2">
+                    <h2 class="pull-left">Clientes</h2>
+                </div>
+            </div>
+
+            <div class="row filaClientes">
+                <div class="col-md-2">
+                    <img class="imagenClientes" src="images/marcaUnlp.jpg">
+                </div>
+                <div class="col-md-2">
+                     <img class="imagenClientes" src="images/marcaBa.jpg">
+                </div>
+                <div class="col-md-2">
+                    <img class="imagenClientes" src="images/marcaUnlp.jpg">
+                </div>
+                <div class="col-md-2">
+                     <img class="imagenClientes" src="images/marcaBa.jpg">
+                </div>
+                <div class="col-md-2">
+                    <img class="imagenClientes" src="images/marcaUnlp.jpg">
+                </div>
+                <div class="col-md-2">
+                     <img class="imagenClientes" src="images/marcaBa.jpg">
+                </div>
+            </div>
+            <div class="row filaClientes">
+                <div class="col-md-2">
+                    <img class="imagenClientes" src="images/marcaUnlp.jpg">
+                </div>
+                <div class="col-md-2">
+                     <img class="imagenClientes" src="images/marcaBa.jpg">
+                </div>
+                <div class="col-md-2">
+                    <img class="imagenClientes" src="images/marcaUnlp.jpg">
+                </div>
+                <div class="col-md-2">
+                     <img class="imagenClientes" src="images/marcaBa.jpg">
+                </div>
+                <div class="col-md-2">
+                    <img class="imagenClientes" src="images/marcaUnlp.jpg">
+                </div>
+                <div class="col-md-2">
+                     <img class="imagenClientes" src="images/marcaBa.jpg">
+                </div>
+                
+            </div>
+            <div class="row filaClientes">
+                <div class="col-md-2">
+                    <img class="imagenClientes" src="images/marcaUnlp.jpg">
+                </div>
+                <div class="col-md-2">
+                     <img class="imagenClientes" src="images/marcaBa.jpg">
+                </div>
+                <div class="col-md-2">
+                    <img class="imagenClientes" src="images/marcaUnlp.jpg">
+                </div>
+                <div class="col-md-2">
+                     <img class="imagenClientes" src="images/marcaBa.jpg">
+                </div>
+                <div class="col-md-2">
+                    <img class="imagenClientes" src="images/marcaUnlp.jpg">
+                </div>
+                <div class="col-md-2">
+                     <img class="imagenClientes" src="images/marcaBa.jpg">
+                </div>
+            </div>
+              
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="info">
+                        <h4>Offitec en La Plata</h4>
+                        <p>Calle 39 N° 833 e/ 11 y 12<br>
+                        Teléfono: (0221) 4221273 / Fax: (0221) 4273777<br>
+                        Email: ventas@offitec.com</p>
+                    </div>
+                
+                    <div class="info">
+                        <h4>Offitec en Lomas de Zamora</h4>
+                        <p>Av. Hipólito Yrigoyen 9275 (ex Av. Pavón)<br>
+                        Teléfono: (011) 4244 4099<br>
+                        Email: lomas@offitec.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- abre F O O T E R -->
+        <footer>
+        </footer>
+
+
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="{{URL::to('bootstrap-3.3.4-dist/js/bootstrap.min.js')}}"></script>
+
+    </body>
+</html>
