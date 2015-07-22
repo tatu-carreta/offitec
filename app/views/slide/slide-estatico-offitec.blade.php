@@ -62,7 +62,7 @@
                     <div class="carousel-home">
                         <div id="owl-demo2">
                             
-                                <div class="item"><a class="boton-naranja" href="{{URL::to('muebles-operativos')}}">Muebles<br>gerenciales</a></div>
+                                <div class="item"><a class="boton-naranja" href="{{URL::to('muebles-gerenciales')}}">Muebles<br>gerenciales</a></div>
                                 <div class="item"><a class="boton-rojo" href="{{URL::to('muebles-operativos')}}">Muebles<br>operativos</a></div>
                                 <div class="item"><a class="boton-violeta" href="{{URL::to('mesas-de-reunion')}}">Mesas <br> de reunión</a></div>
                                 <div class="item"><a class="boton-azul" href="{{URL::to('mesas-bajas')}}">Mesas <br>bajas</a></div>
