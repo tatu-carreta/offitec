@@ -68,9 +68,9 @@ section  * > * > *{margin-top: 0 !important}
 /* FOOTER */
 footer {margin-top: 1em; padding: 4em 0}
 
+.tarjetas{width: 100%;height: 100%; text-align: center;}
 .tarjetas img {margin: 0 2em 2em 0; vertical-align: middle;}
-.data-fiscal {float: right !important; position: relative; top: -10px;}
-.data-fiscal img {width: 40px; border: 0;margin-right: 0!important;}
+.data-fiscal img {width: 30px; border: 0;margin-right: 0!important;}
 
 /* ----------------------------- A D M I N ------------------------------------ */
 

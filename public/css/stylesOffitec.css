@@ -89,7 +89,7 @@ h4{margin-bottom: 20px;font-size: 20px;}
 /* CLIENTES */
 .imagenClientes{width: 100%;height: 100%; margin-bottom: 20px;}
 
-
+.tarjetas{width: 100%;height: 100%; text-align: center;}
 
 /* ----------------------------- M E D I A  Q U E R Y ------------------------------------- */
 @media screen and (max-width: 1000px) {
