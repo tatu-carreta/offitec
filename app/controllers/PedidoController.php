@@ -74,6 +74,7 @@ class PedidoController extends BaseController {
                 $datos_persona = array(
                     'email' => Input::get('email'),
                     'apellido' => Input::get('nombre'),
+                    'nombre' => Input::get('empresa'),
                     'tipo_telefono_id' => 2,
                     'telefono' => Input::get('telefono')
                 );

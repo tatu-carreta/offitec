@@ -95,7 +95,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <a class="navbar-brand" href="#"><img alt="logo" src="{{URL::to('images/offitec.svg')}}"></a>
+                            <h1 class="logo pull-left"><a href="{{URL::to('/')}}" ><img alt="logo" src="{{URL::to('images/offitec.svg')}}"></a></h1>
                             <!-- B T N   C A R R I T O -->
                             <a href="{{URL::to('carrito')}}" class="pull-right btnCarrito active">Presupuesto: {{Cart::count(false)}}</a>
                             <!-- N A V -->
@@ -111,11 +111,7 @@
 
             @yield('slide-estatico') 
 
-            <!-- REDES SOCIALES -->
-            <div class="@section('class-redes-sociales') redes @show pull-right">
-                <a class="facebook" href="#"></a>
-                <a class="google" href="#"></a>
-            </div>
+            
         @show
         
         <!-- abre S E C T I O N -->

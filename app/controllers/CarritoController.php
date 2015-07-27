@@ -11,7 +11,7 @@ class CarritoController extends BaseController {
         return View::make($this->folder_name . '.' . $this->project_name . '-ver', $this->array_view);
     }
 
-    public function agregarProducto($producto_id, $continue) {
+    public function agregarProducto($producto_id, $continue, $sec_id) {
 
         if (Cart::count(false) < 6) {
 
@@ -38,7 +38,7 @@ class CarritoController extends BaseController {
             $error = true;
             $producto_carrito_subido = false;
         }
-        
+
         $producto = Producto::find($producto_id);
 
         switch ($continue) {
@@ -46,11 +46,23 @@ class CarritoController extends BaseController {
                 return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with($estado, $error)->with('producto_carrito', $producto)->with('producto_carrito_subido', $producto_carrito_subido);
                 break;
             case 'seccion':
-                
-                $menu = $producto->item()->seccionItem()->menuSeccion()->url;
-                $ancla = '#' . $producto->item()->seccionItem()->estado . $producto->item()->seccionItem()->id;
 
-                return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla)->with($estado, $error)->with('producto_carrito', $producto)->with('producto_carrito_subido', $producto_carrito_subido);
+                if ($sec_id != "") {
+                    $seccion = Seccion::find($sec_id);
+
+                    if ($seccion) {
+
+                        $menu = $seccion->menuSeccion()->url;
+                        $ancla = '#' . $producto->item()->seccionItem()->estado . $producto->item()->seccionItem()->id;
+
+                        return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla)->with($estado, $error)->with('producto_carrito', $producto)->with('producto_carrito_subido', $producto_carrito_subido);
+                    } else {
+                        return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with($estado, $error)->with('producto_carrito', $producto)->with('producto_carrito_subido', $producto_carrito_subido);
+                    }
+                } else {
+                    return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with($estado, $error)->with('producto_carrito', $producto)->with('producto_carrito_subido', $producto_carrito_subido);
+                }
+
                 break;
             case 'carrito':
                 return Redirect::to('/carrito')->with('mensaje', $respuesta['mensaje'])->with($estado, $error)->with('producto_carrito', $producto)->with('producto_carrito_subido', $producto_carrito_subido);
@@ -76,7 +88,7 @@ class CarritoController extends BaseController {
         return $respuesta;
     }
 
-    public function borrarProducto($producto_id, $rowId, $continue) {
+    public function borrarProducto($producto_id, $rowId, $continue, $sec_id) {
 
         $info = array(
             'producto_id' => $producto_id,
@@ -93,10 +105,21 @@ class CarritoController extends BaseController {
                 return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
                 break;
             case 'seccion':
-                $menu = $producto->item()->seccionItem()->menuSeccion()->url;
-                $ancla = '#' . $producto->item()->seccionItem()->estado . $producto->item()->seccionItem()->id;
+                if ($sec_id != "") {
+                    $seccion = Seccion::find($sec_id);
 
-                return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla)->with('ok', true);
+                    if ($seccion) {
+
+                        $menu = $seccion->menuSeccion()->url;
+                        $ancla = '#' . $producto->item()->seccionItem()->estado . $producto->item()->seccionItem()->id;
+
+                        return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla)->with('ok', true);
+                    } else {
+                        return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
+                    }
+                } else {
+                    return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
+                }
                 break;
             case 'carrito':
                 return Redirect::to('/carrito')->with('mensaje', $respuesta['mensaje'])->with('ok', true);

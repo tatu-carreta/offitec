@@ -46,8 +46,16 @@
         <div class="row">
             <div class="col-md-12">
                 <h2 class="presentacion">Equipamiento integral de oficinas. Muebles, sillas, sillones, cortinas y complementos. Asesoramiento profesional. Muebles a medida. Envíos a todo el país.</h2>
+            <div class="@section('class-redes-sociales') redes @show">
+                <a class="facebook" href="#"></a>
+                <a class="google" href="#"></a>
             </div>
+            </div>
+             
         </div>
+        <!-- REDES SOCIALES -->
+       
+        
         <div class="row carrouselProdHome carousel-oculto">
             <div id="owl-demo-prod">
 
@@ -107,9 +115,9 @@
                                         <span class="pull-left">{{ $item->titulo }}</span>
                                         @if(!Auth::check())
                                             @if($c = Cart::search(array('id' => $item->producto()->id)))
-                                                <a href="{{URL::to('carrito/borrar/'.$item->producto()->id.'/'.$c[0].'/home')}}" class="carrito btn btn-default pull-right"><i class="fa fa-check-square-o"></i>Presupuestar</a>
+                                                <a href="{{URL::to('carrito/borrar/'.$item->producto()->id.'/'.$c[0].'/home/h')}}" class="carrito btn btn-default pull-right"><i class="fa fa-check-square-o"></i>Presupuestar</a>
                                             @else
-                                                <a href="{{URL::to('carrito/agregar/'.$item->producto()->id.'/home')}}" class="btn btn-default pull-right"><i class="fa fa-square-o"></i>Presupuestar</a>
+                                                <a href="{{URL::to('carrito/agregar/'.$item->producto()->id.'/home/h')}}" class="btn btn-default pull-right"><i class="fa fa-square-o"></i>Presupuestar</a>
                                             @endif
                                         @endif
                                         <div class="clearfix"></div>
