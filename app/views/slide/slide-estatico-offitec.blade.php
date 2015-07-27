@@ -59,7 +59,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="contenedor-carousel">
-                    <div class="carousel-home">
+                    <div class="carousel-home carousel-oculto">
                         <div id="owl-demo2">
                             
                                 <div class="item"><a class="boton-naranja" href="{{URL::to('muebles-gerenciales')}}">Muebles<br>gerenciales</a></div>

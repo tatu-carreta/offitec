@@ -7,6 +7,10 @@
 
     <script>
     $(document).ready(function(){
+        setTimeout(function() {
+            $(".carousel-oculto").removeClass("carousel-oculto");
+        }, 5);
+        
         $("#owl-demo2").owlCarousel({
          
             autoPlay: 2000, //Set AutoPlay to 3 seconds //itemsDesktop : [1199,3]
@@ -31,6 +35,12 @@
 @stop
 
 @section('contenido')
+<style>
+    .carousel-oculto{
+        display: none;
+    }
+</style>
+
     <section class="container">
         
         <div class="row">
@@ -38,7 +48,7 @@
                 <h2 class="presentacion">Equipamiento integral de oficinas. Muebles, sillas, sillones, cortinas y complementos. Asesoramiento profesional. Muebles a medida. Envíos a todo el país.</h2>
             </div>
         </div>
-        <div class="row carrouselProdHome">
+        <div class="row carrouselProdHome carousel-oculto">
             <div id="owl-demo-prod">
 
                 @if(count($items_home) > 0)
