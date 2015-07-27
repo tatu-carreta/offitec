@@ -33,8 +33,8 @@ h1, h2, h3 {font-weight: 300}
 .logo {position: absolute !important; z-index: 999;}
 /* Estilos Fichas de Productos*/
 
-.divImgProd {width: 100%; height: 100%; position: relative; border: 1px solid #F4F4EF}
-.divImgProd img {width: 100%; height: 100%;}
+.divImgProd {width: 100%;  position: relative; border: 1px solid #F4F4EF} /* height: 100%;*/
+.divImgProd img {width: 100%; height: auto;}
 .bandaInfoProd {background: #F4F4EF; padding: 0.5em 1em; color: #777774 !important; }
 .bandaInfoProd .btn-default {color: #777774 !important;}
 .bandaInfoProd .btn-default:hover {color: #fff !important; background: #00A9E0; border: none;}
@@ -60,7 +60,7 @@ h1, h2, h3 {font-weight: 300}
 
 .progress {height: 12px;}
 
-/* SERVICIOS */
+/* SERVICIOS */ 
 .redesHome{width: 24px; position: relative; top: 58px; right: -50px;float: right;}
 .redesHome a{background-image: url(../images/sprites-redes.png); width: 24px; height: 24px; display: inline-block;}
 .redes{  width: 51px; position: relative; z-index: 99; top: 70px; right: 105px;}
