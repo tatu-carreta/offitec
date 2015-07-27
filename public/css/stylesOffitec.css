@@ -15,7 +15,7 @@ h1, h2, h3 {font-weight: 300}
 .carousel-control.right {background: none}
 /*.olw-item {width: 142px !important;}*/
 
-.contenedor-carousel a{display: block;height: 150px;text-align: center;padding-top: 40px;color:#fff; }
+.contenedor-carousel a{display: block;height: 150px;text-align: center;padding-top: 50px;color:#fff; }
 .contenedor-carousel a span {width: 80%; display: inline-block;}
 .boton-naranja {background: #ff7503;}
 .boton-rojo {background: #D52318;}
@@ -103,7 +103,7 @@ h4{margin-bottom: 20px;font-size: 20px;}
 }
 
 @media screen and (max-width: 600px){
-	.contenedor-carousel a{height: 120px; padding-top: 40px; font-size:0.9em }
+	.contenedor-carousel a{height: 150px; padding-top: 50px; font-size:0.9em }
 }
 
 @media screen and (max-width: 1200px){
@@ -125,6 +125,7 @@ h4{margin-bottom: 20px;font-size: 20px;}
 @media (max-width: 768px){
 .navbar-header {float: right !important;}
 .info {width: 100%; border-bottom: 0; margin-bottom: 1em}
+.contenedor-carousel a{height: 150px; padding-top: 50px; font-size:0.9em }
 }
 
 @media (max-width: 600px){
