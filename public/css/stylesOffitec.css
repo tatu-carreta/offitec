@@ -15,7 +15,7 @@ h1, h2, h3 {font-weight: 300}
 .carousel-control.right {background: none}
 /*.olw-item {width: 142px !important;}*/
 
-.contenedor-carousel a{display: block;height: 150px;text-align: center;padding-top: 50px;color:#fff; }
+.contenedor-carousel a{display: block; height: 150px; font-size: 1.250em; font-weight: 300; text-align: center;padding-top: 50px;color:#fff; }
 .contenedor-carousel a span {width: 80%; display: inline-block;}
 .boton-naranja {background: #ff7503;}
 .boton-rojo {background: #D52318;}
@@ -47,7 +47,7 @@ h1, h2, h3 {font-weight: 300}
 
 /* Estilos de Bootstrap modificados */
 .navbar {margin:0;}
-.navbar-toggle {margin-top: 1.560em}
+.navbar-toggle {margin-top: 2em}
 .navbar-brand {padding: 0.125em 0; margin-top: 1em;}
 .navbar-collapse {padding-right: 0}
 .dropdown-menu {background: #878979}
@@ -96,12 +96,15 @@ h4{margin-bottom: 20px;font-size: 20px;}
     #menuPrincipal a {padding: 0 1.250em !important }
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 870px){
     .navbar-header {float: right !important; }
+    .btnCarrito { padding: 0 1.1em !important;} 
 }
-
+@media screen and (max-width: 780px) {
+    #menuPrincipal a {padding: 0 1.2em !important }
+}
 @media screen and (max-width: 768px) {
-    .divMenu {float: left; width: 100%}
+    /*.divMenu {float: left; width: 100%}*/
     #menuPrincipal {height: auto !important;} 
     #menuPrincipal a {height: 40px; line-height: 40px; font-size: 1.250em;}
     .navbar-collapse {border: 0 !important; padding: 0}
@@ -114,3 +117,4 @@ h4{margin-bottom: 20px;font-size: 20px;}
     .tarjetas {text-align: center}
     .data-fiscal {float:none;}
 }
+

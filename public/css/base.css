@@ -3,7 +3,7 @@
  * Copyright 2015 -
  */
 
-body {margin:0; font-family: 'Source Sans Pro', sans-serif !important;}
+body {margin:0; font-family: 'Source Sans Pro', arial,  sans-serif !important;}
 
 h1, h2, h3 {font-weight: normal}
 ul, li {margin:0; padding:0; list-style: none}
@@ -23,8 +23,7 @@ header {background: #000;}
 #menuPrincipal a:hover {background: #878979}
 #menuPrincipal .dropdown li a {height: 35px; line-height: 35px; font-size: 15px;}
 .btnCarrito {font-weight: 300; font-size: 15px; height: 88px; line-height: 88px; margin: 0 !important; background: #302F2F; color:#fff; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box; position: relative; z-index: 1000;}
-.btnCarrito.active {color:#80DFFF}
-
+.btnCarrito:hover {color:#fff;}
 .carrouselProdHome {margin-bottom: 6em}
 
 /* SLIDE HOME */
