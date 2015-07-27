@@ -93,46 +93,24 @@ h4{margin-bottom: 20px;font-size: 20px;}
 
 /* ----------------------------- M E D I A  Q U E R Y ------------------------------------- */
 @media screen and (max-width: 1000px) {
-	#menuPrincipal a {padding: 0 1.250em !important }
+    #menuPrincipal a {padding: 0 1.250em !important }
 }
 
 @media screen and (max-width: 900px){
-	.navbar-header {float: right !important;
+    .navbar-header {float: right !important; }
 }
 
 @media screen and (max-width: 768px) {
-	.divMenu {float: left; width: 100%}
-	#menuPrincipal {height: auto !important;} 
-	#menuPrincipal a {height: 40px; line-height: 40px; font-size: 1.250em;}
-	.navbar-collapse {border: 0 !important; padding: 0}
-	.navbar-nav {margin:0;}
-	.info {width: 100%; border-bottom: 0; margin-bottom: 1em}
-}
-
-@media screen and (max-width: 1200px){
-	#menuPrincipal a{padding: 0 20px !important;}
-}
-
-@media screen and (max-width: 950px){
-	#menuPrincipal a{padding: 0 15px !important;}
-}
-
-@media screen and (max-width: 900px){
-	//#menuPrincipal {display: none;}
-}
-
-@media screen and (max-width: 900px){
-	.navbar-toggle {display: block; }
-}
-
-@media (max-width: 768px){
-.navbar-header {float: right !important;}
-.info {width: 100%; border-bottom: 0; margin-bottom: 1em}
-.contenedor-carousel a{height: 150px; padding-top: 50px; font-size:0.9em }
+    .divMenu {float: left; width: 100%}
+    #menuPrincipal {height: auto !important;} 
+    #menuPrincipal a {height: 40px; line-height: 40px; font-size: 1.250em;}
+    .navbar-collapse {border: 0 !important; padding: 0}
+    .navbar-nav {margin:0;}
+    .info {width: 100%; border-bottom: 0; margin-bottom: 1em}
 }
 
 @media (max-width: 600px){
-.contenedor-carousel a{height: 150px; padding-top: 50px; font-size:0.9em }
-.tarjetas {text-align: center}
-.data-fiscal {float:none;}
+    .contenedor-carousel a{height: 150px; padding-top: 50px; font-size:0.9em }
+    .tarjetas {text-align: center}
+    .data-fiscal {float:none;}
 }
