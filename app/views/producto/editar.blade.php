@@ -110,6 +110,10 @@
                             </div>
                             @endforeach
                     </div>
+                @else
+                    @foreach($item->secciones as $seccion)
+                        <input type="hidden" name="secciones[]" value="{{$seccion->id}}">
+                    @endforeach
                 @endif
             </div><!--cierra columna datos de producto-->
 
