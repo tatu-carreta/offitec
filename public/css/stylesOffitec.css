@@ -61,7 +61,7 @@ h1, h2, h3 {font-weight: 300}
 .progress {height: 12px;}
 
 /* SERVICIOS */
-.redesHome{width: 26px; height: 51px;   position: relative; top: 270px;}
+.redesHome{width: 24px; position: relative; top: 58px; right: -50px;float: right;}
 .redesHome a{background-image: url(../images/sprites-redes.png); width: 24px; height: 24px; display: inline-block;}
 .redes{  width: 51px; position: relative; z-index: 99; top: 70px; right: 105px;}
 .redes a{background-image: url(../images/sprites-redes.png); width: 24px; height: 24px; display: inline-block;}
@@ -114,3 +114,10 @@ h4{margin-bottom: 20px;font-size: 20px;}
     .tarjetas {text-align: center}
     .data-fiscal {float:none;}
 }
+
+@media screen and (max-width: 1250px) {
+   .redesHome {width: 100%; text-align: center; position: relative; top:-30px;right: 0 !important;}
+}
+
+
+
