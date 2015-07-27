@@ -30,7 +30,7 @@ class ClienteController extends BaseController {
         $reglas = array(
             'email' => array('required', 'email'),
             'nombre' => array('required'),
-            'telefono' => array('required'),
+            //'telefono' => array('required'),
         );
 
         $validator = Validator::make($data, $reglas);
@@ -41,9 +41,9 @@ class ClienteController extends BaseController {
                 $mensaje = $messages->first('nombre');
             } elseif ($messages->has('email')) {
                 $mensaje = $messages->first('email');
-            } elseif ($messages->has('telefono')) {
+            } /*elseif ($messages->has('telefono')) {
                 $mensaje = $messages->first('telefono');
-            } else {
+            } */else {
                 $mensaje = 'Los datos de contacto para el envio del presupuesto son erróneos.';
             }
 
