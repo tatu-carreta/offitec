@@ -109,11 +109,6 @@ h4{margin-bottom: 20px;font-size: 20px;}
 	.info {width: 100%; border-bottom: 0; margin-bottom: 1em}
 }
 
-@media screen and (max-width: 600px){
-<<<<<<< HEAD
-	.contenedor-carousel a{height: 150px; padding-top: 50px; font-size:0.9em }
-}
-
 @media screen and (max-width: 1200px){
 	#menuPrincipal a{padding: 0 20px !important;}
 }
@@ -137,11 +132,7 @@ h4{margin-bottom: 20px;font-size: 20px;}
 }
 
 @media (max-width: 600px){
+.contenedor-carousel a{height: 150px; padding-top: 50px; font-size:0.9em }
 .tarjetas {text-align: center}
 .data-fiscal {float:none;}
-=======
-	.contenedor-carousel a{height: 120px; padding-top: 40px; font-size:0.9em }
-	.tarjetas {text-align: center}
-	.data-fiscal {float:none;}
->>>>>>> origin/master
 }
