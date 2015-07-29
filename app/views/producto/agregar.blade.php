@@ -26,7 +26,7 @@
 <script src="{{URL::to('js/ckeditorLimitado.js')}}"></script>
 <script src="{{URL::to('js/producto-funcs.js')}}"></script>
 <section class="container">    
-        {{ Form::open(array('url' => 'admin/producto/agregar', 'files' => true, 'role' => 'form')) }}
+        {{ Form::open(array('url' => 'admin/producto/agregar', 'files' => true, 'role' => 'form', 'onsubmit' => 'return validatePrecioProd(this);')) }}
             <h2 class="marginBottom2"><span>Nuevo producto</span></h2>
 
         <div class="row datosProducto marginBottom2">

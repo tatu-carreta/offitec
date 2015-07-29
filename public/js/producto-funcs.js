@@ -79,3 +79,32 @@ $(document).ready(function () {
                 }
             });
 });
+
+function validatePrecioProd(form)
+{
+    var ok = true;
+    
+    alert('im -> '+$(form).find("input[name='imagen_portada_crop']").length);
+
+    if($(form).find("input[name='imagen_portada_crop']").length)
+    {
+        if($(form).find("input[name='imagen_portada_crop']").val() == "")
+        {
+            ok = false;
+            alert('Se olvidó de cargar o guardar la imagen recortada.');
+        }
+    }
+    if ($(form).find("input[name='item_destacado']:checked").val() == 'O')
+    {
+        var precio_antes = $(form).find("input[name='precio_antes']").val();
+        var precio_ahora = $(form).find("input[name='precio_actual']").val();
+
+        if (precio_antes > precio_ahora)
+        {
+            ok = false;
+            alert('El precio actual es mayor al precio anterior.');
+        }
+    }
+
+    return ok;
+}
