@@ -9,21 +9,21 @@
                 @if(!$i->producto()->nuevo())
                     @if(!$i->producto()->oferta())
                         @if(Auth::user()->can("destacar_item"))
-                            <i onclick="destacarItemSeccion('{{URL::to('admin/producto/nuevo')}}', '{{$seccion->id}}', '{{$i->id}}');" class="fa fa-tag fa-lg"></i>
+                            <a href="#" class="btn"><i onclick="destacarItemSeccion('{{URL::to('admin/producto/nuevo')}}', '{{$seccion->id}}', '{{$i->id}}');" class="fa fa-tag fa-lg"></i>Nuevo</a>
                         @endif
                     @endif
                 @else
                     @if(Auth::user()->can("quitar_destacado_item"))
-                        <i onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', '{{$seccion->id}}', '{{$i->id}}');" class="fa fa-tag prodDestacado fa-lg"></i>
+                        <a href="#" class="btn"><i onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', '{{$seccion->id}}', '{{$i->id}}');" class="fa fa-tag prodDestacado fa-lg"></i>Nuevo</a>
                     @endif
                 @endif
                 @if(!$i->producto()->oferta())
                     @if(Auth::user()->can("destacar_item"))
-                        <a href="{{URL::to('admin/producto/oferta/'.$i->producto()->id.'/'.$seccion->id.'/seccion')}}" class="popup-nueva-seccion"><i  class="fa fa-shopping-cart fa-lg"></i></a>
+                        <a href="#" class="btn" {{URL::to('admin/producto/oferta/'.$i->producto()->id.'/'.$seccion->id.'/seccion')}}" class="popup-nueva-seccion"><i  class="fa fa-usd fa-lg"></i>Oferta</a>
                     @endif
                 @else
                     @if(Auth::user()->can("quitar_destacado_item"))
-                        <i onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', '{{$seccion->id}}', '{{$i->id}}');" class="fa fa-shopping-cart prodDestacado fa-lg"></i>
+                        <a href="#" class="btn"><i onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', '{{$seccion->id}}', '{{$i->id}}');" class="fa fa-usd prodDestacado fa-lg"></i>Oferta</a>
                     @endif
                 @endif
                 </span>

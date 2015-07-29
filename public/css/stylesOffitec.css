@@ -40,10 +40,11 @@ h1, h2, h3 {font-weight: 300}
 .bandaInfoProd .btn-default:hover {color: #fff !important; background: #00A9E0; border: none;}
 .bandaInfoProd p {margin:7px 0 5px;}
 .bandaOfertas, .bandaNuevos {color: #fff; font-size: 1.2em; position: absolute; bottom: 0; left: 0; padding: 0.1em 0.5em;}
-.bandaOfertas {background: #D52318;}
+.bandaOfertas {background: #D52318; font-weight: 700;}
 .bandaNuevos {background: #ff7503}
 .bandaProd span {margin-right: 1em; font-size: 0.938em; text-transform: uppercase; margin-top: 0.6em;}
 .lazy {margin: 0}
+.bandaOfertas span{font-weight: 300;}
 
 /* Estilos de Bootstrap modificados */
 .navbar {margin:0;}

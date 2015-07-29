@@ -1516,3 +1516,43 @@ Stack trace:
 #16 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
 #17 C:\xampp\htdocs\offitec\public\index.php(54): Illuminate\Foundation\Application->run()
 #18 {main} [] []
+[2015-07-29 16:23:44] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ':', expecting '('' in C:\xampp\htdocs\offitec\app\storage\views\b1147ba1be3ebd605c0726d7098ed051:16
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-29 16:23:47] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ':', expecting '('' in C:\xampp\htdocs\offitec\app\storage\views\b1147ba1be3ebd605c0726d7098ed051:16
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-29 16:23:58] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ':', expecting '('' in C:\xampp\htdocs\offitec\app\storage\views\b1147ba1be3ebd605c0726d7098ed051:16
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-29 16:24:50] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ':', expecting '('' in C:\xampp\htdocs\offitec\app\storage\views\b1147ba1be3ebd605c0726d7098ed051:16
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-29 16:25:18] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ':', expecting '('' in C:\xampp\htdocs\offitec\app\storage\views\b1147ba1be3ebd605c0726d7098ed051:16
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-29 16:25:30] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ':', expecting '('' in C:\xampp\htdocs\offitec\app\storage\views\b1147ba1be3ebd605c0726d7098ed051:16
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-29 16:26:21] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ':', expecting '('' in C:\xampp\htdocs\offitec\app\storage\views\b1147ba1be3ebd605c0726d7098ed051:16
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-29 16:27:16] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ':', expecting '('' in C:\xampp\htdocs\offitec\app\storage\views\b1147ba1be3ebd605c0726d7098ed051:16
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-29 16:29:10] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ':', expecting '('' in C:\xampp\htdocs\offitec\app\storage\views\b1147ba1be3ebd605c0726d7098ed051:16
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-29 16:29:37] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ':', expecting '('' in C:\xampp\htdocs\offitec\app\storage\views\b1147ba1be3ebd605c0726d7098ed051:16
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
