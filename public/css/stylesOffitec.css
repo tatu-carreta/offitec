@@ -91,8 +91,11 @@ h4{margin-bottom: 20px;font-size: 20px;}
 
 /* CLIENTES */
 .imagenClientes{width: 100%;height: 100%; margin-bottom: 20px;}
-
 .tarjetas{width: 100%;height: 100%; text-align: center;}
+.clientesImg{width:80%; margin-bottom: 25%;}
+.info-margen{margin-top: 140px;}
+.fila-clientes{margin-top: 4%;}
+.lista-clientes{font-size: 1.2em}
 
 /*CONTACTOS*/
 .col-contacto{vertical-align: top;background-color: #F4F4EF; width: 49.8%; height: 600px;padding: 2% 3%; margin-bottom:146px;display: inline-block;}
