@@ -84,8 +84,6 @@ function validatePrecioProd(form)
 {
     var ok = true;
     
-    alert('im -> '+$(form).find("input[name='imagen_portada_crop']").length);
-
     if($(form).find("input[name='imagen_portada_crop']").length)
     {
         if($(form).find("input[name='imagen_portada_crop']").val() == "")

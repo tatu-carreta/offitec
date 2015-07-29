@@ -11,24 +11,18 @@
                 Email: ventas@offitec.com</p>
                 <h3>Lomas de Zamora</h3>
                 <p>Av. Hipólito Yrigoyen 9275 (ex Av. Pavón) </br>
-                Teléfono: (011) 4244 4099 </br>
+                Teléfono: (011) 42444099 </br>
                 Email: lomas@offitec.com</p>
             </div>
             <div class="col-contacto">
                 <h3>Consultas</h3>
                 <div class="formulario">
-                    {{ Form::open(array('url' => 'pedido/agregar', 'class' => 'borde', 'role' => 'form')) }}
+                    {{Form::open(array('url' => 'consulta', 'class' => 'borde'))}}
                         <div class="form-group">
                             <label for="nombre">Nombre y apellido</label>
                             {{Form::text('nombre', Input::old('nombre'),  array('id' => 'nombre','class' => 'form-control', 'required' => true))}}    
                             <!--<input type="type" class="form-control" id="ejemplo_email_1"
                                    placeholder="" name="nombre">-->
-                        </div>
-                        <div class="form-group">
-                            <label for="empresa">Empresa</label>
-                            {{Form::text('empresa', Input::old('empresa'),  array('id' => 'empresa','class' => 'form-control'))}} 
-                            <!--<input type="type" class="form-control" id="ejemplo_password_1" 
-                                   placeholder="" name="empresa">-->
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
