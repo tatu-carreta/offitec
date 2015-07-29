@@ -74,12 +74,12 @@
                             </div>
                             <div class="col-md-4">
                                 <label for="" >
-                                    Precio Antes $ <input id="" class="form-control inputWidth80 precioAble1" type="text" name="precio_antes" value="@if($item->producto()->oferta()){{ $producto->precio(1) }}@endif">
+                                    Precio Antes $ <input id="" class="form-control inputWidth80 precioAble1 precio-number" type="text" name="precio_antes" value="@if($item->producto()->oferta()){{ $producto->precio(1) }}@endif">
                                 </label>
                             </div>
                             <div class="col-md-4">
                                 <label for="" >
-                                    Precio Después $ <input id="" class="form-control inputWidth80 precioAble" type="text" name="precio_actual" value="@if($item->producto()->oferta()){{ $producto->precio(2) }}@endif">
+                                    Precio Después $ <input id="" class="form-control inputWidth80 precioAble1 precio-number" type="text" name="precio_actual" value="@if($item->producto()->oferta()){{ $producto->precio(2) }}@endif">
                                 </label>
                             </div>    
                         </div>

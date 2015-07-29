@@ -41,9 +41,9 @@
 
         <a class="fancybox" href="{{URL::to($i->imagen_destacada()->ampliada()->carpeta.$i->imagen_destacada()->ampliada()->nombre)}}" title="{{ $i->imagen_destacada()->ampliada()->epigrafe }}" rel='group'>
             <div class="divImgProd">
-               <img class="lazy" data-original="@if(!is_null($i->imagen_destacada())){{ URL::to($i->imagen_destacada()->carpeta.$i->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="{{$i->titulo}}">
-               @if($i->producto()->oferta())
-                    <span class="bandaOfertas">OFERTA: Nuevo: ${{$i->producto()->precio(1)}}, Oferta: ${{$i->producto()->precio(2)}}</span>
+                <img class="lazy" data-original="@if(!is_null($i->imagen_destacada())){{ URL::to($i->imagen_destacada()->carpeta.$i->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="{{$i->titulo}}">
+                @if($i->producto()->oferta())
+                    <span class="bandaOfertas">OFERTA: ${{$i->producto()->precio(1)}} <span>(antes: ${{$i->producto()->precio(2)}})</span></span>
                 @elseif($i->producto()->nuevo())
                     <span class="bandaNuevos">NUEVO</span>
                 @endif
