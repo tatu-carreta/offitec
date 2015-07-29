@@ -46,10 +46,10 @@ h4{margin-bottom: 20px;font-size: 20px;}
 
 
 /* CLIENTES */
-.clientesImg{width:150px; margin-right: 6%;margin-bottom: 5%; }
-.filaClientes{width: 100%}
+.clientesImg{width:80%; margin-bottom: 25%;}
 .info-margen{margin-top: 140px;}
-
+.fila-clientes{margin-top: 4%;}
+.lista-clientes{font-size: 1.2em}
 
 /* -- M E D I A  Q U E R Y -- */
 @media screen and (max-width: 1000px) {
