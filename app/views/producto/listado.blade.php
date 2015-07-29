@@ -39,7 +39,7 @@
             </div>
         @endif
 
-        <a class="fancybox" href="{{URL::to($i->imagen_destacada()->ampliada()->carpeta.$i->imagen_destacada()->ampliada()->nombre)}}" title="{{ $i->imagen_destacada()->ampliada()->epigrafe }}" rel='group'>
+        <a class="fancybox" href="@if(!is_null($i->imagen_destacada())){{URL::to($i->imagen_destacada()->ampliada()->carpeta.$i->imagen_destacada()->ampliada()->nombre)}}@else{{URL::to('images/sinImg.gif')}}@endif" title="@if(!is_null($i->imagen_destacada())){{ $i->imagen_destacada()->ampliada()->epigrafe }}@else{{$i->titulo}}@endif" rel='group'>
             <div class="divImgProd">
                 <img class="lazy" data-original="@if(!is_null($i->imagen_destacada())){{ URL::to($i->imagen_destacada()->carpeta.$i->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="{{$i->titulo}}">
                 @if($i->producto()->oferta())
