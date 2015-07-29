@@ -82,7 +82,7 @@ class ProductoController extends BaseController {
             //return Redirect::to('admin/producto')->withErrors($respuesta['mensaje'])->withInput();
         } else {
             $seccion = Seccion::find(Input::get('seccion_id'));
-            
+
             $menu = $seccion->menuSeccion()->url;
             $ancla = '#' . $seccion->estado . $seccion->id;
 
@@ -133,17 +133,23 @@ class ProductoController extends BaseController {
           }
          * 
          */
+        if (Input::get('seccion_id') !== null) {
+            $seccion_id = Input::get('seccion_id');
+        } else {
+            $seccion_id = 'null';
+        }
+
         if ($respuesta['error'] == true) {
-            return Redirect::to('admin/' . $this->folder_name . '/editar/' . Input::get('producto_id').'/'.Input::get('continue'))->with('mensaje', $respuesta['mensaje'])->with('error', true);
+            return Redirect::to('admin/' . $this->folder_name . '/editar/' . Input::get('producto_id') . '/' . Input::get('continue') . '/' . $seccion_id)->with('mensaje', $respuesta['mensaje'])->with('error', true);
             //return Redirect::to('admin/producto')->withErrors($respuesta['mensaje'])->withInput();
         } else {
             if (Input::get('continue') == "home") {
                 return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
             } else {
                 $seccion = Seccion::find(Input::get('seccion_id'));
-                
+
                 $menu = $seccion->menuSeccion()->url;
-                $ancla = '#' . $respuesta['data']->item()->seccionItem()->estado . $respuesta['data']->item()->seccionItem()->id;
+                $ancla = '#' . $seccion->estado . $seccion->id;
 
                 return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla)->with('ok', true);
             }

@@ -116,7 +116,14 @@ class Producto extends Item {
         $validator = Validator::make($input, $reglas);
 
         if ($validator->fails()) {
-            $respuesta['mensaje'] = $validator->messages()->first('titulo');
+            $messages = $validator->messages();
+            if ($messages->has('titulo')) {
+                $respuesta['mensaje'] = $messages->first('titulo');
+            } elseif ($messages->has('imagen_portada_crop')) {
+                $respuesta['mensaje'] = 'Se olvidó de guardar la imagen recortada.';
+            } else {
+                $respuesta['mensaje'] = 'Los datos necesario para el producto son erróneos.';
+            }
             $respuesta['error'] = true;
         } else {
 

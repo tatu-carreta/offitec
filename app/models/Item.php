@@ -40,11 +40,16 @@ class Item extends Eloquent {
         $validator = Validator::make($input, $reglas);
 
         if ($validator->fails()) {
-            // $respuesta['mensaje'] = "No se pudo realizar la carga del producto. Compruebe los campos.";
-            $respuesta['mensaje'] = $validator->messages()->first('imagen_portada_crop');
-            if (isset($input['titulo']) && ($input['titulo'] != "")) {
-                $respuesta['mensaje'] = $validator->messages()->first('titulo');
+            
+            $messages = $validator->messages();
+            if ($messages->has('titulo')) {
+                $respuesta['mensaje'] = $messages->first('titulo');
+            } elseif ($messages->has('imagen_portada_crop')) {
+                $respuesta['mensaje'] = 'Se olvidó de guardar la imagen recortada.';
+            } else {
+                $respuesta['mensaje'] = 'Los datos necesario para el producto son erróneos.';
             }
+            
             //Si está todo mal, carga lo que corresponde en el mensaje.
 
             $respuesta['error'] = true;

@@ -18,6 +18,12 @@
                 <a class="btn pull-right" href="{{URL::to('admin/slide/editar/'.$slide_index->id.'/home')}}"> <i class="fa fa-pencil fa-lg"></i>Editar Slide Home</a>
             </div>
         </div>
+    @else
+        <div class="row">
+            <div class="col-md-12">
+                <a class="btn pull-right" href="{{URL::to('admin/slide/agregar/1/I')}}"> <i class="fa fa-pencil fa-lg"></i>Agregar Slide Home</a>
+            </div>
+        </div>
     @endif
 @endif
 
