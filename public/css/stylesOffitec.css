@@ -61,7 +61,7 @@ h1, h2, h3 {font-weight: 300}
 .progress {height: 12px;}
 
 /* SERVICIOS */ 
-.redesHome{width: 24px; position: relative; top: 58px; right: -50px;float: right;}
+.redesHome{width: 100%; text-align: center; position: relative; top:-30px;right: 0;}
 .redesHome a{background-image: url(../images/sprites-redes.png); width: 24px; height: 24px; display: inline-block;}
 .redes{  width: 51px; position: relative; z-index: 99; top: 70px; right: 105px;}
 .redes a{background-image: url(../images/sprites-redes.png); width: 24px; height: 24px; display: inline-block;}
@@ -79,6 +79,8 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .col-carrito label{font-size: 18px; font-weight: normal;}
 .col-carrito .form-group {margin-bottom: 18px;}
 .col-carrito h3{border-bottom: 1px #DEDAD7 solid; padding-bottom: 2%;}
+.col-carrito .btn{color:#fff;background-color: #234a5b !important; width:175px;}
+.col-carrito .btn:hover{background-color: #142B3A !important}
 
 .table .fa-times:before {color: #000 !important;}
 .mapa{border-top: 3px solid #fff;}
@@ -90,6 +92,13 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .imagenClientes{width: 100%;height: 100%; margin-bottom: 20px;}
 
 .tarjetas{width: 100%;height: 100%; text-align: center;}
+
+/*CONTACTOS*/
+.col-contacto{vertical-align: top;background-color: #F4F4EF; width: 49.8%; height: 600px;padding: 2% 3%; margin-bottom:146px;display: inline-block;}
+.col-contacto p{margin-bottom: 50px;}
+.col-contacto label {font-size: 18px; font-weight: normal;}
+.col-contacto .btn {color:#fff;background-color:  #234a5b !important; width:45%; }
+.col-contacto .btn:hover{background-color: #142B3A !important}
 
 /* ----------------------------- M E D I A  Q U E R Y ------------------------------------- */
 @media screen and (max-width: 1000px) {
@@ -118,6 +127,9 @@ h4{margin-bottom: 20px;font-size: 20px;}
     .data-fiscal {float:none;}
 }
 
-@media screen and (max-width: 1250px) {
-   .redesHome {width: 100%; text-align: center; position: relative; top:-30px;right: 0 !important;}
+@media (max-width: 743px){
+    .col-tabla{vertical-align: top;background-color: #F4F4EF; width: 100%; height: auto;padding: 2% 3%; margin-bottom:146px;display: inline-block;}
+    .col-carrito {vertical-align: top;background-color: #F4F4EF; width: 100%; height: auto;padding: 2% 3% 5%; margin-bottom:146px;display: inline-block;}
+    .col-contacto{vertical-align: top;background-color: #F4F4EF; width: 100%; height: auto;padding: 2% 3%; margin-bottom:146px;display: inline-block;}
 }
+

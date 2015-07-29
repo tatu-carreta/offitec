@@ -61,7 +61,7 @@
                                     {{Form::textarea('consulta', Input::old('consulta'),  array('id' => 'consulta','class' => 'form-control', 'rows' => 3))}} 
                                     <!--<textarea class="form-control" rows="3" name="consulta"></textarea>-->
                                 </div>
-                                <button type="submit" class="btn btn-primary">Enviar</button>
+                                <button type="submit" class="btn">Enviar</button>
                             {{ Form::close() }}
                         </div>
                     </div>
