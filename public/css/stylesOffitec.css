@@ -98,8 +98,11 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .col-contacto p{margin-bottom: 50px;}
 .col-contacto label {font-size: 18px; font-weight: normal;}
 .col-contacto .btn {color:#fff;background-color:  #234a5b !important; width:45%; }
-.col-contacto .btn:hover{background-color: #142B3A !important}
+.col-contacto .btn:hover{background-color: #142B3A !important; color:#fff;}
 
+
+.boton-presupuestar{background-color:  #234a5b !important; color: #fff}
+.boton-presupuestar:hover{background-color: #142B3A !important; color:#fff;}
 /* ----------------------------- M E D I A  Q U E R Y ------------------------------------- */
 @media screen and (max-width: 1000px) {
     #menuPrincipal a {padding: 0 1.250em !important }

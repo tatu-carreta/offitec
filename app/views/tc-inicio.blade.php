@@ -117,7 +117,7 @@
                                             @if($c = Cart::search(array('id' => $item->producto()->id)))
                                                 <a href="{{URL::to('carrito/borrar/'.$item->producto()->id.'/'.$c[0].'/home/h')}}" class="carrito btn btn-default pull-right"><i class="fa fa-check-square-o"></i>Presupuestar</a>
                                             @else
-                                                <a href="{{URL::to('carrito/agregar/'.$item->producto()->id.'/home/h')}}" class="btn btn-default pull-right"><i class="fa fa-square-o"></i>Presupuestar</a>
+                                                <a href="{{URL::to('carrito/agregar/'.$item->producto()->id.'/home/h')}}" class="btn boton-presupuestar pull-right"><i class="fa fa-square-o"></i>Presupuestar</a>
                                             @endif
                                         @endif
                                         <div class="clearfix"></div>
