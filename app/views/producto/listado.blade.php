@@ -50,7 +50,7 @@
             </div>
         </a>
         
-        <div class="bandaInfoProd @if($i->producto()->nuevo()) nuevos @elseif($i->producto()->oferta()) ofertas @endif">
+        <div class="bandaInfoProd @if($i->producto()->nuevo()) nuevos @elseif($i->producto()->oferta()) ofertas @endif" id="Pr{{$i->producto()->id}}">
             <p class="pull-left">{{ $i->titulo }}</p>
             {{-- <p class="marca">Marca: @if(!is_null($i->producto()->marca_principal())){{$i->producto()->marca_principal()->nombre}}@endif</p> --}}
             @if(!Auth::check())

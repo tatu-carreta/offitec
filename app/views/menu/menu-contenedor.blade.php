@@ -2,14 +2,15 @@
 
 @section('contenido')
     @if(isset($page) && ($page != ""))
-        @if(isset($ancla) && ($ancla != ""))
+        @if((isset($ancla) && ($ancla != "")))
             <script src="{{URL::to('js/anclaFuncs.js')}}"></script>
             <a id="ancla" href="{{ $ancla }}" style="display: none;">Ancla</a>
+            <a id="anclaProd" href="{{ $anclaProd }}" style="display: none;">Ancla</a>
         @endif
     @endif
     @if(Auth::check())
-        @if(isset($ancla) && ($ancla != ""))
-            <script src="{{URL::to('js/anclaFuncs.js')}}"></script>
+        @if((isset($ancla) && ($ancla != "")))
+             <script src="{{URL::to('js/anclaFuncs.js')}}"></script>
             <a id="ancla" href="{{ $ancla }}" style="display: none;">Ancla</a>
         @endif
         <script src="{{URL::to('js/popupFuncs.js')}}"></script>
@@ -24,6 +25,14 @@
             });
         </script>
         @endif
+    @else
+    holi
+        @if(Session::has('anclaProd'))
+        holi2
+        <script src="{{URL::to('js/anclaFuncs.js')}}"></script>
+        <a id="ancla" href="{{ Session::get('anclaProd') }}" style="display: none;">Ancla</a>
+        @endif
+    
     @endif
     <!-- S E C T I O N -->
     <section class="container">
