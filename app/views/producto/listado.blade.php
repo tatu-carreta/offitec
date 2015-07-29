@@ -55,9 +55,9 @@
             {{-- <p class="marca">Marca: @if(!is_null($i->producto()->marca_principal())){{$i->producto()->marca_principal()->nombre}}@endif</p> --}}
             @if(!Auth::check())
                 @if($c = Cart::search(array('id' => $i->producto()->id)))
-                    <a class="carrito btn btn-default pull-right" href="{{URL::to('carrito/borrar/'.$i->producto()->id.'/'.$c[0].'/seccion/'.$seccion->id)}}"><i class="fa fa-check-square-o"></i>Presupuestar</a>
+                    <a class="carrito boton-presupuestar btn pull-right" href="{{URL::to('carrito/borrar/'.$i->producto()->id.'/'.$c[0].'/seccion/'.$seccion->id)}}"><i class="fa fa-check-square-o"></i>Presupuestar</a>
                 @else
-                    <a href="{{URL::to('carrito/agregar/'.$i->producto()->id.'/seccion/'.$seccion->id)}}" class="btn btn-default pull-right"><i class="fa fa-square-o"></i>Presupuestar</a>
+                    <a href="{{URL::to('carrito/agregar/'.$i->producto()->id.'/seccion/'.$seccion->id)}}" class="boton-presupuestar btn pull-right"><i class="fa fa-square-o"></i>Presupuestar</a>
                     {{-- <a class="carrito btn btn-default pull-right" href="{{URL::to('carrito/agregar/'.$i->producto()->id)}}">Agregar Carrito</a> --}}
                 @endif
             @endif

@@ -26,9 +26,7 @@
         </script>
         @endif
     @else
-    holi
         @if(Session::has('anclaProd'))
-        holi2
         <script src="{{URL::to('js/anclaFuncs.js')}}"></script>
         <a id="ancla" href="{{ Session::get('anclaProd') }}" style="display: none;">Ancla</a>
         @endif
