@@ -1,12 +1,5 @@
 @extends($project_name.'-master')
 
-@section('head')
-
-    @parent
-
-    <link rel="stylesheet" href="{{URL::to('css/ng-img-crop.css')}}" />
-@stop
-
 @section('contenido')
 <style>
     .check_box {
