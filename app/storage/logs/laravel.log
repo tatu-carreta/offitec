@@ -1470,3 +1470,49 @@ Stack trace:
 Stack trace:
 #0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
 #1 {main} [] []
+[2015-07-29 13:42:14] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-07-29 14:39:45] production.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in C:\xampp\htdocs\offitec\app\controllers\SlideController.php:30
+Stack trace:
+#0 C:\xampp\htdocs\offitec\app\controllers\SlideController.php(30): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 [internal function]: SlideController->agregar()
+#2 C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5835): Illuminate\Routing\Controller->callAction('agregar', Array)
+#4 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5823): Illuminate\Routing\ControllerDispatcher->call(Object(SlideController), Object(Illuminate\Routing\Route), 'agregar')
+#5 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5028): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'SlideController', 'agregar')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5386): call_user_func_array(Object(Closure), Array)
+#8 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5053): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5041): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\offitec\bootstrap\compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\offitec\bootstrap\compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7813): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8420): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8367): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\offitec\bootstrap\compiled.php(11030): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 C:\xampp\htdocs\offitec\public\index.php(54): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2015-07-29 14:40:31] production.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in C:\xampp\htdocs\offitec\app\controllers\SlideController.php:30
+Stack trace:
+#0 C:\xampp\htdocs\offitec\app\controllers\SlideController.php(30): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 30, Array)
+#1 [internal function]: SlideController->agregar()
+#2 C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(231): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5835): Illuminate\Routing\Controller->callAction('agregar', Array)
+#4 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5823): Illuminate\Routing\ControllerDispatcher->call(Object(SlideController), Object(Illuminate\Routing\Route), 'agregar')
+#5 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5028): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'SlideController', 'agregar')
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5386): call_user_func_array(Object(Closure), Array)
+#8 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5053): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5041): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\offitec\bootstrap\compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\offitec\bootstrap\compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7813): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8420): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8367): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\offitec\bootstrap\compiled.php(11030): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#17 C:\xampp\htdocs\offitec\public\index.php(54): Illuminate\Foundation\Application->run()
+#18 {main} [] []

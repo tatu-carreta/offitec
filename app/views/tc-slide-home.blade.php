@@ -21,7 +21,7 @@
     @else
         <div class="row">
             <div class="col-md-12">
-                <a class="btn pull-right" href="{{URL::to('admin/slide/agregar/1/I')}}"> <i class="fa fa-pencil fa-lg"></i>Agregar Slide Home</a>
+                <a class="btn pull-right" href="{{URL::to('admin/slide/agregar/5/I')}}"> <i class="fa fa-pencil fa-lg"></i>Agregar Slide Home</a>
             </div>
         </div>
     @endif

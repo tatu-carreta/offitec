@@ -2,27 +2,45 @@
 
 @section('contenido')
 <section class="container">
+<h2 class="marginBottom2"><span>Slide. Selección de imágenes</span></h2>
     {{ Form::open(array('url' => 'admin/slide/editar')) }}
-        @include('imagen.modulo-galeria-angular')
-        
-        @if(count($slide->imagenes) > 0)
-        
-            @foreach($slide->imagenes as $img)
-                <div class="imgSeleccionadas">
-                   <div class="col-md-3">
-                       <div class="thumbnail">
-                           <input type="hidden" name="imagen_slide_editar[]" value="{{$img->id}}">
-                           <img class="marginBottom1" src="{{ URL::to($img->carpeta.$img->nombre) }}" alt="{{$slide->titulo}}">
-                           <textarea class="form-control" name="epigrafe_imagen_slide_editar[]" >{{$img->epigrafe}}</textarea>
-                           <i onclick="borrarImagenReload('{{ URL::to('admin/imagen/borrar') }}', '{{$img->id}}');" class="fa fa-times-circle fa-lg"></i>
+
+    <div class="row marginBottom2">
+      <!-- Abre columna de imágenes -->
+            <div class="col-md-12 cargaImg">
+                <div class="fondoDestacado">
+                  @include('imagen.modulo-galeria-angular')
+                  
+                  @if(count($slide->imagenes) > 0)
+                  <div class="row imgSeleccionadas">
+                      @foreach($slide->imagenes as $img)
+                          
+                             <div class="col-md-3">
+                                 <div class="thumbnail">
+                                   <div class="divCargaImg marginBottom1">
+                                       <input type="hidden" name="imagen_slide_editar[]" value="{{$img->id}}">
+                                       <img src="{{ URL::to($img->carpeta.$img->nombre) }}" alt="{{$slide->titulo}}">
+                                        <i onclick="borrarImagenReload('{{ URL::to('admin/imagen/borrar') }}', '{{$img->id}}');" class="fa fa-times-circle fa-lg"></i>
+                                    </div>
+                                       <textarea class="form-control" name="epigrafe_imagen_slide_editar[]" >{{$img->epigrafe}}</textarea>
+                                       
+                                  
+                                 </div>
+                             </div>
+                         
+                      @endforeach
                        </div>
-                   </div>
+                  @endif
+                  <div class="clearfix"></div>
                 </div>
-            @endforeach
-        @endif
-          
+              </div>
+
+    </div>
+
+      <div class="border-top">
+          <button type="submit" class="btn btn-primary marginRight5">Publicar</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-          <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>  
         {{Form::hidden('slide_id', $slide->id)}}
         {{Form::hidden('continue', $continue)}}
     {{Form::close()}}

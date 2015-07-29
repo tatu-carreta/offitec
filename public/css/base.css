@@ -88,6 +88,12 @@ footer {margin-top: 1em; padding: 4em 0}
 .headerAdmin .divAdministrar{position: absolute; left: 0}
 .headerAdmin .salir{color:#fff; padding: 0 1em; margin-left: 1em}
 
+/* Carga Slide Home */
+.imgSeleccionadas .thumbnail {background: transparent;}
+.imgSeleccionadas .divCargaImg {width: 100%; overflow: hidden}
+.imgSeleccionadas .divCargaImg canvas {min-width: 100%; min-height: 100%; width: auto; height: auto; overflow: hidden;}
+.imgSeleccionadas textarea {height: 6em}
+
 /* Catálogo de Productos */
 .divListadoItems:nth-child(1) {border-top: 0 none;}
 .divListadoItems {border-top: 1px solid #c6c6c6; min-height: 5em; padding-top: 1em; vertical-align: top;}

@@ -2,18 +2,22 @@
 
 @section('contenido')
 <section class="container">
+    <h2 class="marginBottom2"><span>Slide. Selección de imágenes</span></h2>
     {{ Form::open(array('url' => 'admin/slide/agregar')) }}
         <div class="row marginBottom2">
             <!-- Abre columna de imágenes -->
             <div class="col-md-12 cargaImg">
                 <div class="fondoDestacado">
-                    <h3>Selección de imágenes</h3>
                     @include('imagen.modulo-galeria-angular')
                 </div>
             </div>
         </div>  
-        <button type="button" class="btn btn-default" onclick="window.history.back();">Cancelar</button>
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <div class="border-top">
+            <button type="submit" class="btn btn-primary marginRight5">Publicar</button>
+            <button type="button" class="btn btn-default" onclick="window.history.back();">Cancelar</button>
+        </div>
+
+        
         {{Form::hidden('seccion_id', $seccion_id)}}
         {{Form::hidden('tipo', $tipo)}}
     {{Form::close()}}
