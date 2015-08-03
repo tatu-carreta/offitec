@@ -1556,3 +1556,38 @@ Stack trace:
 Stack trace:
 #0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
 #1 {main} [] []
+[2015-08-03 15:03:31] production.ERROR: exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
+' in C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php:47
+Stack trace:
+#0 C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\Database\Connectors\Connector.php(47): PDO->__construct('mysql:host=loca...', 'root', '', Array)
+#1 C:\xampp\htdocs\offitec\vendor\laravel\framework\src\Illuminate\Database\Connectors\MySqlConnector.php(20): Illuminate\Database\Connectors\Connector->createConnection('mysql:host=loca...', Array, Array)
+#2 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7701): Illuminate\Database\Connectors\MySqlConnector->connect(Array)
+#3 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7697): Illuminate\Database\Connectors\ConnectionFactory->createSingleConnection(Array)
+#4 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7609): Illuminate\Database\Connectors\ConnectionFactory->make(Array, 'mysql')
+#5 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7564): Illuminate\Database\DatabaseManager->makeConnection('mysql')
+#6 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7665): Illuminate\Database\DatabaseManager->connection()
+#7 C:\xampp\htdocs\offitec\bootstrap\compiled.php(3260): Illuminate\Database\DatabaseManager->__call('table', Array)
+#8 C:\xampp\htdocs\offitec\bootstrap\compiled.php(3260): Illuminate\Database\DatabaseManager->table('menu_asociado')
+#9 C:\xampp\htdocs\offitec\app\controllers\BaseController.php(31): Illuminate\Support\Facades\Facade::__callStatic('table', Array)
+#10 C:\xampp\htdocs\offitec\app\controllers\BaseController.php(31): Illuminate\Support\Facades\DB::table('menu_asociado')
+#11 C:\xampp\htdocs\offitec\app\controllers\BaseController.php(10): BaseController->desplegarMenu()
+#12 [internal function]: BaseController->__construct()
+#13 C:\xampp\htdocs\offitec\bootstrap\compiled.php(247): ReflectionClass->newInstanceArgs(Array)
+#14 C:\xampp\htdocs\offitec\bootstrap\compiled.php(205): Illuminate\Container\Container->build('HomeController', Array)
+#15 C:\xampp\htdocs\offitec\bootstrap\compiled.php(583): Illuminate\Container\Container->make('HomeController', Array)
+#16 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5830): Illuminate\Foundation\Application->make('HomeController')
+#17 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5819): Illuminate\Routing\ControllerDispatcher->makeController('HomeController')
+#18 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5028): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'HomeController', 'inicio')
+#19 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#20 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5386): call_user_func_array(Object(Closure), Array)
+#21 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5053): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#22 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5041): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#23 C:\xampp\htdocs\offitec\bootstrap\compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#24 C:\xampp\htdocs\offitec\bootstrap\compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#25 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7813): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#26 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8420): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#27 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8367): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#28 C:\xampp\htdocs\offitec\bootstrap\compiled.php(11030): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#29 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#30 C:\xampp\htdocs\offitec\public\index.php(54): Illuminate\Foundation\Application->run()
+#31 {main} [] []

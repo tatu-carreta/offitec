@@ -40,15 +40,18 @@ h1, h2, h3 {font-weight: 300 !important}
 .col-md-6{margin-bottom: 40px;}
 .info{background-color: #F4F4EF; width: 49.8%;text-align: center; padding-top: 5px; border-bottom: 5px solid #fff; display: inline-block; }
 .info p{font-size: 16px;}
+.col-izqservicios {margin-bottom:3%;}
+.col-izqservicios p{margin-top:-6px;}
+#owl-demoservicios .item img{display: block;width: 100%;height: auto;}
+.owl-buttons{display: none;}
 
 
-h4{margin-bottom: 20px;font-size: 20px;}
 
 
 /* CLIENTES */
 .clientesImg{width:80%; margin-bottom: 25%;}
 .info-margen{margin-top: 140px;}
-.fila-clientes{margin-top: 4%;}
+.fila-clientes{margin-top: 4% !important;}
 .lista-clientes{font-size: 1.2em}
 
 /* -- M E D I A  Q U E R Y -- */

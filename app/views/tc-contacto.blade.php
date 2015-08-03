@@ -4,7 +4,7 @@
 <section class="container">
     <div class="row ">
         <div class="col-md-12 ">
-            <div class="col-contacto">
+            <div class="col-izqcontacto">
                 <h3>La Plata</h3>
                 <p>Calle 39 N° 833 e/ 11 y 12 </br>
                 Teléfono: (0221) 4221273 / Fax: (0221) 4273777 </br>
