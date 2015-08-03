@@ -69,10 +69,8 @@
                                         <div class="iconos">
                                             <span class="pull-left">
                                                 @if(!$item->producto()->nuevo())
-                                                    @if(!$item->producto()->oferta())
-                                                        @if(Auth::user()->can("destacar_item"))
-                                                        <a href="#" class="btn" onclick="destacarItemSeccion('{{URL::to('admin/producto/nuevo')}}', 'null', '{{$item->id}}');" ><i class="fa fa-tag fa-lg"></i>Nuevo</a>
-                                                        @endif
+                                                    @if(Auth::user()->can("destacar_item"))
+                                                        <a href="#" class="btn @if($item->producto()->oferta()) disabled @endif" @if(!$item->producto()->oferta()) onclick="destacarItemSeccion('{{URL::to('admin/producto/nuevo')}}', 'null', '{{$item->id}}');" @endif ><i class="fa fa-tag fa-lg"></i>Nuevo</a>
                                                     @endif
                                                 @else
                                                     @if(Auth::user()->can("quitar_destacado_item"))

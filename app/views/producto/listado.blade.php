@@ -7,10 +7,8 @@
             <div class="iconos">
             <span class="pull-left">
                 @if(!$i->producto()->nuevo())
-                    @if(!$i->producto()->oferta())
-                        @if(Auth::user()->can("destacar_item"))
-                            <a href="#" class="btn" onclick="destacarItemSeccion('{{URL::to('admin/producto/nuevo')}}', '{{$seccion->id}}', '{{$i->id}}');" ><i class="fa fa-tag fa-lg"></i>Nuevo</a>
-                        @endif
+                    @if(Auth::user()->can("destacar_item"))
+                        <a href="#" class="btn @if($i->producto()->oferta()) disabled @endif" @if(!$i->producto()->oferta()) onclick="destacarItemSeccion('{{URL::to('admin/producto/nuevo')}}', '{{$seccion->id}}', '{{$i->id}}');" @endif><i class="fa fa-tag fa-lg"></i>Nuevo</a>
                     @endif
                 @else
                     @if(Auth::user()->can("quitar_destacado_item"))
