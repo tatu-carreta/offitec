@@ -27,8 +27,8 @@
 <script src="{{URL::to('js/producto-funcs.js')}}"></script>
 <section class="container">    
         {{ Form::open(array('url' => 'admin/producto/editar', 'files' => true, 'role' => 'form', 'onsubmit' => 'return validatePrecioProd(this);')) }}
-            <h2 class="marginBottom2"><span>Editar producto</span></h2>
-
+        <h2 class="marginBottom2"><span>Editar producto</span></h2>
+        <a class="volveraSeccion" href="{{URL::to('/'.Seccion::find($seccion_next) -> menuSeccion() -> url)}}"><i class="fa fa-caret-left"></i>Volver a {{ Seccion::find($seccion_next) -> menuSeccion() -> nombre }}</a>
         <div class="row datosProducto marginBottom2">
             <!-- Abre columna de descripción de Producto -->
             <div class="col-md-6">
