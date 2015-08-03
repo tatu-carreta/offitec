@@ -10,7 +10,7 @@ ul, li {margin:0; padding:0; list-style: none}
 a {text-decoration: none !important;}
 
 .fondoDestacado {background: #EFEFEF; padding: 1em; margin-bottom: 2em; box-sizing: border-box !important;}
-.fondoDestacado > * { margin-top: 0;}
+.fondoDestacado > * {margin-top: 0;}
 
 .ajustaImg {width: 100%; height: auto}
 
@@ -22,12 +22,13 @@ header {background: #000;}
 #menuPrincipal a {background: transparent; font-size: 15px; color:#fff; font-weight: 300;background: transparent; height: 88px; line-height: 88px; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box;}
 #menuPrincipal a:hover {background: #878979}
 #menuPrincipal .dropdown li a {height: 35px; line-height: 35px; font-size: 15px;}
-.btnCarrito {font-weight: 300; font-size: 15px; height: 88px; line-height: 88px; margin: 0 !important; background: #302F2F; color:#fff; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box; position: relative; z-index: 1000;}
+.btnCarrito {font-weight: 300; font-size: 15px; height: 88px; line-height: 88px; margin: 0 !important; background: #302F2F; color:#fff; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box; position: relative; z-index: 1000; float: right}
 .btnCarrito:hover {color:#fff;}
+.btnCarrito i {display:none;}
 .carrouselProdHome {margin-bottom: 6em}
 
 /* SLIDE HOME */
-.slideHome{overflow: hidden; }
+.slideHome {overflow: hidden;}
 .carousel-inner {position: relative; width: 100%; overflow: hidden;}
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {width: 100%; margin: auto;}
 

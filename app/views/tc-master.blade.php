@@ -98,10 +98,12 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="logo pull-left"><a href="{{URL::to('/')}}" ><img alt="logo" src="{{URL::to('images/offitec.svg')}}"></a></h1>
-                            <!-- B T N   C A R R I T O -->
-                            <a href="{{URL::to('carrito')}}" class="pull-right btnCarrito active">Presupuesto: {{Cart::count(false)}}</a>
+                             <!-- B T N   C A R R I T O -->
+                            <a href="{{URL::to('carrito')}}" class="btnCarrito active"><span>Presupuesto: {{Cart::count(false)}}</span><i class="fa fa-shopping-cart fa-lg"></i></a>
                             <!-- N A V -->
                             @include('menu.'.$project_name.'-desplegar-menu')
+                            
+                           
 
                             <div class="clearfix"></div>
                             

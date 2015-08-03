@@ -2,6 +2,12 @@
 
 @section('contenido')
 <section class="container">
+    <div class="row">
+        <div class="col-md-12 marginBottom2">
+            <h2>Contacto</h2>
+        </div>
+    </div>
+    <div class="clearfix"></div>
     <div class="row ">
         <div class="col-md-12 ">
             <div class="col-izqcontacto">
