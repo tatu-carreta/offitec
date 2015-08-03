@@ -17,13 +17,13 @@
 </style>
 
 
-
-<div class="row" id="ng-app" ng-app="app">
+<div class="row">
     <div ng-controller="GaleriaUpload" nv-file-drop="" uploader="uploader" filters="queueLimit, customFilter, sizeLimit">
+        
         <div class="col-md-12">
             <div class="row marginBottom2">
                 <div class="col-md-2">
-                    <label class="btn btn-primary" style="width:100%"> Seleccionar archivo
+                    <label class="btn btn-primary" style="width:100%"  ng-disabled="<% total_permitido %> == 0"> Seleccionar archivo
                         <span>
                             <input id="fileInput" type="file" nv-file-select="" uploader="uploader"  class="oculto file imagen" data="1" multiple/>
                         </span>

@@ -1,46 +1,42 @@
 @extends($project_name.'-master')
 
 @section('contenido')
-<section class="container">
+<section class="container"  id="ng-app" ng-app="app">
 <h2 class="marginBottom2"><span>Slide. Selección de imágenes</span></h2>
     {{ Form::open(array('url' => 'admin/slide/editar')) }}
 
-    <div class="row marginBottom2">
-      <!-- Abre columna de imágenes -->
-            <div class="col-md-12 cargaImg">
-                <div class="fondoDestacado">
-                  @include('imagen.modulo-galeria-angular')
-                  
-                  @if(count($slide->imagenes) > 0)
-                  <div class="row imgSeleccionadas">
-                      @foreach($slide->imagenes as $img)
-                          
-                             <div class="col-md-3">
-                                 <div class="thumbnail">
-                                   <div class="divCargaImg marginBottom1">
-                                       <input type="hidden" name="imagen_slide_editar[]" value="{{$img->id}}">
-                                       <img src="{{ URL::to($img->carpeta.$img->nombre) }}" alt="{{$slide->titulo}}">
-                                        <i onclick="borrarImagenReload('{{ URL::to('admin/imagen/borrar') }}', '{{$img->id}}');" class="fa fa-times-circle fa-lg"></i>
-                                    </div>
-                                       <textarea class="form-control" name="epigrafe_imagen_slide_editar[]" >{{$img->epigrafe}}</textarea>
-                                       
-                                  
-                                 </div>
-                             </div>
-                         
-                      @endforeach
-                       </div>
-                  @endif
-                  <div class="clearfix"></div>
+        <div class="row marginBottom2">
+          <!-- Abre columna de imágenes -->
+                <div class="col-md-12 cargaImg">
+                    <div class="fondoDestacado">
+                        <input type="hidden" ng-model="total_permitido" ng-init="total_permitido = @if(count($slide->imagenes) > 0){{4-count($slide->imagenes)}}@else 4 @endif">
+                        @include('imagen.modulo-galeria-angular')
+
+                        @if(count($slide->imagenes) > 0)
+                            <div class="row imgSeleccionadas">
+                                @foreach($slide->imagenes as $img)
+                                   <div class="col-md-3">
+                                       <div class="thumbnail">
+                                         <div class="divCargaImg marginBottom1">
+                                             <input type="hidden" name="imagen_slide_editar[]" value="{{$img->id}}">
+                                             <img src="{{ URL::to($img->carpeta.$img->nombre) }}" alt="{{$slide->titulo}}">
+                                              <i onclick="borrarImagenReload('{{ URL::to('admin/imagen/borrar') }}', '{{$img->id}}');" class="fa fa-times-circle fa-lg"></i>
+                                          </div>
+                                             <textarea class="form-control" name="epigrafe_imagen_slide_editar[]" >{{$img->epigrafe}}</textarea>
+                                       </div>
+                                   </div>
+                                @endforeach
+                            </div>
+                        @endif
+                        <div class="clearfix"></div>
+                    </div>
                 </div>
-              </div>
+        </div>
 
-    </div>
-
-      <div class="border-top">
-          <button type="submit" class="btn btn-primary marginRight5">Publicar</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-      </div>  
+        <div class="border-top">
+            <button type="submit" class="btn btn-primary marginRight5">Publicar</button>
+            <button type="button" class="btn btn-default" onclick="window.history.back();">Cancelar</button>
+        </div>  
         {{Form::hidden('slide_id', $slide->id)}}
         {{Form::hidden('continue', $continue)}}
     {{Form::close()}}

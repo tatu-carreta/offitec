@@ -191,7 +191,7 @@ angular
                 uploader.filters.push({
                     name: 'customFilter',
                     fn: function (item /*{File|FileLikeObject}*/, options) {
-                        return this.queue.length < 4;
+                        return this.queue.length < $scope.total_permitido;
                     },
                     texto: 'Está intentando cargar más de las 4 imágenes permitidas.',
                 });

@@ -215,7 +215,7 @@ class Slide extends Eloquent {
 
     //Me quedo con las categorias a las que pertenece el Item
     public function imagenes() {
-        return $this->belongsToMany('Imagen', 'slide_imagen', 'slide_id', 'imagen_id');
+        return $this->belongsToMany('Imagen', 'slide_imagen', 'slide_id', 'imagen_id')->where('slide_imagen.estado', 'A')->where('imagen.estado', 'A');
     }
 
     //Me quedo con las secciones a las que pertenece el Item
