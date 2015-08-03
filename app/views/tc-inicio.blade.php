@@ -178,7 +178,7 @@
         $(document).ready(function() {
           $("#owl-demo-prod").owlCarousel({
               items : 4,
-              itemsDesktop : [1199,3],
+              itemsDesktop : [1199,4],
               itemsDesktopSmall : [979,3]
           });
         });

@@ -107,7 +107,11 @@ h4{margin-bottom: 20px;font-size: 20px;}
 
 .boton-presupuestar{background-color:  #234a5b !important; color: #fff}
 .boton-presupuestar:hover{background-color: #142B3A !important; color:#fff;}
+
+
 /* ----------------------------- M E D I A  Q U E R Y ------------------------------------- */
+
+
 @media screen and (max-width: 1000px) {
     #menuPrincipal a {padding: 0 1.250em !important }
 }
