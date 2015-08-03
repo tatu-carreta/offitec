@@ -4,17 +4,52 @@
 @section('header')@stop
 
 @section('contenido')
-        <div class="modal-header">
+<script>
+$(document).ready(function () {
+    $(".valid-number").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                // Allow: Ctrl+A
+                        (e.keyCode == 65 && e.ctrlKey === true) ||
+                        // Allow: home, end, left, right
+                                (e.keyCode >= 35 && e.keyCode <= 39)) {
+                    // let it happen, don't do anything
+                    return;
+                }
+                // Ensure that it is a number and stop the keypress
+                if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                    e.preventDefault();
+                }
+            });
+});
+
+function validatePrecioProd(form)
+{
+    var ok = true;
+
+    var precio_antes = $(form).find("input[name='precio_antes']").val();
+    var precio_ahora = $(form).find("input[name='precio_actual']").val();
+
+    if (precio_antes > precio_ahora)
+    {
+        ok = false;
+        alert('El precio actual es mayor al precio anterior.');
+    }
+    
+    return ok;
+}
+</script>
+    <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Producto en oferta</h4>
     </div>
-    {{ Form::open(array('url' => 'admin/producto/oferta')) }}
+    {{ Form::open(array('url' => 'admin/producto/oferta', 'onsubmit' => 'return validatePrecioProd(this);')) }}
         <div class="modal-body">
             <div class="form-group marginBottom2">
-                <input class="form-control" type="text" name="precio_antes" placeholder="Precio Anterior" required="true">
+                <input class="form-control valid-number" type="text" name="precio_antes" placeholder="Precio Anterior" required="true">
             </div>
             <div class="form-group marginBottom2">
-                <input class="form-control" type="text" name="precio_actual" placeholder="Precio Actual" required="true">
+                <input class="form-control valid-number" type="text" name="precio_actual" placeholder="Precio Actual" required="true">
             </div>
             
             {{Form::hidden('continue', $continue)}}

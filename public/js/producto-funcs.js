@@ -83,10 +83,10 @@ $(document).ready(function () {
 function validatePrecioProd(form)
 {
     var ok = true;
-    
-    if($(form).find("input[name='imagen_portada_crop']").length)
+
+    if ($(form).find("input[name='imagen_portada_crop']").length)
     {
-        if($(form).find("input[name='imagen_portada_crop']").val() == "")
+        if ($(form).find("input[name='imagen_portada_crop']").val() == "")
         {
             ok = false;
             alert('Se olvidó de cargar o guardar la imagen recortada.');

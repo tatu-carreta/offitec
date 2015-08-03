@@ -71,21 +71,21 @@
                                                 @if(!$item->producto()->nuevo())
                                                     @if(!$item->producto()->oferta())
                                                         @if(Auth::user()->can("destacar_item"))
-                                                            <i onclick="destacarItemSeccion('{{URL::to('admin/producto/nuevo')}}', 'null', '{{$item->id}}');" class="fa fa-tag fa-lg"></i>
+                                                        <a href="#" class="btn" onclick="destacarItemSeccion('{{URL::to('admin/producto/nuevo')}}', 'null', '{{$item->id}}');" ><i class="fa fa-tag fa-lg"></i>Nuevo</a>
                                                         @endif
                                                     @endif
                                                 @else
                                                     @if(Auth::user()->can("quitar_destacado_item"))
-                                                        <i onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', 'null', '{{$item->id}}');" class="fa fa-tag prodDestacado fa-lg"></i>
+                                                        <a href="#" class="btn" onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', 'null', '{{$item->id}}');" ><i class="fa fa-tag prodDestacado fa-lg"></i>Nuevo</a>
                                                     @endif
                                                 @endif
                                                 @if(!$item->producto()->oferta())
                                                     @if(Auth::user()->can("destacar_item"))
-                                                        <a href="{{URL::to('admin/producto/oferta/'.$item->producto()->id.'/null/home')}}" class="popup-nueva-seccion"><i  class="fa fa-shopping-cart fa-lg"></i></a>
+                                                        <a href="{{URL::to('admin/producto/oferta/'.$item->producto()->id.'/null/home')}}" class="btn popup-nueva-seccion"><i  class="fa fa-shopping-cart fa-lg"></i>Oferta</a>
                                                     @endif
                                                 @else
                                                     @if(Auth::user()->can("quitar_destacado_item"))
-                                                        <i onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', 'null', '{{$item->id}}');" class="fa fa-shopping-cart prodDestacado fa-lg"></i>
+                                                        <a href="#" onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', 'null', '{{$item->id}}');" class="btn"><i class="fa fa-shopping-cart prodDestacado fa-lg"></i>Oferta</a>
                                                     @endif
                                                 @endif
                                             </span>
