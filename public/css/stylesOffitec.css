@@ -81,7 +81,8 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .col-tabla{vertical-align: top;background-color: #F4F4EF; width: 49.8%; height: 600px;padding: 2% 3%; margin-bottom:146px;display: inline-block;}
 .col-carrito {vertical-align: top;background-color: #F4F4EF; width: 49.8%; height: 600px;padding: 2% 3% 5%; margin-bottom:146px;display: inline-block;}
 .col-carrito label{font-size: 18px; font-weight: normal;}
-.col-carrito .form-group {margin-bottom: 18px;}
+.col-carrito textarea {height: 125px; margin-bottom: 1.2em;}
+.col-carrito .form-group {margin-bottom: 8px;}
 .col-carrito h3{border-bottom: 1px #DEDAD7 solid; padding-bottom: 2%;}
 .col-carrito .btn{color:#fff;background-color: #234a5b !important; width:175px;}
 .col-carrito .btn:hover{background-color: #142B3A !important}
