@@ -33,12 +33,14 @@ header {background: #000;}
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {width: 100%; margin: auto;}
 
 /* SLIDE HOME */
-.slideDinamicoHome {height: 340px; background: #70162F; margin-bottom: 6em; overflow: hidden}
-.flex-caption {width: 50%; padding: 10%; float:left ; color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 14px; line-height: 2em;}
-.flex-caption p {font-size: 1.6em; font-weight: 300;}
+.slideDinamicoHome {max-height: 340px; background: #70162F; margin-bottom: 6em; overflow: hidden}
+.flex-caption {width: 50%; padding: 0 10%; float:left ; color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 14px; line-height: 2em;height: 340px;
+    max-height: 340px; display: table;}
+.flex-caption p {font-size: 1.6em; font-weight: 300; display: table-cell; vertical-align: middle;}
 
-.imgSlideFlex {width: 50%; float: left;}
+.imgSlideFlex {width: 50%; float: left; position: relative;}
 .imgSlideFlex img {width: 100%; height: auto;}
+.imgSlideFlex .flechaSlide {background: url(../images/flecha-slide.svg); width:23px; height: 70px; position: absolute; right: 0; top:50%; margin-top: -35px }
 /*.flex-direction-nav {position: absolute; top:30%; left: 50%}
 .flex-prev {display: none}
 .flex-next {background: url(../images/flecha-02.svg); width: 22px; height: 72px;display: block; text-indent: -9999px; }*/

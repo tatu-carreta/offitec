@@ -34,7 +34,10 @@
             @if (!is_null($slide_index) && !is_null($slide_index -> imagenes))
                 @foreach($slide_index -> imagenes as $img)
                     <li>
-                        <div class="imgSlideFlex"><img src="{{ URL::to($img->carpeta.$img->nombre) }}" /></div>
+                        <div class="imgSlideFlex">
+                            <div class="flechaSlide"></div>
+                            <img src="{{ URL::to($img->carpeta.$img->nombre) }}" />
+                        </div>
                         <div class="flex-caption">
                             <p>{{ $img->epigrafe }}</p>
                         </div>

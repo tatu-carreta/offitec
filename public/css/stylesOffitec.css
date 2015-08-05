@@ -120,16 +120,20 @@ h4{margin-bottom: 20px;font-size: 20px;}
 
 @media screen and (max-width: 1000px) {
     #menuPrincipal a {padding: 0 1.250em !important }
+    .fondo-negro .container {padding: 0}
 }
+
+
 
 @media screen and (max-width: 870px){
     .navbar-header {float: right !important; }
     .btnCarrito { padding: 0 1.1em !important;} 
 }
 @media screen and (max-width: 780px) {
-    #menuPrincipal a {padding: 0 1.2em !important }
+    #menuPrincipal a {padding: 0 1.2em !important}
 }
 @media screen and (max-width: 768px) {
+    header .container {padding-right: 0}
     .divMenu {float: left; width: 100%}
     #menuPrincipal {height: auto !important;} 
     #menuPrincipal a {height: 40px; line-height: 40px; font-size: 1.250em;}
@@ -142,6 +146,8 @@ h4{margin-bottom: 20px;font-size: 20px;}
     .col-tabla {width: 100%; margin-bottom:146px;}
     .col-carrito {width: 100%; margin-bottom:146px;}
     .col-contacto{width: 100%; margin-bottom:3px; padding: 1em}
+    .imgSlideFlex, .flex-caption {width: 100%}
+    .imgSlideFlex .flechaSlide {display: none}
 }
 
 @media screen and (max-width: 600px){
