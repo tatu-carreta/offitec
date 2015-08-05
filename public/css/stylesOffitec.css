@@ -108,9 +108,11 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .col-contacto{vertical-align: top;background-color: #F4F4EF; width: 49.8%; height: 600px;padding: 2% 3%; margin-bottom:146px;display: inline-block;}
 .col-contacto p{margin-bottom: 50px;}
 .col-contacto label {font-size: 18px; font-weight: normal;}
+.col-contacto .form-group {margin-bottom: 8px;}
 .col-contacto .btn {color:#fff;background-color:  #234a5b !important; width:45%; }
 .col-contacto .btn:hover{background-color: #142B3A !important; color:#fff;}
-.col-izqcontacto{vertical-align: top; width: 49.8%; height: 600px;padding: 2% 3%; margin-bottom:146px;display: inline-block;}
+.col-izqcontacto{vertical-align: top; width: 49.8%; height: 600px;padding-top: 2%; margin-bottom:146px;display: inline-block;}
+.col-izqcontacto p{margin-bottom: 2em;}
 
 .boton-presupuestar{background-color:  #234a5b !important; color: #fff}
 .boton-presupuestar:hover{background-color: #142B3A !important; color:#fff;}
