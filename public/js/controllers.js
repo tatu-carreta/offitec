@@ -21,6 +21,8 @@ angular
                 $scope.resImgSize = 280;
                 $scope.url = '';
 
+                $scope.todo_error = false;
+
                 $scope.$watch('url_public', cambiaUrlUploader, true);
                 function cambiaUrlUploader() {
                     $scope.uploader.url = $scope.url_public + '/admin/imagen/crop/upload';
@@ -155,17 +157,29 @@ angular
                 };
                 uploader.onErrorItem = function (fileItem, response, status, headers) {
                     console.info('onErrorItem', fileItem, response, status, headers);
+                    
                 };
                 uploader.onCancelItem = function (fileItem, response, status, headers) {
                     console.info('onCancelItem', fileItem, response, status, headers);
                 };
                 uploader.onCompleteItem = function (fileItem, response, status, headers) {
                     console.info('onCompleteItem', response);
-                    $scope.imagen_portada = response.imagen_path;
+                    
+                    if(angular.isUndefined(response.imagen_path))
+                    {
+                        $scope.todo_error = true;
+                    }
+                    else
+                    {
+                        $scope.imagen_portada = response.imagen_path;
+                    }
                 };
                 uploader.onCompleteAll = function () {
                     console.info('onCompleteAll');
-
+                    if(!$scope.todo_error)
+                    {
+                        $scope.todo_ok = true;
+                    }
                 };
 
                 console.info('uploader', uploader);

@@ -137,7 +137,7 @@
 
             <div class="border-top">
                 <input type="submit" value="Publicar" class="btn btn-primary marginRight5">
-                <a onclick="window.history.back();" class="btn btn-default">Cancelar</a>
+                <a href="{{URL::to('/'.Seccion::find($seccion_next) -> menuSeccion() -> url)}}" class="btn btn-default">Cancelar</a>
             </div>
 
 

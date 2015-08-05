@@ -8,11 +8,11 @@
             <span class="pull-left">
                 @if(!$i->producto()->nuevo())
                     @if(Auth::user()->can("destacar_item"))
-                        <a href="#" class="btn @if($i->producto()->oferta()) disabled @endif" @if(!$i->producto()->oferta()) onclick="destacarItemSeccion('{{URL::to('admin/producto/nuevo')}}', '{{$seccion->id}}', '{{$i->id}}');" @endif><i class="fa fa-tag fa-lg"></i>Nuevo</a>
+                        <a class="btn @if($i->producto()->oferta()) disabled @endif" @if(!$i->producto()->oferta()) onclick="destacarItemSeccion('{{URL::to('admin/producto/nuevo')}}', '{{$seccion->id}}', '{{$i->id}}');" @endif><i class="fa fa-tag fa-lg"></i>Nuevo</a>
                     @endif
                 @else
                     @if(Auth::user()->can("quitar_destacado_item"))
-                        <a href="#" class="btn" onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', '{{$seccion->id}}', '{{$i->id}}');" ><i class="fa fa-tag prodDestacado fa-lg"></i>Nuevo</a>
+                        <a class="btn" onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', '{{$seccion->id}}', '{{$i->id}}');" ><i class="fa fa-tag prodDestacado fa-lg"></i>Nuevo</a>
                     @endif
                 @endif
                 @if(!$i->producto()->oferta())
@@ -21,7 +21,7 @@
                     @endif
                 @else
                     @if(Auth::user()->can("quitar_destacado_item"))
-                        <a href="#" onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', '{{$seccion->id}}', '{{$i->id}}');" class="btn"><i  class="fa fa-usd prodDestacado fa-lg"></i>Oferta</a>
+                        <a onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', '{{$seccion->id}}', '{{$i->id}}');" class="btn"><i  class="fa fa-usd prodDestacado fa-lg"></i>Oferta</a>
                     @endif
                 @endif
                 </span>

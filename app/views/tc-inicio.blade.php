@@ -9,6 +9,7 @@
     $(document).ready(function(){
         setTimeout(function() {
             $(".carousel-oculto").removeClass("carousel-oculto");
+            $("#ancla").click();
         }, 5);
         
         $("#owl-demo2").owlCarousel({
@@ -41,6 +42,11 @@
     }
 </style>
 
+    @if(Session::has('anclaProd'))
+        <script src="{{URL::to('js/anclaFuncs.js')}}"></script>
+        <a id="ancla" href="{{ Session::get('anclaProd') }}" style="display: none;">Ancla</a>
+    @endif
+
     <section class="container">
         
         <div class="row">
@@ -62,7 +68,7 @@
                 @if(count($items_home) > 0)
                     <!-- PRODUCTOS DESTACADOS -->
                     @foreach($items_home as $item)
-                        <div class="item">
+                        <div class="item"  id="Pr{{$item->producto()->id}}">
                             <div class="col-md-12">
                                 <div class="thumbnail">
                                     @if(Auth::check())
@@ -70,11 +76,11 @@
                                             <span class="pull-left">
                                                 @if(!$item->producto()->nuevo())
                                                     @if(Auth::user()->can("destacar_item"))
-                                                        <a href="#" class="btn @if($item->producto()->oferta()) disabled @endif" @if(!$item->producto()->oferta()) onclick="destacarItemSeccion('{{URL::to('admin/producto/nuevo')}}', 'null', '{{$item->id}}');" @endif ><i class="fa fa-tag fa-lg"></i>Nuevo</a>
+                                                        <a class="btn @if($item->producto()->oferta()) disabled @endif" @if(!$item->producto()->oferta()) onclick="destacarItemSeccion('{{URL::to('admin/producto/nuevo')}}', 'null', '{{$item->id}}');" @endif ><i class="fa fa-tag fa-lg"></i>Nuevo</a>
                                                     @endif
                                                 @else
                                                     @if(Auth::user()->can("quitar_destacado_item"))
-                                                        <a href="#" class="btn" onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', 'null', '{{$item->id}}');" ><i class="fa fa-tag prodDestacado fa-lg"></i>Nuevo</a>
+                                                        <a class="btn" onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', 'null', '{{$item->id}}');" ><i class="fa fa-tag prodDestacado fa-lg"></i>Nuevo</a>
                                                     @endif
                                                 @endif
                                                 @if(!$item->producto()->oferta())
@@ -83,7 +89,7 @@
                                                     @endif
                                                 @else
                                                     @if(Auth::user()->can("quitar_destacado_item"))
-                                                        <a href="#" onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', 'null', '{{$item->id}}');" class="btn"><i class="fa fa-shopping-cart prodDestacado fa-lg"></i>Oferta</a>
+                                                        <a onclick="destacarItemSeccion('{{URL::to('admin/item/quitar-destacado')}}', 'null', '{{$item->id}}');" class="btn"><i class="fa fa-shopping-cart prodDestacado fa-lg"></i>Oferta</a>
                                                     @endif
                                                 @endif
                                             </span>
@@ -109,7 +115,7 @@
                                             @endif
                                         </div>
                                     </a>
-                                    <div class="bandaInfoProd @if($item->producto()->nuevo()) nuevos @elseif($item->producto()->oferta()) ofertas @endif">
+                                    <div class="bandaInfoProd @if($item->producto()->nuevo()) nuevos @elseif($item->producto()->oferta()) ofertas @endif ">
                                         <span class="pull-left">{{ $item->titulo }}</span>
                                         @if(!Auth::check())
                                             @if($c = Cart::search(array('id' => $item->producto()->id)))

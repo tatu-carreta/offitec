@@ -43,7 +43,9 @@ class CarritoController extends BaseController {
 
         switch ($continue) {
             case 'home':
-                return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with($estado, $error)->with('producto_carrito', $producto)->with('producto_carrito_subido', $producto_carrito_subido);
+                $anclaProd = '#Pr' . $producto->id;
+                
+                return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with($estado, $error)->with('producto_carrito', $producto)->with('producto_carrito_subido', $producto_carrito_subido)->with('anclaProd', $anclaProd);
                 break;
             case 'seccion':
 
@@ -104,7 +106,9 @@ class CarritoController extends BaseController {
         $producto = Producto::find($producto_id);
         switch ($continue) {
             case 'home':
-                return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
+                $anclaProd = '#Pr' . $producto->id;
+                
+                return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true)->with('anclaProd', $anclaProd);
                 break;
             case 'seccion':
                 if ($sec_id != "") {
@@ -117,7 +121,7 @@ class CarritoController extends BaseController {
 
                         $anclaProd = '#Pr' . $producto->id;
                         
-                        return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla)->with('ok', true)->with('anclaProd', $anclaProd);;
+                        return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla)->with('ok', true)->with('anclaProd', $anclaProd);
                     } else {
                         return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
                     }
@@ -129,7 +133,9 @@ class CarritoController extends BaseController {
                 return Redirect::to('/carrito')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
                 break;
             default :
-                return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
+                $anclaProd = '#Pr' . $producto->id;
+                
+                return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true)->with('anclaProd', $anclaProd);
                 break;
         }
         //return Redirect::to('/carrito')->with('mensaje', $respuesta['mensaje']);

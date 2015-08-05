@@ -205,7 +205,7 @@ class Slide extends Eloquent {
             }
 
             //Mensaje correspondiente a la agregacion exitosa
-            $respuesta['mensaje'] = 'Slide creado.';
+            $respuesta['mensaje'] = 'Slide modificado.';
             $respuesta['error'] = false;
             $respuesta['data'] = $slide;
         }

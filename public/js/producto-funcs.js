@@ -97,7 +97,7 @@ function validatePrecioProd(form)
         var precio_antes = $(form).find("input[name='precio_antes']").val();
         var precio_ahora = $(form).find("input[name='precio_actual']").val();
 
-        if (precio_antes > precio_ahora)
+        if (precio_antes < precio_ahora)
         {
             ok = false;
             alert('El precio actual es mayor al precio anterior.');

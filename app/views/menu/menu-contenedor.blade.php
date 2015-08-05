@@ -25,13 +25,11 @@
             });
         </script>
         @endif
-    @else
-        @if(Session::has('anclaProd'))
+    @endif
+    @if(Session::has('anclaProd'))
         <script src="{{URL::to('js/anclaFuncs.js')}}"></script>
         <a id="ancla" href="{{ Session::get('anclaProd') }}" style="display: none;">Ancla</a>
         @endif
-    
-    @endif
     <!-- S E C T I O N -->
     <section class="container">
         

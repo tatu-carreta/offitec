@@ -3,7 +3,7 @@
     .nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
     .another-file-over-class { border: dotted 3px green; }
 
-    html, body { height: 100%; }
+    //html, body { height: 100%; }
 </style>
 <style>
     .cropArea {
@@ -88,6 +88,8 @@
                     <div class="progress" style="">
                         <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
                     </div>
+                    <span ng-show="todo_ok"><i class="glyphicon glyphicon-ok"></i></span>
+                    <span ng-show="todo_error"><i class="glyphicon glyphicon-remove"></i></span>
                 </div>
 
                 <button type="button" class="btn btn-primary marginRight5" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">Cargar imagen
