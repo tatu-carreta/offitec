@@ -64,7 +64,7 @@ h1, h2, h3 {font-weight: 300}
 
 /* SERVICIOS */ 
 .redesHome{width: 100%; text-align: center; position: relative; top:-30px;right: 0;}
-.redesHome a{background-image: url(../images/sprites-redes.png); width: 24px; height: 24px; display: inline-block;}
+.redesHome a{background-image: url(../images/sprites-redes.png); width: 24px; height: 24px; display: inline-block; margin: 0.80em;}
 .redes{  width: 51px; position: relative; z-index: 99; top: 70px; right: 105px;}
 .redes a{background-image: url(../images/sprites-redes.png); width: 24px; height: 24px; display: inline-block;}
 .facebook{background-position: 0 -24px; }
@@ -115,7 +115,9 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .boton-presupuestar{background-color:  #234a5b !important; color: #fff}
 .boton-presupuestar:hover{background-color: #142B3A !important; color:#fff;}
 
-
+a.btn{color:  #234a5b !important;}
+a.btn:hover{color: #142B3A !important;}
+.btn i{margin-right: 0.2em !important;}
 /* ----------------------------- M E D I A  Q U E R Y ------------------------------------- */
 
 
