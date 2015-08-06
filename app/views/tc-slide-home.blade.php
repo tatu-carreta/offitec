@@ -44,21 +44,6 @@
                         <div class="clearfix"></div>
                     </li>
                 @endforeach
-            @else
-                <li>
-                    <div class="imgSlideFlex"><img src="{{URL::to('images/foto1.jpg')}}" /></div>
-                    <div class="flex-caption">
-                        <p>Descripción de la Imagen</p>
-                    </div>
-                    <div class="clearfix"></div>
-                </li>
-                <li>
-                    <div class="imgSlideFlex"><img src="{{URL::to('images/foto1.jpg')}}" /></div>
-                    <div class="flex-caption">
-                        <p>Descripción de la Imagen</p>
-                    </div>
-                    <div class="clearfix"></div>
-                </li>
             @endif
         </ul>
     </div>
