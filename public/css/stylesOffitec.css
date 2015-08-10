@@ -124,11 +124,11 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .presionadoNuevo{color:#ff7503;}
 .presionadoOferta{color:#D52318;}
 .btn{box-shadow: none}
-.editarEliminar a i:hover{color: #142B3A !important;}
+.editarEliminar{padding: 6px 0;}
+
+
 
 /* ----------------------------- M E D I A  Q U E R Y ------------------------------------- */
-
-
 @media screen and (max-width: 1000px) {
     #menuPrincipal a {padding: 0 1.250em !important }
     .fondo-negro .container {padding: 0}
