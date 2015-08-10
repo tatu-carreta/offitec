@@ -117,12 +117,14 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .boton-presupuestar{background-color:  #234a5b !important; color: #fff}
 .boton-presupuestar:hover{background-color: #142B3A !important; color:#fff;}
 
-.iconos a.btn{color:  #234a5b !important;}
+.iconos a.btn{padding: 6px 12px 0 0;}
 .iconos a.btn:hover{color: #142B3A !important;}
-.iconos i{color:  #234a5b !important;}
 .iconos i:hover{color: #142B3A !important;}
 
-
+.presionadoNuevo{color:#ff7503;}
+.presionadoOferta{color:#D52318;}
+.btn{box-shadow: none}
+.editarEliminar a i:hover{color: #142B3A !important;}
 
 /* ----------------------------- M E D I A  Q U E R Y ------------------------------------- */
 
