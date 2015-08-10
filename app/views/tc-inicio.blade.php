@@ -109,7 +109,7 @@
                                         <div class="divImgProd">
                                             <img class="lazy" src="@if(!is_null($item->imagen_destacada())){{ URL::to($item->imagen_destacada()->carpeta.$item->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="{{$item->titulo}}">
                                             @if($item->producto()->oferta())
-                                                <span class="bandaOfertas">OFERTA: ${{$item->producto()->precio(1)}} <span>(antes: ${{$item->producto()->precio(2)}})</span></span>
+                                                <span class="bandaOfertas">OFERTA: ${{$item->producto()->precio(2)}} <span>(antes: ${{$item->producto()->precio(1)}})</span></span>
                                             @elseif($item->producto()->nuevo())
                                                 <span class="bandaNuevos">NUEVO</span>
                                             @endif

@@ -88,7 +88,7 @@ class PortfolioCompletoController extends BaseController {
             $this->array_view['continue'] = $next;
             return View::make($this->folder_name . '.editar', $this->array_view);
         } else {
-            $this->array_view['texto'] = 'Página de Error!!';
+            $this->array_view['texto'] = 'Error al cargar la página.';
             return View::make($this->project_name . '-error', $this->array_view);
         }
     }
@@ -158,7 +158,7 @@ class PortfolioCompletoController extends BaseController {
       $this->array_view['continue'] = $next;
       return View::make('producto.destacar', $this->array_view);
       } else {
-      $this->array_view['texto'] = 'Página de Error!!';
+      $this->array_view['texto'] = 'Error al cargar la página.';
       return View::make($this->project_name . '-error', $this->array_view);
       }
       }
@@ -236,7 +236,7 @@ class PortfolioCompletoController extends BaseController {
       return Redirect::to('/')->with('mensaje', $mensaje);
       //return View::make('producto.editar', $this->array_view);
       } else {
-      $this->array_view['texto'] = 'Página de Error!!';
+      $this->array_view['texto'] = 'Error al cargar la página.';
       return View::make($this->project_name . '-error', $this->array_view);
       }
       }

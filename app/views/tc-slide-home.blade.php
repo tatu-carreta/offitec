@@ -27,7 +27,7 @@
     @endif
 @endif
 
-<div class="slideDinamicoHome">
+<div class="slideDinamicoHome" @if(Auth::check()) @if (!is_null($slide_index) && !is_null($slide_index -> imagenes)) id="Pr{{$slide_index->id.$slide_index->tipo}}" @endif @endif>
     <!-- Place somewhere in the <body> of your page -->
     <div class="flexslider">
         <ul class="slides">

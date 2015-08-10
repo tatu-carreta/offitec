@@ -84,7 +84,8 @@ class HomeController extends BaseController {
 
         $this->array_view['texto'] = $texto;
 
-        return View::make($this->project_name . '-error', $this->array_view);
+        return Redirect::to('/');
+        //return View::make($this->project_name . '-error', $this->array_view);
     }
 
     public function consultaContacto() {

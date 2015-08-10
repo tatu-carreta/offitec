@@ -51,7 +51,7 @@
                             <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
                             <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
                             <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
-                            <textarea class="form-control" id="epigrafe" name="epigrafe_slide[]" max-lenght="100"></textarea>
+                            <textarea class="form-control" id="epigrafe" name="epigrafe_slide[]" maxlength="150"></textarea>
                         </div>
                     </div>
                 </div>

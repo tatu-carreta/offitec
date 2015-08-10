@@ -22,7 +22,7 @@
                                              <img src="{{ URL::to($img->carpeta.$img->nombre) }}" alt="{{$slide->titulo}}">
                                               <i onclick="borrarImagenReload('{{ URL::to('admin/imagen/borrar') }}', '{{$img->id}}');" class="fa fa-times-circle fa-lg"></i>
                                           </div>
-                                             <textarea class="form-control" name="epigrafe_imagen_slide_editar[]" >{{$img->epigrafe}}</textarea>
+                                           <textarea class="form-control" name="epigrafe_imagen_slide_editar[]" maxlength="150">{{$img->epigrafe}}</textarea>
                                        </div>
                                    </div>
                                 @endforeach

@@ -87,7 +87,7 @@ angular
                         //500kb
                         return item.size < 500000;
                     },
-                    texto: 'Excede los 500kb'
+                    texto: 'La imagen no debe exceder los 500kb de peso.'
                 });
 
                 // CALLBACKS
@@ -215,7 +215,7 @@ angular
                         //500kb
                         return item.size < 500000;
                     },
-                    texto: 'Excede los 500kb'
+                    texto: 'La imagen no debe exceder los 500kb de peso.'
                 });
 
                 uploader.filters.push({

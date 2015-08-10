@@ -27,13 +27,13 @@ function validatePrecioProd(form)
 {
     var ok = true;
 
-    var precio_antes = $(form).find("input[name='precio_antes']").val();
-    var precio_ahora = $(form).find("input[name='precio_actual']").val();
+    var precio_antes = parseInt($(form).find("input[name='precio_antes']").val());
+    var precio_ahora = parseInt($(form).find("input[name='precio_actual']").val());
 
-    if (precio_antes < precio_ahora)
+    if (precio_antes <= precio_ahora)
     {
         ok = false;
-        alert('El precio actual es mayor al precio anterior.');
+        alert('El precio oferta es mayor que el precio anterior.');
     }
     
     return ok;
@@ -45,11 +45,11 @@ function validatePrecioProd(form)
     </div>
     {{ Form::open(array('url' => 'admin/producto/oferta', 'onsubmit' => 'return validatePrecioProd(this);')) }}
         <div class="modal-body">
-            <p>Precio Anterior</p>
+            <p>Precio anterior</p>
             <div class="form-group marginBottom2">
                 <input class="form-control valid-number" type="text" name="precio_antes" required="true">
             </div>
-            <p>Precio Actual</p>
+            <p>Precio oferta</p>
             <div class="form-group marginBottom2">
                 <input class="form-control valid-number" type="text" name="precio_actual" required="true">
             </div>

@@ -64,7 +64,7 @@
         
         {{--
         @if($i->producto()->oferta())
-            <span class="precio">Oferta: ${{$i->producto()->precio(1)}} ${{$i->producto()->precio(2)}}</span>
+            <span class="precio">Oferta: ${{$i->producto()->precio(2)}} ${{$i->producto()->precio(1)}}</span>
         @elseif($i->producto()->nuevo())
             <span>NUEVO</span>
         @endif

@@ -57,7 +57,7 @@ class PersonaController extends BaseController {
       $this->array_view['seccion'] = $seccion;
       return View::make('seccion.editar-seccion', $this->array_view);
       } else {
-      $this->array_view['texto'] = 'Página de Error!!';
+      $this->array_view['texto'] = 'Error al cargar la página.';
       return View::make($this->project_name . '-error', $this->array_view);
       }
       }

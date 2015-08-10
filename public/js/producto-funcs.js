@@ -94,13 +94,15 @@ function validatePrecioProd(form)
     }
     if ($(form).find("input[name='item_destacado']:checked").val() == 'O')
     {
-        var precio_antes = $(form).find("input[name='precio_antes']").val();
-        var precio_ahora = $(form).find("input[name='precio_actual']").val();
+        var precio_antes = parseInt($(form).find("input[name='precio_antes']").val());
+        var precio_ahora = parseInt($(form).find("input[name='precio_actual']").val());
+        //var precio_antes = $(form).find("input[name='precio_antes']").val();
+        //var precio_ahora = $(form).find("input[name='precio_actual']").val();
 
-        if (precio_antes < precio_ahora)
+        if (precio_antes <= precio_ahora)
         {
             ok = false;
-            alert('El precio actual es mayor al precio anterior.');
+            alert('El precio oferta es mayor que el precio anterior.');
         }
     }
 

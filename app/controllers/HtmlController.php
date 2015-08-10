@@ -43,7 +43,7 @@ class HtmlController extends BaseController {
             $this->array_view['html'] = $html;
             return View::make('item.' . $this->folder_name . '.editar-html', $this->array_view);
         } else {
-            $this->array_view['texto'] = 'Página de Error!!';
+            $this->array_view['texto'] = 'Error al cargar la página.';
             return View::make($this->project_name . '-error', $this->array_view);
         }
     }

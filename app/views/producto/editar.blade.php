@@ -28,7 +28,7 @@
 <section class="container">    
         {{ Form::open(array('url' => 'admin/producto/editar', 'files' => true, 'role' => 'form', 'onsubmit' => 'return validatePrecioProd(this);')) }}
         <h2 class="marginBottom2"><span>Editar producto</span></h2>
-        <a class="volveraSeccion" href="{{URL::to('/'.Seccion::find($seccion_next) -> menuSeccion() -> url)}}"><i class="fa fa-caret-left"></i>Volver a {{ Seccion::find($seccion_next) -> menuSeccion() -> nombre }}</a>
+        <a class="volveraSeccion" href="@if($seccion_next != 'null'){{URL::to('/'.Seccion::find($seccion_next) -> menuSeccion() -> url)}}@else{{URL::to('/')}}@endif"><i class="fa fa-caret-left"></i>Volver a @if($seccion_next != 'null'){{ Seccion::find($seccion_next) -> menuSeccion() -> nombre }}@else Home @endif</a>
         <div class="row datosProducto marginBottom2">
             <!-- Abre columna de descripción de Producto -->
             <div class="col-md-6">
@@ -74,12 +74,12 @@
                             </div>
                             <div class="col-md-4">
                                 <label for="" >
-                                    Precio Antes $ <input id="" class="form-control inputWidth80 precioAble1 precio-number" type="text" name="precio_antes" value="@if($item->producto()->oferta()){{ $producto->precio(1) }}@endif">
+                                    Precio anterior $ <input id="" class="form-control inputWidth80 precioAble1 precio-number" type="text" name="precio_antes" value="@if($item->producto()->oferta()){{ $producto->precio(1) }}@endif">
                                 </label>
                             </div>
                             <div class="col-md-4">
                                 <label for="" >
-                                    Precio Después $ <input id="" class="form-control inputWidth80 precioAble1 precio-number" type="text" name="precio_actual" value="@if($item->producto()->oferta()){{ $producto->precio(2) }}@endif">
+                                    Precio oferta $ <input id="" class="form-control inputWidth80 precioAble1 precio-number" type="text" name="precio_actual" value="@if($item->producto()->oferta()){{ $producto->precio(2) }}@endif">
                                 </label>
                             </div>    
                         </div>
@@ -137,7 +137,7 @@
 
             <div class="border-top">
                 <input type="submit" value="Publicar" class="btn btn-primary marginRight5">
-                <a href="{{URL::to('/'.Seccion::find($seccion_next) -> menuSeccion() -> url)}}" class="btn btn-default">Cancelar</a>
+                <a href="@if($seccion_next != 'null'){{URL::to('/'.Seccion::find($seccion_next) -> menuSeccion() -> url)}}@else{{URL::to('/')}}@endif" class="btn btn-default">Cancelar</a>
             </div>
 
 

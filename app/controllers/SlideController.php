@@ -11,7 +11,7 @@ class SlideController extends BaseController {
         );
 
         $seccion = Seccion::agregarSeccion($datos);
-        
+
         $this->array_view['seccion_id'] = $seccion['data']->id;
         $this->array_view['tipo'] = $tipo;
 
@@ -25,18 +25,19 @@ class SlideController extends BaseController {
         $respuesta = Slide::agregarSlideHome(Input::all());
 
         if ($respuesta['error'] == true) {
-            return Redirect::to('admin/item')->with('mensaje', $respuesta['mensaje'])->with('error', true);
+            return Redirect::to('admin/slide/agregar/' . $menu_id . '/' . $tipo)->with('mensaje', $respuesta['mensaje'])->with('error', true);
         } else {
             $menu = $respuesta['data']->seccion->menuSeccion()->url;
             $ancla = '#' . $respuesta['data']->seccion->estado . $respuesta['data']->seccion->id;
 
-            return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla)->with('ok', true);
+            //return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla)->with('ok', true);
+            return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
         }
     }
-    
+
     public function vistaEditar($id, $next) {
         $slide = Slide::find($id);
-        
+
         $this->array_view['slide'] = $slide;
         $this->array_view['continue'] = $next;
 
@@ -50,10 +51,12 @@ class SlideController extends BaseController {
         $respuesta = Slide::editarSlideHome(Input::all());
 
         if ($respuesta['error'] == true) {
-            return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('error', true);
+            return Redirect::to('admin/slide/editar/' . Input::get('slide_id') . '/' . Input::get('continue'))->with('mensaje', $respuesta['mensaje'])->with('error', true);
         } else {
+
+            $anclaProd = '#Pr' . $respuesta['data']->id.$respuesta['data']->tipo;
             
-            return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
+            return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true)->with('anclaProd', $anclaProd);
         }
     }
 
