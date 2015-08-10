@@ -89,7 +89,7 @@ function validatePrecioProd(form)
         if ($(form).find("input[name='imagen_portada_crop']").val() == "")
         {
             ok = false;
-            alert('Se olvidó de cargar o guardar la imagen recortada.');
+            alert('Falta cargar o guardar la imagen recortada.');
         }
     }
     if ($(form).find("input[name='item_destacado']:checked").val() == 'O')

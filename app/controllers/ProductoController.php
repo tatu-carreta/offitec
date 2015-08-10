@@ -145,14 +145,17 @@ class ProductoController extends BaseController {
             //return Redirect::to('admin/producto')->withErrors($respuesta['mensaje'])->withInput();
         } else {
             if (Input::get('continue') == "home") {
-                return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true);
+                $anclaProd = '#Pr' . $respuesta['data']->id;
+                
+                return Redirect::to('/')->with('mensaje', $respuesta['mensaje'])->with('ok', true)->with('anclaProd', $anclaProd);
             } else {
                 $seccion = Seccion::find(Input::get('seccion_id'));
 
                 $menu = $seccion->menuSeccion()->url;
                 $ancla = '#' . $seccion->estado . $seccion->id;
 
-                return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla)->with('ok', true);
+                $anclaProd = '#Pr' . $respuesta['data']->id;
+                return Redirect::to('/' . $menu)->with('mensaje', $respuesta['mensaje'])->with('ancla', $ancla)->with('ok', true)->with('anclaProd', $anclaProd);
             }
         }
     }

@@ -755,7 +755,7 @@ class Item extends Eloquent {
             $item = DB::table('item_seccion')->where(
                             $input)->update(array('orden' => $orden));
 
-            $respuesta['mensaje'] = 'Los productos han sido ordenados.';
+            $respuesta['mensaje'] = 'Productos ordenados.';
             $respuesta['error'] = false;
             $respuesta['data'] = $item;
         }

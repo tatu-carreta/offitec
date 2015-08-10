@@ -24,6 +24,10 @@
                                             <td> <a href="{{URL::to('carrito/borrar/'.$producto->id.'/'.$producto->rowid.'/carrito/c')}}"><i class="fa fa-times fa-lg"></i></a></td>
                                         </tr>
                                     @endforeach
+                                @else
+                                <tr>
+                                    <td>No hay productos seleccionados.</td>
+                                </tr>
                                 @endif
                             </tbody>
                         </table>
