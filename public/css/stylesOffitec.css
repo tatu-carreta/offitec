@@ -116,7 +116,7 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .col-izqcontacto p{margin-bottom: 2em;}
 
 .boton-presupuestar{background-color:  #234a5b !important; color: #fff}
-.boton-presupuestar:hover{background-color: #142B3A !important; color:#fff;}
+.boton-presupuestar:hover,.boton-presupuestar:focus {background-color: #142B3A !important; color:#fff;}
 
 .iconos a.btn{padding: 6px 12px 0 0;}
 .iconos a.btn:hover{color: #142B3A !important;}
