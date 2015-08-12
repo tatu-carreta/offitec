@@ -27,9 +27,11 @@
 <script src="{{URL::to('js/producto-funcs.js')}}"></script>
     <section class="container">    
         {{ Form::open(array('url' => 'admin/producto/agregar', 'files' => true, 'role' => 'form', 'onsubmit' => 'return validatePrecioProd(this);')) }}
-        <h2 class="marginBottom2"><span>Nuevo producto</span></h2>
-        <a class="volveraSeccion" href="{{URL::to('/'.Seccion::find($seccion_id) -> menuSeccion() -> url)}}"><i class="fa fa-caret-left"></i>Volver a {{ Seccion::find($seccion_id) -> menuSeccion() -> nombre }}</a>
-        <div class="row datosProducto marginBottom2">
+        <h2><span>Nuevo producto</span></h2>
+        <div class="marginBottom2">
+            <a class="volveraSeccion" href="{{URL::to('/'.Seccion::find($seccion_id) -> menuSeccion() -> url)}}"><i class="fa fa-caret-left"></i>Volver a {{ Seccion::find($seccion_id) -> menuSeccion() -> nombre }}</a>
+        </div>
+        <div class="row datosProducto">
             <!-- Abre columna de descripción de Producto -->
             <div class="col-md-6">
 
@@ -37,9 +39,10 @@
                 <div>
                     <h3>Código del producto</h3>
                     <div class="form-group marginBottom2">
-                        <input class="form-control" type="text" name="titulo" placeholder="Código" required="true" maxlength="50">
-                    </div>
+                        <input class="form-control" type="text" name="titulo" placeholder="Código" required="true" maxlength="9">
+                        <p class="infoTxt"><i class="fa fa-info-circle"></i>No puede haber dos productos con igual código. Máximo 9 caracteres.</p>
                 </div>
+            </div>
 
                 <!-- Estado  -->
                 <h3>Estado</h3>
@@ -58,6 +61,7 @@
                         <div class="radio">
                             <label>
                                 <input id="" class="" type="checkbox" name="item_destacado" value="N">
+                                <i class="fa fa-tag prodDestacado fa-lg"></i>
                                 Nuevo
                             </label>
                         </div>
@@ -67,7 +71,9 @@
                             <div class="col-md-4">
                                 <div class="radio">
                                     <label>
+                                        
                                         <input id="" class=" precioDisabled" type="checkbox" name="item_destacado" value="O">
+                                        <i  class="fa fa-usd prodDestacado fa-lg"></i>
                                         Oferta
                                     </label>
                                 </div>
@@ -84,11 +90,12 @@
                             </div>    
                         </div>
                     </div>
-                    <p>Los productos nuevos y las ofertas se muestran en la home</p>
+                    <p class="infoTxt"><i class="fa fa-info-circle"></i>Los productos NUEVOS y las OFERTAS se muestran también en la home.</p>
                 </div>
-
+                
+                <h3>Ubicación</h3>
                 <div class="fondoDestacado modIndicarSeccion">
-                    <h3>Ubicación</h3>
+                    
                         @foreach($menues as $men)
                         <div class="cadaSeccion">
                             @if(count($men->children) == 0)
@@ -105,9 +112,12 @@
             </div><!--cierra columna datos de producto-->
 
             <!-- Abre columna de imágenes -->
+            <h3>Imagen del producto</h3>
             <div class="col-md-6 fondoDestacado cargaImg">
-                <h3>Imagen principal</h3>
+                <h3>Carga y recorte de la imagen</h3>
+
                 @include('imagen.modulo-imagen-angular-crop')
+
             </div>
 
             <div class="clear"></div>

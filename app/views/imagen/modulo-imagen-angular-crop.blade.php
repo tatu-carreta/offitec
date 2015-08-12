@@ -46,11 +46,18 @@
                     <input data='1' id="fileInput" type="file" nv-file-select="" uploader="uploader" name="imagen_portada_ampliada" class='oculto file imagen'/>
                 </span>
                 </label>
+
             </div>
             <div class="col-xs-8">
                 <input type="text" class="url-archivo1 form-control">
                 <input type="hidden" name="imagen_portada_crop" value="<% imagen_portada %>">
                 <input type="hidden" ng-model="url_public" ng-init="url_public = '{{URL::to('/')}}'">
+            </div>
+        </div>
+        <div class="row marginBottom1">
+            <div class="col-xs-12">
+                <p class="infoTxt"><i class="fa fa-info-circle">
+                </i>La imagen original puede ser vertical u horizontal pero no debe exceder los 500kb de peso.</p>
             </div>
         </div>
 
@@ -74,17 +81,17 @@
             <!--aspect-ratio="aspectRatio"-->
         </div>
 
-        <h3>Resultado</h3>
+        <h3>Resultado del corte:</h3>
         <div class="marginBottom1">
                 <img ng-src="<% croppedImage %>" />
         </div>
 
         <input class="marginBottom1 form-control" type="text" name="epigrafe_imagen_portada" placeholder="Ingrese una descripción de la foto (opcional)">
 
-        <div style="margin-bottom: 40px;margin-top: 20px;">
+        <div class="progreso">
             <div>
                 <div>
-                    Progreso de carga
+                    <p>Progreso:</p>
                     <div class="progress" style="">
                         <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
                     </div>
@@ -98,6 +105,12 @@
                 </button>
             </div>
 
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <p class="infoTxt"><i class="fa fa-info-circle">
+                </i>Cuando el progreso haya finalizado publique el producto.</p>
+            </div>
         </div>
     </div>
 </div>

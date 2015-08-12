@@ -1619,3 +1619,367 @@ Stack trace:
 Stack trace:
 #0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
 #1 {main} [] []
+[2015-08-12 15:39:00] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 15:46:19] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 15:48:15] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 15:48:31] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 15:49:08] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 15:50:10] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 15:50:37] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 15:51:03] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 15:51:12] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 15:52:40] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 15:53:07] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 15:53:44] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 15:55:36] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 15:56:06] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 15:57:00] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 15:57:35] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 15:58:07] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:00:43] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:00:58] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:01:58] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:03:12] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:03:33] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:04:56] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:07:15] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:09:34] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:12:12] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:13:00] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:13:20] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:13:58] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:14:14] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:17:11] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:20:51] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:21:32] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:24:26] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:25:32] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:26:19] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:27:50] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:28:02] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:28:16] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:28:43] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:29:19] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:29:55] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:30:05] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:30:37] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:37:44] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:38:12] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:40:03] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:40:23] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:40:58] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:41:39] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:42:38] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:43:43] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:44:21] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:44:44] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:45:26] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:45:44] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:48:59] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:50:32] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:51:07] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:52:37] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:53:18] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:54:03] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:55:28] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:56:39] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:57:24] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:58:02] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 16:59:48] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:01:16] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:01:25] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:02:27] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:03:53] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:04:50] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:05:30] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:06:42] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:07:25] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:08:33] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:11:51] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:12:13] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:17:50] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:19:48] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:23:17] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:24:52] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:25:37] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:25:43] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:29:47] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:30:22] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:32:10] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:33:40] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:33:44] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:35:13] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2015-08-12 17:35:46] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function menuSeccion() on a non-object' in C:\xampp\htdocs\offitec\app\controllers\ProductoController.php:46
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
