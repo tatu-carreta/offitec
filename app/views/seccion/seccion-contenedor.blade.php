@@ -12,6 +12,7 @@
                                 @endif  --}}
                             @endif 
                         </h3>
+                        <p class="infoCarrito marginBottom2 pull-right" class="fa fa-shopping-cart"></i><strong>CONSULTE PRESUPUESTO:</strong> seleccione los productos y le enviaremos el presupuesto por email.</p>
                     @endif
 
                     @if(Auth::check())
@@ -26,7 +27,6 @@
                         @endif
                     @endif
                     <div class="clearfix"></div>
-                     <!-- Ver con MAXI -->
                     
                 </div>
             

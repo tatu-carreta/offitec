@@ -11,6 +11,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
+                <p class="infoCarrito marginBottom2"><i class="fa fa-shopping-cart"></i><strong>CONSULTE PRESUPUESTO:</strong> 1) seleccione hasta 6 productos del catálogo e indique cantidad  2) complete sus datos, detalle su consulta si es necesario y presione enviar 3) Le entregaremos el presupuesto detallado por email.</p>
                     <div class="col-tabla">
                         <h3>Productos seleccionados</h3>
                         <table class="table">
