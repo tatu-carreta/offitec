@@ -22,41 +22,44 @@
         
         <div class="col-md-12">
             <div class="row marginBottom2">
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label class="btn btn-primary" style="width:100%"  ng-disabled="<% total_permitido %> == 0"> Seleccionar archivo
                         <span>
                             <input id="fileInput" type="file" nv-file-select="" uploader="uploader"  class="oculto file imagen" data="1" multiple/>
                         </span>
                     </label>
                 </div>
-                <div class="col-md-10">
+                <div class="col-md-9">
                     <input type="text" class="url-archivo1 form-control" value="<% nombres_archivos %>">
                     <input type="hidden" ng-model="url_public" ng-init="url_public = '{{URL::to('/')}}'">
                 </div>
             </div>
-            <div class="row">
-                <div ng-repeat="item in uploader.queue" class="imgSeleccionadas">
-                    <div class="col-md-3">
-                        <div class="thumbnail">
-                            <div class="divCargaImg">
+            <p class="infoTxt"><i class="fa fa-info-circle"></i>El slide puede tener hasta 4 imágenes. Las imágenes deben ser horizontales y medir <strong>600px de ancho por 360px de alto.<strong></p>
+            <div>
+                <div ng-repeat="item in uploader.queue" class="imgSeleccionadas marginBottom1">
+                    <div class="fondoBco">
+                        <div class="">
+                            <div class="divCargaImgSlideHome">
                                 <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 255.5 }" class="marginBottom1">
                                     
                                 </div>
-                                <i ng-click="removeItem(item)" class="fa fa-times-circle fa-lg"></i>
+                                <!-- <i ng-click="removeItem(item)" class="fa fa-times-circle fa-lg"></i> -->
                             </div>
-
+                            <div class="divCargaTxtSlideHome">
+                                <textarea class="form-control" id="epigrafe" name="epigrafe_slide[]" maxlength="150"></textarea>
+                            </div>
+                            <div class="clearfix"></div>
                             <div class="progress marginBottom1">
                                 <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
                             </div>
                             <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
                             <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
                             <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
-                            <textarea class="form-control" id="epigrafe" name="epigrafe_slide[]" maxlength="150"></textarea>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="nombre-peso marginBottom2">
+            <div class="nombre-peso">
                 <div>
                     <div>
                         Progreso de carga
@@ -65,15 +68,15 @@
                         </div>
                     </div>
                     <button type="button" class="btn btn-primary btn-s marginRight5" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length">
-                        Guardar Imágenes
+                        Guardar imagen
                     </button>
                     <button type="button" class="btn btn-default btn-s" ng-click="removeTodos()" ng-disabled="!uploader.queue.length">
-                        Eliminar
+                        Eliminar imagen
                     </button>
                 </div>
 
             </div>
-        </div><!-- cierra col-md-6 -->
+        </div><!-- cierra col-md -->
         
 
         <div ng-repeat="imagen in imagenes_seleccionadas">

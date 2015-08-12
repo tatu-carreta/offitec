@@ -80,6 +80,8 @@ footer {margin-top: 1em; padding: 4em 0}
 .alert-warning{border: 0;}
 .sortable div{cursor:move;}
 .cursor-move{cursor: move !important;}
+.infoTxt {font-style: 0.750em;}
+.infoTxt i {margin-right: 0.3em; color: #ADADAD; font-size: 1.6em; vertical-align: middle;}
 
 .divLogin{margin: 100px auto 250px auto; width: 300px;  }
 /*.divLogin input[type="text"], .divLogin input[type="password"] {width: 100%; margin-bottom: 20px}
@@ -91,10 +93,12 @@ footer {margin-top: 1em; padding: 4em 0}
 .headerAdmin .salir{color:#fff; padding: 0 1em; margin-left: 1em}
 
 /* Carga Slide Home */
-.imgSeleccionadas .thumbnail {background: transparent;}
-.imgSeleccionadas .divCargaImg {width: 100%; overflow: hidden}
-.imgSeleccionadas .divCargaImg canvas {min-width: 100%; min-height: 100%; width: auto; height: auto; overflow: hidden;}
+.fondoBco {background: #fff; padding: 1em}
+.divCargaImgSlideHome {width: 48.5%; float:left; overflow: hidden}
+.divCargaImgSlideHome canvas {min-width: 100%; min-height: 100%; width: auto; height: auto; overflow: hidden;}
 .imgSeleccionadas textarea {height: 6em}
+.divCargaTxtSlideHome {width: 48.5%; float: right;}
+.divCargaTxtSlideHome textarea {height: 100%}
 
 /* Catálogo de Productos */
 .divListadoItems:nth-child(1) {border-top: 0 none;}

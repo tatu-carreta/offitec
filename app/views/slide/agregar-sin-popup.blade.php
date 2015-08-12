@@ -2,11 +2,11 @@
 
 @section('contenido')
 <section class="container"  id="ng-app" ng-app="app">
-    <h2 class="marginBottom2"><span>Slide. Selección de imágenes</span></h2>
+    <h2 class="marginBottom2"><span>Editar slide de home</span></h2>
     {{ Form::open(array('url' => 'admin/slide/agregar')) }}
         <div class="row marginBottom2">
             <!-- Abre columna de imágenes -->
-            <div class="col-md-12 cargaImg">
+            <div class="col-md-8 cargaImg">
                 <div class="fondoDestacado">
                     <input type="hidden" ng-model="total_permitido" ng-init="total_permitido = 4">
                     @include('imagen.modulo-galeria-angular')

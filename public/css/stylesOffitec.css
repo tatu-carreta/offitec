@@ -32,8 +32,8 @@ h1, h2, h3 {font-weight: 300}
 .fondo-negro {width: 100%;height: 150px;background-color: #000;}
 
 .logo {position: absolute !important; z-index: 999;}
-/* Estilos Fichas de Productos*/
 
+/* Estilos Fichas de Productos*/
 .divImgProd {width: 100%;  position: relative; border: 1px solid #F4F4EF} /* height: 100%;*/
 .divImgProd img {width: 100%; height: auto;}
 .bandaInfoProd {background: #F4F4EF; padding: 0.5em 1em; color: #777774 !important; }
