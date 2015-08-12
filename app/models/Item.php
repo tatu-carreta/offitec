@@ -22,7 +22,7 @@ class Item extends Eloquent {
         );
 
         if (isset($input['titulo']) && ($input['titulo'] != "")) {
-            $reglas['titulo'] = array('max:50', 'unique:item');
+            $reglas['titulo'] = array('max:9', 'unique:item');
         }
 
         if (isset($input['es_texto']) && ($input['es_texto'])) {

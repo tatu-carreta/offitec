@@ -106,7 +106,7 @@ class Producto extends Item {
         $respuesta = array();
 
         $reglas = array(
-            'titulo' => array('required', 'max:50', 'unique:item,titulo,' . $input['id']),
+            'titulo' => array('required', 'max:9', 'unique:item,titulo,' . $input['id']),
         );
 
         if (isset($input['imagen_portada_crop'])) {
