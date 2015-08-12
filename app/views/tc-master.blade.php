@@ -123,12 +123,8 @@
                             
                             <!-- N A V -->
                             @include('menu.'.$project_name.'-desplegar-menu')
-                            
-                           
 
-                            <div class="clearfix"></div>
-                            
-                            
+                            <div class="clearfix"></div> 
                         </div>
                     </div>
                 </div>
@@ -136,7 +132,6 @@
 
             @yield('slide-estatico') 
 
-            
         @show
         
         <!-- abre S E C T I O N -->

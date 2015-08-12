@@ -6,6 +6,7 @@ h1, h2, h3 {font-weight: 300}
 #owl-demo2 .item {margin: 0px;}
 #owl-demo2 .item img {display: block; width: 100%; height: auto;}
 
+.carousel-oculto{ display: none;}
 
 .carousel-home .owl-pagination {margin-top: 10px; text-align: center;display: none;}
 .carousel-home {width: 100%; margin:0 auto;}
