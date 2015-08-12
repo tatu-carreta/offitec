@@ -45,14 +45,16 @@ header {background: #000;}
 .flex-next {background: url(../images/flecha-02.svg); width: 22px; height: 72px;display: block; text-indent: -9999px; }*/
 
 /* Ventanas emergentes */
-.divEmergente{background:#00A9E0; width:170px; padding: 20px; position: absolute; top:88px; right: 15px; z-index: 999; font-size: 1em; line-height: 1.4em; text-align: center; -webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.4);
--moz-box-shadow:1px 1px 5px 0px rgba(50, 50, 50, 0.4); box-shadow:1px 1px 5px 0px rgba(50, 50, 50, 0.4);  }
-.divEmergente .imgArtPedido {width: 150px; height: auto}
-.cerrarEmergente{position: absolute; top:10px; right:10px;}
-.cerrarEmergente i {color:#fff; font-size: 1.3em;}
+.divEmergente{background:#fff; border: 1px solid #B4B4A7; width:167px; padding: 2em 1em 1em; position: absolute; top:108px; right: 15px; z-index: 999; font-size: 1em; line-height: 1.4em; text-align: center; -webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.4);
+-moz-box-shadow:1px 1px 5px 0px rgba(50, 50, 50, 0.4); box-shadow:1px 1px 5px 0px rgba(50, 50, 50, 0.4); text-align: center }
+.divEmergente a {color: #234A5B !important;}
+/*.divEmergente .imgArtPedido {width: 150px; height: auto}    sacar*/
+.cerrarEmergente{position: absolute; bottom:6px; right:10px;}
+.cerrarEmergente i {color:#234A5B !important;}
+.cerrarEmergente .fa-remove:before, .cerrarEmergente .fa-close:before, .cerrarEmergente .fa-times:before  {color:#234A5B !important;}
 .cerrarEmergente span {display: none}
 .triang{background: url(../images/triang.png); width:20px; height: 9px; position: absolute; top:-9px; z-index:999;}
-#ventanaCarrito .triang{left:95px;}
+#ventanaCarrito .triang{left: 50%; margin-left: -10px;}
 
 .tooltip {background: black; color:#fff;}
 
@@ -196,4 +198,5 @@ a.laura:hover {background-position:bottom}
 
 @media (max-width: 386px){
 	.tarjetas img {margin: 0 2em 1em 0; vertical-align: middle; width: 30px;}
+  .divEmergente {width: 260px; left: 50%; margin-left: -130px;}
 }

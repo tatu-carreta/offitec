@@ -20,7 +20,7 @@
         
         <link rel="stylesheet" type="text/css" href="{{URL::to('css/jquery-ui.css')}}">
         <link rel="stylesheet" href="{{URL::to('font-awesome-4.2.0/css/font-awesome.css')}}">
-        <link href="{{URL::to('css/jquery.Jcrop.css')}}" rel="stylesheet" />
+        <link rel="stylesheet" href="{{URL::to('css/jquery.Jcrop.css')}}">
         <!-- <link rel="stylesheet" href="{{URL::to('css/flexslider.css')}}">-->
         <link rel="stylesheet" href="{{URL::to('css/owl.carousel.css')}}">
         <link rel="stylesheet" href="{{URL::to('css/owl.theme.css')}}">
@@ -110,11 +110,13 @@
                                     <!-- ventana Carrito -->
                                     <div id="ventanaCarrito" class="divEmergente">
                                         <div class="triang"></div>
-                                        <div class="cerrarEmergente cerrarVentanaCarrito"><i class="fa fa-times-circle-o fa-lg"></i></div>
-                                            <img class="imgArtPedido" src="@if(!is_null(Session::get('producto_carrito')->item()->imagen_destacada())){{ URL::to(Session::get('producto_carrito')->item()->imagen_destacada()->carpeta.Session::get('producto_carrito')->item()->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="">
-                                            <p>Agregaste a carrito<br>
-                                            <span>Cod: {{ Session::get('producto_carrito')->item()->titulo }}</span></p>
-                                            <a href="{{URL::to('carrito')}}" class="btn btn-default">Ver Presupuesto</a>
+                                        <a href="{{URL::to('carrito')}}" class="">
+                                        {{--<img class="imgArtPedido" src="@if(!is_null(Session::get('producto_carrito')->item()->imagen_destacada())){{ URL::to(Session::get('producto_carrito')->item()->imagen_destacada()->carpeta.Session::get('producto_carrito')->item()->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="">--}}
+                                        <i class="fa fa-shopping-cart fa-2x"></i>
+                                        <p>El producto fue agregado. <br>Ingrese a PRESUPUESTO<br> para finalizar.</p>
+                                        {{--<span>Cod: {{ Session::get('producto_carrito')->item()->titulo }}</span>--}}
+                                        </a>
+                                        <div class="cerrarEmergente cerrarVentanaCarrito"><i class="fa fa-times fa-lg"></i></div>
                                     </div>
                                 @endif
                             @endif
