@@ -12,9 +12,9 @@
                                 @endif  --}}
                             @endif 
                         </h3>
-                        <p class="infoCarrito marginBottom2 pull-right" class="fa fa-shopping-cart"></i><strong>CONSULTE PRESUPUESTO:</strong> seleccione los productos y le enviaremos el presupuesto por email.</p>
+                        
                     @endif
-
+                    <p class="infoCarrito marginBottom2 pull-right"><i class="fa fa-shopping-cart"></i><strong>CONSULTE PRESUPUESTO:</strong> seleccione los productos y le enviaremos el presupuesto por email.</p>
                     @if(Auth::check())
                         @if(Auth::user()->can("editar_seccion"))
                             <a href="{{URL::to('admin/seccion/editar/'.$seccion->id)}}" data='{{ $seccion->id }}' class="btn popup-seccion"><i class="fa fa-pencil fa-lg"></i>Cambiar nombre</a>
