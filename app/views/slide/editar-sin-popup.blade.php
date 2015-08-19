@@ -18,18 +18,23 @@
                     <div class="fondoDestacado">
                         @if(count($slide->imagenes) > 0)
                             <div class="row imgSeleccionadas">
-                                @foreach($slide->imagenes as $img)
-                                   <div class="col-md-3">
-                                       <div class="thumbnail">
-                                         <div class="divCargaImg marginBottom1">
-                                             <input type="hidden" name="imagen_slide_editar[]" value="{{$img->id}}">
-                                             <img src="{{ URL::to($img->carpeta.$img->nombre) }}" alt="{{$slide->titulo}}">
-                                              <i onclick="borrarImagenReload('{{ URL::to('admin/imagen/borrar') }}', '{{$img->id}}');" class="fa fa-times-circle fa-lg"></i>
-                                          </div>
-                                           <textarea class="form-control" name="epigrafe_imagen_slide_editar[]" maxlength="150">{{$img->epigrafe}}</textarea>
-                                       </div>
-                                   </div>
-                                @endforeach
+                              <div class="col-md-12">
+                                  @foreach($slide->imagenes as $img)
+                                     <div class="fondoBco marginBottom2">
+                                         <div class="">
+                                           <div class="divCargaImgSlideHome">
+                                               <input type="hidden" name="imagen_slide_editar[]" value="{{$img->id}}">
+                                               <img src="{{ URL::to($img->carpeta.$img->nombre) }}" alt="{{$slide->titulo}}">
+                                                <i onclick="borrarImagenReload('{{ URL::to('admin/imagen/borrar') }}', '{{$img->id}}');" class="fa fa-times-circle fa-lg"></i>
+                                            </div>
+                                            <div class="divCargaTxtSlideHome">
+                                              <textarea class="form-control" name="epigrafe_imagen_slide_editar[]" maxlength="150">{{$img->epigrafe}}</textarea>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                         </div>
+                                     </div>
+                                  @endforeach
+                                </div>
                             </div>
                         @endif
                     </div>

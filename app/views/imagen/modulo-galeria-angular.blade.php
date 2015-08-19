@@ -55,6 +55,7 @@
                             <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
                             <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
                             <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                            <div class="clearfix"></div>
                         </div>
                     </div>
                 </div>

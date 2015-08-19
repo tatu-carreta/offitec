@@ -99,8 +99,9 @@ footer {margin-top: 1em; padding: 4em 0}
 
 /* Carga Slide Home */
 .fondoBco {background: #fff; padding: 1em}
-.divCargaImgSlideHome {width: 48.5%; float:left; overflow: hidden}
+.divCargaImgSlideHome {width: 48.5%; float:left; overflow: hidden; position: relative; cursor: pointer}
 .divCargaImgSlideHome canvas {min-width: 100%; min-height: 100%; width: auto; height: auto; overflow: hidden;}
+.divCargaImgSlideHome i {position: absolute; top: 0.6em; right: 0.6em; font-size: 1.4em; color: #337ab7; background: #fff; border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%;}
 .imgSeleccionadas textarea {height: 6em}
 .divCargaTxtSlideHome {width: 48.5%; float: right;}
 .divCargaTxtSlideHome textarea {height: 100%}
@@ -128,7 +129,7 @@ footer {margin-top: 1em; padding: 4em 0}
 .spanDestacarProd {display: inline-block; font-size: 1.5em; font-weight: 300;padding-top: 0.3em; width: 300px; margin-left: 1em;}
 .divCargaImgProducto {margin: 0px 0px 4em; position: relative;}
 .divCargaImg { height: 20em; width: 20em; position: relative; box-sizing: border-box;}
-.divCargaImg i {position: absolute; top: 0.6em; right: 0.6em; font-size: 1.4em; color: #337ab7;}
+.divCargaImg i {position: absolute; top: 0.6em; right: 0.6em; font-size: 1.4em; color: #337ab7; background: #fff; border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%;}
 
 .form-group span {display: inline-block; margin:0 0.3em; font-size: 2em;}
 
