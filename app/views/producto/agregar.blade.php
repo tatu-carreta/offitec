@@ -67,8 +67,8 @@
                         </div>
                     </div>
                     <div class="fondoDestacado marginBottom05">
-                        <div class="row">
-                            <div class="col-md-4">
+                        <div class="divEstado">
+                            <div class="estado">
                                 <div class="radio">
                                     <label>
                                         
@@ -78,16 +78,17 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="divPrecio">
                                 <label for="" >
-                                    Precio Antes $ <input id="" class="form-control inputWidth80 precioAble1 precio-number" type="text" name="precio_antes" value="">
+                                    <span>Precio después $ </span><input id="" class="form-control inputWidth60 precioAble1 precio-number" type="text" name="precio_antes" value="">
                                 </label>
                             </div>
-                            <div class="col-md-4">
+                            <div class="divPrecio">
                                 <label for="" >
-                                    Precio Después $ <input id="" class="form-control inputWidth80 precioAble1 precio-number" type="text" name="precio_actual" value="">
+                                    <span>Precio antes $ </span><input id="" class="form-control inputWidth60 precioAble1 precio-number" type="text" name="precio_actual" value="">
                                 </label>
-                            </div>    
+                            </div>   
+                            <div class="clearfix"></div>
                         </div>
                     </div>
                     <p class="infoTxt"><i class="fa fa-info-circle"></i>Los productos NUEVOS y las OFERTAS se muestran también en la home.</p>

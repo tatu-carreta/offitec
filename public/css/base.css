@@ -82,7 +82,7 @@ footer {margin-top: 1em; padding: 4em 0}
 .alert-warning{border: 0;}
 .sortable div{cursor:move;}
 .cursor-move{cursor: move !important;}
-.infoTxt {font-size: 16px;}
+.infoTxt {font-size: 14px !important;}
 .infoTxt i {margin-right: 0.3em; color: #ADADAD; font-size: 1.6em; vertical-align: middle;}
 .infoCarrito {font-size: 16px; color: #234A5B; margin-bottom: 1em}
 .infoCarrito i {margin-right: 0.3em; font-size: 1.6em; vertical-align: baseline;}
@@ -184,6 +184,7 @@ margin: 0;padding:0;left:0;top: 0;width: 130px;}
 .btnCalado:hover i:before {color: #FF8D13;}
 
 .inputWidth80 {width: 80px}
+.inputWidth60 {width: 60px;}
 
 .marginTop1 {margin-top: 1em !important}
 .marginRight5 {margin-right: 0.5em;}

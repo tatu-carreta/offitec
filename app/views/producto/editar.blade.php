@@ -38,6 +38,7 @@
                     <h3>Código del producto</h3>
                     <div class="form-group marginBottom2">
                         <input class="form-control" type="text" name="titulo" placeholder="Código" required="true" maxlength="9" value="{{ $item->titulo }}">
+                        <p class="infoTxt"><i class="fa fa-info-circle"></i>No puede haber dos productos con igual código. Máximo 9 caracteres.</p>
                     </div>
                 </div>
 
@@ -58,33 +59,37 @@
                         <div class="radio">
                             <label>
                                 <input id="" class="" type="checkbox" name="item_destacado" value="N" @if($item->producto()->nuevo()) checked="true" @endif>
+                                 <i class="fa fa-tag prodDestacado fa-lg"></i>
                                 Nuevo
                             </label>
                         </div>
                     </div>
                     <div class="fondoDestacado marginBottom05">
-                        <div class="row">
-                            <div class="col-md-4">
+                       <div class="divEstado">
+                            <div class="estado">
                                 <div class="radio">
                                     <label>
-                                        <input id="" class=" precioDisabled" type="checkbox" name="item_destacado" value="O" @if($item->producto()->oferta()) checked="true" @endif>
+                                        
+                                        <input id="" class=" precioDisabled" type="checkbox" name="item_destacado" value="O">
+                                        <i  class="fa fa-usd prodDestacado fa-lg"></i>
                                         Oferta
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="divPrecio">
                                 <label for="" >
-                                    Precio anterior $ <input id="" class="form-control inputWidth80 precioAble1 precio-number" type="text" name="precio_antes" value="@if($item->producto()->oferta()){{ $producto->precio(1) }}@endif">
+                                    <span>Precio después $ </span><input id="" class="form-control inputWidth60 precioAble1 precio-number" type="text" name="precio_antes" value="">
                                 </label>
                             </div>
-                            <div class="col-md-4">
+                            <div class="divPrecio">
                                 <label for="" >
-                                    Precio oferta $ <input id="" class="form-control inputWidth80 precioAble1 precio-number" type="text" name="precio_actual" value="@if($item->producto()->oferta()){{ $producto->precio(2) }}@endif">
+                                    <span>Precio antes $ </span><input id="" class="form-control inputWidth60 precioAble1 precio-number" type="text" name="precio_actual" value="">
                                 </label>
-                            </div>    
+                            </div>   
+                            <div class="clearfix"></div>
                         </div>
                     </div>
-                    <p>Los productos nuevos y las ofertas se muestran en la home</p>
+                    <p class="infoTxt"><i class="fa fa-info-circle"></i>Los productos NUEVOS y las OFERTAS se muestran también en la home.</p>
                 </div>
 
                 @if($seccion_next != 'null')
@@ -111,8 +116,12 @@
             </div><!--cierra columna datos de producto-->
 
             <!-- Abre columna de imágenes -->
-            <div class="col-md-6 fondoDestacado cargaImg">
+           
                 <h3>Imagen principal</h3>
+                <div class="col-md-6 fondoDestacado cargaImg">
+                    <h3>Carga y recorte de la imagen</h3>
+                    <p class="infoTxt"><i class="fa fa-info-circle">
+                </i>La imagen original puede ser vertical u horizontal pero no debe exceder los 500kb de peso.</p>
                 @if(!is_null($item->imagen_destacada()))
                     <div class="divCargaImgProducto">
                         <div class="marginBottom1 divCargaImg">
