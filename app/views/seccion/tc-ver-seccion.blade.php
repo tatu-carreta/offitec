@@ -1,4 +1,3 @@
-
 <div class="divProductos">
     @if(($seccion->titulo != "") || (Auth::check()))<h3 class="floatLeft marginRight" id="{{$seccion->estado.$seccion->id}}">@if($seccion->titulo != ""){{ $seccion -> titulo }} @endif</h3>@endif
     @if(Auth::check())
