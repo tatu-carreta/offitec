@@ -56,7 +56,9 @@
         </div>
         
         <div class="row carrouselProdHome carousel-oculto">
-            <p class="infoCarrito" style="text-align:center"><i class="fa fa-shopping-cart"></i><strong>CONSULTE PRESUPUESTO:</strong> seleccione los productos y le enviaremos el presupuesto por email.</p>
+            @if(!Auth::check())
+                <p class="infoCarrito" style="text-align:center"><i class="fa fa-shopping-cart"></i><strong>CONSULTE PRESUPUESTO:</strong> seleccione los productos y le enviaremos el presupuesto por email.</p>
+            @endif
             <div id="owl-demo-prod">
                 @if(count($items_home) > 0)
                     <!-- PRODUCTOS DESTACADOS -->
