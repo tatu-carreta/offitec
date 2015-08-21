@@ -36,6 +36,8 @@
             </div>
             <p class="infoTxt"><i class="fa fa-info-circle"></i>El slide puede tener hasta 4 imágenes. Las imágenes deben ser horizontales y medir <strong>600px de ancho por 360px de alto.<strong></p>
             <div>
+               
+                 
                 <div ng-repeat="item in uploader.queue" class="imgSeleccionadas marginBottom1">
                     <div class="fondoBco">
                         <div class="">

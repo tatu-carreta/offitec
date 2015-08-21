@@ -159,8 +159,10 @@
                                 <a  class="data-fiscal" href="http://qr.afip.gob.ar" target=""><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0"></a>
                                 <!--/data fiscal -->
                                 <div class="clearfix"></div>
+                                <p class="firmalaura">Copyright © OFFITEC 2015 - Desarrollo web: <a href="http://www.laurachuburu.com.ar/" target="_blank">www.laurachuburu.com.ar</a></p>
                             </div>
                         </div>
+
                     </div>
                 @endif
             @show
