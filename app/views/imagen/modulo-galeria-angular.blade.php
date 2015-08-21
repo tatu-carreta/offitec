@@ -48,14 +48,16 @@
                             <div class="divCargaTxtSlideHome">
                                 <textarea class="form-control" id="epigrafe" name="epigrafe_slide[]" maxlength="150"></textarea>
                             </div>
-                            <div class="clearfix"></div>
-                            <div class="progress marginBottom1">
-                                <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                            <div class="clearfix marginBottom1"></div>
+                            <div class="progreso">
+                                <div class="progress marginBottom1">
+                                    <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                </div>
+                                <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                                <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                                <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                                <div class="clearfix"></div>
                             </div>
-                            <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
-                            <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
-                            <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
-                            <div class="clearfix"></div>
                         </div>
                     </div>
                 </div>

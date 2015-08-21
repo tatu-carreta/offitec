@@ -99,12 +99,13 @@ footer {margin-top: 1em; padding: 4em 0}
 
 /* Carga Slide Home */
 .fondoBco {background: #fff; padding: 1em}
-.divCargaImgSlideHome {width: 48.5%; height: ; float:left; overflow: hidden; position: relative; cursor: pointer}
+.divCargaImgSlideHome {width: 49%; height: 230px ; float:left; overflow: hidden; position: relative; cursor: pointer}
+.divCargaImgSlideHome img {width: 100%; height: auto}
 .divCargaImgSlideHome canvas {min-width: 100%; min-height: 100%; width: auto; height: auto; overflow: hidden;}
 .divCargaImgSlideHome i {position: absolute; top: 0.6em; right: 0.6em; font-size: 1.4em; color: #337ab7; background: #fff; border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%;}
 .imgSeleccionadas textarea {height: 6em}
 .divCargaTxtSlideHome {width: 48.5%; float: right;}
-.divCargaTxtSlideHome textarea {height: 100%}
+.divCargaTxtSlideHome textarea {height: 230px; border-radius: 0; -webkit-border-radius: 0; -moz-border-radius: 0; font-weight: 400; font-size: 16px; font-family: 'Source Sans Pro', arial,  sans-serif }
 
 /* Catálogo de Productos */
 .divListadoItems:nth-child(1) {border-top: 0 none;}
