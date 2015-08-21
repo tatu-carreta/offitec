@@ -74,6 +74,8 @@ footer {margin-top: 1em; padding: 4em 0}
 .tarjetas img {margin: 0 2em 2em 0; vertical-align: middle;}
 .data-fiscal img {width: 30px; border: 0;margin-right: 0!important;}
 
+#s-m-t-tooltip{position:absolute; max-width:300px;padding:6px 8px 8px 8px; z-index:99; display:inline-block; /*important*/ font-size:13px;line-height:16px;color:#fff; -moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px; background-color: #000;}
+
 /* ----------------------------- A D M I N ------------------------------------ */
 
 .divAlerta{position: fixed; bottom: 0; right: 1em; width: 300px; padding: 1em; z-index: 1000; font-size: 1.1em; }

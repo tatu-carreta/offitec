@@ -49,11 +49,15 @@
         </script>
 
         <!-- Include MyTooltips -->
-        <script src="{{URL::to('source/jquery.fancybox.js')}}"></script>
-        <script>
-            $(document).ready(function(){
-                $('[data-toggle="tooltip"]').tooltip(); 
-            });
+        <script src="{{URL::to('js/jquery.style-my-tooltips.js')}}"></script>
+        <script type="text/javascript">  
+            $().ready(function() {  
+                //applies to all elements with title attribute. Change to ".class[title]" to select only elements with specific .class and title
+                $("[title]").style_my_tooltips({ 
+                    tip_follows_cursor: "on", //on/off
+                    tip_delay_time: 10 //milliseconds
+                });  
+            });  
         </script>
         @show
     </head>
