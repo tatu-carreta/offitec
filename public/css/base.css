@@ -9,7 +9,7 @@ h1, h2, h3 {font-weight: normal}
 ul, li {margin:0; padding:0; list-style: none}
 a {text-decoration: none !important;}
 
-.fondoDestacado {background: #EFEFEF; padding: 1em; margin-bottom: 2em; box-sizing: border-box !important;}
+.fondoDestacado {background: #F4F4EF; padding: 1em; margin-bottom: 2em; box-sizing: border-box !important;}
 .fondoDestacado > * {margin-top: 0;}
 
 .ajustaImg {width: 100%; height: auto}
@@ -207,6 +207,10 @@ margin: 0;padding:0;left:0;top: 0;width: 130px;}
 a.laura {display:block; width:210px; height:15px; background:url(../images/laura-chuburu.png); position:absolute; bottom: 0; right:20px;}
 a.laura span {display:none}
 a.laura:hover {background-position:bottom}
+
+.firmalaura{color:#9B9B9B;font-size: 11px; }
+.firmalaura a{color:#9B9B9B;}
+.firmalaura a:hover{color:#626263;}
 
 @media (max-width: 386px){
 	.tarjetas img {margin: 0 2em 1em 0; vertical-align: middle; width: 30px;}
