@@ -114,7 +114,8 @@ footer {margin-top: 1em; padding: 4em 0}
 .sinProductos {border: 1px dashed #C6C6C6; width: 250px; height: 250px; text-align: center; line-height: 200px; margin: 2em 0px 4em;}
 
 .iconos{padding: 0.5em 0.5em 0.563em; border-bottom: 1px dashed #C6C6C6; margin-bottom: 0.5em}
-.iconos i{cursor: pointer; color: #337ab7}
+.iconos i{cursor: pointer; color: #286090}
+.iconos i:hover {color:#3885C7;}
 .iconos .fa-pencil{margin-right: 0.5em}
 
 .lazy {margin-bottom: 0.5em;}
@@ -184,6 +185,11 @@ margin: 0;padding:0;left:0;top: 0;width: 130px;}
 .btnCalado {display:inline-block; color:#fff !important; padding: 0.625em 0.938em;}
 .btnCalado i:before {color:#FF8D13;}
 .btnCalado:hover i:before {color: #FF8D13;}
+
+.btn-primary {background:#286090}
+.btn-primary:hover {background:#337ab7}
+
+.btn.disabled, .btn.disabled i {opacity: 1; color: #C7C7C7}
 
 .inputWidth80 {width: 80px}
 .inputWidth60 {width: 60px;}

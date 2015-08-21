@@ -205,7 +205,6 @@
 .fa-close:before,
 .fa-times:before {
   content: "\f00d";
-  color: #3074B1;
 }
 .fa-search-plus:before {
   content: "\f00e";
@@ -352,7 +351,7 @@
 }
 .fa-pencil:before {
   content: "\f040";
-  color: #3074B1;
+  /*color: #3074B1;*/
 }
 .fa-map-marker:before {
   content: "\f041";

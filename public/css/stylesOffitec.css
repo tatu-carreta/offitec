@@ -122,7 +122,6 @@ h4{margin-bottom: 20px;font-size: 20px;}
 
 .iconos a.btn{padding: 6px 12px 0 0;}
 .iconos a.btn:hover{color: #142B3A !important;}
-.iconos i:hover{color: #142B3A !important;}
 
 .presionadoNuevo{color:#ff7503;}
 .presionadoOferta{color:#D52318;}
@@ -142,6 +141,11 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .divEstado input{display: inline-block;}
 .estado{float: left; padding-top: 0.5em;}
 .divPrecio{display: inline-block;float: right; margin-left: 1em;}
+
+/* ADMIN */
+.ok{background: #302F2F !important; }
+.divAlerta .close {color: #fff; opacity: 1; text-shadow:none; -webkit-text-shadow:none; -moz-text-shadow:none; position: relative; top: -2px;}
+
 
 /* ----------------------------- M E D I A  Q U E R Y ------------------------------------- */
 @media screen and (max-width: 1000px) {
@@ -165,6 +169,8 @@ h4{margin-bottom: 20px;font-size: 20px;}
     #menuPrincipal a {height: 40px; line-height: 40px; font-size: 1.250em;}
     .navbar-collapse {border: 0 !important; padding: 0}
     .navbar-nav {margin:0;}
+    .btnCarrito i {display: inline-block; font-size: 1.6em; padding: 0 0.4em}
+    .btnCarrito span {display: none}
     .info {width: 100%; border-bottom: 0; margin-bottom: 1em}
 }
 
@@ -184,8 +190,6 @@ h4{margin-bottom: 20px;font-size: 20px;}
 
 @media screen and (max-width: 440px){
     .col-xs-6 {width: 100%;}
-    .btnCarrito i {display: inline-block; font-size: 1.6em; padding: 0 0.4em}
-    .btnCarrito span {display: none}
 }
 
 
