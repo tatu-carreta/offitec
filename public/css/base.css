@@ -212,6 +212,13 @@ a.laura:hover {background-position:bottom}
 .firmalaura a{color:#9B9B9B;}
 .firmalaura a:hover{color:#626263;}
 
+
+.btn-primary{color:#286090;background-color: #fff}
+.btn-primary:hover{color:#3885C7;background-color: #fff}
+.iconos a.btn{padding: 6px 12px 0 0;color:#286090 }
+.iconos a.btn:hover{color: #3885C7!important;}
+
+
 @media (max-width: 386px){
 	.tarjetas img {margin: 0 2em 1em 0; vertical-align: middle; width: 30px;}
   .divEmergente {width: 260px; left: 50%; margin-left: -130px;}

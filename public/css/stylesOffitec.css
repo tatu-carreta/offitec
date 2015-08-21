@@ -24,6 +24,7 @@ h1, h2, h3 {font-weight: 300}
 .boton-azul {background: #142B3A;}
 .boton-verde {background: #1D6A0E;}
 
+
 .presentacion {text-align: center; color: #70162F; font-size: 1.8em; line-height: 1.3em; width: 80%; margin: 0 auto 2em;letter-spacing: 0.2px;}
 
 .info {color:#142B3A;width: 49.8%;height: 100%; text-align:left; padding-top: 5px;  display: inline-block; }
@@ -88,7 +89,7 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .col-carrito textarea {height: 125px; margin-bottom: 1.2em;}
 .col-carrito .form-group {margin-bottom: 8px;}
 .col-carrito h3{border-bottom: 1px #DEDAD7 solid; padding-bottom: 2%;}
-.col-carrito .btn{color:#fff;background-color: #234a5b !important; width:175px;}
+.col-carrito .btn{color:#fff;background-color:  #234a5b !important; padding: 6px 40px !important; font-size: 18px !important; margin-top: 12px !important;}
 .col-carrito .btn:hover{background-color: #142B3A !important}
 
 .table .fa-times:before {color: #000 !important;}
@@ -120,12 +121,11 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .boton-presupuestar{background-color:  #234a5b !important; color: #fff}
 .boton-presupuestar:hover,.boton-presupuestar:focus {background-color: #142B3A !important; color:#fff;}
 
-.iconos a.btn{padding: 6px 12px 0 0;}
-.iconos a.btn:hover{color: #142B3A !important;}
+
 
 .presionadoNuevo{color:#ff7503;}
 .presionadoOferta{color:#D52318;}
-.btn{box-shadow: none}
+.btn{box-shadow: none !important;}
 .editarEliminar{padding: 6px 0;}
 
 
