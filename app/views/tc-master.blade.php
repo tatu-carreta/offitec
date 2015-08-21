@@ -47,6 +47,9 @@
                 $(".fancybox").fancybox();
             });
         </script>
+
+        <!-- Include MyTooltips -->
+        <script src="{{URL::to('source/jquery.fancybox.js')}}"></script>
         <script>
             $(document).ready(function(){
                 $('[data-toggle="tooltip"]').tooltip(); 

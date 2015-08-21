@@ -37,7 +37,7 @@ h1, h2, h3 {font-weight: 300}
 /* Estilos Fichas de Productos*/
 .divImgProd {width: 100%;  position: relative; border: 1px solid #F4F4EF} /* height: 100%;*/
 .divImgProd img {width: 100%; height: auto;}
-.bandaInfoProd {background: #F4F4EF; padding: 0.5em 1em; color: #777774 !important; }
+.bandaInfoProd {background: #efefef; padding: 0.5em 1em; color: #777774 !important; }
 .bandaInfoProd .btn-default {color: #777774 !important;}
 .bandaInfoProd .btn-default:hover {color: #fff !important; background: #00A9E0; border: none;}
 .bandaInfoProd p {margin:7px 0 5px;}
@@ -152,8 +152,6 @@ h4{margin-bottom: 20px;font-size: 20px;}
     #menuPrincipal a {padding: 0 1.250em !important }
     .fondo-negro .container {padding: 0}
 }
-
-
 
 @media screen and (max-width: 870px){
     .navbar-header {float: right !important; }
