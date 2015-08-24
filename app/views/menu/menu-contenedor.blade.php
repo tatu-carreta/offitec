@@ -37,7 +37,7 @@
             <div class="col-md-12 marginBottom2">
                 <h2 class="pull-left">{{ $menu->nombre }}</h2>
                 @if(!Auth::check())
-                    <p class="infoCarrito marginBottom2 pull-right"><i class="fa fa-shopping-cart"></i><strong>CONSULTE PRESUPUESTO:</strong> seleccione los productos y le enviaremos el presupuesto por email.</p>
+                    <p class="infoCarrito marginBottom2"><i class="fa fa-shopping-cart"></i><strong>CONSULTE PRESUPUESTO:</strong> seleccione los productos y le enviaremos el presupuesto por email.</p>
                 @endif
                 
                 @if(Auth::check())

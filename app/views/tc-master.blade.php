@@ -163,7 +163,7 @@
                                 <img src="{{URL::to('images/tarjetas/cabal.jpg')}}" alt="Tarjeta Cabal">
                                 <img src="{{URL::to('images/tarjetas/mercado_pago.jpg')}}" alt="Mercado Pago">
                                 <!--data fiscal -->
-                                <a  class="data-fiscal" href="http://qr.afip.gob.ar" target=""><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" border="0"></a>
+                                <a  class="data-fiscal" href="http://qr.afip.gob.ar/?qr=B2xopj0onm6SrChQuHtxHQ,,"   target="_F960AFIPInfo"><img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg"  border="0"></a>
                                 <!--/data fiscal -->
                                 <div class="clearfix"></div>
                                 <p class="firmalaura">Copyright © OFFITEC 2015 - Desarrollo web: <a href="http://www.laurachuburu.com.ar/" target="_blank">www.laurachuburu.com.ar</a></p>

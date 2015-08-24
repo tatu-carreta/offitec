@@ -150,9 +150,14 @@ h4{margin-bottom: 20px;font-size: 20px;}
 #menuPrincipal .dropdown li a:hover{ background-color:#9C9C8A;}
 
 /* ----------------------------- M E D I A  Q U E R Y ------------------------------------- */
+
 @media screen and (max-width: 1000px) {
     #menuPrincipal a {padding: 0 1.250em !important }
     .fondo-negro .container {padding: 0}
+}
+
+@media screen and (max-width: 980px){
+   .infoCarrito {float: left !important;}
 }
 
 @media screen and (max-width: 870px){
@@ -162,6 +167,11 @@ h4{margin-bottom: 20px;font-size: 20px;}
 @media screen and (max-width: 780px) {
     #menuPrincipal a {padding: 0 1.2em !important}
 }
+
+@media screen and (max-width: 770px) {
+.infoizq{margin-right: 0;}
+}
+
 @media screen and (max-width: 768px) {
     header .container {padding-right: 0}
     .divMenu {float: left; width: 100%}
@@ -180,12 +190,14 @@ h4{margin-bottom: 20px;font-size: 20px;}
     .col-contacto{width: 100%; margin-bottom:3px; padding: 1em}
     .imgSlideFlex, .flex-caption {width: 100%}
     .imgSlideFlex .flechaSlide {display: none}
+    .col-izqcontacto{height: auto;}
 }
 
 @media screen and (max-width: 600px){
     .contenedor-carousel a{height: 150px; padding-top: 50px; font-size:1.2em }
     .tarjetas {text-align: center}
     .data-fiscal {float:none;}
+    .col-izqcontacto{width: 100%}
 }
 
 @media screen and (max-width: 440px){

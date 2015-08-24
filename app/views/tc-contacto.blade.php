@@ -20,8 +20,8 @@
                 Teléfono: (011) 42444099 </br>
                 Email: lomas@offitec.com</p>
                 <div class="redesContacto">
-                    <a class="facebook" href="https://www.facebook.com/profile.php?id=100001265423883&fref=ts"></a>
-                    <a class="google" href="https://plus.google.com/101901769123903199376/posts"></a>
+                    <a class="facebook" href="https://www.facebook.com/profile.php?id=100001265423883&fref=ts" target="_blank"></a>
+                    <a class="google" href="https://plus.google.com/101901769123903199376/posts" target="_blank"></a>
                 </div>
             </div>
             <div class="col-contacto">
