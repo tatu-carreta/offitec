@@ -146,6 +146,8 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .ok{background: #302F2F !important; }
 .divAlerta .close {color: #fff; opacity: 1; text-shadow:none; -webkit-text-shadow:none; -moz-text-shadow:none; position: relative; top: -2px;}
 
+/* SUB MENU */
+#menuPrincipal .dropdown li a:hover{ background-color:#9C9C8A;}
 
 /* ----------------------------- M E D I A  Q U E R Y ------------------------------------- */
 @media screen and (max-width: 1000px) {
