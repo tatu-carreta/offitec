@@ -163,7 +163,8 @@ h4{margin-bottom: 20px;font-size: 20px;}
     #menuPrincipal a {padding: 0 1.2em !important}
 }
 @media screen and (max-width: 768px) {
-    header .container {padding-right: 0}
+    header .container {padding: 0}
+    .logo {left:35px;}
     .divMenu {float: left; width: 100%}
     #menuPrincipal {height: auto !important;} 
     #menuPrincipal a {height: 40px; line-height: 40px; font-size: 1.250em;}
