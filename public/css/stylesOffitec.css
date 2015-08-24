@@ -126,8 +126,8 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .presionadoNuevo{color:#ff7503;}
 .presionadoOferta{color:#D52318;}
 .btn{box-shadow: none !important;}
-.editarEliminar{padding: 6px 0;}
-
+.editarEliminar{padding: 6px 0; color: #286090;}
+.editarEliminar:hover{color: #3885C7}
 
 .volveraSeccion {font-size: 1em !important; color:#000;}
 .volveraSeccion:hover{color:#696969; }
