@@ -14,9 +14,10 @@
                         @include('imagen.modulo-galeria-angular')
                     </div>
 
+                    @if(count($slide->imagenes) > 0)
                     <h4>Imágenes ya cargadas:</h4>
                     <div class="fondoDestacado">
-                        @if(count($slide->imagenes) > 0)
+                        
                             <div class="row imgSeleccionadas">
                               <div class="col-md-12">
                                   @foreach($slide->imagenes as $img)
@@ -36,8 +37,9 @@
                                   @endforeach
                                 </div>
                             </div>
-                        @endif
+                        
                     </div>
+                    @endif
                 </div>
         </div>
 

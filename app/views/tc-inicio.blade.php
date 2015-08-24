@@ -93,14 +93,14 @@
                                                     <a href="{{URL::to('admin/producto/editar/'.$item->producto()->id.'/home/null')}}" data='null'><i class="fa fa-pencil fa-lg"></i></a>
                                                 @endif
                                                 @if(Auth::user()->can("borrar_item"))
-                                                    <i onclick="borrarData('{{URL::to('admin/item/borrar')}}', '{{$item->id}}');" class="fa fa-times fa-lg"></i>
+                                                    <a onclick="borrarData('{{URL::to('admin/item/borrar')}}', '{{$item->id}}');"><i class="fa fa-times fa-lg"></i></a>
                                                 @endif
                                             </span>
                                             <div class="clearfix"></div>
                                         </div>
                                     @endif
                                     
-                                    <a class="fancybox" href="@if(!is_null($item->imagen_destacada())){{URL::to($item->imagen_destacada()->ampliada()->carpeta.$item->imagen_destacada()->ampliada()->nombre)}}@else{{URL::to('images/sinImg.gif')}}@endif" title="@if(!is_null($item->imagen_destacada())){{ $item->imagen_destacada()->ampliada()->epigrafe }}@endif" rel='group'> 
+                                    <a class="fancybox" href="@if(!is_null($item->imagen_destacada())){{URL::to($item->imagen_destacada()->ampliada()->carpeta.$item->imagen_destacada()->ampliada()->nombre)}}@else{{URL::to('images/sinImg.gif')}}@endif" title="{{$item->titulo}} @if(!is_null($item->imagen_destacada())){{ $item->imagen_destacada()->ampliada()->epigrafe }}@endif" rel='group'> 
                                         <div class="divImgProd">
                                             <img class="lazy" src="@if(!is_null($item->imagen_destacada())){{ URL::to($item->imagen_destacada()->carpeta.$item->imagen_destacada()->nombre) }}@else{{URL::to('images/sinImg.gif')}}@endif" alt="{{$item->titulo}}">
                                             @if($item->producto()->oferta())
