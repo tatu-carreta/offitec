@@ -15,13 +15,13 @@
     @if (!is_null($slide_index) && !is_null($slide_index -> imagenes))
         <div class="row">
             <div class="col-md-12">
-                <a class="btn pull-right" href="{{URL::to('admin/slide/editar/'.$slide_index->id.'/home')}}"> <i class="fa fa-pencil fa-lg"></i>Editar Slide Home</a>
+                <a class="btn pull-right iconoBtn-texto" href="{{URL::to('admin/slide/editar/'.$slide_index->id.'/home')}}"> <i class="fa fa-pencil fa-lg"></i>Editar Slide Home</a>
             </div>
         </div>
     @else
         <div class="row">
             <div class="col-md-12">
-                <a class="btn pull-right" href="{{URL::to('admin/slide/agregar/5/I')}}"> <i class="fa fa-pencil fa-lg"></i>Agregar Slide Home</a>
+                <a class="btn pull-right iconoBtn-texto" href="{{URL::to('admin/slide/agregar/5/I')}}"> <i class="fa fa-pencil fa-lg"></i>Agregar Slide Home</a>
             </div>
         </div>
     @endif

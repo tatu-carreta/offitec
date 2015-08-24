@@ -116,7 +116,7 @@ footer {margin-top: 1em; padding: 4em 0}
 .sinProductos {border: 1px dashed #C6C6C6; width: 250px; height: 250px; text-align: center; line-height: 200px; margin: 2em 0px 4em;}
 
 .iconos{padding: 0.5em 0.5em 0.563em; border-bottom: 1px dashed #C6C6C6; margin-bottom: 0.5em}
-.iconos i{cursor: pointer; color: #286090}
+.iconos i{cursor: pointer; }
 .iconos i:hover {color:#3885C7;}
 .iconos .fa-pencil{margin-right: 0.5em}
 
@@ -215,9 +215,11 @@ a.laura:hover {background-position:bottom}
 .firmalaura a:hover{color:#626263;}
 
 
-.btn-primary{color:#286090;background-color: #fff}
-.btn-primary:hover{color:#3885C7;background-color: #fff}
-.iconos a.btn{padding: 6px 12px 0 0;color:#286090 }
+.btn-primary{}
+.btn-primary:hover{}
+.iconoBtn-texto{color: #286090}
+.iconoBtn-texto:hover{color: #3885C7}
+.iconos a.btn{padding: 6px 12px 0 0;color:#286090;}
 .iconos a.btn:hover{color: #3885C7!important;}
 
 
