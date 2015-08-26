@@ -187,8 +187,8 @@ h4{margin-bottom: 20px;font-size: 20px;}
 }
 
 @media screen and (max-width: 743px){
-    .col-tabla {width: 100%; margin-bottom:146px;}
-    .col-carrito {width: 100%; margin-bottom:146px;}
+    .col-tabla {width: 100%; height: auto;}
+    .col-carrito {width: 100%;}
     .col-contacto{width: 100%; margin-bottom:3px; padding: 1em}
     .imgSlideFlex, .flex-caption {width: 100%}
     .imgSlideFlex .flechaSlide {display: none}
@@ -206,5 +206,4 @@ h4{margin-bottom: 20px;font-size: 20px;}
 @media screen and (max-width: 440px){
     .col-xs-6 {width: 100%;}
 }
-
 
