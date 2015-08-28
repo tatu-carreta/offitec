@@ -95,7 +95,7 @@ footer {margin-top: 1em; padding: 4em 0}
 /*.divLogin input[type="text"], .divLogin input[type="password"] {width: 100%; margin-bottom: 20px}
 .divLogin input[type="submit"]{float:right;}ver bootstrap y sacar*/ 
 
-.headerAdmin{background: #000; border-bottom: 1px solid #fff; height:3.125em; color: #fff; position: relative; }
+.headerAdmin{background: #4C4B4B; border-bottom: 1px solid #fff; height:3.125em; color: #fff; position: relative; }
 .headerAdmin .divSalir{position: absolute;right: 0}
 .headerAdmin .divAdministrar{position: absolute; left: 0}
 .headerAdmin .salir{color:#fff; padding: 0 1em; margin-left: 1em}
