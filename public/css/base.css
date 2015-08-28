@@ -15,14 +15,14 @@ a {text-decoration: none !important;}
 .ajustaImg {width: 100%; height: auto;}
 
 /* HEADER */
-header {background: #000;}
+header {background: #1c1c1c;} /*#000*/
 
 /* NAV */
 .divMenu {float: right;}
 #menuPrincipal a {background: transparent; font-size: 15px; color:#fff; font-weight: 300;background: transparent; height: 88px; line-height: 88px; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box;}
 #menuPrincipal a:hover {background: #878979}
 #menuPrincipal .dropdown li a {height: 35px; line-height: 35px; font-size: 15px;}
-.btnCarrito {font-weight: 300; font-size: 15px; height: 88px; line-height: 88px; margin: 0 !important; background: #302F2F; color:#fff; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box; position: relative; z-index: 1000; float: right}
+.btnCarrito {font-weight: 300; font-size: 15px; height: 88px; line-height: 88px; margin: 0 !important; background: #234a5b;color:#fff; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box; position: relative; z-index: 1000; float: right} /*background: #302F2F; */
 .btnCarrito:hover {color:#fff;}
 .btnCarrito i {display:none;}
 .carrouselProdHome {margin-bottom: 6em}
@@ -87,9 +87,9 @@ footer {margin-top: 1em; padding: 4em 0}
 .infoTxt {font-size: 14px !important;}
 .infoTxt i {margin-right: 0.3em; color: #ADADAD; font-size: 1.6em; vertical-align: middle;}
 .infoCarrito {font-size: 16px; color: #234A5B; margin-bottom: 1em;float: right;}
-.infoCarrito i {margin-right: 0.3em; font-size: 1.6em; vertical-align: baseline;}
+.infoCarrito i {margin-right: 0.3em; font-size: 1.2em; vertical-align: baseline;}
 .infoCarritoHome{font-size: 16px; color: #234A5B; margin-bottom: 1em; text-align: center;}
-.infoCarritoHome i{margin-right: 0.5em; }
+.infoCarritoHome i{    margin-right: 0.3em; font-size: 1.2em; vertical-align: baseline;}
 
 .divLogin{margin: 100px auto 250px auto; width: 300px;  }
 /*.divLogin input[type="text"], .divLogin input[type="password"] {width: 100%; margin-bottom: 20px}
