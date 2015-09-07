@@ -16,7 +16,7 @@ h1, h2, h3 {font-weight: 300}
 .carousel-control.right {background: none}
 /*.olw-item {width: 142px !important;}*/
 
-.contenedor-carousel a{display: block; height: 150px; font-size: 1.250em; font-weight: 300; text-align: center;padding-top: 50px;color:#fff; }
+.contenedor-carousel a{display: block; height: 130px; font-size: 1.250em; font-weight: 300; text-align: center;padding-top: 40px;color:#fff; }
 .contenedor-carousel a span {width: 80%; display: inline-block;}
 .boton-naranja {background:#A25A77;} /* #ff7503 */
 .boton-rojo {background:#FF735E ;} /*#D52318 */
@@ -25,13 +25,13 @@ h1, h2, h3 {font-weight: 300}
 .boton-verde {background:#367D91 ;} /*primer verde: #1D6A0E segundo verde: #498C1C*/
 
 
-.presentacion {text-align: center; color: #70162F; font-size: 1.8em; line-height: 1.3em; width: 80%; margin: 0 auto 2em;letter-spacing: 0.2px;}
+.presentacion {text-align: center; color: #A25A77; font-size: 1.8em; line-height: 1.3em; width: 80%; margin: 0 auto 2em;letter-spacing: 0.2px;}
 
-.info {color:#142B3A;width: 49.8%;height: 100%; text-align:left; padding-top: 5px;  display: inline-block; }
+.info {color:#6D6F6B;width: 49.8%;height: 100%; text-align:left; padding-top: 5px;  display: inline-block; }
 .info p{font-size: 16px;}
 .infoizq{margin-right: 4%}
 .mapa {width: 100%; height: 224px; border: 0;}
-.fondo-negro {width: 100%;height: 150px;background-color: #868585;}/* gris oscuro: #1c1c1c*/
+.fondo-negro {width: 100%;height: 150px;background-color: #E6E6DA; height: 130px;}/* gris oscuro: #1c1c1c  clarito:#868585*/
 
 .logo {position: absolute !important; z-index: 999;}
 
@@ -51,10 +51,10 @@ h1, h2, h3 {font-weight: 300}
 
 /* Estilos de Bootstrap modificados */
 .navbar {margin:0;}
-.navbar-toggle {margin-top: 2em}
+.navbar-toggle {margin-top: 2em;}
 .navbar-brand {padding: 0.125em 0; margin-top: 1em;}
-.navbar-collapse {padding-right: 0}
-.dropdown-menu {background: #878979}
+.navbar-collapse {padding-right: 0;}
+.dropdown-menu {background: #E6E6DA;}
 
 .open {background: #878979}
 
@@ -93,7 +93,7 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .col-carrito .btn:hover{background-color: #142B3A !important}
 
 .table .fa-times:before {color: #000 !important;}
-.mapa{border-top: 4px solid #142B3A;}
+.mapa{border-top: 4px solid #367D91;}
 .table td{padding: 2.5% 0 !important; vertical-align: middle !important;}
 .table img{width: 60px !important; height: 60px !important;}
 .table input{width: 68px;}
@@ -118,8 +118,8 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .col-izqcontacto{vertical-align: top; width: 49.8%; height: 600px;padding-top: 2%; margin-bottom:146px;display: inline-block;}
 .col-izqcontacto p{margin-bottom: 2em;}
 
-.boton-presupuestar{background-color:  #234a5b !important; color: #fff}
-.boton-presupuestar:hover,.boton-presupuestar:focus {background-color: #142B3A !important; color:#fff;}
+.boton-presupuestar{background-color:  #4295AD !important; color: #fff}
+.boton-presupuestar:hover,.boton-presupuestar:focus {background-color: #367D91 !important; color:#fff;}
 
 
 
@@ -147,7 +147,7 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .divAlerta .close {color: #fff; opacity: 1; text-shadow:none; -webkit-text-shadow:none; -moz-text-shadow:none; position: relative; top: -2px;}
 
 /* SUB MENU */
-#menuPrincipal .dropdown li a:hover{ background-color:#9C9C8A;}
+#menuPrincipal .dropdown li a:hover{ background-color:#D6D6CA;}/*#9C9C8A*/
 
 /* ----------------------------- M E D I A  Q U E R Y ------------------------------------- */
 

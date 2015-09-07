@@ -5,35 +5,37 @@
                     <div id="ei-slider" class="ei-slider">
                         <ul class="ei-slider-large">
                             <li>
-                                <img src="{{URL::to('images/slide1.jpg')}}" alt="image01" />
+                                <img src="{{URL::to('images/slide1blanco.jpg')}}" alt="image01" />
                                 <div class="ei-title">
-                                    <h3>diseño</h3>
+                                    <h3>funcionalidad</h3>
                                 </div>
                             </li>
                             <li>
                                 <img src="{{URL::to('images/slide2.jpg')}}" alt="image01" />
                                 <div class="ei-title">
-                                    <h3>ergonomía</h3>
+                                    <h3>estilo</h3>
                                 </div>
                             </li>
                             <li>
                                 <img  src="{{URL::to('images/slide3.jpg')}}" alt="image02" />
                                 <div class="ei-title">
+                                    <h3>diseño</h3>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="{{URL::to('images/slide4blanco.jpg')}}"alt="image03"/>
+                                <div class="ei-title">
                                     <h3>confort</h3>
                                 </div>
                             </li>
-                            <li>
-                                <img src="{{URL::to('images/slide4.jpg')}}"alt="image03"/>
-                                <div class="ei-title">
-                                    <h3>estilo</h3>
-                                </div>
-                            </li>
+                        <!-- 
                             <li>
                                 <img src="{{URL::to('images/slide5.jpg')}}" alt="image04"/>
                                 <div class="ei-title">
-                                   <h3>funcionalidad</h3>
+                                   <h3>ergonomía</h3>
                                 </div>
                             </li>
+                        -->
                        
                         </ul><!-- ei-slider-large -->
                     

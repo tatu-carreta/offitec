@@ -15,20 +15,20 @@ a {text-decoration: none !important;}
 .ajustaImg {width: 100%; height: auto;}
 
 /* HEADER */
-header {background: #868585; border-bottom: 2px solid #fff} /*gris oscuro: #1c1c1c*/
+header {background:#fff;} /*gris oscuro: #1c1c1c gris clarito #868585*/
 
 /* NAV */
 .divMenu {float: right;}
-#menuPrincipal a {background: transparent; font-size: 15px; color:#fff; font-weight: 300;background: transparent; height: 88px; line-height: 88px; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box;}
-#menuPrincipal a:hover {background: #878979}
+#menuPrincipal a {background: transparent; font-size: 15px; color:#6D6F6B; font-weight: 400;background: transparent; height: 88px; line-height: 88px; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box;}
+#menuPrincipal a:hover {background:#E6E6DA;}
 #menuPrincipal .dropdown li a {height: 35px; line-height: 35px; font-size: 15px;}
-.btnCarrito {font-weight: 300; font-size: 15px; height: 88px; line-height: 88px; margin: 0 !important; background: #367D91;color:#fff; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box; position: relative; z-index: 1000; float: right} /*background: #302F2F; */
-.btnCarrito:hover {color:#fff;}
+.btnCarrito {font-weight: 400; font-size: 15px; height: 88px; line-height: 88px; margin: 0 !important; background: #49B6A4;color:#fff; padding: 0 30px !important; text-transform: uppercase; box-sizing: border-box; position: relative; z-index: 1000; float: right} /*background: #302F2F; */
+.btnCarrito:hover {background: #419E8F; color:#fff;}
 .btnCarrito i {display:none;}
 .carrouselProdHome {margin-bottom: 6em}
 
 /* SLIDE HOME */
-.slideHome {overflow: hidden; border-bottom: 2px solid #fff;} 
+.slideHome {overflow: hidden;} 
 .carousel-inner {position: relative; width: 100%; overflow: hidden;}
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {width: 100%; margin: auto;}
 
@@ -88,7 +88,7 @@ footer {margin-top: 1em; padding: 4em 0}
 .infoTxt i {margin-right: 0.3em; color: #ADADAD; font-size: 1.6em; vertical-align: middle;}
 .infoCarrito {font-size: 16px; color: #234A5B; margin-bottom: 1em;float: right;}
 .infoCarrito i {margin-right: 0.3em; font-size: 1.2em; vertical-align: baseline;}
-.infoCarritoHome{font-size: 16px; color: #234A5B; margin-bottom: 1em; text-align: center;}
+.infoCarritoHome{font-size: 16px; color: #367D91; margin-bottom: 1em; text-align: center;}
 .infoCarritoHome i{    margin-right: 0.3em; font-size: 1.2em; vertical-align: baseline;}
 
 .divLogin{margin: 100px auto 250px auto; width: 300px;  }
