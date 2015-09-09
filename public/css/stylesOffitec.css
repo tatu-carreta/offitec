@@ -18,11 +18,11 @@ h1, h2, h3 {font-weight: 300}
 
 .contenedor-carousel a{display: block; height: 130px; font-size: 1.250em; font-weight: 300; text-align: center;padding-top: 40px;color:#fff; }
 .contenedor-carousel a span {width: 80%; display: inline-block;}
-.boton-naranja {background:#A25A77;} /* #ff7503 */
-.boton-rojo {background:#FF735E ;} /*#D52318 */
-.boton-violeta {background:#49B6A4 ;} /*#70162F */
-.boton-azul {background: #F7A636;} /*#142B3A */
-.boton-verde {background:#367D91 ;} /*primer verde: #1D6A0E segundo verde: #498C1C*/
+.boton-violeta {background:#A25A77;} /* #ff7503 */
+.boton-rosa {background:#FF735E ;} /*#D52318 */
+.boton-verdeagua {background:#49B6A4 ;} /*#70162F */
+.boton-amarillo {background: #F7A636;} /*#142B3A */
+.boton-azul {background:#367D91 ;} /*primer verde: #1D6A0E segundo verde: #498C1C*/
 
 
 .presentacion {text-align: center; color: #A25A77; font-size: 1.8em; line-height: 1.3em; width: 80%; margin: 0 auto 2em;letter-spacing: 0.2px;}
