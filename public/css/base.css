@@ -86,7 +86,7 @@ footer {margin-top: 1em; padding: 4em 0}
 .cursor-move{cursor: move !important;}
 .infoTxt {font-size: 14px !important;}
 .infoTxt i {margin-right: 0.3em; color: #ADADAD; font-size: 1.6em; vertical-align: middle;}
-.infoCarrito {font-size: 16px; color: #234A5B; margin-bottom: 1em;float: right;}
+.infoCarrito {font-size: 16px; color:#367D91; margin-bottom: 1em;float: right;}
 .infoCarrito i {margin-right: 0.3em; font-size: 1.2em; vertical-align: baseline;}
 .infoCarritoHome{font-size: 16px; color: #367D91; margin-bottom: 1em; text-align: center;}
 .infoCarritoHome i{    margin-right: 0.3em; font-size: 1.2em; vertical-align: baseline;}
@@ -216,10 +216,10 @@ a.laura:hover {background-position:bottom}
 .firmalaura a:hover{color:#626263;}
 
 
-.iconoBtn-texto{color: #286090}
-.iconoBtn-texto:hover{color: #3885C7}
-.iconos a.btn{padding: 6px 12px 0 0;color:#286090;}
-.iconos a.btn:hover{color: #3885C7!important;}
+.iconoBtn-texto{color:  #4295AD;}
+.iconoBtn-texto:hover{color: #367D91;}
+.iconos a.btn{padding: 6px 12px 0 0; color:#4295AD !important;}
+.iconos a.btn:hover{color: #367D91 !important;}
 
 
 @media (max-width: 386px){

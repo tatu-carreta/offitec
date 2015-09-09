@@ -56,7 +56,7 @@ h1, h2, h3 {font-weight: 300}
 .navbar-collapse {padding-right: 0;}
 .dropdown-menu {background: #E6E6DA;}
 
-.open {background: #878979}
+.open {background: #E6E6DA}
 
 .thumbnail {padding: 0; border: none; border-radius: 0;}
 
@@ -89,8 +89,8 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .col-carrito textarea {height: 125px; margin-bottom: 1.2em;}
 .col-carrito .form-group {margin-bottom: 8px;}
 .col-carrito h3{border-bottom: 1px #DEDAD7 solid; padding-bottom: 2%;}
-.col-carrito .btn{color:#fff;background-color:  #234a5b !important; padding: 6px 40px !important; font-size: 18px !important; margin-top: 12px !important;}
-.col-carrito .btn:hover{background-color: #142B3A !important}
+.col-carrito .btn{color:#fff;background-color:  #A25A77 !important; padding: 6px 40px !important; font-size: 18px !important; margin-top: 12px !important;}
+.col-carrito .btn:hover{background-color: #92526C !important;}
 
 .table .fa-times:before {color: #000 !important;}
 .mapa{border-top: 4px solid #367D91;}
@@ -113,8 +113,8 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .col-contacto p{margin-bottom: 50px;}
 .col-contacto label {font-size: 18px; font-weight: normal;}
 .col-contacto .form-group {margin-bottom: 8px;}
-.col-contacto .btn {color:#fff;background-color:  #234a5b !important; padding: 6px 40px !important; font-size: 18px !important; margin-top: 12px !important;}
-.col-contacto .btn:hover{background-color: #142B3A !important; color:#fff;}
+.col-contacto .btn {color:#fff;background-color:  #A25A77 !important; padding: 6px 40px !important; font-size: 18px !important; margin-top: 12px !important;}
+.col-contacto .btn:hover{background-color: #92526C !important; color:#fff;}
 .col-izqcontacto{vertical-align: top; width: 49.8%; height: 600px;padding-top: 2%; margin-bottom:146px;display: inline-block;}
 .col-izqcontacto p{margin-bottom: 2em;}
 
@@ -126,8 +126,8 @@ h4{margin-bottom: 20px;font-size: 20px;}
 .presionadoNuevo{color:#ff7503;}
 .presionadoOferta{color:#D52318;}
 .btn{box-shadow: none !important;}
-.editarEliminar{padding: 6px 0; color: #286090;}
-.editarEliminar:hover{color: #3885C7}
+.editarEliminar{padding: 6px 0; color: #4295AD !important;}
+.editarEliminar:hover{color: #367D91 !important;}
 
 .volveraSeccion {font-size: 1em !important; color:#000;}
 .volveraSeccion:hover{color:#696969; }
