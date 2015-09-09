@@ -38,13 +38,13 @@ h1, h2, h3 {font-weight: 300}
 /* Estilos Fichas de Productos*/
 .divImgProd {width: 100%;  position: relative; border: 1px solid #F4F4EF} /* height: 100%;*/
 .divImgProd img {width: 100%; height: auto;}
-.bandaInfoProd {background: #efefef; padding: 0.5em 1em; color: #777774 !important; }
+.bandaInfoProd {background: #E6E6DA; padding: 0.5em 1em; color: #777774 !important; }
 .bandaInfoProd .btn-default {color: #777774 !important;}
 .bandaInfoProd .btn-default:hover {color: #fff !important; background: #00A9E0; border: none;}
 .bandaInfoProd p {margin:7px 0 5px;}
 .bandaOfertas, .bandaNuevos {color: #fff; font-size: 1.2em; position: absolute; bottom: 0; left: 0; padding: 0.1em 0.5em;}
-.bandaOfertas {background: #D52318; font-weight: 700;}
-.bandaNuevos {background: #ff7503}
+.bandaOfertas {background: #FF735E; font-weight: 700;}
+.bandaNuevos {background: #F7A636;}
 .bandaProd span {margin-right: 1em; font-size: 0.938em; text-transform: uppercase; margin-top: 0.6em;}
 .lazy {margin: 0}
 .bandaOfertas span{font-weight: 300;}
