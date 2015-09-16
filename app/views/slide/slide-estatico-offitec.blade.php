@@ -17,6 +17,13 @@
                                 </div>
                             </li>
                             <li>
+                                <img src="{{URL::to('images/sillasVerde.jpg')}}" alt="image04"/>
+                                <div class="ei-title">
+                                   <h3>ergonomía</h3>
+                                </div>
+                            </li>
+                       
+                            <li>
                                 <img src="{{URL::to('images/slide1blanco.jpg')}}" alt="image01" />
                                 <div class="ei-title">
                                     <h3>funcionalidad</h3>
@@ -29,14 +36,8 @@
                                     <h3>confort</h3>
                                 </div>
                             </li>
-                        <!-- 
-                            <li>
-                                <img src="{{URL::to('images/slide5.jpg')}}" alt="image04"/>
-                                <div class="ei-title">
-                                   <h3>ergonomía</h3>
-                                </div>
-                            </li>
-                        -->
+                         
+                        
                        
                         </ul><!-- ei-slider-large -->
                     
