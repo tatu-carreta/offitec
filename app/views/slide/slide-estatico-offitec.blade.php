@@ -11,7 +11,7 @@
                                 </div>
                             </li>
                             <li>
-                                <img src="{{URL::to('images/escritorioSilla1.jpg')}}" alt="image01" />
+                                <img src="{{URL::to('images/mesaSillonBlanco1.jpg')}}" alt="image01" />
                                 <div class="ei-title">
                                     <h3>estilo</h3>
                                 </div>
