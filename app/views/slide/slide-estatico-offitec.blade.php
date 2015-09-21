@@ -31,7 +31,7 @@
                             </li>
                             
                             <li>
-                                <img src="{{URL::to('images/slide4blanco.jpg')}}"alt="image03"/>
+                                <img src="{{URL::to('images/slide4blanco.jpg')}}" alt="image03"/>
                                 <div class="ei-title">
                                     <h3>confort</h3>
                                 </div>
