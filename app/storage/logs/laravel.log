@@ -2259,3 +2259,19 @@ Stack trace:
 Stack trace:
 #0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
 #1 {main} [] []
+[2015-09-28 16:32:04] production.ERROR: exception 'Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException' in C:\xampp\htdocs\offitec\bootstrap\compiled.php:5763
+Stack trace:
+#0 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5759): Illuminate\Routing\RouteCollection->methodNotAllowed(Array)
+#1 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5737): Illuminate\Routing\RouteCollection->getOtherMethodsRoute(Object(Illuminate\Http\Request), Array)
+#2 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5061): Illuminate\Routing\RouteCollection->match(Object(Illuminate\Http\Request))
+#3 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5049): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#4 C:\xampp\htdocs\offitec\bootstrap\compiled.php(5041): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#5 C:\xampp\htdocs\offitec\bootstrap\compiled.php(715): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#6 C:\xampp\htdocs\offitec\bootstrap\compiled.php(696): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#7 C:\xampp\htdocs\offitec\bootstrap\compiled.php(7813): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#8 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8420): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#9 C:\xampp\htdocs\offitec\bootstrap\compiled.php(8367): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#10 C:\xampp\htdocs\offitec\bootstrap\compiled.php(11030): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#11 C:\xampp\htdocs\offitec\bootstrap\compiled.php(657): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\offitec\public\index.php(54): Illuminate\Foundation\Application->run()
+#13 {main} [] []

@@ -202,6 +202,11 @@ h4{margin-bottom: 20px;font-size: 20px;}
     .data-fiscal {float:none;}
     .col-izqcontacto{width: 100%}
 }
+@media screen and (max-width: 495px) {
+    .col-izqservicios{width: 100%;}
+    .col-xs-6{width:100% !important;}
+
+}
 
 @media screen and (max-width: 440px){
     .col-xs-6 {width: 100%;}
