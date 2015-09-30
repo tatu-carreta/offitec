@@ -4,7 +4,7 @@
         @section('head')
         <meta charset="UTF-8">
         <title>OFFITEC - Muebles de oficina. Deco casa. En La Plata y Lomas de Zamora.</title>
-        <meta property="og:image" content="http://www.offitec.com/marca-face.png"/>
+        <meta property="og:image" content="{{URL::to('images/marca-face.png')}}"/>
 
         <!-- abre LINK -->
         <link href="favicon.ico" rel="shortcut icon">
@@ -12,7 +12,6 @@
         <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
         <meta name="description" content="DISEÑO / OFICINA / CASA. Equipamiento integral. Muebles, sillas, sillones, cortinas y complementos. Asesoramiento profesional. Muebles a medida">
         <meta name="Keywords" content="Offitec, equipamiento de oficinas, muebles, sillas, sillones, cortinas, complementos, asesoramiento, muebles a medida, La Plata.">
-        <meta property="og:image" content="" />
         <meta name="viewport" content="width = device-width, initial-scale=1, maximum-scale=1">
         
         <!-- B O O T S T R A P -->
