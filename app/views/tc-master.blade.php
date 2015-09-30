@@ -203,9 +203,13 @@
                 });
             });
         </script>
-
+        
         <!-- Div alerta  -->
         @include($project_name.'-div-alerta')
+        
+        <!-- Div loading  -->
+        @include($project_name.'-div-loading')
+        
         
         @show
         
