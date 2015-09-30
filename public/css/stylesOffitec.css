@@ -149,6 +149,8 @@ h4{margin-bottom: 20px;font-size: 20px;}
 /* SUB MENU */
 #menuPrincipal .dropdown li a:hover{ background-color:#D6D6CA;}/*#9C9C8A*/
 
+.prePresentacion{text-align: center;color: #A25A77;font-size: 1.6em;line-height: 1.3em;width: 80%;margin: 0 auto 0.5em;letter-spacing: 0.2px;}
+.parrafoServicios{margin-bottom: 1em;}
 /* ----------------------------- M E D I A  Q U E R Y ------------------------------------- */
 
 @media screen and (max-width: 1000px) {

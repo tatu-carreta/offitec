@@ -46,7 +46,8 @@
         
         <div class="row">
             <div class="col-md-12">
-                    <h2 class="presentacion">Equipamiento integral de oficinas. Muebles, sillas, sillones, cortinas y complementos. Asesoramiento profesional. Muebles a medida. Envíos a todo el país.</h2>
+                    <h2 class="prePresentacion">DISEÑO • OFICINA • CASA</h2>
+                    <h2 class="presentacion">Equipamiento integral. Muebles, sillas, sillones, cortinas y complementos. Asesoramiento profesional. Muebles a medida. Envíos a todo el país.</h2>
                 <div class="@section('class-redes-sociales') redes @show">
                     <a class="facebook" href="https://www.facebook.com/profile.php?id=100001265423883&fref=ts" target="_blank"></a>
                     <a class="google" href="https://plus.google.com/101901769123903199376/posts" target="_blank"></a>
